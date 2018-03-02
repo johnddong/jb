@@ -1375,6 +1375,21 @@ select{
 #pay01 .shipping .quantity{
   margin-bottom: 20px;
 }
+#pay01 .shipping select{
+  height: 40px;
+  padding: 0 25px;
+  color: #666;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance:none;
+}
+#pay01 .shipping .quantity i{
+  position: absolute;
+  top: 38px;
+  right: 5px;
+}
 .subtotal .coupon input{
   width: 73%;
   border: solid 1px #bbbbbb;
