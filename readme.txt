@@ -2754,3 +2754,11 @@ pay.js
 
 4. 備註
   請加上判斷，在APP上才引入上方敘述 floater 相關的css/js檔案和markup
+
+  
+/**
+* Date: 2018/03/08
+*內容： 前台_購物車刪除鈕消失問題
+*TKT:  #71399
+*/
+1.更新 jollybuy.css
