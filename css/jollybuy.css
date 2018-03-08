@@ -2258,6 +2258,9 @@ select{
   }
   .order-grid .shopping-cart-content .product-thumb img{
     max-width: 100px;
+    max-height: 100px;
+    margin: 0 auto;
+    display: block;
   }
   .order-grid .shopping-cart-content .product-name{
     display: inline-block;
