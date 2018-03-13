@@ -1,0 +1,91 @@
+#view-type{
+  float: right;
+}
+#view-type li{
+  margin-right: 5px;
+  display: inline-block;
+}
+#view-type li:last-child{
+  margin-right: 0;
+}
+#view-type li .icon{
+  width: 30px;
+  height: 30px;
+}
+#view-type .icon-brick {background: url(../images/icons/view-type/icon-brick.png);}
+#view-type .icon-grid {background: url(../images/icons/view-type/icon-grid.png);}
+#view-type .icon-list {background: url(../images/icons/view-type/icon-list.png);}
+#view-type .active .icon-brick {background: url(../images/icons/view-type/icon-brick-active.png);}
+#view-type .active .icon-grid {background: url(../images/icons/view-type/icon-grid-active.png);}
+#view-type .active .icon-list {background: url(../images/icons/view-type/icon-list-active.png);}
+
+/* list view */
+.list .product-item{
+  overflow: hidden;
+  border-top: 1px solid #f6f6f6;
+  padding: 10px;
+}
+.list .thumb,
+.list .info {
+  float: left;
+}
+.list .thumb{
+  width: 30%;
+  padding-bottom: 30%;
+}
+.list .info{
+  width: 70%;
+  text-align: left;
+  padding-left: 20px;
+}
+.list .info .price .ins{
+  display: block;
+}
+/* reset */
+.featured-products .supper-title{
+  margin-top: 0;
+}
+.supper-title{
+  float: left;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+.supper-title::after{
+  width: 100%;
+  background: #ccbcbc;
+}
+.list .product-item{
+  margin: 0;
+}
+.list .product-item .info{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.list .product-item .info .product-name{
+  height: auto;
+  overflow: auto;
+}
+@media(max-width: 479px) { /* show display icons */
+  #view-type{display: block;}
+  .main-content-home1 .main-slideshow{ /* slideshow margin bottom reduced */
+    margin-bottom: 20px;
+  }
+}
+@media(min-width: 479px) { /* hide display icons */
+  .supper-title{
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  #view-type{display: none;}
+  .main-content-home1 .main-slideshow{ /* slideshow margin bottom reduced */
+    margin-bottom: 0px;
+  }
+}
+
+.product-grid{
+  display: block;
+  clear: both;
+}

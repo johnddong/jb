@@ -2755,10 +2755,38 @@ pay.js
 4. 備註
   請加上判斷，在APP上才引入上方敘述 floater 相關的css/js檔案和markup
 
-  
+
 /**
 * Date: 2018/03/08
 *內容： 前台_購物車刪除鈕消失問題
 *TKT:  #71399
 */
 1.更新 jollybuy.css
+
+
+
+/**
+*Date: 2018/03/13
+*內容： 首頁新增商品展示切換功能
+*TKT:  #71858
+*/
+
+1.頁面: index.html
+  markup (放置位置請參考 index.html):
+  <!-- display mode -->
+  <div id="view-type">
+    <ul>
+      <li><div class="icon icon-brick" data-type="brick"></div></li>
+      <li><div class="icon icon-grid" data-type="grid"></div></li>
+      <li><div class="icon icon-list" data-type="list"></div></li>
+    </ul>
+  </div>
+  <!--/ display mode -->
+
+2.新增
+  3.1 tab.css
+  3.2 tab.js
+
+3. 引入 (引入位置請參考 index.html)
+  4.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
+  4.2 <script type="text/javascript" src="js/tab.js"></script>

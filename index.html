@@ -19,6 +19,13 @@
 	<link href="css/hoverEffects/default.css" rel="stylesheet" type="text/css" />
 	<link href="css/hoverEffects/component.css" rel="stylesheet" type="text/css" />
 	<link href="css/hoverEffects/hoverEffects.css" rel="stylesheet" type="text/css" />
+	<!-- tab -->
+	<link href="css/tab.css" rel="stylesheet" tyle="text/css">
+	<!--/ tab -->
+	<!-- floater -->
+	<link href="css/promo/animate.css" rel="stylesheet" tyle="text/css">
+  <link href="css/promo/floater.css" rel="stylesheet" tyle="text/css">
+	<!--/ floater -->
 	<script src="js/hoverEffects/modernizr.custom.js"></script>
 	<script src="js/hoverEffects/hoverEffects.js"></script>
 	<!--/ icon hover effects -->
@@ -60,6 +67,8 @@
 										<li><a href="tpl11.html">模板11 - tpl11</a></li>
 										<li><a href="tpl12.html">模板12 - tpl12</a></li>
 										<li><a href="tpl13.html">模板13 - tpl13</a></li>
+										<li><a href="tpl14.html">模板14 - tpl14</a></li>
+										<li><a href="tpl15.html">模板15 - tpl15</a></li>
 									</ul>
 								</li>
 								<li class="menu-item menu-item-has-children">
@@ -246,21 +255,29 @@
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="custom-clear featured-products">
 						<h3 class="supper-title">熱門商品</h3>
+						<!-- display mode -->
+						<div id="view-type">
+							<ul>
+								<li><div class="icon icon-brick" data-type="brick"></div></li>
+								<li><div class="icon icon-grid" data-type="grid"></div></li>
+								<li><div class="icon icon-list" data-type="list"></div></li>
+							</ul>
+						</div>
+						<!--/ display mode -->
 						<div class="row product-grid">
-							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 xs-clear">
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
 								<div class="product-item layout1">
 									<div class="product-inner">
 										<div class="thumb">
 											<div class="group-button">
-												<a href="#" class="wishlist-button"></a>
-												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
 											</div>
-											<a href="#"><img src="images/product-details-470x470.jpg" alt=""></a>
+											<a href="#"><img src="images/temp/tpl08/list01.jpg" alt=""></a>
 										</div>
 										<div class="info">
 											<a href="#" class="product-name">經典藍色 T-Shirt</a>
-											<a href="#" class="add-to-cart">+ 放入購物車</a>
 											<div class="price">
+												<span class="del">$100.00 </span>
 												<span class="ins">$75</span>
 											</div>
 										</div>
@@ -275,14 +292,12 @@
 												<span class="flash sale">sale</span>
 											</div>
 											<div class="group-button">
-												<a href="#" class="wishlist-button"></a>
-												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
 											</div>
-											<a href="#"><img src="images/product-details-470x470.jpg" alt=""></a>
+											<a href="#"><img src="images/temp/tpl08/list02.jpg" alt=""></a>
 										</div>
 										<div class="info">
 										<a href="#" class="product-name">經典藍色 T-Shirt</a>
-										<a href="#" class="add-to-cart">+ 放入購物車</a>
 										<div class="price">
 											<span class="del">$100.00 </span>
 											<span class="ins">$75</span>
@@ -291,40 +306,117 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 xs-clear">
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
 								<div class="product-item layout1">
 									<div class="product-inner">
 										<div class="thumb">
 											<div class="group-button">
-												<a href="#" class="wishlist-button"></a>
-												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
 											</div>
-											<a href="#"><img src="images/product-details-470x470.jpg" alt=""></a>
+											<a href="#"><img src="images/temp/tpl08/list03.jpg" alt=""></a>
 										</div>
 										<div class="info">
 											<a href="#" class="product-name">經典藍色 T-Shirt</a>
-											<a href="#" class="add-to-cart">+ 放入購物車</a>
 											<div class="price">
+												<span class="del">$100.00 </span>
 												<span class="ins">$75</span>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 md-clear sm-clear">
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
 								<div class="product-item layout1">
 									<div class="product-inner">
 										<div class="thumb">
 											<div class="group-button">
-												<a href="#" class="wishlist-button"></a>
-												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
 											</div>
-											<a href="#"><img src="images/product-details-470x470.jpg" alt=""></a>
+											<a href="#"><img src="images/temp/tpl08/list04.jpg" alt=""></a>
 										</div>
 										<div class="info">
 											<a href="#" class="product-name">經典藍色 T-Shirt</a>
-											<a href="#" class="add-to-cart">+ 放入購物車</a>
 											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
+											</div>
+											<a href="#"><img src="images/temp/tpl08/list01.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-flash">
+												<span class="flash sale">sale</span>
+											</div>
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
+											</div>
+											<a href="#"><img src="images/temp/tpl08/list02.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<a href="#" class="product-name">經典藍色 T-Shirt</a>
+										<div class="price">
+											<span class="del">$100.00 </span>
+											<span class="ins">$75</span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
+											</div>
+											<a href="#"><img src="images/temp/tpl08/list03.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-4 col-md-4 col-lg-3">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
+											</div>
+											<a href="#"><img src="images/temp/tpl08/list04.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
 												<span class="ins">$75</span>
 											</div>
 										</div>
@@ -365,7 +457,7 @@
 	<section id="hoverEffects">
 		<div class="hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a">
 			<ul>
-				<li><a href="javascript:void(0);" class="hi-icon hi-icon-theme-1"></a></li>
+				<li><a href="javascript:void(0);" class="hi-icon hi-icon-theme-1" title=""></a></li>
 				<li><a href="javascript:void(0);" class="hi-icon hi-icon-theme-2"></a></li>
 				<li><a href="javascript:void(0);" class="hi-icon hi-icon-theme-3"></a></li>
 				<li><a href="javascript:void(0);" class="hi-icon hi-icon-theme-4"></a></li>
@@ -374,6 +466,20 @@
 		</div>
 	</section>
 	<!--/ hoverEffects -->
+	<!-- floater -->
+	<div id="floater">
+		<div class="icon open animated zoomIn">
+			<div class="icon-inner"><span></span></div>
+		</div>
+		<div class="icon home">
+			<div class="icon-inner"><a href="https://dev-www.jollybuy.com/beango/"></a></div>
+		</div>
+		<div class="icon setting">
+			<div class="icon-inner"><a href="https://admin.jollybuy.com/Home/Index"></a></div>
+		</div>
+	</div>
+	<!--/ floater-->
+
 	<script type="text/javascript" src="js/load_script.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
@@ -389,6 +495,7 @@
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="js/tab.js"></script>
 	<script>
 	// (function(d, s, f, h) {
   //   var f = f + (new Date().getTime())
@@ -403,5 +510,8 @@
 		kt_innit_carousel();
 	});
 	</script>
+	<!-- floater -->
+	<script type="text/javascript" src="js/promo/floater.js"></script>
+	<!--/ floater -->
 </body>
 </html>
