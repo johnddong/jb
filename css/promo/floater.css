@@ -1,0 +1,55 @@
+#floater {
+  position: fixed;
+  z-index: 11;
+  bottom: 0;
+}
+#floater .icon{
+  display: none;
+  transition: all .5s ease;
+  box-shadow: 0 3px 5px rgba(0,0,0,.3);
+  border-radius: 40px;
+  background: #ea0d43;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  position: fixed;
+  z-index: 11;
+  bottom: 15px;
+}
+#floater .icon-inner{
+  background: #ea0d43;
+  border: 2px #ff7d9d solid;
+  border-radius: 36px;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: #ff7d9d;
+  font-size: 13px;
+}
+#floater .icon-inner span,
+#floater .icon-inner a{
+  transition: all .5s ease;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+#floater .open .icon-inner span{background: url(../../images/floater/icon-plus.png) no-repeat center center;}
+#floater .home .icon-inner a{background: url(../../images/floater/icon-home.png) no-repeat center center;}
+#floater .setting .icon-inner a{background: url(../../images/floater/icon-setting.png) no-repeat center center;}
+/* easing */
+#floater .home,
+#floater .setting{
+  transition: all .5s ease;
+  opacity: 0;
+  position: fixed;
+  bottom: 15px;
+  z-index: 0;
+}
+/* active plus icon */
+#floater .active .icon-inner span{
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
