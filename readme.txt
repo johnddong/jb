@@ -2771,8 +2771,16 @@ pay.js
 *TKT:  #71858
 */
 
-1.頁面: index.html
-  markup (放置位置請參考 index.html):
+1.頁面：
+  1.1 index.html
+  1.2 autumn.html
+  1.3 skyline.html
+  1.4 tpl09.html
+  1.5 tpl10.html
+  1.6 tpl13.html
+  1.7 tpl15.html
+
+  markup (放置位置請參考上方對應頁面):
   <!-- display mode -->
   <div id="view-type">
     <ul>
@@ -2783,10 +2791,11 @@ pay.js
   </div>
   <!--/ display mode -->
 
-2.新增
+2.新增：
   3.1 tab.css
   3.2 tab.js
+  3.3 images/icons/view-type
 
-3. 引入 (引入位置請參考 index.html)
+3. 引入至首頁 (引入位置請參考 index.html):
   4.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
   4.2 <script type="text/javascript" src="js/tab.js"></script>

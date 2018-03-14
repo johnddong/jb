@@ -1,5 +1,6 @@
 #view-type{
   float: right;
+  line-height: 0;
 }
 #view-type li{
   margin-right: 5px;
@@ -41,13 +42,35 @@
 .list .info .price .ins{
   display: block;
 }
-/* reset */
-.featured-products .supper-title{
-  margin-top: 0;
+@media(max-width: 479px) { /* show display icons */
+  #view-type{display: block;}
+  .main-content-home1 .main-slideshow,
+  .main-content-home10 .main-slideshow,
+  .main-content-home6 .main-slideshow{ /* slideshow margin bottom reduced */
+    margin-bottom: 20px;
+  }
 }
+@media(min-width: 479px) { /* hide display icons */
+  .featured-products{
+    text-align: center;
+  }
+  .supper-title{
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  #view-type{display: none;}
+  .main-content-home1 .main-slideshow,
+  .main-content-home10 .main-slideshow,
+  .main-content-home6 .main-slideshow,
+  .main-content-home9 .main-slideshow{ /* slideshow margin bottom reduced */
+    /* margin-bottom: 0px; */
+    margin-bottom: 20px!important;
+  }
+}
+/* super title */
 .supper-title{
-  float: left;
-  margin: 0;
+  display: inline-block;
+  margin: 0 0 3px 0;
   padding-top: 0;
   padding-bottom: 10px;
 }
@@ -55,6 +78,22 @@
   width: 100%;
   background: #ccbcbc;
 }
+.featured-products{ /* products' bottom margin */
+  margin-bottom: 20px;
+}
+/* tpl13 */
+#tpl13 .col-xs-12 .featured-products{
+  text-align: center;
+}
+#tpl13 .col-xs-12 .custom-clear.featured-products{
+  text-align: left;
+}
+@media(min-width: 479px) {
+  #tpl13 .col-xs-12 .custom-clear.featured-products{
+    text-align: center;
+  }
+}
+/* reset */
 .list .product-item{
   margin: 0;
 }
@@ -66,23 +105,17 @@
   height: auto;
   overflow: auto;
 }
-@media(max-width: 479px) { /* show display icons */
-  #view-type{display: block;}
-  .main-content-home1 .main-slideshow{ /* slideshow margin bottom reduced */
-    margin-bottom: 20px;
-  }
+.featured-products .supper-title{
+  margin-top: 0;
 }
-@media(min-width: 479px) { /* hide display icons */
-  .supper-title{
-    left: 50%;
-    transform: translateX(-50%);
-    padding-top: 20px;
-    margin-bottom: 20px;
-  }
-  #view-type{display: none;}
-  .main-content-home1 .main-slideshow{ /* slideshow margin bottom reduced */
-    margin-bottom: 0px;
-  }
+.main-content-home10{ /* products's bottom */
+  padding-bottom: 0;
+}
+.products-show{ /* supper-title's parent */
+  text-align: center;
+}
+.post-item { /* tpl09 video bottom margin*/
+  margin-bottom: 10px;
 }
 
 .product-grid{
