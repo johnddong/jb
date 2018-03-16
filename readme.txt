@@ -2819,14 +2819,14 @@ markup:
 				<h3 class="title supper-title">退款資料</h3>
 	--------------------------------新增↓---------------------------------
 				<div class="quantity">
-					<select name="delivery" class="chosen-select">
+					<select name="bank_name" class="chosen-select">
 						<option value="">銀行名稱</option>
 						<option value="0">台灣銀行(004)</option>
 						<option value="1">第一銀行(007)</option>
 					</select>
 				</div>
 				<div class="quantity">
-					<select name="delivery" class="chosen-select">
+					<select name="branch_name" class="chosen-select">
 						<option value="">分行名稱</option>
 						<option value="0">臺灣銀行館前分行(0040071)</option>
 						<option value="1">臺灣銀行臺南分行(0040093)</option>
@@ -2836,8 +2836,11 @@ markup:
 	--------------------------------刪除↓---------------------------------
 				<input type="text" name="bank_name" class="input-info" placeholder="銀行名稱" value="">
 				<input type="text" name="branch_name" class="input-info" placeholder="分行名稱" value="">
+	--------------------------------刪除↑---------------------------------
 				<input type="text" name="account_name" class="input-info" placeholder="帳戶名稱" value="">
 				<input type="text" name="account_number" class="input-info" placeholder="帳戶" value="">
-	--------------------------------刪除↑---------------------------------
 			</div>
-2.更新:jollybuy.css
+			
+2.更新: fix.css (暫套，請見第三點)
+
+3.待前台套版進度與台北前端提供的專案進度一致時,更新jollybuy.css,並移除fix.css
