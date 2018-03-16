@@ -1790,6 +1790,12 @@ select{
   width: 100%;
   margin-bottom: 20px;
 }
+#order-success .quantity i{
+  position: absolute;
+  top: 14px;
+  right: 5px;
+  color: #ccc;
+}
 #order-success .quantity .chosen-container{
   width: inherit;
 }

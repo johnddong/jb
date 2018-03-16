@@ -2820,19 +2820,21 @@ markup:
 				<h3 class="title supper-title">退款資料</h3>
 	--------------------------------新增↓---------------------------------
 				<div class="quantity">
-					<select name="bank_name" class="chosen-select">
+					<select name="bank_name">
 						<option value="">銀行名稱</option>
 						<option value="0">台灣銀行(004)</option>
 						<option value="1">第一銀行(007)</option>
 					</select>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
 				</div>
 				<div class="quantity">
-					<select name="branch_name" class="chosen-select">
+					<select name="branch_name">
 						<option value="">分行名稱</option>
 						<option value="0">臺灣銀行館前分行(0040071)</option>
 						<option value="1">臺灣銀行臺南分行(0040093)</option>
 					</select>
-				</div>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+			    </div>
 	--------------------------------新增↑---------------------------------
 	--------------------------------刪除↓---------------------------------
 				<input type="text" name="bank_name" class="input-info" placeholder="銀行名稱" value="">
