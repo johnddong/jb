@@ -1786,6 +1786,13 @@ select{
   height: 150px;
   margin-bottom: 20px;
 }
+#order-success .quantity{
+  width: 100%;
+  margin-bottom: 20px;
+}
+#order-success .quantity .chosen-container{
+  width: inherit;
+}
 
 /* 運送貨態 */
 /* reset seubmenu */
