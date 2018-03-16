@@ -2799,3 +2799,49 @@ pay.js
 3. 引入至首頁 (引入位置請參考 index.html):
   3.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
   3.2 <script type="text/javascript" src="js/tab.js"></script>
+
+
+/**
+*Date: 2018/03/16
+*內容：前台退款頁面_ATM退款與取貨付款 退款銀行資料填寫欄位修改成下拉式選單
+*TKT:  #72344
+*/
+
+1.頁面:
+return.html
+
+markup:
+<!-- ATM轉帳 -->
+<div class="refund-info panel panel-default">
+	<div class="panel-heading"><h2>ATM轉帳 退款資料</h2></div>
+	<div class="panel-body">
+		<div class="row orther-info">
+			<div class="col-xs-12 col-sm-6">
+				<h3 class="title supper-title">退款資料</h3>
+	--------------------------------新增↓---------------------------------
+				<div class="quantity">
+					<select name="bank_name" class="chosen-select">
+						<option value="">銀行名稱</option>
+						<option value="0">台灣銀行(004)</option>
+						<option value="1">第一銀行(007)</option>
+					</select>
+				</div>
+				<div class="quantity">
+					<select name="branch_name" class="chosen-select">
+						<option value="">分行名稱</option>
+						<option value="0">臺灣銀行館前分行(0040071)</option>
+						<option value="1">臺灣銀行臺南分行(0040093)</option>
+					</select>
+				</div>
+	--------------------------------新增↑---------------------------------
+	--------------------------------刪除↓---------------------------------
+				<input type="text" name="bank_name" class="input-info" placeholder="銀行名稱" value="">
+				<input type="text" name="branch_name" class="input-info" placeholder="分行名稱" value="">
+	--------------------------------刪除↑---------------------------------
+				<input type="text" name="account_name" class="input-info" placeholder="帳戶名稱" value="">
+				<input type="text" name="account_number" class="input-info" placeholder="帳戶" value="">
+			</div>
+
+2.更新: fix.css (暫套，請見第三點)
+
+3.待前台套版進度與台北前端提供的專案進度一致時,更新jollybuy.css,並移除fix.css
