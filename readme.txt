@@ -2792,13 +2792,14 @@ pay.js
   <!--/ display mode -->
 
 2.新增：
-  3.1 tab.css
-  3.2 tab.js
-  3.3 images/icons/view-type
+  2.1 tab.css (之後會合併至 jollybuy.css)
+  2.2 tab.js
+  2.3 images/icons/view-type
 
 3. 引入至首頁 (引入位置請參考 index.html):
-  4.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
-  4.2 <script type="text/javascript" src="js/tab.js"></script>
+  3.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
+  3.2 <script type="text/javascript" src="js/tab.js"></script>
+
 
 /**
 *Date: 2018/03/16
@@ -2840,7 +2841,7 @@ markup:
 				<input type="text" name="account_name" class="input-info" placeholder="帳戶名稱" value="">
 				<input type="text" name="account_number" class="input-info" placeholder="帳戶" value="">
 			</div>
-			
+
 2.更新: fix.css (暫套，請見第三點)
 
 3.待前台套版進度與台北前端提供的專案進度一致時,更新jollybuy.css,並移除fix.css
