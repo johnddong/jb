@@ -2792,10 +2792,10 @@ pay.js
   <!--/ display mode -->
 
 2.新增：
-  3.1 tab.css
-  3.2 tab.js
-  3.3 images/icons/view-type
+  2.1 tab.css (之後會合併至 jollybuy.css)
+  2.2 tab.js
+  2.3 images/icons/view-type
 
 3. 引入至首頁 (引入位置請參考 index.html):
-  4.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
-  4.2 <script type="text/javascript" src="js/tab.js"></script>
+  3.1 <link href="css/tab.css" rel="stylesheet" type="text/css">
+  3.2 <script type="text/javascript" src="js/tab.js"></script>
