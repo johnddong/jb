@@ -2847,3 +2847,27 @@ markup:
 2.更新: fix.css (暫套，請見第三點)
 
 3.待前台套版進度與台北前端提供的專案進度一致時,更新jollybuy.css,並移除fix.css
+
+
+
+/**
+*Date: 2018/03/20
+*內容：改版首頁
+*TKT: #71740
+*/
+
+/**** 首頁 ****/
+1. markup 異動：
+<div class="price">
+  <span class="del"><span>12345</span></span>
+  <span class="ins">$<span>16789</span></span>
+</div>
+
+2. 移除下方模板引入的 tab.css:
+  2.1 index.html
+  2.2 autumn.html
+  2.3 skyline.html
+  2.4 tpl09.html
+  2.5 tpl10.html
+  2.6 tpl13.html
+  2.7 tpl15.html
