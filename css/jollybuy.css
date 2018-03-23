@@ -562,13 +562,7 @@ form#search .invalid{
   color: #ff2944;
   font-weight: bold;
 }
-/* 列表商品圖至底對齊呈現 */
-.product-grid, /* Basic, Autumn, Skyline */
-.owl-stage{    /* Skyline, Electronics, Feature, tpl08*/
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
+/* 列表商品圖縮圖垂直&水平置中呈現 */
 .product-grid .thumb,
 .owl-stage .thumb{
   padding-bottom: 100%;
