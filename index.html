@@ -423,6 +423,20 @@
 								</div>
 							</div>
 						</div>
+						<input type="hidden" name="totalPage" value="3" />
+						<script>
+							$(function() {
+								new $.infiniteScroll({
+									_this: 'product-grid',
+									target: {
+										id: 'product-grid'
+									},
+									is_btnSubmit: false,
+									ajax_path: 'js/api-temp/product-list.json'
+								});
+							});
+							</script>
+
 					</div>
 				</div>
 			</div>
@@ -495,6 +509,7 @@
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/tab.js"></script>
+	<script type="text/javascript" src="js/infiniteScroll.js"></script>
 	<script>
 	// (function(d, s, f, h) {
   //   var f = f + (new Date().getTime())
