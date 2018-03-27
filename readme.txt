@@ -2820,19 +2820,21 @@ markup:
 				<h3 class="title supper-title">退款資料</h3>
 	--------------------------------新增↓---------------------------------
 				<div class="quantity">
-					<select name="bank_name" class="chosen-select">
+					<select name="bank_name">
 						<option value="">銀行名稱</option>
 						<option value="0">台灣銀行(004)</option>
 						<option value="1">第一銀行(007)</option>
 					</select>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
 				</div>
 				<div class="quantity">
-					<select name="branch_name" class="chosen-select">
+					<select name="branch_name">
 						<option value="">分行名稱</option>
 						<option value="0">臺灣銀行館前分行(0040071)</option>
 						<option value="1">臺灣銀行臺南分行(0040093)</option>
 					</select>
-				</div>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+			    </div>
 	--------------------------------新增↑---------------------------------
 	--------------------------------刪除↓---------------------------------
 				<input type="text" name="bank_name" class="input-info" placeholder="銀行名稱" value="">
@@ -2845,3 +2847,42 @@ markup:
 2.更新: fix.css (暫套，請見第三點)
 
 3.待前台套版進度與台北前端提供的專案進度一致時,更新jollybuy.css,並移除fix.css
+
+
+
+/**
+*Date: 2018/03/20
+*內容：改版首頁
+*TKT: #71740
+*/
+
+/**** 首頁 ****/
+1. markup 異動：
+<div class="price">
+  <span class="del"><span>12345</span></span>
+  <span class="ins">$<span>16789</span></span>
+</div>
+
+2. 移除下方模板引入的 tab.css:
+  2.1 index.html
+  2.2 autumn.html
+  2.3 skyline.html
+  2.4 tpl09.html
+  2.5 tpl10.html
+  2.6 tpl13.html
+  2.7 tpl15.html
+
+
+  /**
+  *Date: 2018/03/27
+  *內容：改版商品頁
+  *TKT: #71741
+  */
+  1.頁面 product.html:
+  不須異動 markup:
+   (1)  #sync1 & #sync2 區塊 (2) footer 區塊 (3) Model 區塊
+  其他部分請依照 product.html 調整 markup。
+
+  2.更新:
+  jollybuy.css
+  frontend.js

@@ -1095,10 +1095,9 @@ header .header.layout1 .top-links{
 /*共用*/
 /*checkbox style*/
 .checkbox-cont{
-  /* display: block; */
+  height: 24px;
+  width: 24px;
   position: relative;
-  padding-left: 26px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -1107,42 +1106,14 @@ header .header.layout1 .top-links{
   user-select: none;
   float: left;
   margin-top: 24px;
+  border: solid 2px #d4d7d9;
 }
 .checkbox-cont input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-}
-.checkbox-cont input:checked ~ .checkmark {
-    background-color: #555;
-}
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-.checkbox-cont input:checked ~ .checkmark:after {
-    display: block;
-}
-.checkbox-cont .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
+
 #product .main-content{
   font-family: Verdana,"微軟正黑體",Arial;
   font-size: 15px;
@@ -1150,9 +1121,7 @@ header .header.layout1 .top-links{
   color: #777;
 }
 #product .main-content a{cursor: pointer;}
-#product .main-content a:link,
-#product .main-content a:visited,
-.product-item .info .price .del{color: #777;}
+
 .sub-title{
   font-size: 1.2em;
   font-weight: bold;
@@ -1191,12 +1160,6 @@ header .header.layout1 .top-links{
 }
 #product .product-item .info .price .del{
   margin-right: 0px;
-}
-@media (min-width: 768px) {
-  #product a:hover, #product a:active{color: #555;}
-  .about-product .details-info .btn:hover{
-    background-color: #f0dddd;
-  }
 }
 /* 商品主圖, limit height 500px */
 #product .spec .chosen-container-single .chosen-single{
@@ -1628,6 +1591,11 @@ header .header.layout1 .top-links{
     border-right:none;
   }
 }
+@media(max-width: 768px) {
+  #product #additional-product .product-inner .info{
+    width: 50%;
+  }
+}
 /* active */
 .product-item .group-button .active::before {
   color: #888;
@@ -1668,41 +1636,12 @@ header .header.layout1 .top-links{
     width: 32%;
     text-align: center;
     display: inline-block;
-    padding: 1em;
+    padding: 1em 10px;
   }
 }
 /*推薦商品*/
-#product .related-product .product-item .info{
-  text-align: left;
-  padding: 10px;
-}
-#product .related-product .product-item .product-name{
-  height: 53px;
-  line-height: 25px;
-  margin-bottom: 5px;
-}
-#product .related-product .product-item .info .price{
-  color: #ff0000;
-}
-#product .related-product .product-item .info .price .del{
-  max-width: 53px;
-  overflow: hidden;
-  display: inline-flex;
-}
-#product .related-product .product-item .info .price .ins{
-  display: inline-block;
-}
-#product .related-product .product-item .info .price .ins span{
-  max-width: 89px;
-  line-height: 30px;
-  overflow: hidden;
-  display: inline-flex;
-}
-#product .related-product .product-item .info .add-to-cart{
-  height: 40px;
-  width: 80%;
-  padding-top: 12px;
-  margin-right: 20%;
+#product .related-product .product-item .info .product-name{
+  margin-bottom: 10px;
 }
 /*floater buttons*/
 #product .fixed-section{display: none;}

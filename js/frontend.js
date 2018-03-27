@@ -514,4 +514,16 @@ jQuery(document).ready(function ($) {
       timer: 600,
       z_index: 1052
     });
+
+    $('.checkbox-cont').on('click',function(){
+      var
+      $this = $(this),
+      input = $this.find('input'),
+      fa = '<i class="fa fa-check" aria-hidden="true"></i>';
+      if (input.prop('checked')) {
+        $this.append(fa);
+      }else{
+        $this.find($('.fa')).remove();
+      }
+    });
 });
