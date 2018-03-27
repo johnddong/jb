@@ -1298,8 +1298,8 @@ header .header.layout1 .top-links{
   height: 40px;
   display: inline-block;
 }
-#product .btn-chart a{background: url('../images/icons/chart.png');}
-#product .btn-chart a:hover{background: url('../images/icons/chart-hover.png');}
+#product .btn-chat a{background: url('../images/icons/chat.png');}
+#product .btn-chat a:hover{background: url('../images/icons/chat-hover.png');}
 #product .btn-wishlist a{background: url('../images/icons/heart.png');}
 #product .btn-wishlist a:hover,
 #product .btn-wishlist .wishlist.active{background: url('../images/icons/heart-hover.png');}
