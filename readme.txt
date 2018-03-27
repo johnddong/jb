@@ -2871,3 +2871,14 @@ markup:
   2.5 tpl10.html
   2.6 tpl13.html
   2.7 tpl15.html
+
+
+
+/**
+*Date: 2018/03/26
+*內容：店鋪商品加入動態載入功能
+*TKT: na
+*/
+
+1. markup 新增：
+<input type="hidden" name="totalPage" value="" />　=> value 帶入總共的頁數
