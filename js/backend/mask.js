@@ -20,20 +20,17 @@ var Mask = (function() {
       },
 
   init = function(obj) {
-    console.log('init');
+    img = imgSize();
     if (('#'+id.frame).length > 0) {
       $('#'+id.frame).remove(); // rm previous unused img
     }
-    img = imgSize();
-    img.onload = function() {
-      if (img.width >= 576)  {
-        // pre-adjust page's layout
-        if ($inner.length > 0) {
-          $inner.css({overflow: 'visible', marginBottom: 50});
-          $imgWrap.parent().css({overflow: 'visible'});
-        }
-        cover(obj);
+    if (img.width >= 576)  {
+      // pre-adjust page's layout
+      if ($inner.length > 0) {
+        $inner.css({overflow: 'visible', marginBottom: 50});
+        $imgWrap.parent().css({overflow: 'visible'});
       }
+      cover(obj);
     }
   },
 
@@ -101,7 +98,6 @@ var Mask = (function() {
   },
 
   cover = function(obj) {  // append a duplicated image w/ mask
-     console.log('cover');
      var dir = imgDirection()
        , src = $galleryWrap.find('img').attr('src')
        , mask = $('<img />', {id: id.mask}).attr({src: src}).css({ // MASK image
@@ -129,7 +125,6 @@ var Mask = (function() {
          position: 'absolute',
          zIndex: 1,
          top: 0,
-         opacity: 0,
          width: (dir == 'hor') ? '50%' : '100%',
          height: (dir == 'hor') ? '100%' : '50%',
          cursor: 'text'
@@ -140,9 +135,9 @@ var Mask = (function() {
 
     var $frame = $galleryWrap.find('#'+id.frame);
     if (dir == 'hor') {
-      $frame.css({left: '25%', opacity: 1}).find('#'+id.mask).css({objectPosition: 'center'}); // default  align center horizontally
+      $frame.css({left: '25%'}).find('#'+id.mask).css({objectPosition: 'center'}); // default  align center horizontally
     } else {
-      $frame.css({top: '25%', opacity: 1}).find('#'+id.mask).css({objectPosition: 'center'});  // default align center vertically
+      $frame.css({top: '25%'}).find('#'+id.mask).css({objectPosition: 'center'});  // default align center vertically
     }
     // via parameter to override default position
     if (!$.isEmptyObject(obj)) {

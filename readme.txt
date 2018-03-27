@@ -2874,6 +2874,7 @@ markup:
 
 
 
+
 /**
 *Date: 2018/03/26
 *內容：店鋪商品加入動態載入功能
@@ -2882,3 +2883,21 @@ markup:
 
 1. markup 新增：
 <input type="hidden" name="totalPage" value="" />　=> value 帶入總共的頁數
+
+
+
+/**
+*Date: 2018/03/27
+*內容：改版商品頁
+*TKT: #71741
+*/
+
+1.頁面 product.html:
+不須異動 markup:
+(1)  #sync1 & #sync2 區塊 (2) footer 區塊 (3) Model 區塊
+其他部分請依照 product.html 調整 markup。
+
+2.更新:
+jollybuy.css
+frontend.js
+
