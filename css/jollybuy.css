@@ -41,6 +41,39 @@ h3.supper-title{
   padding: 0 5px;
   left: 13%;
 }
+/*checkbox style*/
+.checkbox-cont{
+  height: 24px;
+  width: 24px;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: left;
+  margin-top: 24px;
+  border: solid 2px #d4d7d9;
+}
+.checkbox-cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/*按鈕基本樣式*/
+.btn-basic{
+  text-align: center;
+  font-size: 1.33em;
+  font-weight: 600;
+  line-height: 50px;
+  background-color: #fff;
+  border: solid 1px #c7b7b7;
+  border-radius: 4px;
+  box-shadow: 0px 5px 0px #c7b7b7;
+  display: inline-block;
+  padding: 0px 20px;
+}
 /* 手機的電視牆顯示前往按鈕 */
 .main-slideshow .slide-content-1 a.button,
 .main-slideshow .slide-content-5 a.button {
@@ -1099,34 +1132,16 @@ header .header.layout1 .top-links{
 */
 /*共用*/
 /*checkbox style*/
-.checkbox-cont{
-  height: 24px;
-  width: 24px;
-  position: relative;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  float: left;
-  margin-top: 24px;
-  border: solid 2px #d4d7d9;
-}
-.checkbox-cont input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
 #product .main-content{
   font-family: Verdana,"微軟正黑體",Arial;
   font-size: 15px;
   line-height: 20px;
   color: #777;
 }
-#product .main-content a{cursor: pointer;}
-
+#product .main-content a{
+  color: #777;
+  cursor: pointer;
+}
 .sub-title{
   font-size: 1.2em;
   font-weight: bold;
@@ -1137,18 +1152,6 @@ header .header.layout1 .top-links{
 .sub-title span{
   border-bottom: solid 2px #ccbcbc;
   padding-bottom: 7px;
-}
-.btn-basic{
-  text-align: center;
-  font-size: 1.33em;
-  font-weight: 600;
-  line-height: 50px;
-  background-color: #fff;
-  border: solid 1px #c7b7b7;
-  border-radius: 4px;
-  box-shadow: 0px 5px 0px #c7b7b7;
-  display: inline-block;
-  padding: 0px 20px;
 }
 .about-product{
   padding-bottom: 0px;
