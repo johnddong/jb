@@ -87,6 +87,11 @@ form#search .invalid{
 .breadcrumbs {
   margin: 35px 0 0 0;
 }
+/* loader */
+.loader{
+  background:url(../images/spinner/spinner.gif) no-repeat center center;
+}
+
 
 
 
