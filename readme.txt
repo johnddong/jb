@@ -2858,6 +2858,7 @@ markup:
 
 /**** 首頁 ****/
 1. markup 異動：
+更新每個模板的價格markup, 除模板04, 模板05 不變
 <div class="price">
   <span class="del"><span>12345</span></span>
   <span class="ins">$<span>16789</span></span>
@@ -2881,9 +2882,53 @@ markup:
 *TKT: na
 */
 
-1. markup 新增：
-<input type="hidden" name="totalPage" value="" />　=> value 帶入總共的頁數
+1. 流程說明:
+  1.1 滑動至底載入動態商品資料，一次回傳10筆
+  1.2 頁面載入當下，依網址的page參數載入對應的筆數 (網址列的page參數會動態產生)
+    ex: URL (沒帶page參數) => 預設載入前10筆，滑動至底取第11-20筆
+        URL?page=2 => 預設載入前 20筆，滑動至底取第 21-30筆
+        URL?page=3 => 預設載入前 30筆，滑動至底取第 31-40筆
 
+2. 套用模板：
+  模板01、模板02、模板09
+
+3. markup 新增：
+  2.1<input type="hidden" name="pageSize" value="" />　=> value 套入總共的頁數 (放置位置請參考 index.html)
+  2.2 動態元素：
+	'<div class="'+colClass+'col-xs-6 col-sm-4 col-md-4 col-lg-3">'+
+    '<div class="product-item layout1">'+
+      '<div class="product-inner">'+
+        '<div class="thumb">'+
+          '<div class="group-button">'+
+            '<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="'+e.btn.pid+'" data-type="wishlist"></a>'+
+          '</div>'+
+          '<a href="'+e.url+'"><img src="'+e.image+'" alt=""></a>'+
+        '</div>'+
+        '<div class="info">'+
+          '<a href="'+e.url+'" class="product-name">'+e.desc+'</a>'+
+          '<div class="price">'+
+            '<span class="del"><span>'+e.fixed_price+'</span></span>'+
+            '<span class="ins">$<span>'+e.sale_price+'</span></span>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+
+  備註： 單宮格&列表 => colClass = 'col-ss-12'
+        雙宮格 => colClass = 'col-ss-6'
+
+4. 引入 script
+  <script type="text/javascript" src="js/infiniteScroll.js"></script>
+
+5. 呼叫方式
+  $(function() {
+	  /* infinite scroll */
+		infiniteScroll.init({_this: 'product-grid'});
+	});
+
+6. 新增圖片
+  images/spinner/spinner.gif (ajax request 等待時，顯示的圖示)
 
 
 /**
