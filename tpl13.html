@@ -407,8 +407,9 @@
 									</ul>
 								</div>
 								<!--/ display mode -->
+								<!-- product list -->
 								<div class="row product-grid">
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -451,7 +452,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -472,7 +473,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 md-clear sm-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -491,7 +492,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 md-clear sm-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -510,7 +511,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 md-clear sm-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -529,7 +530,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -548,7 +549,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -567,7 +568,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -586,7 +587,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -605,7 +606,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -624,7 +625,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2 xs-clear">
+									<div class="col-ss-12 col-xs-4 col-sm-3 col-md-3 col-lg-2">
 										<div class="product-item layout1">
 											<div class="product-inner">
 												<div class="thumb">
@@ -644,20 +645,25 @@
 										</div>
 									</div>
 								</div>
+								<!-- product list -->
+								<input type="hidden" name="pageSize" value="3" />
+								<script>
+									$(function() {
+										/* wishlist */
+										var $owl = $( '.owl-carousel' );
+										$owl.on('initialized.owl.carousel', function(event){
+											$('.wishlist').on('click', function() {
+												Cart.wish(this);
+											});
+										});
+										/* infinite scroll */
+										infiniteScroll.init({_this: 'product-grid'});
+									});
+								</script>
 							</div>
 						</div>
 					</div>
-				<!-- /特選商品 -->
-				<script type="text/javascript">
-				$(function() {
-				   var $owl = $( '.owl-carousel' );
-				   $owl.on('initialized.owl.carousel', function(event){
-				    $('.wishlist').on('click', function() {
-				     Cart.wish(this);
-				    });
-				   });
-				  });
-				</script>
+					<!-- /特選商品 -->
 				</div>
 			</div>
 		</div>
@@ -700,5 +706,6 @@
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/cart.js"></script>
 	<script type="text/javascript" src="js/tab.js"></script>
+	<script type="text/javascript" src="js/infiniteScroll.js"></script>
 </body>
 </html>
