@@ -216,14 +216,29 @@ var Pay = (function() {
   checktoCal = function() {
     // check header 
     $('.shopping-cart-header').find('[type="checkbox"]').on('click', function() {
-      var $this = $(this);
+      var $this = $(this)
+        , $li = $this.parents('li').eq(0);
       if ($this.is(':checked')) { // check all
-        $this.parents('li').eq(0).find('.each-item').find('[type="checkbox"]').each(function() {
+        $li.find('.each-item').find('[type="checkbox"]').each(function() {
           if (!$(this).is(':checked')) $(this).click();
+        });
+        // exclude store with gray bg color
+        var storeType = $li.data('type');
+        $cartContent.find('#order-list li').each(function() {
+          if ($(this).data('type') != storeType) {
+            $(this).addClass('special-store');
+          } else {
+            // uncheck all
+            $(this).removeClass('special-store');
+          }
         });
       } else { //uncheck all
         $this.parents('li').eq(0).find('.each-item').find('[type="checkbox"]').each(function() {
           if ($(this).is(':checked')) $(this).click();
+        });
+        // remove exlcuded sotre w/o gray bg color
+        $cartContent.find('li').each(function() {
+          $(this).removeClass('special-store');
         });
       }
     });
@@ -238,20 +253,17 @@ var Pay = (function() {
     $('.shopping-cart-footer').find('[type="checkbox"]').on('click', function() {
       var $this = $(this)
         , specialStore = 'special-store';
-      $cartContent.find('li').each(function() {
-        if ($this.is(':checked')) {
-          if ($(this).data('type') == specialStore) {
+      $cartContent.find('li').each(function() { // loop stores
+        if ($this.is(':checked')) { // store checked
+          if ($(this).data('type') == specialStore) { // special store
             $(this).addClass(specialStore);
-            $cartContent.find('.each-item').find('[type="checkbox"]').each(function() {
-              if (!$(this).is(':checked')) $(this).click();
-            });
-          }
-        } else {
-          if ($(this).data('type') == specialStore) {
-            $(this).removeClass(specialStore);
-            $cartContent.find('.each-item').find('[type="checkbox"]').each(function() {
+            $(this).find('.each-item').find('[type="checkbox"]').each(function() {
               if ($(this).is(':checked')) $(this).click();
             });
+          }
+        } else { // store unchecked
+          if ($(this).data('type') == specialStore) {
+            $(this).removeClass(specialStore);
           }
         }
       });
