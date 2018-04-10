@@ -2946,3 +2946,23 @@ markup:
 jollybuy.css
 frontend.js
 
+
+
+/**
+*Date: 2018/04/10
+*內容：合併購物車
+*TKT: #73071
+*/
+
+1. 更新：
+  1.1 cart.js
+  1.2 pay.js
+  1.3 jollybuy.css
+
+2. 新增
+  images/pay/pay-steps
+
+3. 頁面markup
+  pay.html
+
+

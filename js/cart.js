@@ -149,7 +149,7 @@ var Cart = (function() {
         min: 'min'
       };
 
-    $quantityBtn.find('.plus').on('click', function() {
+    $quantityBtn.find('.btns-plus').on('click', function() {
       var
       $qty = $(this).parent().find('input[name="'+attr.qty+'"]'),
       qty = $qty.val(),
@@ -159,10 +159,10 @@ var Cart = (function() {
       }
       $qty.val(qty);
       if (qty > 1) {
-        $(this).parent().find('.minus').removeClass('disable');
+        $(this).parent().find('.btns-minus').removeClass('disable');
       }
     });
-    $quantityBtn.find('.minus').on('click', function() {
+    $quantityBtn.find('.btns-minus').on('click', function() {
       var
       $qty = $(this).parent().find('input[name="'+attr.qty+'"]'),
       qty = $qty.val(),
