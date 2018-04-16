@@ -75,8 +75,6 @@ var Pay = (function() {
     removeCart();
     // 查看優惠券
     getCoupon();
-    // check 店鋪
-    checktoCal();
   },
 
   subTotal = function(obj) {
@@ -86,6 +84,7 @@ var Pay = (function() {
       , point = 0     // 紅利
       , pirce = 0      // 單價
       , qty = 0        // 數量
+      , specialStore = 'special-store' // 特別店鋪
       , $checkoutBtn = $cartContent.find('.btns-checkout')
       , $grandTotal = $cartContent.find('.grandtotal')
       , $point = obj.find('.point')
@@ -117,13 +116,13 @@ var Pay = (function() {
     $subTotal.find('span').text(format(subTotal - point - discount ));
     // cal grandTotal
     $cartContent.find('.total span').each(function() {
-      grandTotal += trim($(this).text());
+      grandTotal += ($(this).parents('li').eq(0).hasClass(specialStore))? 0 :trim($(this).text());
     });
     $grandTotal.text(format(grandTotal));
     // checkout btn
     (grandTotal == 0) ? $checkoutBtn.hide() : $checkoutBtn.show();
 
-    return subTotal;
+    return {subTotal: subTotal, grandTotal: grandTotal};
   },
 
   removeCart = function() {
@@ -211,64 +210,127 @@ var Pay = (function() {
         $myModal.modal('hide');
       });
     });
-  },
+  };
 
-  checktoCal = function() {
-    // check header 
-    $('.shopping-cart-header').find('[type="checkbox"]').on('click', function() {
-      var $this = $(this)
-        , $li = $this.parents('li').eq(0);
-      if ($this.is(':checked')) { // check all
-        $li.find('.each-item').find('[type="checkbox"]').each(function() {
-          if (!$(this).is(':checked')) $(this).click();
-        });
-        // exclude store with gray bg color
-        var storeType = $li.data('type');
-        $cartContent.find('#order-list li').each(function() {
-          if ($(this).data('type') != storeType) {
-            $(this).addClass('special-store');
-          } else {
-            // uncheck all
-            $(this).removeClass('special-store');
-          }
-        });
-      } else { //uncheck all
-        $this.parents('li').eq(0).find('.each-item').find('[type="checkbox"]').each(function() {
-          if ($(this).is(':checked')) $(this).click();
-        });
-        // remove exlcuded sotre w/o gray bg color
-        $cartContent.find('li').each(function() {
-          $(this).removeClass('special-store');
-        });
+  init();
+
+  return {
+    subTotal: subTotal
+  };
+
+})();
+
+
+
+
+/**
+ * 特別店鋪&一般店鋪 checkbox to checkout 
+ * 
+ */
+
+(function() {
+  var  
+  $cartContent = $('.cart-content'),
+
+  init = function() {
+    headerCheck();
+    $cartContent.find('li [type="checkbox"]').on('click', function() {
+      var storeType = $(this).parents('li').eq(0).data('type')
+        , specialStore = 'special-store'
+        , payResult = {};
+      if ($(this).is(':checked')) {
+        allHeaderCheck(this);
+      } else {
+        if (isCheckClear(this)) { // children checkbox all clear
+          allHeaderUncheck();
+        }
+      }
+      // cal grand total
+      payResult = Pay.subTotal($(this));
+      // uncheck 選擇全部
+      if (payResult.grandTotal == 0) {
+        $('.shopping-cart-footer').find('.pull-left [type="checkbox"]').click();
       }
     });
 
-    // check content 
-    $('.shopping-cart-content').find('[type="checkbox"]').on('click', function() {
-      var $this = $(this);
-      subTotal($this);
-    });
+    // select all, excluding speical store
+    checkAll();
+  },
 
-    // check all
-    $('.shopping-cart-footer').find('[type="checkbox"]').on('click', function() {
-      var $this = $(this)
+  allHeaderCheck = function(_this) {
+    $cartContent.find('.shopping-cart-header [type="checkbox"]').each(function() {
+      var storeType = $(_this).parents('li').eq(0).data('type')
         , specialStore = 'special-store';
-      $cartContent.find('li').each(function() { // loop stores
-        if ($this.is(':checked')) { // store checked
-          if ($(this).data('type') == specialStore) { // special store
-            $(this).addClass(specialStore);
-            $(this).find('.each-item').find('[type="checkbox"]').each(function() {
-              if ($(this).is(':checked')) $(this).click();
-            });
-          }
-        } else { // store unchecked
-          if ($(this).data('type') == specialStore) {
-            $(this).removeClass(specialStore);
-          }
-        }
-      });
+      
+      // rm clicked bg 
+      if ($(_this).parents('li').eq(0).is(':checked')) {
+        $(_this).parents('li').eq(0).removeClass(specialStore);
+      } 
+      
+      if ($(this).parents('li').eq(0).data('type') != storeType) {  // add bg to diff store
+        $(this).parents('li').eq(0).addClass(specialStore);
+      } else {  // rm bg to diff store
+        $(this).parents('li').eq(0).removeClass(specialStore);
+      }
     });
+  },
 
+  allHeaderUncheck = function() {
+    var specialStore = 'special-store';
+    $cartContent.find('.shopping-cart-header [type="checkbox"]').each(function() {
+      if ($(this).is(':checked')) {
+        $(this).click();
+      }
+      $(this).parents('li').eq(0).removeClass(specialStore);
+    });
+  },
+
+  headerCheck = function() {
+    $cartContent.find('.shopping-cart-header [type="checkbox"]').on('click', function() {
+      if ($(this).is(':checked')) { // check children
+        childrenCheck(this);
+      } else { // uncheck children
+        childrenUnCheck(this);
+      }
+    });
+  },
+  
+  childrenCheck = function(_this) {
+    $(_this).parents('li').eq(0).find('.shopping-cart-content [type="checkbox"]').each(function() {
+      if (!$(this).is(':checked')) $(this).click();
+    });
+  },
+
+  childrenUnCheck = function(_this) {
+    $(_this).parents('li').eq(0).find('.shopping-cart-content input[type="checkbox"]').each(function(i, e) {
+      if ($(e).is(':checked')) {
+        $(e).click();
+      }
+    });
+  },
+
+  isCheckClear = function(_this) {
+    var checkClear = true;
+    $(_this).parents('li').eq(0).find('.shopping-cart-content [type="checkbox"]').each(function() {
+      if ($(this).is(':checked')) {
+        checkClear = false;
+      }
+    });
+    return checkClear;
+  },
+
+  checkAll = function() {
+    $cartContent.find('.shopping-cart-footer [type="checkbox"]').on('click', function() {
+      if ($(this).is(':checked')) {
+        $cartContent.find('#order-list li').each(function() {
+          if($(this).data('type') != 'special-store') { // general store
+            $(this).find('.shopping-cart-header [type="checkbox"]').click();
+          }
+        });
+      } else {
+        allHeaderUncheck();
+      }
+    });
   };
 
   init();
@@ -393,7 +455,8 @@ var syncData = (function() {
       }
     }
     // 同訂購人
-    $ortherInfo.find('#buyer_sync').on('click', function() {
+    //$ortherInfo.find('#buyer_sync').on('click', function() {
+    $memberInfo.on('click', function() {
       var $this = $(this);
       if($this.prop('checked')){
         syncData.setBuyer(this);

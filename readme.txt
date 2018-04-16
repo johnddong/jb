@@ -2950,7 +2950,7 @@ frontend.js
 
 /**
 *Date: 2018/04/10
-*內容：合併購物車
+*內容：合併購物車step001
 *TKT: #73071
 */
 
@@ -2965,4 +2965,34 @@ frontend.js
 3. 頁面markup
   pay.html
 
+4. 反饋調整：
+  4.1 移除天&地 
+  4.2 加購品新增 fixed-num class
+  ex: <div class="qty_box fixed-num">
+  4.3 規格 
+    4.3.1 註解 dropdown class
+    4.3.2 替換<div>元素
+    ex:
+    <div>顏色：圓領白色</div>
+	  <div>尺寸：S</div>
+  4.4 欄位名稱修改
+    4.4.1 「商品圖片」欄位名稱改為商品
+    4.4.2 「商品名稱」欄位名稱移除所有文字
 
+
+
+/**
+*Date: 2018/04/16
+*內容：合併購物車step02
+*TKT: #73072
+*/
+
+1. 更新：
+  1.1 pay.js
+  1.2 jollybuy.css
+
+2. 新增
+  images/icons/store
+
+3. 頁面markup
+  pay02.html

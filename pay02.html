@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>jollybuy - 結帳第二步 填寫資訊</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
+	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/flaticon.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/jquery.scrollbar.min.css" rel="stylesheet">
+	<link href="css/chosen.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme-1.css" rel="stylesheet">
+	<link href="css/jollybuy.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body id="pay02">
+	<div class="main-content checkout-page">
+		<div class="container">
+			<div class="breadcrumbs">
+				<a href="#">Home</a> / <span class="current">填寫資訊</span>
+			</div>
+			<div class="cart-content">
+				<!-- pay steps -->
+				<div id="pay-steps">
+					<ul>
+						<li>
+							<div class="supper-title">
+								<div class="pay-step1" data-title="1.購物車"></div>
+								<div class="pay-txt">step.1<span>我的購物車</span></div>
+							</div>
+						</li>
+						<li class="active">
+							<div class="supper-title">
+								<div class="pay-step2" data-title="2.結帳"></div>
+								<div class="pay-txt">step.2<span>結帳</span></div>
+							</div>
+						</li>
+						<li>
+							<div class="supper-title">
+								<div class="pay-step3" data-title="3.訂單成立"></div>
+								<div class="pay-txt">step.3<span>訂單成立</span></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--/ pay steps -->
+				<!-- 購物車清單 -->
+				<div id="order-list" class="order-grid">
+					<ul>
+						<li>
+							<!-- table header -->
+							<div class="pay-info"></div>
+							<div class="shopping-cart-header table">
+								<div class="tr">
+									<div class="td product-name">
+										<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span>
+									</div>
+									<div class="td product-coupon"></div>
+								</div>
+							</div>
+							<!-- table header -->
+							<div class="shopping-cart-content table">
+								<!-- table 標題 -->
+								<div class="tr title">
+									<div class="td product-thumb">商品</div>
+									<div class="td product-name"></div>
+									<div class="td product-spec">規格</div>
+									<div class="td quantity-item">數量</div>
+									<div class="td price">單價(NT$)</div>
+								</div>
+								<!--/ table 標題 -->
+								<div class="tbody">
+									<!-- 一般商品 -->
+									<div class="tr each-item" data-orderid="11111">
+										<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+										<div class="td product-name" data-title="商品名稱">
+											<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
+											<div><span class="mark">符合優惠</span><span>全館滿100000折1000</span></div>
+											<div><span class="mark">符合優惠</span><span>好友推薦折扣20%</span></div>
+										</div>
+										<div class="td product-spec" data-title="規格">
+											<div>顏色：圓領白色</div>
+											<div>尺寸：S</div>
+											<!-- <div class="dropdown">
+												<select name="color">
+													<option value="">請選擇顏色</option>
+													<option value="0">黑色</option>
+													<option value="1">白色</option>
+												</select>
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</div>
+											<div class="dropdown">
+												<select name="size">
+													<option value="">請選擇尺寸</option>
+													<option value="0">XS</option>
+													<option value="1">SM</option>
+													<option value="2">L</option>
+												</select>
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</div> -->
+										</div>
+										<div class="td quantity-item" data-title="數量">
+											<div class="quantity-btn">
+												<div class="qty_box fixed-num">
+													<div class="btns btns-minus disable">&#45;</div>
+													<input class="qty" name="qty" type="tel" value="1" disabled>
+													<div class="btns btns-plus disable">&#43;</div>
+												</div>
+											</div>
+										</div>
+										<div class="td price" data-title="單價">$<span>1,000</span></div>
+									</div>
+									<div class="tr each-item" data-orderid="22222">
+										<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images02.jpg" alt="" /></a></div>
+										<div class="td product-name" data-title="商品名稱">
+											<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
+											<span class="mark mark-gray">本商品不適用任何優惠</span>
+										</div>
+										<div class="td product-spec" data-title="規格">
+											<div>顏色：圓領白色</div>
+											<div>尺寸：S</div>
+											<!-- <div class="dropdown">
+												<select name="color">
+													<option value="">請選擇顏色</option>
+													<option value="0">黑色</option>
+													<option value="1">白色</option>
+												</select>
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</div>
+											<div class="dropdown">
+												<select name="size">
+													<option value="">請選擇尺寸</option>
+													<option value="0">XS</option>
+													<option value="1">SM</option>
+													<option value="2">L</option>
+												</select>
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</div> -->
+										</div>
+										<div class="td quantity-item" data-title="數量">
+											<div class="quantity-btn">
+												<div class="qty_box fixed-num">
+													<div class="btns btns-minus disable">&#45;</div>
+													<input class="qty" name="qty" type="tel" value="1" disabled>
+													<div class="btns btns-plus disable">&#43;</div>
+												</div>
+											</div>
+										</div>
+										<div class="td price" data-title="單價">$<span>2,000</span></div>
+									</div>
+									<!--/ 一般商品 -->
+									<!-- 加購商品 -->
+									<div class="tr each-item" data-relatedid="22222" data-orderid="33333">
+										<div class="td product-thumb" data-title="商品圖片"><img src="images/temp/470x470/images03.jpg" alt="" /></div>
+										<div class="td product-name" data-title="商品名稱">
+											<div class="product-title">加購商品：公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</div>
+											<div class="flash">加購商品</div>
+										</div>
+										<div class="td product-spec" data-title="規格">
+										</div>
+										<div class="td quantity-item" data-title="數量">
+											<div class="quantity-btn">
+												<div class="qty_box fixed-num">
+													<div class="btns btns-minus disable">&#45;</div>
+													<input class="qty" name="qty" type="tel" value="1" disabled>
+													<div class="btns btns-plus disable">&#43;</div>
+												</div>
+											</div>
+										</div>
+										<div class="td price" data-title="單價">$<span>100</span></div>
+									</div>
+									<!--/ 加購商品 -->
+								</div>
+							</div>
+							<div class="shopping-cart-checkout table">
+								<div class="row">
+									<!-- 送貨方式 & 發票開立方式 -->
+									<div class="col-xs-12 col-md-5">
+										<div class="subtotal-cont methods">
+											<div class="row">
+												<div class="col-xs-5 pull-left">
+													送貨方式
+												</div>
+												<div class="col-xs-7 pull-right logistics" data-type="logistics">
+													<div>新竹物流$100</div>
+													<div class="unbold">台北市內湖區瑞光路123號3樓</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-5 pull-left">
+													發票開立方式
+												</div>
+												<div class="col-xs-7 pull-right invoice" data-type="invoice">
+													<div>載具</div>
+													<div class="unbold">手機載具</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-5 pull-left">
+													訂單備註
+												</div>
+												<div class="col-xs-7 pull-right">
+													<div class="unbold">
+														<input type="text" placeholder="請留言...">
+													</div>
+												</div>
+											</div>
+										</div>		
+									</div>
+									<!--/ 送貨方式 & 發票開立方式 -->
+									<div class="col-sm-12 col-md-2 line-cont">
+										<div class="line"></div>
+									</div>
+									<!-- 小計清單&提交訂單 -->
+									<div class="col-xs-12 col-md-5">
+										<div class="subtotal-cont">
+											<h3 class="discount"><div>優惠折扣 </div>-$<span>0</span></h3>
+											<h3 class="point"><div>折抵紅利 </div>-$<span>0</span></h3>
+											<h3 class="subtitle total"><div class="txt">小計 </div>$<span>3,100</span></h3>
+											<!-- 獲得紅利顯示 -->
+											<div class="gain-point">本次可獲得20紅利</div>
+											<!--/ 獲得紅利顯示 -->
+										</div>
+									</div>
+									<!--/ 小計清單&提交訂單 -->
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- 訂購資料 & 付款方式 -->
+					<div class="orther-info dropdown-list-cont">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6">
+								<!-- 訂購資料 -->
+								<div class="customer-info">
+									<h3 class="title supper-title">訂購資料</h3>
+									<div>
+										<label class="checkbox-cont">
+											<input id="member_update" name="member_update" type="checkbox" value="1">
+										</label>
+										&nbsp;<span>更新會員資訊</span>
+									</div>
+									<!-- </h4> -->
+									<input type="text" name="buyer_name" class="input-info" placeholder="姓名" value="">
+									<input type="text" name="buyer_email" class="input-info" placeholder="E-mail帳號" value="">
+									<input type="text" name="buyer_mobile" class="input-info" placeholder="聯絡電話" value="">
+									<!-- 會員地址 -->
+									<div class="twzipcode">
+										<div class="address">
+											<div data-role="county" data-name="receiver_county" data-style="receiver-county"></div>
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+										<div class="address">
+											<div data-role="district" data-name="receiver_area" data-style="receiver-area"></div>
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+										<div data-role="zipcode" data-name="receiver_zipcode" data-style="receiver-zipcode"></div>
+										<input class="input-info receiver-address" name="receiver_address" type="text" value="" placeholder="聯絡地址" />
+									</div>
+									<!--/ 會員地址 -->
+									<span class="buyer-note">地址請填寫完整，若店鋪有開立電子發票，中獎將寄送至此</span>
+								</div>
+								<!--/ 訂購資料 -->
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<!-- 付款方式 -->
+								<div class="dropdown-list">
+									<h3 class="title supper-title">付款方式</h3>
+									<div class="shipping">
+										<div class="quantity">
+											<select name="payment">
+												<option value="">付款方式</option>
+												<option value="">橘子支</option>
+												<option value="">ATM轉帳</option>
+												<option value="">信用卡付款</option>
+											</select>
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+								<!--/ 付款方式 -->
+							</div>
+						</div>
+					</div>
+					<!--/ 訂購資料 & 付款方式-->
+					<!-- 前往結帳按鈕 -->
+					<div class="shopping-cart-footer">
+						<div class="row">
+							<div class="col-xs-12 col-md-6 col-md-offset-3">
+								<div class="col-xs-12">
+									<div class="shipping"><span>總付款金額 NT$<span class="grandtotal">3,100</span></span></div>
+								</div>
+							</div>
+							<div class="col-xs-12">
+								<span	class="btns"><a href="">回上一步</a></span>
+								<span class="btns btns-checkout">提交訂單</span>
+							</div>
+						</div>
+					</div>
+					<!--/ 前往結帳按鈕 -->
+				</div>
+				<!--/ 購物車清單 -->
+
+				<script type="text/javascript">
+				$(function() {
+					var $myModal = $('#myModal');
+					// 填寫送貨方式 or 開立發票方式
+					$('.shopping-cart-checkout .logistics, .shopping-cart-checkout .invoice').on('click', function() {
+						var type = $(this).data('type');
+						switch (type) {
+							case 'invoice': 
+								$myModal.find('.logistics').hide();
+								$myModal.find('.'+type).show();
+							break;
+							case 'logistics': 
+								$myModal.find('.invoice').hide();
+								$myModal.find('.'+type).show();
+							break;
+						}
+						$myModal.modal('show')
+					});
+
+					// 新增運送地址 func
+					var addAddress = function(_this) {
+						$(_this).find('[type="radio"]').on('click', function() {
+							if ($(this).hasClass('add-address')) {
+								$(this).parents('li:visible').find('.sync, .shipping-method').show();
+							} else {
+								$(this).parents('li:visible').find('.sync, .shipping-method').hide();
+							}
+						});
+					};
+
+					// 運送方式
+					$myModal.find('select[name="delivery"]').on('change', function() {
+						var selectOption = $(this).find(':selected').data('option');
+						$myModal.find('.address-list > ul > li').each(function() {
+							if ($(this).data('type') == selectOption) {
+								$(this).show();
+								// 選擇其它地址下拉選單
+								$(this).toggleExp();
+								// 新增地址
+								addAddress(this);
+							} else {
+								$(this).hide();
+							}
+						});
+					});
+
+				 // 收件人地址
+				 $('.shipping-method .twzipcode').twzipcode();
+
+				 /* 狀態一 訂購資料: 有預設地址 */
+				 $('.customer-info').twzipcode({
+				 	'zipcodeSel'  : '106', //郵遞區號
+					'countySel'   : '臺北市', //縣市
+					'districtSel' : '大安區' //鄉鎮市
+				 });
+
+				/* 狀態二 訂購資料: 沒有預設地址 */
+				// $('.customer-info').twzipcode({
+				//  'zipcodeSel'  : '',
+				//  'countySel'   : '',
+				//  'districtSel' : ''
+				// });
+				});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<a class="back-to-top" href="#"></a>
+	<!-- Modal -->
+	<div id="myModal" class="modal fade">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<!-- 發票開立方式 -->
+						<div class="shipping invoice">
+							<div class="quantity invoice">
+								<h3 class="title supper-title text-label">發票開立方式<span></span></h3>
+								<select id="invoice" name="invoice" class="chosen-select">
+									<option value="" selected>發票開立方式</option>
+									<option data-option="carrier" value="0">載具</option>
+									<option data-option="donate" value="1">捐贈</option>
+									<option data-option="triplicate" value="2">三聯式</option>
+								</select>
+							</div>
+							<!-- 發票開立方式：載具 -->
+							<div class="quantity carrier invoice-type">
+								<h5 class="text-label">載具方式<span></span></h5>
+								<select id="carrier" name="carrier" class="chosen-select">
+									<option value="" selected>載具方式</option>
+									<option data-option="mobile-carrier" value="3J0002">手機條碼載具</option>
+									<option data-option="citizen-barcode" value="CQ0001">自然人憑證條碼</option>
+									<option data-option="member-carrier" value="ER0017">會員載具</option>
+								</select>
+								<!-- 載具方式：手機條碼 -->
+								<div class="mobile-carrier carrier-type">
+									<h5 class="text-label">手機條碼<span></span></h5>
+									<input type="text" name="mobile_carrier"  id="mobile_carrier" class="input-info" placeholder='手機條碼為&quot;/&quot;開頭之條碼，共8碼'>
+									<h5 class="text-label">確認手機條碼<span></span></h5>
+									<input type="text" name="re_mobile_carrier" class="input-info" placeholder="請再填入手機條碼(確認用)">
+									<div class="product-name">
+										<a class="align-right" href="https://www.einvoice.nat.gov.tw/APMEMBERVAN/GeneralCarrier/generalCarrier!apply?CSRT=950772956056491589" target="_blank">沒有手機條碼？點這裡申請</a>
+									</div>
+								</div>
+								<!-- 載具方式：自然人憑證條碼 -->
+								<div class="citizen-carrier carrier-type">
+									<h5 class="text-label">自然人憑證條碼<span></span></h5>
+									<input type="text" name="citizen_barcode" id="citizen_barcode" class="input-info" placeholder="自然人憑證條碼為正面右下方16碼英數字">
+									<h5 class="text-label">確認自然人憑證條碼<span></span></h5>
+									<input type="text" name="re_citizen_barcode" class="input-info" placeholder="請再次填入自然人憑證條碼(確認用)">
+									<a class="align-right" href="https://www.einvoice.nat.gov.tw/APMEMBERVAN/NPCBarcode/NPCBarcode!pwdApply" target="_blank">沒有自然人憑證條碼？點這裡申請</a>
+								</div>
+							</div>
+							<!-- 發票開立方式：捐贈 -->
+							<div class="donate-barcode invoice-type">
+								<h5 class="text-label">請填入愛心條碼<span></span></h5>
+								<input type="text" name="donate_barcode" class="input-info" placeholder="請填入愛心條碼">
+								<div class="children-fdn">
+									<div>若無指定社福團體，默認捐贈給<span class="foundation" data-fdn-code="885521">兒童福利聯盟文教基金會</span></div>
+									<a class="align-right charity-code" href="https://www.einvoice.nat.gov.tw/APMEMBERVAN/XcaOrgPreserveCodeQuery/XcaOrgPreserveCodeQuery?CSRT=2194166228579422277" target="_blank">愛心條碼查詢</a>
+								</div>
+							</div>
+							<!-- 發票開立方式：三聯式 -->
+							<div class="invoice-id invoice-type">
+								<h5 class="text-label">統一編號<span></span></h5>
+								<input type="text" name="invoice_id" class="input-info" placeholder="請填入統一編號">
+								<h5 class="text-label">發票抬頭<span></span></h5>
+								<input type="text" name="invoice_title" class="input-info" placeholder="請填入發票抬頭(統一編號之公司名稱)">
+							</div>
+						</div>
+						<!-- 發票開立方式 -->
+
+						<!-- 運送方式 -->
+						<div class="cart-content logistics">
+							<h3 class="title supper-title">送貨方式<span></span></h3>
+							<div class="col-xs-12">
+								<div class="row">
+									<div class="dropdown-list">
+										<div class="shipping">
+											<div class="quantity">
+												<select name="delivery">
+													<option value="" selected>請選擇送貨方式</option>
+													<option data-option="logistics" value="0">新竹物流 $100</option>
+													<option data-option="cvs" value="1">7-11超商取貨 $100</option>
+												</select>
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+									<div class="orther-info">
+										<div class="address-list">
+											<ul>
+												<!-- 物流運送 -->
+												<li data-type="logistics">
+													<div class="remark">我是賣家物流運送備註</div>
+													<h3 class="title supper-title">送貨資料<span></span></h3>
+													<div class="icon-arrow summary">選擇其它 <i class="fa fa-angle-down fa-lg ease"></i></div>
+													<div class="row address-default">
+														<div class="col-xs-2 col-sm-1">
+															<input type="radio" name="logistics-receiver" checked>
+														</div>
+														<div class="col-xs-10 col-sm-11">
+															<div>我是收件人10912123123</div>
+															<div>台北市 松山區 瑞光路150巷123號5F</div>
+														</div>
+													</div>
+													<div class="detail ease">
+														<ul class="submenu">
+															<li>
+																<div class="row">
+																	<div class="col-xs-2 col-sm-1">
+																		<input type="radio" name="logistics-receiver">
+																	</div>
+																	<div class="col-xs-10 col-sm-11">
+																		<div>我是收件人0927777</div>
+																		<div>台北市 松山區 瑞光路150巷123號5F</div>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-xs-2 col-sm-1">
+																		<input type="radio" name="logistics-receiver">
+																	</div>
+																	<div class="col-xs-10 col-sm-11">
+																		<div>我是收件人83470283</div>
+																		<div>台北市 松山區 瑞光路150巷123號5F</div>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-xs-2 col-sm-1">
+																		<input class="add-address" type="radio"  name="logistics-receiver">
+																	</div>
+																	<div class="col-xs-10 col-sm-11">
+																		<div class="row">
+																			<div class="col-xs-4">
+																				<div>新增地址</div>
+																			</div>
+																			<div class="col-xs-8">
+																				<div class="sync">
+																					<label class="checkbox-cont">
+																						<input id="buyer_sync" name="member_info" type="checkbox" value="1">
+																					</label>
+																					&nbsp;<span>同訂購人</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<!-- 同訂購人 -->
+													<div class="shipping-method">
+														<input type="text" name="receiver_name" class="input-info receiver-name" placeholder="收件人姓名" value="">
+														<input type="text" name="receiver_mobile" class="input-info receiver-mobile" placeholder="收件人電話" value="">
+														<!-- 收件人地址 -->
+														<div class="twzipcode">
+															<div class="address">
+																<div data-role="county" data-name="receiver_county" data-style="receiver-county"></div>
+																<i class="fa fa-angle-down" aria-hidden="true"></i>
+															</div>
+															<div class="address">
+																<div data-role="district" data-name="receiver_area" data-style="receiver-area"></div>
+																<i class="fa fa-angle-down" aria-hidden="true"></i>
+															</div>
+															<div data-role="zipcode" data-name="receiver_zipcode" data-style="receiver-zipcode"></div>
+															<input class="input-info receiver-address" name="receiver_address" type="text" value="" placeholder="收件人地址" />
+															<label class="checkbox-cont">
+																<input id="address_add" type="checkbox">
+															</label>
+															&nbsp;<span>儲存地址到會員中心</span>
+														</div>
+														<!-- / 收件人地址 -->
+													</div>
+													<!--/ 同訂購人 -->
+												</li>
+												<!--/ 物流運送 -->
+
+												<!-- 超取 -->
+												<li data-type="cvs"> 
+													<div class="remark">我是超取運送備註</div>
+													<h3 class="title supper-title">送貨資料<span></span></h3>
+													<div class="icon-arrow summary">選擇其它 <i class="fa fa-angle-down fa-lg ease"></i></div>
+													<div class="row address-default">
+														<div class="col-xs-2 col-sm-1">
+															<input type="radio" name="cvs-receiver" checked>
+														</div>
+														<div class="col-xs-10 col-sm-11">
+															<div>我是收件人10912123123</div>
+															<div>瑞湖門市</div>
+														</div>
+													</div>
+													<div class="detail ease">
+														<ul class="submenu">
+															<li>
+																<div class="row">
+																	<div class="col-xs-2 col-sm-1">
+																		<input type="radio" name="cvs-receiver">
+																	</div>
+																	<div class="col-xs-10 col-sm-11">
+																		<div>我是收件人0927777</div>
+																		<div>瑞湖門市</div>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-xs-2 col-sm-1">
+																		<input type="radio" name="cvs-receiver">
+																	</div>
+																	<div class="col-xs-10 col-sm-11">
+																		<div>我是收件人83470283</div>
+																		<div>瑞湖門市</div>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-xs-2 col-sm-1">
+																		<input class="add-address" type="radio" name="cvs-receiver">
+																	</div>
+																	<div class="col-xs-10 col-sm-11">
+																		<div class="row">
+																			<div class="col-xs-4">
+																				<div>新增地址</div>
+																			</div>
+																			<div class="col-xs-8">
+																				<div class="sync">
+																					<label class="checkbox-cont">
+																						<input id="buyer_sync" name="member_info" type="checkbox" value="1">
+																					</label>
+																					&nbsp;<span>同訂購人</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<!-- 同訂購人 -->
+													<div class="shipping-method">
+														<input type="text" name="receiver_name" class="input-info receiver-name" placeholder="收件人姓名" value="">
+														<input type="text" name="receiver_mobile" class="input-info receiver-mobile" placeholder="收件人電話" value="">
+														<!-- 門市名稱&地址 -->
+														<div id="store">
+															<div class="row">
+																<div class="col-xs-7 col-sm-">
+																	<input type="text" name="store_name" class="input-info" placeholder="門市名稱" readonly="">
+																	<input type="text" name="store_address" class="input-info" placeholder="門市地址" readonly="">
+																</div>
+																<div class="col-xs-5">
+																	<!-- 7-11 icon -->
+																	<!-- <span class="icon-store icon-fm"></span> -->
+																	<!-- family mart icon -->
+																	<span class="icon-store icon-seven"></span>
+																</div>
+															</div>
+															<span class="btns btn-store">搜尋門市</span>
+														</div>
+														<label class="checkbox-cont">
+															<input id="address_add" type="checkbox">
+														</label>
+														&nbsp;<span>儲存地址到會員中心</span>
+														<!--/ 門市名稱&地址 -->
+													</div>
+													<!--/ 同訂購人 -->
+												</li>
+												<!--/ 超取 -->
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ 運送方式 -->
+
+						<!-- 提醒標語 -->
+						<!-- <div class="warning">
+							<i class="fa fa-exclamation-circle fa-lg"></i> 必須選取送貨方式
+						</div> -->
+						<!--/ 提醒標語 -->
+					</div>
+					<div class="modal-footer">
+						<span class="btns btns-cancel" data-dismiss="modal">取消</span>
+						<span class="btns btns-send">確定</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ Modal -->
+
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/owl.thumbs.min.js"></script>
+  <script type="text/javascript" src="js/magnific-popup.min.js"></script>
+  <script type="text/javascript" src="js/mobilemenu.min.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/masonry.min.js"></script>
+  <script type="text/javascript" src="js/chosen.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
+	<script type="text/javascript" src="js/twzipcode/jquery.twzipcode.min.js"></script>
+  <script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="js/pay.js"></script>
+</body>
+</html>
