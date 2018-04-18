@@ -209,143 +209,146 @@ var Cart = (function() {
 * demo: https://goo.gl/HgMQbY
 */
 (function() {
-  var
-  $product = $('#product'),
-  sync1 = $product.find("#sync1"),
-  sync2 = $product.find("#sync2"),
-  slideSpeed = 400,
-  sync1SlideSpeed = 300,
-  slidesPerPage = 5, //globaly define number of elements per page
-  syncedSecondary = true,
-  setSync2 = function(){
+  var pageId= $('body').attr('id');
+  if(pageId =='product'){
     var
-    win_width = $(window).width(),
-    width,
-    height,
-    maxWidth,
-    maxHeight;
+    $product = $('#product'),
+    sync1 = $product.find("#sync1"),
+    sync2 = $product.find("#sync2"),
+    slideSpeed = 400,
+    sync1SlideSpeed = 300,
+    slidesPerPage = 5, //globaly define number of elements per page
+    syncedSecondary = true,
+    setSync2 = function(){
+      var
+      win_width = $(window).width(),
+      width,
+      height,
+      maxWidth,
+      maxHeight;
 
-    if(win_width<576){
-      var num = sync2.find('.owl-item').width();
-      maxWidth = '';
-      maxHeight = '';
-      height = num;
-    }else{
-      maxWidth = 75;
-      maxHeight = 75;
-      width='';
-      height='';
-    }
-    sync2.find('.owl-item').css({
-      maxWidth: maxWidth,
-      maxHeight: maxHeight,
-      height: height
-    });
-  };
+      if(win_width<576){
+        var num = sync2.find('.owl-item').width();
+        maxWidth = '';
+        maxHeight = '';
+        height = num;
+      }else{
+        maxWidth = 75;
+        maxHeight = 75;
+        width='';
+        height='';
+      }
+      sync2.find('.owl-item').css({
+        maxWidth: maxWidth,
+        maxHeight: maxHeight,
+        height: height
+      });
+    };
 
-  sync1.owlCarousel({
-    items : 1,
-    slideSpeed : 2000,
-    nav: false,
-    dots: true,
-    loop: false, //關閉:避免複製多張主圖，取得正確的index
-    autoplay:false,
-    responsiveRefreshRate : 200,
-    navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
-  }).on('changed.owl.carousel', syncPosition);
+    sync1.owlCarousel({
+      items : 1,
+      slideSpeed : 2000,
+      nav: false,
+      dots: true,
+      loop: false, //關閉:避免複製多張主圖，取得正確的index
+      autoplay:false,
+      responsiveRefreshRate : 200,
+      navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+    }).on('changed.owl.carousel', syncPosition);
 
-  sync2
+    sync2
     .on('initialized.owl.carousel', function () {
       sync2.find(".owl-item").eq(0).addClass("current");
     })
     .owlCarousel({
-    items : slidesPerPage,
-    dots: false,
-    nav: true,
-    margin: 10,
-    smartSpeed: 200,
-    pagination:false,
-    slideSpeed : slideSpeed,
-    slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-    navText: ['<span class="flaticon-arrows-left"></span>','<span class="flaticon-arrows-right"></span>'],
-    responsiveRefreshRate : 100
-  }).on('changed.owl.carousel', syncPosition2);
+      items : slidesPerPage,
+      dots: false,
+      nav: true,
+      margin: 10,
+      smartSpeed: 200,
+      pagination:false,
+      slideSpeed : slideSpeed,
+      slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
+      navText: ['<span class="flaticon-arrows-left"></span>','<span class="flaticon-arrows-right"></span>'],
+      responsiveRefreshRate : 100
+    }).on('changed.owl.carousel', syncPosition2);
 
-  function syncPosition(el) {
-    //**if you set loop to false, you have to restore this next line
-     var current = el.item.index;
+    function syncPosition(el) {
+      //**if you set loop to false, you have to restore this next line
+      var current = el.item.index;
 
-    //**if you disable loop you have to comment this block
-    // var count = el.item.count-1;
-    // var current = Math.round(el.item.index - (el.item.count/2) - .5);
-    //
-    // if(current < 0) {
-    //   current = count;
-    // }
-    // if(current > count) {
-    //   current = 0;
-    // }
+      //**if you disable loop you have to comment this block
+      // var count = el.item.count-1;
+      // var current = Math.round(el.item.index - (el.item.count/2) - .5);
+      //
+      // if(current < 0) {
+      //   current = count;
+      // }
+      // if(current > count) {
+      //   current = 0;
+      // }
 
-    //**end block
+      //**end block
 
-    sync2
+      sync2
       .find(".owl-item")
       .removeClass("current")
       .eq(current)
       .addClass("current");
-    var onscreen = sync2.find('.owl-item.active').length - 1;
-    var start = sync2.find('.owl-item.active').first().index();
-    var end = sync2.find('.owl-item.active').last().index();
+      var onscreen = sync2.find('.owl-item.active').length - 1;
+      var start = sync2.find('.owl-item.active').first().index();
+      var end = sync2.find('.owl-item.active').last().index();
 
-    if (current > end) {
-      sync2.data('owl.carousel').to(current, slideSpeed , true);
+      if (current > end) {
+        sync2.data('owl.carousel').to(current, slideSpeed , true);
+      }
+      if (current < start) {
+        sync2.data('owl.carousel').to(current - onscreen, slideSpeed, true);
+      }
     }
-    if (current < start) {
-      sync2.data('owl.carousel').to(current - onscreen, slideSpeed, true);
-    }
-  }
 
-  function syncPosition2(el) {
-    if(syncedSecondary) {
-      var number = el.item.index;
+    function syncPosition2(el) {
+      if(syncedSecondary) {
+        var number = el.item.index;
+        sync1.data('owl.carousel').to(number, sync1SlideSpeed, true);
+      }
+    }
+
+    sync2.on("click", ".owl-item", function(e){
+      e.preventDefault();
+      var number = $(this).index();
       sync1.data('owl.carousel').to(number, sync1SlideSpeed, true);
-    }
-  }
+    });
 
-  sync2.on("click", ".owl-item", function(e){
-    e.preventDefault();
-    var number = $(this).index();
-    sync1.data('owl.carousel').to(number, sync1SlideSpeed, true);
-  });
-
-  //指定商品小圖的尺寸
-  setSync2();
-  if(sync2.find(".owl-nav").hasClass("disabled")){
-    sync2.find(".owl-stage-outer").css("margin-left","0");
-  }
-  $( window ).resize(function() {
+    //指定商品小圖的尺寸
     setSync2();
-  });
-
-  /*選規格切換主圖*/
-  var specSelect = $product.find('.details-info .spec');
-
-  specSelect.find('select').on('change',function(){
-    var
-    spec = $(this).find(':selected').data('spec'),
-    mainImg = sync1.find('.details-item');
-
-    if(spec != ''){
-      $.each(mainImg,function(k,v){
-        var
-        $this = $(this),
-        imgSpec = $this.data('spec');
-        if(spec == imgSpec){
-          sync2.data('owl.carousel').to(k, sync1SlideSpeed, true);
-          sync1.data('owl.carousel').to(k, sync1SlideSpeed, true);
-        }
-      });
+    if(sync2.find(".owl-nav").hasClass("disabled")){
+      sync2.find(".owl-stage-outer").css("margin-left","0");
     }
-  });
+    $( window ).resize(function() {
+      setSync2();
+    });
+
+    /*選規格切換主圖*/
+    var specSelect = $product.find('.details-info .spec');
+
+    specSelect.find('select').on('change',function(){
+      var
+      spec = $(this).find(':selected').data('spec'),
+      mainImg = sync1.find('.details-item');
+
+      if(spec != ''){
+        $.each(mainImg,function(k,v){
+          var
+          $this = $(this),
+          imgSpec = $this.data('spec');
+          if(spec == imgSpec){
+            sync2.data('owl.carousel').to(k, sync1SlideSpeed, true);
+            sync1.data('owl.carousel').to(k, sync1SlideSpeed, true);
+          }
+        });
+      }
+    });
+  }
 
 })();
