@@ -21,7 +21,7 @@
 	<div class="main-content checkout-page">
 		<div class="container">
 			<div class="breadcrumbs">
-				<a href="#">Home</a> / <span class="current">填寫資訊</span>
+				<a href="#">Home</a> / <span class="current">結帳</span>
 			</div>
 			<div class="cart-content">
 				<!-- pay steps -->
@@ -251,15 +251,24 @@
 									<!-- 會員地址 -->
 									<div class="twzipcode">
 										<div class="address">
-											<div data-role="county" data-name="receiver_county" data-style="receiver-county"></div>
+											<div class="shipping">
+												<select name="buyer-country" class="buyer-country">
+													<option value="" data-type="tw">台灣</option>
+													<option value="" data-type="other">其他</option>
+												</select>
+												<i class="fa fa-angle-down" aria-hidden="true"></i>
+											</div>
+										</div>
+										<div class="address">
+											<div data-role="county" data-name="buyer_county" data-style="buyer-county"></div>
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
 										<div class="address">
-											<div data-role="district" data-name="receiver_area" data-style="receiver-area"></div>
+											<div data-role="district" data-name="buyer_area" data-style="buyer-area"></div>
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div data-role="zipcode" data-name="receiver_zipcode" data-style="receiver-zipcode"></div>
-										<input class="input-info receiver-address" name="receiver_address" type="text" value="" placeholder="聯絡地址" />
+										<div data-role="zipcode" data-name="buyer_zipcode" data-style="buyer-zipcode"></div>
+										<input class="input-info buyer-address" name="buyer_address" type="text" value="" placeholder="聯絡地址" />
 									</div>
 									<!--/ 會員地址 -->
 									<span class="buyer-note">地址請填寫完整，若店鋪有開立電子發票，中獎將寄送至此</span>
@@ -273,7 +282,7 @@
 									<div class="shipping">
 										<div class="quantity">
 											<select name="payment">
-												<option value="">付款方式</option>
+												<option value="">請選擇付款方式</option>
 												<option value="">橘子支</option>
 												<option value="">ATM轉帳</option>
 												<option value="">信用卡付款</option>
@@ -321,7 +330,7 @@
 								$myModal.find('.'+type).show();
 							break;
 						}
-						$myModal.modal('show')
+						$myModal.modal('show');
 					});
 
 					// 新增運送地址 func
@@ -351,7 +360,21 @@
 						});
 					});
 
-				 // 收件人地址
+				// 國家切換
+				$('.twzipcode').find('.buyer-country, .receiver-country').on('change', function() {
+					var type = $(this).find(':selected').data('type')
+						, $countrySel = $(this).parents('.twzipcode').eq(0).find('.address').not(':first').find('select, i');
+					switch (type) {
+						case 'tw': 
+							$countrySel.show();
+						break;
+						case 'other': 
+							$countrySel.hide();
+						break;
+					}
+				});
+
+  			 // 收件人地址
 				 $('.shipping-method .twzipcode').twzipcode();
 
 				 /* 狀態一 訂購資料: 有預設地址 */
@@ -500,29 +523,29 @@
 																	</div>
 																</div>
 															</li>
-															<li>
+														</ul>
+													</div>
+													<div class="address-new">
+														<div class="row">
+															<div class="col-xs-2 col-sm-1">
+																<input class="add-address" type="radio"  name="logistics-receiver">
+															</div>
+															<div class="col-xs-10 col-sm-11">
 																<div class="row">
-																	<div class="col-xs-2 col-sm-1">
-																		<input class="add-address" type="radio"  name="logistics-receiver">
+																	<div class="col-xs-5">
+																		<div>新增地址</div>
 																	</div>
-																	<div class="col-xs-10 col-sm-11">
-																		<div class="row">
-																			<div class="col-xs-4">
-																				<div>新增地址</div>
-																			</div>
-																			<div class="col-xs-8">
-																				<div class="sync">
-																					<label class="checkbox-cont">
-																						<input id="buyer_sync" name="member_info" type="checkbox" value="1">
-																					</label>
-																					&nbsp;<span>同訂購人</span>
-																				</div>
-																			</div>
+																	<div class="col-xs-7">
+																		<div class="sync">
+																			<label class="checkbox-cont">
+																				<input id="buyer_sync" name="member_info" type="checkbox" value="1">
+																			</label>
+																			&nbsp;<span>同訂購人</span>
 																		</div>
 																	</div>
 																</div>
-															</li>
-														</ul>
+															</div>
+														</div>
 													</div>
 													<!-- 同訂購人 -->
 													<div class="shipping-method">
@@ -530,6 +553,15 @@
 														<input type="text" name="receiver_mobile" class="input-info receiver-mobile" placeholder="收件人電話" value="">
 														<!-- 收件人地址 -->
 														<div class="twzipcode">
+															<div class="address">
+																<div class="shipping">
+																	<select name="receiver-country" class="receiver-country">
+																		<option value="" data-type="tw">台灣</option>
+																		<option value="" data-type="other">其他</option>
+																	</select>
+																	<i class="fa fa-angle-down" aria-hidden="true"></i>
+																</div>
+															</div>
 															<div class="address">
 																<div data-role="county" data-name="receiver_county" data-style="receiver-county"></div>
 																<i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -589,29 +621,29 @@
 																	</div>
 																</div>
 															</li>
-															<li>
+														</ul>
+													</div>
+													<div class="address-new">
+														<div class="row">
+															<div class="col-xs-2 col-sm-1">
+																<input class="add-address" type="radio"  name="cvs-receiver">
+															</div>
+															<div class="col-xs-10 col-sm-11">
 																<div class="row">
-																	<div class="col-xs-2 col-sm-1">
-																		<input class="add-address" type="radio" name="cvs-receiver">
+																	<div class="col-xs-5">
+																		<div>新增地址</div>
 																	</div>
-																	<div class="col-xs-10 col-sm-11">
-																		<div class="row">
-																			<div class="col-xs-4">
-																				<div>新增地址</div>
-																			</div>
-																			<div class="col-xs-8">
-																				<div class="sync">
-																					<label class="checkbox-cont">
-																						<input id="buyer_sync" name="member_info" type="checkbox" value="1">
-																					</label>
-																					&nbsp;<span>同訂購人</span>
-																				</div>
-																			</div>
+																	<div class="col-xs-7">
+																		<div class="sync">
+																			<label class="checkbox-cont">
+																				<input id="buyer_sync" name="member_info" type="checkbox" value="1">
+																			</label>
+																			&nbsp;<span>同訂購人</span>
 																		</div>
 																	</div>
 																</div>
-															</li>
-														</ul>
+															</div>
+														</div>
 													</div>
 													<!-- 同訂購人 -->
 													<div class="shipping-method">
