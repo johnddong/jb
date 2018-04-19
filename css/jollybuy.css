@@ -347,14 +347,14 @@ form#search .invalid{
   right: -26px;
   top: 88px;
 }
-#tpl13 .owl-carousel .owl-nav.disabled{
-  display: none;
-}
 #tpl13 .col-xs-12 .featured-products{ /* supper-title */
   text-align: center;
 }
 #tpl13 .col-xs-12 .custom-clear.featured-products{ /* supper-title */
   text-align: left;
+}
+#tpl13 .rules-box .owl-nav{
+  display: none;
 }
 @media(min-width: 479px) {
   #tpl13 .col-xs-12 .custom-clear.featured-products{ /* supper-title */
@@ -1863,8 +1863,8 @@ select{
 @media (max-width: 1000px) {
   #pay-steps{
     border: none;
-    width: auto;
     height: auto;
+    overflow: hidden;
   }
   #pay-steps ul{
     width: auto;
@@ -2066,7 +2066,7 @@ select{
 #pay01 .shipping select,
 #pay02 .shipping select{
   height: 40px;
-  padding: 0 25px;
+  padding: 0 15px;
   color: #666;
   outline: none;
   appearance: none;
@@ -2074,6 +2074,18 @@ select{
   -moz-appearance: none;
   -o-appearance:none;
 }
+#pay02 .twzipcode .address{
+  float: left;
+  width: 31%;
+  margin-right: 3.5%;
+}
+#pay02 .twzipcode .address:nth-child(n+3) {
+  margin-right: 0;
+}
+#pay02 .twzipcode select{
+  height: 35px;
+}
+
 #pay01 .shipping .quantity i,
 #pay02 .shipping .quantity i{
   position: absolute;
@@ -2116,7 +2128,13 @@ select{
   margin-left: -20px;
 }
 #pay02 #myModal .address-default{
-  padding: 10px 10px 10px 6px;
+  padding: 10px 10px 5px 6px;
+}
+#pay02 #myModal .address-new{
+  padding: 5px;
+}
+#pay02 #myModal .address-new .col-xs-5{
+  padding: 0;
 }
 /* 其它住址 slidedown */
 #pay02 #myModal .address-list > ul > li{
@@ -2137,6 +2155,7 @@ select{
 #pay02 #myModal .address-list .submenu{
   padding: 10px;
   padding-top: 0;
+  padding-bottom: 0;
   position: relative;
   top: 0px;
   left: -5px;
@@ -2229,7 +2248,6 @@ select{
 }
 .shipping .foundation{
   cursor: pointer;
-  color: #337ab7;
 }
 .shipping .align-right{
   float: right;
@@ -2523,6 +2541,7 @@ select{
   padding: 5px;
   text-align: right;
   width: 100%;
+  color: rgb(175, 175, 175);
 }
 .shopping-cart-checkout .subtotal-cont.methods span{
   font-size: 14px;
@@ -2544,7 +2563,6 @@ select{
 /* reset */
 .shopping-cart-checkout .subtotal-cont{
   background: none;
-  padding: 0 20px;
 }
 .shopping-cart-checkout .subtotal-cont .total{
   margin: 20px 0 10px 0;
@@ -2647,12 +2665,9 @@ select{
 .customer-info .address,
 .shipping-method .address{
   position: relative;
-  display: inline-block;
+  float: left;
   width: 48%;
-}
-.customer-info .address:nth-child(even),
-.shipping-method .address:nth-child(even) {
-  float: right;
+  margin-bottom: 10px;
 }
 .customer-info .address i,
 .shipping-method .address i{
@@ -2670,6 +2685,7 @@ select{
 #pay02 .quantity .chosen-container-single .chosen-single{
   height: 35px;
   line-height: 35px;
+  padding: 0 5px;
 }
 .shipping-method #receiver_county,
 .shipping-method #receiver_area{
@@ -2750,167 +2766,137 @@ select{
 
 #order-success{
   text-align: center;
-  overflow: hidden;
-  margin-bottom: 20px;
 }
-#order-success .panel{
-  border: 1px solid #ddd;
-  border-radius: 0;
+/* 訂單成立 */
+/* 訂單框架 */
+#pay03 #order-success{
+  margin-top: 50px;
 }
-#order-success .panel-heading{
-  background: #f5f5f5;
+@media (max-width: 1000px) {
+  #pay03 #order-success{
+    margin-top: 10px;
+  }
 }
-#order-success h2,
-#order-success i{
-  display: inline-block;
+#pay03 .page-header{
+  border: none;
+  margin: 0;
+  color: #777;
 }
-#order-success i {
-  color: #8dc63f;
-}
-#order-success h2{
-  font-size: 18px;
+#pay03 .page-header h1{
+  font-size: 24px;
   font-weight: bold;
 }
-#order-success .gama-pay h2,
-#order-success .credit-card h2{
-  display: block;
+#pay03 .page-header span{
+  color:rgb(255, 1, 1);
 }
-#order-success .gama-pay .qrcode{
-  background: url(../images/pay/pay-gama-pay-qrcode.png) no-repeat center center;
-  width: 100%;
-  height: 150px;
-  margin-bottom: 20px;
+#pay03 .page-header .symbol{
+  font-size: 18px;
 }
-#order-success .quantity{
-  width: 100%;
-  margin-bottom: 20px;
+#pay03 .panel{
+  border: solid 2px rgb(241, 242, 246);
 }
-#order-success .quantity i{
-  position: absolute;
-  top: 14px;
-  right: 5px;
-  color: #ccc;
+#pay03 .panel-body{
+  padding: 20px 0;
+  color: #777;
 }
-#order-success .quantity .chosen-container{
-  width: inherit;
+#pay03 .panel-body h2{
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+#pay03 .panel-footer{
+  color: #777;
+  background: rgb(248, 249, 251);
+  border-top: solid 2px rgb(241, 242, 246);
+  padding: 20px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+#pay03 .panel-footer .remark{
+  color: rgb(255, 1, 1);
+  font-size: 12px;
+}
+#pay03 .shopping-cart-footer{
+  margin-top: 20px;
 }
 
-/* 運送貨態 */
-/* reset seubmenu */
-.shipping-status .submenu{
-  visibility: visible;
-  opacity: 1;
-  position: static;
-  transform: translate(0);
-  min-width: 175px;
-  box-shadow: none;
+/* ATM 轉帳 */
+#pay03 .atm-payment ul{
+  padding: 20px 80px;
 }
-
-.shipping-status{
-  width: 100%;
+@media (max-width: 576px) {
+  #pay03 .atm-payment ul{
+    padding: 20px;
+  }
+}
+#pay03 .atm-payment li{
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+#pay03 .atm-payment li:last-child{
+  margin-bottom: 0;
+}
+#pay03 .atm-payment li .mark{
+  font-size: 15px;
+  padding: 0 10px;
+  margin-left: 5px;
   cursor: pointer;
 }
-.shipping-status .summary i{
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
+/* 信用卡支付 */
+#pay03 .panel-body .credit-payment h2{
+  font-size: 16px;
 }
-.shipping-status .detail{
-  height: 0;
-  overflow: hidden;
+#pay03 .credit-payment .warning{
+  font-size: 22px;
 }
-.shipping-status .submenu{
-  width: 97%;
-  padding: 10px;
+#pay03 .credit-payment .btns-checkout{
+  margin: 20px 0 10px 0;
+  display: inline-block;
+}
+/* 橘子支支付 */
+#pay03 .panel-body .gamapay-payment h2{
+  font-size: 16px;
+}
+#pay03 .gamapay-payment .gamapay-logo{
+  background: url("../images/pay/gama-pay.png") no-repeat center center;
+  width: 100%;
+  height: 103px;
+}
+#pay03 .gamapay-payment .btns-checkout{
+  margin: 20px 0 10px 0;
+  display: inline-block;
   position: relative;
-  top: 0px;
-  left: 5px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
+  padding: 10px 25px;
 }
-.shipping-status .submenu li{
-  line-height: 28px;
-  color: #ccc;
-  padding-left: 14px;
-}
-.shipping-status .submenu li span{
-  margin-left: 4px;
-}
-/* active */
-.shipping-status .submenu .current{
-  color: #333;
-  padding-left: 0;
-}
-.shipping-status .active i{
-  transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-}
-
-
-
-@media(max-width: 576px) {
-  #order-success .credit-card .warning span{
-    display: block;
-  }
-}
-#order-success .credit-card .warning{
-  font-size: 10px;
-}
-/*#order-success #gama-pay{
-  display: none;
-}*/
-#order-success #gama-pay .submit{background: #ff6b00; margin-top: 0; line-height: normal;}
-
-.order-info .supper-title,
-.customer-info .supper-title{
-  font-size: 14px;
-  padding-top: 0;
-  text-align: left;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-.order-info h3:after,
-.customer-info h3:after{
-  margin: 0;
-}
-
-
-@media screen and (min-width: 768px) {
-  .order-info .supper-title:nth-child(1),
-  .customer-info .supper-title:nth-child(1){
-    margin-top: 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  #member .clo-left{
-    margin-bottom: 20px;
-  }
-  .order-info .supper-title:nth-child(1){
-    margin-top: 0;
-  }
-}
-/* 橘子支支付按鈕位在手機板才顯示 */
-/*@media screen and (max-width: 576px) {
-  #order-success #gama-pay{
-    display: block;
-  }
-}*/
-
-/* 橘子支付 modal */
-#pay03 #myModal .account{
+#pay03 .gamapay-payment .icon-gamapay{
+  background: url("../images/icons/gama-pay.png");
+  width: 25px;
+  height: 40px;
   position: absolute;
-  top: 16px;
-  right: 1px;
-  height: 33px;
-  line-height: 33px;
-  border-radius: 0;
+  right: -5px;
+  top: -2px;
 }
-#pay03 #myModal .account span{
-  width: 14px;
-  text-align: right;
+/* 取貨付款 */
+#pay03 .cvs-payment .msg{
+  font-size: 20px;
+  margin: 10px 0;
 }
-
+/* 依付款方式顯示，其它隱藏 */
+#pay03 .order-complete,
+#pay03 .atm-payment,
+#pay03 .credit-payment,
+#pay03 .gamapay-payment,
+#pay03 .cvs-payment{
+  display: none;
+}
+#pay03 .order .order-complete,
+#pay03 .atm .atm-payment,
+#pay03 .credit .credit-payment,
+#pay03 .gamapay .gamapay-payment,
+#pay03 .cvs .cvs-payment{
+  display: block;
+}
 
 
 /**
@@ -3063,6 +3049,8 @@ select{
   }
 }
 /* address */
+.twzipcode .buyer-county,
+.twzipcode .buyer-area,
 .twzipcode .receiver-county,
 .twzipcode .receiver-area{
   float: left;
@@ -3075,6 +3063,7 @@ select{
   -moz-appearance: none;
   -o-appearance: none;
 }
+.twzipcode .buyer-zipcode,
 .twzipcode .receiver-zipcode{
   display: none;
 }

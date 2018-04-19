@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>jollybuy - 結帳第三步 確認訂單</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/flaticon.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/jquery.scrollbar.min.css" rel="stylesheet">
+	<link href="css/chosen.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme-1.css" rel="stylesheet">
+	<link href="css/jollybuy.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body id="pay03">
+	<div class="main-content checkout-page">
+		<div class="container">
+			<div class="breadcrumbs">
+				<a href="#">Home</a> / <span class="current">訂單成立</span>
+			</div>
+			<div class="cart-content">
+				<!-- pay steps -->
+				<div id="pay-steps">
+					<ul>
+						<li>
+							<div class="supper-title">
+								<div class="pay-step1" data-title="1.購物車"></div>
+								<div class="pay-txt">step.1<span>我的購物車</span></div>
+							</div>
+						</li>
+						<li>
+							<div class="supper-title">
+								<div class="pay-step2" data-title="2.結帳"></div>
+								<div class="pay-txt">step.2<span>結帳</span></div>
+							</div>
+						</li>
+						<li class="active">
+							<div class="supper-title">
+								<div class="pay-step3" data-title="3.訂單成立"></div>
+								<div class="pay-txt">step.3<span>訂單成立</span></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--/ pay steps -->
+
+				<div id="order-success">
+					<div class="row">
+						<div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
+							<div class="page-header">
+								<h1>付款金額 <span>NT <span class="symbol">$</span>12,280</span></h1>
+							</div>
+							<div class="panel panel-default atm">
+								<div class="panel-body">
+									<!-- 付款完成 -->
+									<div class="order-complete">
+										<h2>付款完成！</h2>
+										<h2>感謝您的購買！</h2>
+									</div> 
+									<!--/ 付款完成　-->
+
+									<!-- ATM轉帳 -->
+									<div class="atm-payment">
+										<h2>訂單成立！</h2>
+										<h2>感謝您的購買！</h2>
+									</div>
+									<!--/ ATM轉帳　-->
+
+									<!-- 信用卡支付 -->
+									<div class="credit-payment">
+										<h2>請預備您的信用卡</h2>
+										<h2>點擊 立即付款 前往金流頁完成支付</h2>
+									</div>
+									<!--/ 信用卡支付 -->
+
+									<!-- 橘子支支付 -->
+									<div class="gamapay-payment">
+										<h2>請開啟您的橘子支</h2>
+										<h2>點擊 立即付款 進行支付</h2>
+									</div>
+									<!--/ 橘子支支付 -->
+
+									<!-- 取貨付款 -->
+									<div class="cvs-payment">
+										<h2>訂單成立！</h2>
+										<h2>感謝您的購買！</h2>
+									</div>
+									<!--/ 取貨付款 -->
+								</div>
+								<div class="panel-footer">
+									<!-- 付款完成　-->
+									<div class="order-complete">
+										<div>訂單確認信已發送到您的電子信箱：</div>
+										<div>xxx.xxx@gmail.com</div>
+									</div>
+									<!--/ 付款完成 -->
+
+									<!-- ATM 轉帳 -->
+									<div class="atm-payment">
+										<div class="bg-gray">訂單確認信已發送到您的電子信箱</div>
+										<div class="bg-gray">xxx.xxx@gmail.com</div>
+										<ul>
+											<li>付款方式：ATM轉帳</li>
+											<li>銀行代碼：808(玉山銀行)</li>
+											<li>轉帳帳號：<span id="atm-account">032818878</span><span class="mark" data-clipboard-target="#atm-account">複製</span></li>
+											<li>應繳金額：NT$12,280</li>
+											<li>繳款期限：2018-03-28</li>
+										</ul>
+										<div class="remark">此轉帳帳號僅提供此次交易使用</div>
+										<div class="remark">請於繳款期限2018-03-28 23:59:59前完成轉帳</div>
+									</div>
+									<script>
+									$(function() {
+										if (!(document.queryCommandSupported && document.queryCommandSupported('copy'))) { // old iOS not support
+											$('.mark').hide();
+										}
+										var clipboard = new ClipboardJS('.mark');
+										clipboard.on('success', function() {
+											$.notify({
+												message: '帳號轉帳複製完成'
+											});
+										});
+										clipboard.on('error', function() {
+											$.notify({
+												message: '帳號轉帳複製失敗'
+											});
+										});
+									});
+									</script>
+									<!--/ ATM 轉帳-->
+
+									<!-- 信用卡支付 -->
+									<div class="credit-payment">
+										<div class="warning">提醒！</div>
+										<div>金流交易將由銀行端執行刷卡付款流程</div>
+										<div>我們不會以電話要求提供信用卡資料！！</div>
+										<span class="btns btns-checkout">立即付款</span>
+										<div class="remark">請於繳款期限2018-03-28 23:59:59前完成付款</div>
+									</div>
+									<!-- 信用卡支付 -->
+
+									<!-- 橘子支支付 -->
+									<div class="gamapay-payment">
+										<div class="gamapay-logo"></div>
+										<span id="gama-pay" class="btns btns-checkout">立即付款<span class="icon-gamapay"></span></span>
+										<div class="remark">請於繳款期限2018-03-28 23:59:59前完成付款</div>
+									</div>	
+									<!--/ 橘子支支付 -->
+
+									<!-- 取貨付款 -->
+									<div class="cvs-payment">
+										<div>訂單確認信已發送到您的電子信箱：</div>
+										<div>xxx.xxx@gmail.com</div>
+										<div class="msg">付款方式：取貨付款</div>
+										<div class="remark">請耐心等待賣家出貨</div>
+										<div class="remark">當貨件到達指定門市將會寄送簡訊通知</div>
+									</div>
+									<!--/ 取貨付款 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a class="back-to-top" href="#"></a>
+
+	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+  <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/owl.thumbs.min.js"></script>
+  <script type="text/javascript" src="js/magnific-popup.min.js"></script>
+  <script type="text/javascript" src="js/mobilemenu.min.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/masonry.min.js"></script>
+  <script type="text/javascript" src="js/chosen.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
+  <script type="text/javascript" src="js/frontend.js"></script>
+  <script type="text/javascript" src="js/pay.js"></script>
+	<script type="text/javascript" src="js/gama-pay.js"></script>
+	<script type="text/javascript" src="js/clipboard.min.js"></script>
+</body>
+</html>
