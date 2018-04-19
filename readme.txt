@@ -2996,3 +2996,18 @@ frontend.js
 
 3. 頁面markup
   pay02.html
+  
+/**
+*Date: 2018/04/17
+*內容：熱門商品和規則分類調整
+*TKT: #70660
+*/
+1.頁面 tpl13.html:
+
+markup:
+<!-- 分類 -->
+	<div class="special-container rules-box">
+		<div class="box-has-content featrue-box-list owl-carousel nav-style1" data-autoplay="false" data-nav="false" data-dots="true" data-loop="false" data-slidespeed="800" data-margin="15" data-autoheight="true" data-responsive = '{"0":{"items":1}, "640":{"items":2}, "768":{"items":3}, "1024":{"items":4}, "1200":{"items":4}}'>
+
+2.jollybuy.css:
+目前暫不更新，為了避免影響現有版面，等到合併購物車完成後一併更新。
