@@ -1,5 +1,6 @@
 var kt_innit_carousel
-  , special_banner;
+  , special_banner
+  , checked;
 jQuery(document).ready(function ($) {
   "use strict";
     // isMobile
@@ -515,7 +516,7 @@ jQuery(document).ready(function ($) {
       z_index: 1052
     });
 
-    $('.checkbox-cont').on('click',function(){
+    $.fn.checked = function() {
       var
       $this = $(this),
       input = $this.find('input'),
@@ -525,5 +526,9 @@ jQuery(document).ready(function ($) {
       }else{
         $this.find($('.fa')).remove();
       }
+    };
+
+    $('.checkbox-cont').on('click',function(){
+      $(this).checked();      
     });
 });

@@ -86,7 +86,7 @@
 										<div class="tr each-item" data-orderid="11111">
 											<div class="td product-checkbox">
 												<label class="checkbox-cont" data-title="商品選取">
-													<input type="checkbox" value="1" data-sku="">
+													<input type="checkbox" value="1" data-sku="" data-status="checked">
 												</label>
 											</div>
 											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
@@ -238,6 +238,183 @@
 											<div class="td delete-item" data-title="移除" title="商品移除"><a href="javascript:void(0);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div>
 										</div>
 										<!-- /下架商品 -->
+									</div>
+								</div>
+								<div class="shopping-cart-checkout table">
+									<div class="tr">
+										<div class="td left">
+											<!-- <a href="#" class="continue-shopping submit">繼續購物</a> -->
+										</div>
+										<div class="td right">
+											<!-- 小計清單&提交訂單 -->
+											<div class="subtotal-cont">
+												<h3 class="discount"><div>優惠折扣： </div>-$<span>0</span></h3>
+												<h3 class="point"><div>折抵紅利： </div>-$<span>0</span></h3>
+												<h3 class="subtitle total"><div class="txt">小計： </div>$<span>0</span></h3>
+											</div>
+											<!--/ 小計清單&提交訂單 -->
+										</div>
+									</div>
+								</div>
+								<!-- 獲得紅利顯示 -->
+								<div class="jupoint-gain table">
+									<div class="tr">
+										<div class="td right">
+											<span>本次可獲得<span>20</span>紅利</span>
+										</div>
+									</div>
+								</div>
+								<!--/ 獲得紅利顯示 -->
+							</li>
+							<li data-type="special-store"> <!-- 特別店鋪 -->
+								<!-- table header -->
+								<div class="pay-info"><i class="fa fa-exclamation-circle fa-lg"></i>特別店鋪請分開結帳</div>
+								<div class="shopping-cart-header table">
+									<div class="tr">
+										<div class="td product-checkbox">
+											<label class="checkbox-cont" data-title="商品選取">
+												<input type="checkbox" value="1" data-sku="">
+											</label>
+										</div>
+										<div class="td product-name">
+											<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span></div>
+										<div class="td product-coupon"><span class="btns btns-primary">查看優惠券</span></div>
+									</div>
+								</div>
+								<!-- table header -->
+								<div class="shopping-cart-content table">
+									<!-- table 標題 -->
+									<div class="tr title">
+										<div class="td product-checkbox"></div>
+										<div class="td product-thumb">商品</div>
+										<div class="td product-name"></div>
+										<div class="td product-spec">規格</div>
+										<div class="td quantity-item">數量</div>
+										<div class="td price">單價(NT$)</div>
+										<!-- <div class="td total">小計</div> -->
+										<div class="td delete-item">移除</div>
+									</div>
+									<!--/ table 標題 -->
+									<div class="tbody">
+										<!-- 一般商品 -->
+										<div class="tr each-item" data-orderid="11111">
+											<div class="td product-checkbox">
+												<label class="checkbox-cont" data-title="商品選取">
+													<input type="checkbox" value="1" data-sku="">
+												</label>
+											</div>
+											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+											<div class="td product-name" data-title="商品名稱">
+												<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
+												<div><span class="mark">符合優惠</span><span>全館滿100000折1000</span></div>
+												<div><span class="mark">符合優惠</span><span>好友推薦折扣20%</span></div>
+											</div>
+											<div class="td product-spec" data-title="規格">
+												<div>顏色：圓領白色</div>
+												<div>尺寸：S</div>
+												<!-- <div class="dropdown">
+													<select name="color">
+														<option value="">請選擇顏色</option>
+														<option value="0">黑色</option>
+														<option value="1">白色</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div>
+												<div class="dropdown">
+													<select name="size">
+														<option value="">請選擇尺寸</option>
+														<option value="0">XS</option>
+														<option value="1">SM</option>
+														<option value="2">L</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div> -->
+											</div>
+											<div class="td quantity-item" data-title="數量">
+												<div class="quantity-btn">
+													<div class="qty_box">
+														<div class="btns btns-minus disable">&#45;</div>
+														<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
+														<div class="btns btns-plus">&#43;</div>
+													</div>
+												</div>
+											</div>
+											<div class="td price" data-title="單價">$<span>1,000</span></div>
+											<div class="td delete-item" data-title="移除" title="商品移除"><a href="javascript:void(0);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div>
+										</div>
+										<div class="tr each-item" data-orderid="22222">
+											<div class="td product-checkbox">
+												<label class="checkbox-cont" data-title="商品選取">
+													<input type="checkbox" value="1" data-sku="">
+												</label>
+											</div>
+											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images02.jpg" alt="" /></a></div>
+											<div class="td product-name" data-title="商品名稱">
+												<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
+												<span class="mark mark-gray">本商品不適用任何優惠</span>
+											</div>
+											<div class="td product-spec" data-title="規格">
+												<div>顏色：圓領白色</div>
+												<div>尺寸：S</div>
+												<!-- <div class="dropdown">
+													<select name="color">
+														<option value="">請選擇顏色</option>
+														<option value="0">黑色</option>
+														<option value="1">白色</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div>
+												<div class="dropdown">
+													<select name="size">
+														<option value="">請選擇尺寸</option>
+														<option value="0">XS</option>
+														<option value="1">SM</option>
+														<option value="2">L</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div> -->
+											</div>
+											<div class="td quantity-item" data-title="數量">
+												<div class="quantity-btn">
+													<div class="qty_box">
+														<div class="btns btns-minus disable">&#45;</div>
+														<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
+														<div class="btns btns-plus">&#43;</div>
+													</div>
+												</div>
+											</div>
+											<div class="td price" data-title="單價">$<span>2,000</span></div>
+											<div class="td delete-item" data-title="移除" title="商品移除"><a href="javascript:void(0);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div>
+										</div>
+										<!--/ 一般商品 -->
+										<!-- 加購商品 -->
+										<div class="tr each-item" data-relatedid="22222" data-orderid="33333">
+											<div class="td product-checkbox">
+												<label class="checkbox-cont" data-title="商品選取">
+													<input type="checkbox" value="1" data-sku="">
+												</label>
+											</div>
+											<div class="td product-thumb" data-title="商品圖片"><img src="images/temp/470x470/images03.jpg" alt="" /></div>
+											<div class="td product-name" data-title="商品名稱">
+												<div class="product-title">加購商品：公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</div>
+												<div class="flash">加購商品</div>
+											</div>
+											<div class="td product-spec" data-title="規格">
+												
+											</div>
+											<div class="td quantity-item" data-title="數量">
+												<div class="quantity-btn">
+													<div class="qty_box fixed-num">
+														<div class="btns btns-minus disable">&#45;</div>
+														<input class="qty" name="qty" type="tel" value="1" disabled>
+														<div class="btns btns-plus disable">&#43;</div>
+													</div>
+												</div>
+											</div>
+											<div class="td price" data-title="單價">$<span>100</span></div>
+											<div class="td delete-item" data-title="移除" title="商品移除"><a href="javascript:void(0);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></div>
+										</div>
+										<!--/ 加購商品 -->
 									</div>
 								</div>
 								<div class="shopping-cart-checkout table">
