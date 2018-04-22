@@ -2997,6 +2997,12 @@ frontend.js
 3. 頁面markup
   pay02.html
 
+4. 反饋調整
+  更新：
+  4.1 js/frontend.js
+  4.2 js/pay.js
+  4.3 css/jollybuy.css
+
 
 
 /**
@@ -3032,3 +3038,20 @@ markup:
 
 3. 頁面 markup
   pay03.html
+
+
+
+/**
+*Date: 2018/04/22
+*內容：合併商城會員中心 – 首頁
+*TKT: #73602
+*/
+
+1. 新增
+  images/member/index
+
+2. 更新
+  css/jollybuy.css
+
+3. 頁面 markup
+  member-center.html
