@@ -165,6 +165,26 @@ form#search .invalid{
 .loader{
   background:url(../images/spinner/spinner.gif) no-repeat center center;
 }
+/* supper title */
+.supper-title::after{
+  z-index: 999;
+}
+.title-cont{
+  position: relative;
+  margin: 25px 0;
+}
+.title-cont span{
+  position: absolute;
+  bottom: 3px;
+  display: block;
+  width: 50%;
+  border-bottom: 2px solid rgb(241, 242, 246);
+}
+@media(max-width: 767px){
+  .title-cont span{
+    width: 100%;
+  }
+}
 
 
 
@@ -1994,10 +2014,10 @@ select{
   position: static;
 }
 /* 特別店鋪 */
-.special-store .shopping-cart-header,
-.special-store .shopping-cart-content,
-.special-store .shopping-cart-checkout,
-.special-store .jupoint-gain{
+.disabled .shopping-cart-header,
+.disabled .shopping-cart-content,
+.disabled .shopping-cart-checkout,
+.disabled .jupoint-gain{
   background: rgb(241, 242, 246)!important;
 }
 @media (max-width: 1000px) {
@@ -2819,6 +2839,13 @@ select{
 #pay03 .shopping-cart-footer{
   margin-top: 20px;
 }
+#pay03 .btns-cont{
+  margin-top: 10px;
+}
+#pay03 .btns-cont .btns{ /* reset */
+  padding: 7px 15px;
+  margin: 0 15px;
+}
 
 /* ATM 轉帳 */
 #pay03 .atm-payment ul{
@@ -2887,15 +2914,19 @@ select{
 #pay03 .atm-payment,
 #pay03 .credit-payment,
 #pay03 .gamapay-payment,
-#pay03 .cvs-payment{
+#pay03 .cvs-payment,
+#pay03 .btns-cont{
   display: none;
 }
 #pay03 .order .order-complete,
 #pay03 .atm .atm-payment,
 #pay03 .credit .credit-payment,
 #pay03 .gamapay .gamapay-payment,
-#pay03 .cvs .cvs-payment{
-  display: block;
+#pay03 .cvs .cvs-payment,
+#pay03 .order .btns-cont,
+#pay03 .atm .btns-cont,
+#pay03 .cvs .btns-cont{
+  display: inline-block;
 }
 
 
@@ -3928,5 +3959,95 @@ select{
   .chat-modal .upload a:hover{
     background: url('../images/2x/buttons/upload-hover.png') no-repeat center center;
     background-size: 100% auto;
+  }
+}
+
+
+
+/**
+* 會員中心
+*/  
+
+.title-cont h4::after{
+  border-bottom: 1px solid #ccc;
+}
+
+#member-guide{
+  padding: 0 15px;
+}
+#member-guide .member-header{
+  background: rgb(242, 243, 245);
+  padding: 20px 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#member-guide .member-header img{
+  width: 20%;
+}
+#member-guide .member-header .account-info{
+  display: inline-block;
+  vertical-align: middle;
+}
+#member-guide .account-name{
+  font-size: 16px;
+  font-weight: bold;
+}
+#member-guide .member-header .btns-cont{
+  text-align: right;
+}
+#member-guide .member-header .btns-cont .btns{
+  display: inline-block;
+}
+#member-guide .icon{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background: rgb(248, 249, 251);
+  border: 1px solid rgb(241, 242, 246);
+  padding: 15px 0;
+}
+#member-guide .icon span{
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  display: block;
+  text-align: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#member-guide .icon span::after{
+  display: block;
+  text-align: center;
+}
+/* icons */
+#member-guide .icon-order span{background-image: url(../images/member/index/order.png);}
+#member-guide .icon-order a::after{content: '我的訂單';}
+#member-guide .icon-chat span{background-image: url(../images/member/index/chat.png);}
+#member-guide .icon-chat a::after{content: '敲敲話';}
+#member-guide .icon-favorite span{background-image: url(../images/member/index/favorite.png);}
+#member-guide .icon-favorite a::after{content: '我的珍藏';}
+#member-guide .icon-account span{background-image: url(../images/member/index/account.png);}
+#member-guide .icon-account a::after{content: '我的帳號';}
+#member-guide .icon-level span{background-image: url(../images/member/index/level.png);}
+#member-guide .icon-level a::after{content: '我的等級';}
+#member-guide .icon-coupon span{background-image: url(../images/member/index/coupon.png);}
+#member-guide .icon-coupon a::after{content: '我的優惠券';}
+#member-guide .icon-point span{background-image: url(../images/member/index/point.png);}
+#member-guide .icon-point a::after{content: '我的點數';}
+/* reset BS padding */
+#member-guide .col-xs-12,
+#member-guide .col-xs-4,
+#member-guide .col-sm-3,
+#member-guide .col-md2{
+  padding: 0;
+}
+@media(max-width: 767px) {
+  #member-guide .member-header{
+    display: block;
+  }
+  #member-guide .member-header .btns-cont{
+    text-align: center;
   }
 }
