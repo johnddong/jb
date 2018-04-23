@@ -3028,6 +3028,14 @@ frontend.js
         break;
       }
     });
+	4.2.4
+	 原來radio樣式
+	 <input class="add-address" type="radio"  name="XXXXXX">
+	 改為:
+	 <label class="radio-cont">
+		<input type="radio" name="XXXXX(保留原來的name)">
+		<span class="checkmark"></span>
+	 </label>
 
 
 
