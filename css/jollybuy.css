@@ -62,6 +62,48 @@ h3.supper-title{
   opacity: 0;
   cursor: pointer;
 }
+/*radio style*/
+.radio-cont{
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio-cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio-cont .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: solid 2px #d4d7d9;
+  border-radius: 50%;
+}
+.radio-cont .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radio-cont input:checked ~ .checkmark:after {
+  display: block;
+}
+.radio-cont .checkmark:after {
+  top: 6px;
+  left: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #333;
+}
 /*按鈕基本樣式*/
 .btn-basic{
   text-align: center;
@@ -90,7 +132,7 @@ h3.supper-title{
   -webkit-user-select: none; /* prevent blue hightlight */
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
 .btns:hover{
   background: #fff;
@@ -1887,7 +1929,7 @@ select{
 #pay-steps li .pay-step2,
 #pay-steps li .pay-step3{
   width: 57px;
-  height: 57px; 
+  height: 57px;
   vertical-align: bottom;
   display: inline-block;
 }
@@ -2161,7 +2203,7 @@ select{
 #pay02 #myModal .shipping input{
   width: 100%;
   padding: 5px;
-} 
+}
 /* Modal's 送貨方式 */
 #pay02 #myModal .remark{
   margin-bottom: 20px;
@@ -2266,7 +2308,9 @@ select{
 #pay02 .customer-info .checkbox-cont {
   margin-top: 0;
 }
-
+#pay02 .radio-cont{
+  float: left;
+}
 
 /* reset */
 #pay02 #myModal .address-default .col-xs-10,
@@ -4002,7 +4046,7 @@ select{
 
 /**
 * 會員中心
-*/  
+*/
 
 .title-cont h4::after{
   border-bottom: 1px solid #ccc;
