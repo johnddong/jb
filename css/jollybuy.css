@@ -4057,7 +4057,7 @@ select{
   align-items: center;
 }
 #member-guide .member-header img{
-  width: 20%;
+  width: 18.02%;
 }
 #member-guide .member-header .account-info{
   display: inline-block;
@@ -4123,5 +4123,6 @@ select{
   }
   #member-guide .member-header .btns-cont{
     text-align: center;
+    margin-top: 10px;
   }
 }
