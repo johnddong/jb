@@ -188,16 +188,16 @@ textarea,
   border: 1px solid #ccc!important;
 }
 /* placeholder */
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.container::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ccc;
 }
-::-moz-placeholder { /* Firefox 19+ */
+.container::-moz-placeholder { /* Firefox 19+ */
   color: #ccc;
 }
-:-ms-input-placeholder { /* IE 10+ */
+.container:-ms-input-placeholder { /* IE 10+ */
   color: #ccc;
 }
-:-moz-placeholder { /* Firefox 18- */
+.container:-moz-placeholder { /* Firefox 18- */
   color: #ccc;
 }
 /* error */
@@ -240,7 +240,6 @@ form#search .invalid{
     width: 100%;
   }
 }
-
 
 
 
@@ -2997,6 +2996,7 @@ select{
 }
 
 
+
 /**
 * 會員資訊
 */
@@ -3561,6 +3561,8 @@ select{
   -moz-transform: rotate(180deg);
 }
 
+
+
 /**
 * 訂單查詢
 */
@@ -3667,7 +3669,7 @@ select{
 
 @media screen and (max-width: 576px) {
   body.modal-open {
-      position: fixed;
+      /* position: fixed; */
       width: 100%;
   }
   #order .eval-dialog .select-row,
@@ -3676,10 +3678,14 @@ select{
     width: 100%;
   }
 }
+
+
+
 /**
   退貨
   */
-/*購物清單*/
+
+  /*購物清單*/
 #return #order-list{
   margin-bottom: 0px;
   border-bottom: solid 1px #ccc;
@@ -4058,6 +4064,7 @@ select{
 }
 #member-guide .member-header img{
   width: 18.02%;
+  cursor: pointer;
 }
 #member-guide .member-header .account-info{
   display: inline-block;
@@ -4072,6 +4079,9 @@ select{
 }
 #member-guide .member-header .btns-cont .btns{
   display: inline-block;
+}
+#member-guide .member-bodyer{
+  background: rgb(248, 249, 251);
 }
 #member-guide .icon{
   font-size: 16px;

@@ -3014,7 +3014,7 @@ frontend.js
     替換：
 		<h5 class="text-label">發票開立方式<span></span></h5>
     4.2.3
-    移除：
+    移除JS：
     // 國家切換
     $('.twzipcode').find('.buyer-country, .receiver-country').on('change', function() {
       var type = $(this).find(':selected').data('type')
