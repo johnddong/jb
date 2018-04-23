@@ -209,7 +209,7 @@
 													</div>
 												</div>
 											</div>
-										</div>		
+										</div>
 									</div>
 									<!--/ 送貨方式 & 發票開立方式 -->
 									<div class="col-sm-12 col-md-2 line-cont">
@@ -321,11 +321,11 @@
 					$('.shopping-cart-checkout .logistics, .shopping-cart-checkout .invoice').on('click', function() {
 						var type = $(this).data('type');
 						switch (type) {
-							case 'invoice': 
+							case 'invoice':
 								$myModal.find('.logistics').hide();
 								$myModal.find('.'+type).show();
 							break;
-							case 'logistics': 
+							case 'logistics':
 								$myModal.find('.invoice').hide();
 								$myModal.find('.'+type).show();
 							break;
@@ -478,7 +478,10 @@
 													<div class="icon-arrow summary">選擇其它 <i class="fa fa-angle-down fa-lg ease"></i></div>
 													<div class="row address-default">
 														<div class="col-xs-2 col-sm-1">
-															<input type="radio" name="logistics-receiver" checked>
+															<label class="radio-cont">
+																<input type="radio" name="logistics-receiver" checked>
+																<span class="checkmark"></span>
+															</label>
 														</div>
 														<div class="col-xs-10 col-sm-11">
 															<div>我是收件人10912123123</div>
@@ -489,9 +492,10 @@
 														<ul class="submenu">
 															<li>
 																<div class="row">
-																	<div class="col-xs-2 col-sm-1">
+																	<label class="radio-cont">
 																		<input type="radio" name="logistics-receiver">
-																	</div>
+																		<span class="checkmark"></span>
+																	</label>
 																	<div class="col-xs-10 col-sm-11">
 																		<div>我是收件人0927777</div>
 																		<div>台北市 松山區 瑞光路150巷123號5F</div>
@@ -501,7 +505,10 @@
 															<li>
 																<div class="row">
 																	<div class="col-xs-2 col-sm-1">
-																		<input type="radio" name="logistics-receiver">
+																		<label class="radio-cont">
+																			<input type="radio" name="logistics-receiver">
+																			<span class="checkmark"></span>
+																		</label>
 																	</div>
 																	<div class="col-xs-10 col-sm-11">
 																		<div>我是收件人83470283</div>
@@ -514,7 +521,10 @@
 													<div class="address-new">
 														<div class="row">
 															<div class="col-xs-2 col-sm-1">
-																<input class="add-address" type="radio"  name="logistics-receiver">
+																<label class="radio-cont">
+																	<input class="add-address" type="radio" name="logistics-receiver">
+																	<span class="checkmark"></span>
+																</label>
 															</div>
 															<div class="col-xs-10 col-sm-11">
 																<div class="row">
@@ -570,13 +580,16 @@
 												<!--/ 物流運送 -->
 
 												<!-- 超取 -->
-												<li data-type="cvs"> 
+												<li data-type="cvs">
 													<div class="remark">我是超取運送備註</div>
 													<h3 class="title supper-title">送貨資料<span></span></h3>
 													<div class="icon-arrow summary">選擇其它 <i class="fa fa-angle-down fa-lg ease"></i></div>
 													<div class="row address-default">
 														<div class="col-xs-2 col-sm-1">
-															<input type="radio" name="cvs-receiver" checked>
+															<label class="radio-cont">
+																<input type="radio" name="cvs-receiver" checked>
+																<span class="checkmark"></span>
+															</label>
 														</div>
 														<div class="col-xs-10 col-sm-11">
 															<div>我是收件人10912123123</div>
@@ -588,7 +601,10 @@
 															<li>
 																<div class="row">
 																	<div class="col-xs-2 col-sm-1">
-																		<input type="radio" name="cvs-receiver">
+																		<label class="radio-cont">
+																			<input type="radio" name="cvs-receiver">
+																			<span class="checkmark"></span>
+																		</label>
 																	</div>
 																	<div class="col-xs-10 col-sm-11">
 																		<div>我是收件人0927777</div>
@@ -599,7 +615,10 @@
 															<li>
 																<div class="row">
 																	<div class="col-xs-2 col-sm-1">
-																		<input type="radio" name="cvs-receiver">
+																		<label class="radio-cont">
+																			<input type="radio" name="cvs-receiver">
+																			<span class="checkmark"></span>
+																		</label>
 																	</div>
 																	<div class="col-xs-10 col-sm-11">
 																		<div>我是收件人83470283</div>
@@ -612,7 +631,10 @@
 													<div class="address-new">
 														<div class="row">
 															<div class="col-xs-2 col-sm-1">
-																<input class="add-address" type="radio"  name="cvs-receiver">
+																<label class="radio-cont">
+																	<input class="add-address" type="radio" name="cvs-receiver">
+																	<span class="checkmark"></span>
+																</label>
 															</div>
 															<div class="col-xs-10 col-sm-11">
 																<div class="row">
