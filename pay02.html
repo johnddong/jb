@@ -360,20 +360,6 @@
 						});
 					});
 
-				// 國家切換
-				$('.twzipcode').find('.buyer-country, .receiver-country').on('change', function() {
-					var type = $(this).find(':selected').data('type')
-						, $countrySel = $(this).parents('.twzipcode').eq(0).find('.address').not(':first').find('select, i');
-					switch (type) {
-						case 'tw': 
-							$countrySel.show();
-						break;
-						case 'other': 
-							$countrySel.hide();
-						break;
-					}
-				});
-
   			 // 收件人地址
 				 $('.shipping-method .twzipcode').twzipcode();
 
@@ -410,7 +396,7 @@
 						<!-- 發票開立方式 -->
 						<div class="shipping invoice">
 							<div class="quantity invoice">
-								<h3 class="title supper-title text-label">發票開立方式<span></span></h3>
+								<h5 class="text-label">發票開立方式<span></span></h5>
 								<select id="invoice" name="invoice" class="chosen-select">
 									<option value="" selected>發票開立方式</option>
 									<option data-option="carrier" value="0">載具</option>
@@ -449,7 +435,7 @@
 							<!-- 發票開立方式：捐贈 -->
 							<div class="donate-barcode invoice-type">
 								<h5 class="text-label">請填入愛心條碼<span></span></h5>
-								<input type="text" name="donate_barcode" class="input-info" placeholder="請填入愛心條碼">
+								<input type="text" name="donate_barcode" class="input-info" placeholder="請填入愛心條碼" value="885521">
 								<div class="children-fdn">
 									<div>若無指定社福團體，默認捐贈給<span class="foundation" data-fdn-code="885521">兒童福利聯盟文教基金會</span></div>
 									<a class="align-right charity-code" href="https://www.einvoice.nat.gov.tw/APMEMBERVAN/XcaOrgPreserveCodeQuery/XcaOrgPreserveCodeQuery?CSRT=2194166228579422277" target="_blank">愛心條碼查詢</a>

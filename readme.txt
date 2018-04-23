@@ -2998,10 +2998,36 @@ frontend.js
   pay02.html
 
 4. 反饋調整
-  更新：
-  4.1 js/frontend.js
-  4.2 js/pay.js
-  4.3 css/jollybuy.css
+  4.1 更新：
+    4.1.1 js/frontend.js
+    4.1.2 js/pay.js
+    4.1.3 css/jollybuy.css
+  4.2 markup 調整
+    4.2.1
+    愛心條碼 input value 填上 885521
+    ex:
+    <input type="text" name="donate_barcode" class="input-info" placeholder="請填入愛心條碼" value="885521">
+    4.2.2
+    開立方票樣式調整
+    原來：
+    <h3 class="title supper-title text-label">發票開立方式<span></span></h3>
+    替換：
+		<h5 class="text-label">發票開立方式<span></span></h5>
+    4.2.3
+    移除：
+    // 國家切換
+    $('.twzipcode').find('.buyer-country, .receiver-country').on('change', function() {
+      var type = $(this).find(':selected').data('type')
+        , $countrySel = $(this).parents('.twzipcode').eq(0).find('.address:gt(0)');
+      switch (type) {
+        case 'tw': 
+          $countrySel.show();
+        break;
+        case 'other': 
+          $countrySel.hide();
+        break;
+      }
+    });
 
 
 

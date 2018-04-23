@@ -513,38 +513,63 @@ $(function() {
 var syncData = (function() {
   var ajaxUrl = 'js/api-temp/member-get-success.json',
       active = 'active',
+      twzipcode = 'twzipcode',
       // 訂購人
       $buyer = $('.customer-info'),
       $buyerName = $buyer.find('[name="buyer_name"]'),
       $buyerMobile = $buyer.find('[name="buyer_mobile"]'),
-      $buyerAdress = $buyer.find('.receiver-address'),
+      $buyerAdress = $buyer.find('.buyer-address'),
+      $buyerCountry = $buyer.find('.buyer-country'),
       // 收件人
-      $receiver = $('.shipping-method'),
-      $receiverName = $receiver.find('.receiver-name'),
-      $receiverMobile = $receiver.find('.receiver-mobile'),
-      $receiverAddress = $receiver.find('.receiver-address'),
+      $receiver,
+      $receiverName,
+      $receiverAddress,
+      $receiverMobile,
+
       $ortherInfo = $('.orther-info'),
-      $memberInfo = $ortherInfo.find('[name="member_info"]'), // 同訂購人/會員中心 radio
+      $memberInfo = $ortherInfo.find('.sync [type="checkbox"]'), // 同訂購人
       receiverData = {},
 
   setBuyer = function(_this) {
     var buyerName = $buyerName.val()
       , buyerMobile = $buyerMobile.val()
-      , buyerAdress = $buyerAdress.val();
+      , buyerAdress = $buyerAdress.val()
+      , buyerCountry = $buyerCountry.find('option:selected');
+      
+    $receiver =  $(_this).parents('li').eq(0).find('.'+twzipcode),
+    $receiverName = $receiver.parent().find('.receiver-name'),
+    $receiverMobile = $receiver.parent().find('.receiver-mobile'),
+    $receiverAddress = $receiver.find('.receiver-address'),
+    $receiverCountry = $receiver.find('select[name="receiver-country"] option');
+
     $(_this).addClass(active);
     // reset receiver's address
     $ortherInfo.twzipcode('reset');
     $receiverAddress.val(buyerAdress);
     $receiverName.val(buyerName);
     $receiverMobile.val(buyerMobile);
-    $buyer.twzipcode('get', function (buyerCounty, buyerDistrict, buyerZipcode) {
-      $receiver.twzipcode('set', {
-        'county': buyerCounty,
-        'district': buyerDistrict,
-        'zipcode': buyerZipcode
+    
+    if (buyerCountry.data('type') == 'tw') { // 訂購人 tw option selected
+      $receiver.find('.address:gt(0)').show();
+      $receiverCountry.each(function() {
+        if ($(this).data('type') == 'tw') $(this).prop('selected', true);
       });
-    });
+      //twzipcode
+      $buyer.twzipcode('get', function (buyerCounty, buyerDistrict, buyerZipcode) {
+        $receiver.twzipcode('set', {
+          'county': buyerCounty,
+          'district': buyerDistrict,
+          'zipcode': buyerZipcode
+        });
+      });
+    } else { // 訂購人 其它 option selected
+      $receiver.find('.address:gt(0)').hide();
+      $receiverCountry.each(function() {
+        if ($(this).data('type') == 'other') $(this).prop('selected', true);
+      });
+    }
   },
+
   resetBuyer = function(_this){
     $(_this).removeClass(active);
     $receiverAddress.val('');
@@ -552,21 +577,31 @@ var syncData = (function() {
     $receiverMobile.val('');
     $receiver.twzipcode('reset');
   },
-  init = function() {
-    // 預設訂購人
-    if ($buyerName.length > 0 && $buyerMobile.length > 0) {
-      if ($buyerName.val() != '' || $buyerMobile.val() != '') {
-        $memberInfo.eq(0).attr('checked', true).addClass(active);
-        setBuyer('#buyer_sync');
+
+  countrySelect = function() {
+    $('.'+twzipcode).find('.buyer-country, .receiver-country').on('change', function() {
+      var type = $(this).find(':selected').data('type')
+        , $countrySel = $(this).parents('.'+twzipcode).eq(0).find('.address:gt(0)');
+      switch (type) {
+        case 'tw': 
+          $countrySel.show();
+        break;
+        case 'other': 
+          $countrySel.hide();
+        break;
       }
-    }
+    });
+  },
+
+  init = function() {
+    // 國家切換
+    countrySelect();
     // 同訂購人
-    //$ortherInfo.find('#buyer_sync').on('click', function() {
     $memberInfo.on('click', function() {
       var $this = $(this);
-      if($this.prop('checked')){
+      if ($this.prop('checked')){
         syncData.setBuyer(this);
-      }else{
+      } else {
         syncData.resetBuyer(this);
       }
     });

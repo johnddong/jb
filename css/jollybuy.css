@@ -145,6 +145,19 @@ textarea,
   border-radius: 3px!important;
   border: 1px solid #ccc!important;
 }
+/* placeholder */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #ccc;
+}
 /* error */
 .text-label span,
 label span{
@@ -1994,14 +2007,25 @@ select{
 .fixed-num input[name=qty]{
   border: none!important;
 }
-#pay01 .tbody .price,
-#pay02 .tbody .price{
+#pay02 .fixed-num input[name=qty]{
+  font-size: 15px;
+  font-weight: normal;
+  color: #777;
+}
+#pay01 .tbody .price{
   color: rgb(255, 1, 1);
+  font-size: 15px;
   font-weight: bold;
 }
-#pay01 .tbody .price span,
-#pay02 .tbody .price span{
+#pay02 .tbody .price{
+  font-size: 12px;
+  color: #777;
+}
+#pay01 .tbody .price span{
   font-size: 24px;
+}
+#pay02 .tbody .price span{
+  font-size: 15px;
 }
 /* shopping-cart-footer */
 .shopping-cart-footer{
@@ -2140,12 +2164,11 @@ select{
   padding: 5px;
 } 
 /* Modal's 送貨方式 */
-#pay02 #myModal .orther-info{
-  padding: 0 20px;
-}
 #pay02 #myModal .remark{
   margin-bottom: 20px;
-  margin-left: -20px;
+}
+#pay02 #myModal .supper-title{
+  font-size: 18px;
 }
 #pay02 #myModal .address-default{
   padding: 10px 10px 5px 6px;
@@ -2514,7 +2537,7 @@ select{
 @media (max-width: 1000px) {
   .shopping-cart-checkout {
     border: none;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 0;
   }
   .shopping-cart-checkout .line{
@@ -3388,6 +3411,9 @@ select{
     text-align: center;
     display: inline-block;
   }
+  #pay02 .order-grid .shopping-cart-content .quantity-item{
+    padding: 0;
+  }
   .order-grid .shopping-cart-content .quantity-item::before,
   .order-grid .shopping-cart-content .total::before{
     font-size: 14px;
@@ -3398,6 +3424,10 @@ select{
     position: absolute;
     z-index: -1;
     left: 17px;
+  }
+  #pay02 .order-grid .shopping-cart-content .quantity-item::before{
+    left: 10px;
+    color: #777;
   }
   #pay01 .order-grid .quantity-btn {
     background-color: #fff;
