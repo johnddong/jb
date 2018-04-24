@@ -72,7 +72,9 @@ var Pay = (function() {
       }, 1);
     });
     // remove cart
-    removeCart();
+    $cartContent.find('.delete-item').on('click', function() {
+      removeCart(this);
+    });
     // 查看優惠券
     getCoupon();
   },
@@ -125,7 +127,7 @@ var Pay = (function() {
     return {subTotal: subTotal, grandTotal: grandTotal};
   },
 
-  removeCart = function() {
+  removeCart = function(_this) {
     var fa = {
       trash: 'fa-trash-o',
       spinner: 'fa-circle-o-notch fa-spin'
@@ -140,63 +142,70 @@ var Pay = (function() {
       productTitle: 'product-title',
       btnPrimary: 'btn-primary'
     };
-    $cartContent.find('.delete-item').on('click', function() {
-      var $this = $(this)
-        , orderId = $this.parent().data(attr.orderId)
-        , relatedId = $this.parent().data(attr.relatedId)
-        , message = '是否確認從購物車移除?';
 
-      message += '<div>' + $this.parent().find('.'+c.productTitle).text() + '</div>';
-      if (relatedId == undefined) { // 為主商品，check是否有加購商品
-        var additional = '<ul>'
-          , count = 0;
-        $cartContent.find('.'+c.eachItem).each(function() {
-          if ($(this).data(attr.relatedId) == orderId) { // 刪除加購商品
-            additional += '<li>'+ $(this).find('.'+c.productTitle).text() +'</li>';
-            count++;
-          }
-        });
-        additional += '</ul>';
-        if (count > 0) {
-          message += '<div class="note">您的加購商品將會一併刪除：</div>' + additional;
+    var $this = $(_this)
+      , type = $this.data('type')
+      , orderId = $this.parent().data(attr.orderId)
+      , relatedId = $this.parent().data(attr.relatedId)
+      , messageTitle 
+      , message;
+
+      messageTitle = (type == 'del-all') ? '是否確定刪除該店鋪所有商品?' : '是否確定刪除該筆商品?';
+      message = '<div>'+ messageTitle +'<br />'+
+                  '一旦刪除將無法還原'+
+                  '</div>';
+
+    message += '<div>' + $this.parent().find('.'+c.productTitle).text() + '</div>';
+    if (relatedId == undefined) { // 為主商品，check是否有加購商品
+      var additional = '<ul>'
+        , count = 0;
+      $cartContent.find('.'+c.eachItem).each(function() {
+        if ($(this).data(attr.relatedId) == orderId && $(this).data(attr.relatedId) != undefined) { // 刪除加購商品
+          console.log(orderId);
+          additional += '<li>'+ $(this).find('.'+c.productTitle).text() +'</li>';
+          count++;
         }
+      });
+      additional += '</ul>';
+      if (count > 0) {
+        message += '<div class="note">您的加購商品將會一併刪除：</div>' + additional;
       }
-      $myModal.find('.'+c.modalBody).html(message);
+    }
+    $myModal.find('.'+c.modalBody).html(message);
 
-      // add spinner
-      $this.find('i').removeClass(fa.trash).addClass(fa.spinner);
+    // add spinner
+    $this.find('i').removeClass(fa.trash).addClass(fa.spinner);
 
-      // modal btn-ok
-      $myModal.modal('show').find('.'+c.btnPrimary).on('click', function () {
-        $myModal.modal('hide');
-        $.post(ajaxUrl.remove, {orderId: orderId}, function(json) {
-          if (json.success) {
-            // 刪除加購商品
-            if (relatedId == undefined) { // 為主商品，check是否有加購商品
-              $cartContent.find('.'+c.eachItem).each(function() {
-                if ($(this).data(attr.relatedId) == orderId) { // 刪除加購商品
-                  $(this).remove();
-                }
-              });
-            }
-            // save $row before deleting each-item 
-            var $row = $this.parents('li').eq(0).find('.each-item');
-            // 刪除主商品
-            $this.parent().remove();
-            subTotal($row);
-          } else {
-            $.notify(json.msg);
+    // modal btn-ok
+    $myModal.modal('show').find('.'+c.btnPrimary).on('click', function () {
+      $myModal.modal('hide');
+      $.post(ajaxUrl.remove, {orderId: orderId}, function(json) {
+        if (json.success) {
+          // 刪除加購商品
+          if (relatedId == undefined) { // 為主商品，check是否有加購商品
+            $cartContent.find('.'+c.eachItem).each(function() {
+              if ($(this).data(attr.relatedId) == orderId) { // 刪除加購商品
+                $(this).remove();
+              }
+            });
           }
-        });
+          // save $row before deleting each-item 
+          var $row = $this.parents('li').eq(0).find('.each-item');
+          // 刪除主商品
+          $this.parent().remove();
+          subTotal($row);
+        } else {
+          $.notify(json.msg);
+        }
       });
-      // modal btn-cancel & backdrop
-      $myModal.on('hide.bs.modal', function () {
-        // unbind click evt
-        $myModal.modal('show').find('.'+c.btnPrimary).off('click');
-        $myModal.find('.'+c.modalBody).text('');
-        // rm spinner
-        $this.find('i').removeClass(fa.spinner).addClass(fa.trash);
-      });
+    });
+    // modal btn-cancel & backdrop
+    $myModal.on('hide.bs.modal', function () {
+      // unbind click evt
+      $myModal.modal('show').find('.'+c.btnPrimary).off('click');
+      $myModal.find('.'+c.modalBody).text('');
+      // rm spinner
+      $this.find('i').removeClass(fa.spinner).addClass(fa.trash);
     });
   },
 
@@ -215,7 +224,8 @@ var Pay = (function() {
   init();
 
   return {
-    subTotal: subTotal
+    subTotal: subTotal,
+    removeCart: removeCart
   };
 
 })();
@@ -250,7 +260,6 @@ $(function() {
 
       // store header's children
       $cartContent.find('.shopping-cart-content [type="checkbox"]').on('click', function() {
-        console.log('hii');
         childrenCheckbox(this);
       });
     },
@@ -321,8 +330,8 @@ $(function() {
         // if($(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').is(':checked')) {
         //   $(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').click();
         // }
-        console.log(_this);
-        console.log(' child < len');
+        //console.log(_this);
+        //console.log(' child < len');
       }
     },
   
