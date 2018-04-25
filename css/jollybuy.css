@@ -3505,6 +3505,9 @@ select{
   }
   #pay02 .order-grid .quantity-btn input{
     text-align: left;
+    padding: 7px;
+    -webkit-text-fill-color:#777; /* strengthen text color for iPhone */
+    opacity: 1; /* strengthen text color for iPhone */
   }
   .order-grid .quantity{
     margin-left: 43px;
