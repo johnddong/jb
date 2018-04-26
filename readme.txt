@@ -2696,7 +2696,7 @@ pay.js
             <li><a href="#">聯絡我們</a></li>
           </ul>
           <div class="coppy-right">
-            <h3 class="content">© 2017 Powered By JollyBuy</h3>
+            <h3 class="content">© 2017 Powered By Jollywiz</h3>
           </div>
         </div>
       </div>
@@ -3089,3 +3089,17 @@ markup:
 
 3. 頁面 markup
   member-center.html
+
+
+
+/**
+*Date: 2018/04/24
+*內容：合併商城會員中心 – 我的珍藏
+*TKT: #73605
+*/
+
+1. 更新
+  css/jollybuy.css
+
+2. 頁面 markup
+  favorite.html
