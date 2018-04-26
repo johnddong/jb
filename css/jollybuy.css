@@ -117,6 +117,7 @@ h3.supper-title{
   display: inline-block;
   padding: 0px 20px;
 }
+a.btns,
 .btns{
   color: #777;
   height: 40px;
@@ -204,13 +205,13 @@ textarea,
 .text-label span,
 label span{
   float: right;
-  color: #FFBABA;
+  color: #b83d36;
 }
 form#search .invalid{
-  color: #FFBABA;
+  color: #b83d36;
 }
 .invalid{
-  border: 1px solid #FFBABA!important;
+  border: 1px solid #b83d36!important;
 }
 /* breadcrumbs */
 .breadcrumbs {
@@ -1863,7 +1864,7 @@ div.disable:active:hover{
 }
 /* validate error */
 .login-page .login .invalid{
-  border: 1px solid #FFBABA;
+  border: 1px solid #b83d36;
 }
 /* 登入 reset */
 .login-page .top-links > li{
@@ -2786,7 +2787,8 @@ select{
   -o-appearance: none;
 }
 
-.shipping-method #store{
+.shipping-method #store,
+.shipping-method .store{
   position: relative;
 }
 .shipping-method #store .text-label span{
@@ -2833,11 +2835,11 @@ select{
 }
 /* error */
 #pay02 #agreement.invalid {
-  outline: 1px solid #FFBABA;
+  outline: 1px solid #b83d36;
 }
 #pay02 .orther-info .invalid,
 #pay02 #datepicker .invalid{
-  border: 1px solid #FFBABA;
+  border: 1px solid #b83d36;
 }
 /* reset */
 #pay02 .orther-info input {
@@ -2995,158 +2997,8 @@ select{
   display: inline-block;
 }
 
-
-
-/**
-* 會員資訊
-*/
-
-/* reset & customize */
-#member [type=submit] span{
-  width: 60px;
-}
-#member .note,
-#member .submit{
-  margin: 0;
-}
-#member .receiver-phone .submit{
-  margin-bottom: 20px;
-}
-#member .mini-address-box,
-#member .mini-address-box .td{
-  border: none;
-  text-align: left;
-}
-#member .mini-address-box .td{
-  padding: 15px 0px 15px 10px;
-}
-#member .mini-address-box{
-  border: 1px solid #fff;
-  border-bottom: none;
-  background-color: #fff;
-  margin-top: 20px;
-}
-#member .receiver-info{
-  width: 60%;
-}
-#member .mini-address-box .btn-box{
-  width: 25%;
-}
-#member .mini-address-box .default-box{
-  width: 15%;
-}
-#member .receiver-info .county,
-#member .receiver-info .zipcode{
-  overflow: hidden;
-  display: inline-block;
-}
-#member .receiver-info .street{
-  display: inline-block;
-  max-width: 50%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-#member .btn-modify-box{
-  display: inline-block;
-  margin-right: 10px;
-}
-#member .btn-modify-box i{
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  transition: all .4s ease;
-  -webkit-transition: all .4s ease;
-  -moz-transition: all .4s ease;
-}
-#member .active .btn-modify-box i{
-  transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-}
-#member .modify-address-box{
-  transition: all .4s ease;
-  -webkit-transition: all .4s ease;
-  -moz-transition: all .4s ease;
-  overflow: hidden;
-  height: 0;
-}
-#member .address-box{
-  position: relative;
-}
-#member .address-box h5{
-  display: inline;
-}
-#member .address-box h6{
-  font-size: 12px;
-}
-#member .receiver-default-box{
-  display: inline-block;
-}
-#member .address-box .receiver-default-box{
-  position: relative;
-  right: 10px;
-  float: right;
-}
-#member .customer-info label{
-  font-weight: normal;
-}
-#member .receiver-default{
-  vertical-align: inherit;
-}
-#member .btn-cancel{
-  margin-right: 10px;
-}
-#member .shipping-method{
-  min-height: 479px;
-}
-#member .active{
-  background-color: transparent;
-}
-#member .customer-info .address{
-  position: relative;
-  display: inline-block;
-  width: 48%;
-}
-#member .address:nth-child(even) {
-    float: right;
-}
-#member .address i{
-  position: absolute;
-  top: 12px;
-  right: 5px;
-}
-/* error */
-#member .invalid{
-  border: 1px solid #FFBABA;
-}
-
-@media screen and (max-width: 576px) {
-  #member .receiver-info {
-    width: 100%;
-  }
-  #member .mini-address-box .td{
-    padding: 8px 10px 8px 10px;
-  }
-  #member .receiver-info .street{
-    max-width: 155px;
-    display: inline-block;
-  }
-  #member .mini-address-box .td,
-  #member .mini-address-box .btn-box,
-  #member .mini-address-box .default-box,
-  #member .mini-address-box .receiver-info{
-    width: 100%;
-    display: block;
-  }
-  #member .cart-content .note{
-    padding: 10px;
-  }
-  #member .address-box{
-    padding: 10px;
-  }
-}
 /* address */
+.twzipcode select,
 .twzipcode .buyer-county,
 .twzipcode .buyer-area,
 .twzipcode .receiver-county,
@@ -3169,9 +3021,6 @@ select{
 .shipping-method .fb-connected{
   margin-bottom: 20px;
 }
-.shipping-method .fb-connected img{
-  border-radius: 30px;
-}
 .shipping-method .fb-connected i{
   margin: 0 10px;
 }
@@ -3191,7 +3040,205 @@ select{
   right: 15px;
 }
 
+/**
+* 會員資訊
+*/
 
+/* reset & customize */
+#member a:focus, a:hover{
+  color: #333;
+}
+#member [type=submit] span{
+  width: 60px;
+}
+#member .note,
+#member .submit{
+  margin: 0;
+}
+#member .receiver-phone .submit{
+  margin-bottom: 20px;
+}
+#member .mini-address-box,
+#member .mini-address-box .td{
+  border: none;
+  text-align: left;
+}
+#member .mini-address-box .td{
+  border-right: solid 2px #f8f9fb;
+  padding: 15px 0px 15px 10px;
+}
+#member .mini-address-box{
+  border:solid 2px #f8f9fb;
+  background-color: #fff;
+  margin-top: 20px;
+}
+#member .receiver-info{
+  width: 75%;
+}
+#member .mini-address-box .btn-box{
+  width: 10%;
+  background-color: #f8f9fb;
+  text-align: center;
+  padding: 0;
+}
+#member .mini-address-box .default-box{
+  width: 15%;
+}
+#member .receiver-info .county,
+#member .receiver-info .zipcode{
+  overflow: hidden;
+  display: inline-block;
+}
+#member .receiver-info .street{
+  display: inline-block;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#member .modify-address-box{
+  background-color: #f8f9fb;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  overflow: hidden;
+  height: 0;
+}
+#member .address-box{
+  position: relative;
+  background-color: #f8f9fb;
+}
+#member .address-box h5{
+  display: block;
+}
+#member .address-box h6{
+  font-size: 12px;
+}
+#member .receiver-default-box{
+  display: inline-block;
+}
+#member .shipping-method .receiver-default-box{
+  position: relative;
+  margin-bottom: 8px;
+}
+#member .shipping-method .item{
+  margin-top: 20px;
+}
+#member .shipping-method a{
+  display: inline-block;
+}
+#member .customer-info label{
+  font-weight: normal;
+}
+#member .fb-connected{
+  margin-bottom: 25px;
+}
+#member .fb-connected img{
+  border-radius: 30px;
+}
+#member .fb-connected span{
+  vertical-align: sub;
+  margin-left: 10px;
+}
+#member .fb-connected span .fa{
+  vertical-align: inherit;
+}
+#member .receiver-default{
+  vertical-align: inherit;
+}
+#member .btn-cancel{
+  margin-right: 10px;
+}
+#member .receiving-address{
+  min-height: 479px;
+  margin-top: 30px;
+}
+#member .receiving-address .btn-address,
+#member .shipping-store .btn-add-store{
+  display: inline-block;
+  margin: 0;
+}
+#member .mini-address-box .btn-box a{
+  display: block;
+  margin: 15px 0;
+}
+#member .note .supper-title{
+  display: block;
+}
+#member .active{
+  background-color: transparent;
+}
+#member .address:nth-child(even) {
+    float: right;
+}
+#member .address i{
+  position: absolute;
+  top: 12px;
+  right: 5px;
+}
+#member .orther-info .text-label::before{
+  content: "*";
+  color: #b83d36;
+}
+#member .twzipcode .address {
+  float: left;
+  width: 31%;
+  margin-right: 3.5%;
+}
+#member .twzipcode .address:nth-child(n+3) {
+    margin-right: 0;
+}
+#member .cart-content .note{
+  background-color: transparent;
+  padding: 20px 0;
+}
+#member .store-address{
+  background-color: #f8f9fb;
+  padding: 20px;
+}
+#member .modify-store-box{
+  display: none;
+  background-color: #f8f9fb;
+}
+#member .store-address .input-info{
+  margin-bottom: 20px;
+}
+#member .store-address .btn-store{
+  display: inline-block;
+}
+
+
+/* error */
+#member .invalid{
+  border: 1px solid #b83d36;
+}
+
+@media screen and (max-width: 1120px) {
+  #member .receiver-info {
+    width: 100%;
+  }
+  #member .mini-address-box .td{
+    padding: 8px 10px 8px 10px;
+  }
+  #member .receiver-info .street{
+    max-width: 155px;
+    display: inline-block;
+  }
+  #member .mini-address-box .td,
+  #member .mini-address-box .btn-box,
+  #member .mini-address-box .default-box,
+  #member .mini-address-box .receiver-info{
+    width: 100%;
+    display: block;
+  }
+  #member .address-box{
+    padding: 10px;
+  }
+  #member .mini-address-box .btn-box a{
+    display: inline-block;
+    margin: 0 20%;
+  }
+}
 
 /**
 * order
@@ -3509,7 +3556,7 @@ select{
 
 /* error border */
 #jpoint .invalid{
-  border: 1px solid #FFBABA;
+  border: 1px solid red;
 }
 
 
@@ -3771,7 +3818,7 @@ select{
   outline:none;
 }
 #return .invalid{
-  border: 1px solid #FFBABA;
+  border: 1px solid #b83d36;
 }
 @media screen and (max-width: 576px) {
   #return .select-wrap{
