@@ -1316,6 +1316,9 @@ header .header.layout1 .top-links{
 #product .details-info .product-id{
   margin-bottom: 20px;
 }
+#product .details-info .quantity-btn{
+  margin: 0;
+}
 .sold-out{
   background-color:#ddd;
   font-size: 20px;
@@ -3310,6 +3313,7 @@ select{
   }
   .shopping-cart-header .td.product-checkbox{
     width: 15%;
+    max-width: 44px;
     display: inline-block;
     text-align: left;
   }
@@ -3401,6 +3405,9 @@ select{
     padding-bottom: 0;
   }
   @media (max-width: 1000px) {
+    .order-grid .shopping-cart-header .tr{
+      text-align: left;
+    }
     .order-grid .shopping-cart-content .each-item{
       border-top: 2px solid rgb(241, 242, 246);
     }
@@ -3413,8 +3420,7 @@ select{
   }
   .order-grid .shopping-cart-content .product-checkbox{
     display: inline-block;
-    /* width: 44px; */
-    width: 15%;
+    width: 44px;
     height: 100px;
     margin-top: 10px;
     padding: 0 10px;
@@ -3426,9 +3432,9 @@ select{
   }
   .order-grid .shopping-cart-content .product-thumb{
     display: inline-block;
-    /* width: 100px; */
-    /* max-width: 35%; */
-    width: 35%;
+    width: 100px;
+    max-width: 35%;
+    /* width: 35%; */
     vertical-align: top;
     padding-left: 0;
   }
@@ -3576,8 +3582,11 @@ select{
   text-align: left;
   border-right: none;
 }
+#favorite .shopping-cart-content .tbody .price{
+  color: rgb(255, 1, 1);
+}
 #favorite .shopping-cart-content .product-name a{
-  height: 75px;
+  height: 50px;
 }
 #favorite .shopping-cart-content .info {
   color: rgb(255, 1, 1);
@@ -3608,10 +3617,17 @@ select{
   #favorite .shopping-cart-header .product-checkbox{height: 40px; vertical-align: middle;}
   /* table 框架 */
   #favorite .shopping-cart-header .product-name{width: 85%;}
-  #favorite .shopping-cart-content .product-checkbox{width: 15%;}
-  #favorite .shopping-cart-content .product-name{width: 46%;}
+  #favorite .shopping-cart-content .product-name{width: 47%;}
   #favorite .shopping-cart-content .price{width: 100%; text-align: right;}
   #favorite .shopping-cart-content .info {width: 100%; text-align: center; display: inline-block;}
+
+  #favorite .shopping-cart-content .tbody .price{ /* to line up below product name */
+    float: right;  
+    margin-top: -30px;
+  }
+  #favorite .shopping-cart-content .info {
+    margin-top: 5px;
+  }
 }
 
 
@@ -3920,25 +3936,42 @@ select{
   position: relative;
 }
 #chat-list .dot{
+  display: flex;
   position: relative;
   top: 1px;
   overflow: hidden;
+  border: 2px solid rgb(241, 241, 241);
+  background: rgb(248, 249, 251);
 }
 #chat-list .tab{
+  display: inline-flex;
+  align-items: center;
+  position: relative;
   float: left;
   height: 20px;
   line-height: 0;
-  border: 1px solid #ccc;
-  border-right: none;
-  background: #ebebeb;
-  padding: 19px 16.9px;
+  border: none;
+  border-right: 2px solid rgb(241, 241, 241);
+  background: rgb(248, 249, 251);
+  padding: 30px 20px;
   cursor: pointer;
-}
-#chat-list ul li:last-child .tab{
-  border-right: 1px solid #ccc;
 }
 #chat-list .tab .title{
   display: inline-block;
+}
+#chat-list .tab i{
+  margin-left: 5px;
+}
+#chat-list .tab .bubble{
+  background: #ccc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  vertical-align: middle;
 }
 #chat-list .line {
   background: #ccc;
@@ -3950,7 +3983,7 @@ select{
   max-width: 490px;
   width: 100%;
   height: 40px;
-  border: 1px solid #ccc;
+  border: 2px solid rgb(241, 242, 246);
   overflow: hidden;
   margin-bottom: 20px;
 }
