@@ -3095,7 +3095,7 @@ markup:
 /**
 *Date: 2018/04/24
 *內容：合併商城會員中心 – 我的珍藏
-*TKT: #73605
+*TKT: #73604
 */
 
 1. 更新
@@ -3103,3 +3103,17 @@ markup:
 
 2. 頁面 markup
   favorite.html
+
+
+
+/**
+*Date: 2018/04/27
+*內容：合併商城會員中心 – 敲敲話
+*TKT: #73604
+*/
+
+1. 更新
+  css/jollybuy.css
+
+2. 頁面 markup
+  chat.html
