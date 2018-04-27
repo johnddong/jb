@@ -3964,7 +3964,7 @@ select{
 */
 
 /* bubble icon */
-#chat-list .icon-bubble{
+/* #chat-list .icon-bubble{
   position: relative;
   top: -10px;
   display: inline-block;
@@ -3977,7 +3977,7 @@ select{
   top: 10px;
   left: 10px;
   color: #fff;
-}
+} */
 
 #chat-list .ad_size{
   position: relative;
@@ -3993,32 +3993,34 @@ select{
 #chat-list .tab{
   display: inline-flex;
   align-items: center;
-  position: relative;
-  float: left;
   height: 20px;
   line-height: 0;
-  border: none;
   border-right: 2px solid rgb(241, 241, 241);
-  background: rgb(248, 249, 251);
-  padding: 30px 20px;
+  padding: 30px 15px;
   cursor: pointer;
 }
-#chat-list .tab .title{
-  display: inline-block;
+/* bubble */
+#chat-list .bubble{
+  position: relative;
 }
-#chat-list .tab i{
+#chat-list .bubble i{
   margin-left: 5px;
+  color: rgb(101, 101, 101);
 }
-#chat-list .tab .bubble{
-  background: #ccc;
+#chat-list .bubble span{
+  color: #fff;
+  background: rgb(101, 101, 101);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  border: 1px solid #fff;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 3px;
+  right: 3px;
   text-align: center;
   vertical-align: middle;
+  cursor: pointer;
 }
 #chat-list .line {
   background: #ccc;
@@ -4054,9 +4056,6 @@ select{
 #chat-list .ad{
   margin-top: 20px;
 }
-#chat-list .ad .title{
-  background: #ebebeb;
-}
 #chat-list .ad .icon-bubble{
   top: 0;
   margin-left: 10px;
@@ -4071,23 +4070,145 @@ select{
   background: #fff;
   border-bottom: 1px solid #fff;
 }
-#chat-list .ad .read,
-#chat-list .ad .read a{
-  color: #ccc;
+
+/* override PC table 框架 */
+/* order */
+#chat-list .shopping-cart-content .product-thumb{width: 20%;}
+#chat-list .shopping-cart-content .product-name{width: 20%;}
+#chat-list .shopping-cart-content .price {width: 45%;}
+#chat-list .shopping-cart-content .info {width: 15%;}
+
+/* product */
+#chat-list .product .shopping-cart-content .product-checkbox{width: 10%;}
+#chat-list .product .shopping-cart-content .product-thumb{width: 25%;}
+#chat-list .product .shopping-cart-content .product-name{width: 15%;}
+#chat-list .product .shopping-cart-content .price {width: 35%;}
+#chat-list .product .shopping-cart-content .info {width: 15%;}
+
+/* 標題 */
+#chat-list .shopping-cart-content .title .product-thumb{
+  border-right: 2px solid rgb(241, 242, 246);
+}
+#chat-list .shopping-cart-content .title .price{
+  border-right: none;
+}
+/* 標題內容 */
+#chat-list .shopping-cart-header .bubble{
+  text-align: right;
+  padding-right: 20px;
+}
+#chat-list .shopping-cart-content .tbody .tr{
+  background: rgb(248, 249, 251);
+}
+#chat-list .shopping-cart-content .tbody .td{
+  padding: 20px;
+  text-align: left;
+}
+#chat-list .shopping-cart-content .tbody .td a{
+  font-weight: bold;
+}
+#chat-list .shopping-cart-content .tbody .price{
+  height: 50px;
+  overflow: hidden;
+}
+#chat-list .shopping-cart-content .tbody .price,
+#chat-list .shopping-cart-content .tbody .price span{
+  font-size: 14px;
+}
+#chat-list .shopping-cart-content .tbody .info{
+  text-align: center;
+}
+/* reset */
+#chat-list  ul{
+  padding-left: 0;
+}
+#chat-list .store li{
+  margin-bottom: 30px;
 }
 
-@media (max-width: 479px) {
-  #chat-list .shopping-cart-content tr{
-    border: 1px solid #ccc;
+@media (max-width: 1000px) {
+  /** 
+  *order 
+  */
+
+  /* shopping-cart-header */
+  #chat-list .shopping-cart-header .td.product-name{
+    width: 80%;
   }
-  #chat-list .shopping-cart-content td{
-    border: none;
-    padding: 5px 15px 5px 100px;
+  #chat-list .shopping-cart-header .bubble i{
+    position: relative;
+    bottom: -6px;
+    right: 10px;
   }
-  #chat-list .ad .icon-bubble {
-    text-align: center;
+  /* shopping-cart-content 標題 */
+  #chat-list .shopping-cart-content .product-thumb,
+  #chat-list .shopping-cart-content .product-name,
+  #chat-list .shopping-cart-content .price,
+  #chat-list .shopping-cart-content .info{
+    width: 100%;
+  }
+    /* shopping-cart-content 內容 */
+  #chat-list .shopping-cart-content{
+    border-top: 2px solid rgb(241, 242, 246);
+  }
+  #chat-list .shopping-cart-content .tbody .td{
+    padding: 5px;
+    border-top: none;
+  }
+  #chat-list .shopping-cart-content .tbody .price{
+    height: auto;
+  }
+  #chat-list .shopping-cart-content .tbody .info .btns{
+    display: inline-block;
+    margin: 30px 0;
+  }
+  #chat-list .shopping-cart-content .tbody .product-thumb a,
+  #chat-list .shopping-cart-content .tbody .product-name span,
+  #chat-list .shopping-cart-content .tbody .price span{
+    position: relative;
+    left: 70px;
+  }
+
+  /**
+  *product
+  */
+
+  #chat-list .product .shopping-cart-content .tbody .td{
+    float: left;
+  }
+  #chat-list .product .shopping-cart-content .product-checkbox{
+    width: 40%;
+    max-width: 116px;
+    padding: 10px;
+  }
+  #chat-list .product .shopping-cart-content .product-thumb,
+  #chat-list .product .shopping-cart-content .product-name,
+  #chat-list .product .shopping-cart-content .tbody .price{
+    width: 60%;
+  }
+  #chat-list .product .shopping-cart-content .product-thumb{
+    height: 25px;
+    overflow: hidden;
+  }
+  #chat-list .product .shopping-cart-content .tbody .price{
+    height: 50px;
+    overflow: hidden;
+  }
+  #chat-list .product .shopping-cart-content .info{
+    width: 100%;
+  }
+
+
+  /* reset */
+  #chat-list .order .td::before{
+    color: #333;
+  }
+  #chat-list .product .td::before{
+    content: '';
   }
 }
+
+
 
 /* 敲敲話對話框 */
 .chat-modal .modal-body{
