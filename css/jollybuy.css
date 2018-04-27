@@ -3963,22 +3963,6 @@ select{
 *敲敲話
 */
 
-/* bubble icon */
-/* #chat-list .icon-bubble{
-  position: relative;
-  top: -10px;
-  display: inline-block;
-  background:url(../images/icons/bubble.png);
-  width: 35px;
-  height: 20px;
-}
-#chat-list .icon-bubble span{
-  position: relative;
-  top: 10px;
-  left: 10px;
-  color: #fff;
-} */
-
 #chat-list .ad_size{
   position: relative;
 }
