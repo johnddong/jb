@@ -4010,11 +4010,7 @@ select{
   vertical-align: middle;
   cursor: pointer;
 }
-#chat-list .line {
-  background: #ccc;
-  width: 100%;
-  height: 1px;
-}
+
 /* search bar */
 #chat-list .chat-search{
   max-width: 490px;
@@ -4054,8 +4050,9 @@ select{
 }
 
 /* active */
-#chat-list .active .tab{
+#chat-list .dot .active .tab{
   background: #fff;
+  border-bottom: 2px solid #fff;
 }
 
 /* override PC table 框架 */
