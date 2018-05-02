@@ -4029,6 +4029,7 @@ select{
   padding-left: 2%;
 }
 #chat-list .chat-search .search-button{
+  color: rgb(101, 101, 101);
   float: right;
   width: 13.51%;
   height: 40px;
