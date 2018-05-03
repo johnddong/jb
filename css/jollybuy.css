@@ -1309,11 +1309,9 @@ header .header.layout1 .top-links{
 #product .activity-info{
   line-height: 22px;
 }
-#product .activity-info span{
-  display: inline-block;
+#product .activity-info .flash{
   color: #fff;
   background-color: #ff6b6b;
-  padding: 3px 5px;
   margin-bottom: 10px;
 }
 #product .delivery-method-side{
@@ -1632,6 +1630,10 @@ div.disable:active:hover{
   font-size: 1.33em;
 }
 /*規格*/
+#product .details-info .spec{
+  display: inline-block;
+  margin-right: 10px;
+}
 @media(max-width: 991px) {
   #product .spec-side .quantity .chosen-container-single .chosen-single{
     padding: 0 20px;
