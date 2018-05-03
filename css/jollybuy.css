@@ -4223,9 +4223,10 @@ select{
   #chat-list .product .shopping-cart-content .tbody .price{
     width: 60%;
   }
-  #chat-list .product .shopping-cart-content .product-thumb{
+  #chat-list .product .shopping-cart-content .td.product-thumb{
     height: 25px;
     overflow: hidden;
+    padding-top: 5px;
   }
   #chat-list .product .shopping-cart-content .tbody .price{
     height: 50px;
