@@ -3117,3 +3117,85 @@ markup:
 
 2. 頁面 markup
   chat.html
+  
+/**
+*Date: 2018/05/3
+*內容：店鋪首頁商品展示及商品頁面UI(修改原介面及增加資訊)
+*TKT: #73818
+*/
+1.markup:
+	1.1 所有商品區塊:
+		<div class="product-item layout1">
+			<div class="product-inner">
+				<div class="thumb">
+			/*------------------------ 移除↓ --------------------------*/	
+					<div class="group-flash">
+						<span class="flash sale">sale</span>
+					</div>
+			/*------------------------ 移除↑ --------------------------*/
+					<div class="group-button">
+						<a href="#" class="wishlist-button"></a>
+					</div>
+					<a href="#"><img src="images/product-details-470x470.jpg" alt=""></a>
+				</div>
+	
+	1.2 product.html
+	移除:
+		1.2.1 <h3 class="sub-title"><span>顏色</span></h3>
+		1.2.2 <h3 class="sub-title"><span>尺寸</span></h3>
+		1.2.3 <h3 class="sub-title"><span>數量</span></h3>
+		
+		1.2.4
+		<div class="price">
+			<span class="del">399 </span>
+			$<span class="ins">280</span>
+		</div>
+	/*----------------------新增↓-------------------------*/
+		<div class="shipping-info">
+			<span class="float-left">銷量:99</span>
+			<span class="float-right">付款後將於xx天內出貨</span>
+		</div>
+		<div class="activity-info">
+			<span>店鋪活動</span>
+			<div>母親節多件好禮商品買一送一</div>
+			<div>限時下殺85折</div>
+			<div>單筆消費滿千免運</div>
+		</div>
+	/*----------------------新增↑-------------------------*/
+		1.3.2 
+		<div class="quantity-btn">
+			<div class="qty_box">
+				<div class="btns btns-minus disable">&#45;</div>
+				<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
+				<div class="btns btns-plus">&#43;</div>
+			</div>
+		</div>
+		/*----------------------新增↓-------------------------*/
+		<div class="delivery-method-side">
+			<div class="row header" data-target="#delivery-method" data-toggle="collapse">
+				<div class="col-6 col-sm-6">運費</div>
+				<div class="col-6 col-sm-6">$0-$120
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+				</div>
+			</div>
+			<div id="delivery-method" class="collapse bodyer row">
+				<div class="col-6 col-sm-6">
+					<ul>
+						<li>宅配</li>
+						<li>宅配(按重量收費)</li>
+						<li>全家取貨付款</li>
+						<li>7-11取貨付款</li>
+					</ul>
+				</div>
+				<div class="col-6 col-sm-6">
+					<ul>
+						<li>$0</li>
+						<li>$80</li>
+						<li>$120起</li>
+						<li>$30</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		/*----------------------新增↑-------------------------*/
+2.更新: jollybuy.css

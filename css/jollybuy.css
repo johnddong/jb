@@ -1294,6 +1294,46 @@ header .header.layout1 .top-links{
 #product .product-item .info .price .del{
   margin-right: 0px;
 }
+#product .shipping-info{
+  display: flow-root;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#product .shipping-info .float-left{
+  float: left;
+}
+#product .shipping-info .float-right{
+  float: right;
+}
+#product .activity-info{
+  line-height: 22px;
+}
+#product .activity-info .flash{
+  color: #fff;
+  background-color: #ff6b6b;
+  margin-bottom: 10px;
+}
+#product .delivery-method-side{
+  width: 300px;
+  overflow: hidden;
+  margin: 40px 0;
+}
+#product .delivery-method-side .title{
+  cursor: pointer;
+  border-bottom: solid 2px #f1f3f5;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 991px){
+  #product .delivery-method-side{
+    width: 100%;
+  }
+  #product .delivery-method-side .col-6{
+    float: left;
+    width: 50%;
+  }
+}
 /* 商品主圖, limit height 500px */
 #product .spec .chosen-container-single .chosen-single{
   height: 42px;
@@ -1376,6 +1416,10 @@ header .header.layout1 .top-links{
   width: auto;
   max-height: 75px;
   max-width: 75px;
+}
+#product .details-info .spec-side{
+  border-bottom: none;
+  padding-bottom: 0px;
 }
 @media (max-width: 991px){
   #product .about-product .details-thumb .main-img {
@@ -1528,6 +1572,10 @@ header .header.layout1 .top-links{
 * 加/減的數量
 */
 /* qty */
+#product .quantity-btn .btns-minus,
+#product .quantity-btn .btns-plus{
+  text-align: center;
+}
 .quantity{
   float: none;
   margin-bottom: 30px;
@@ -1535,52 +1583,21 @@ header .header.layout1 .top-links{
 .quantity .chosen-container{
   min-width: 133px;
 }
-.quantity-btn{
-  max-width:192.35px;
-  margin:auto;
-  margin:0 8px 0 0;
-}
 .quantity-btn .qty_box{
-  height:50px;
-  line-height:50px;
   font-weight:bold;
-}
-.quantity-btn .minus,
-.quantity-btn .plus{
-  float:left;
-  color:#fff;
-  width:26%;
-  height:50px;
-  line-height:50px;
-  font-size:2.154em;
-  font-weight:bold;
-  text-align:center;
-  cursor:pointer;
-  border-radius: 3px;
-}
-.quantity-btn .minus:active,
-.quantity-btn .plus:active{
-  border: none;
 }
 .quantity-btn .qty_box .qty{
   float:left;
   width:42%;
-  height:40px;
-  line-height:40px;
-  font-size:1.846em;
   color:#666666;
   background-color:#fff;
   text-align:center;
   border-left:1px solid #aaa;
   border-right:1px solid #aaa;
-  border-radius: 3px;
 }
 .quantity-btn .qty_box input{
-  border:none;
-  border-radius:0;
   padding:0;
   margin:0 3%;
-  border:1px solid #d4d4d4;
 }
 /* disable class for minus btn */
 div.disable,
@@ -1592,10 +1609,6 @@ div.disable:active:hover{
   cursor: default;
 }
 
-#product .quantity-btn .qty_box{
-  height: 40px;
-  line-height: 40px;
-}
 #product .quantity-btn .minus,
 #product .quantity-btn .plus{
   color: #777;
@@ -1617,6 +1630,10 @@ div.disable:active:hover{
   font-size: 1.33em;
 }
 /*規格*/
+#product .details-info .spec{
+  display: inline-block;
+  margin-right: 10px;
+}
 @media(max-width: 991px) {
   #product .spec-side .quantity .chosen-container-single .chosen-single{
     padding: 0 20px;
@@ -2042,7 +2059,9 @@ select{
 #pay01 .btns-plus,
 #pay01 .btns-minus,
 #pay02 .btns-plus,
-#pay02 .btns-minus{
+#pay02 .btns-minus,
+#product .btns-plus,
+#product .btns-minus{
   float:left;
   font-family: "Lucida Grande", tahoma, arial, sans-serif;
   color:#777;
@@ -3673,7 +3692,7 @@ select{
   #favorite .shopping-cart-content .info {width: 100%; text-align: center; display: inline-block;}
 
   #favorite .shopping-cart-content .tbody .price{ /* to line up below product name */
-    float: right;  
+    float: right;
     margin-top: -30px;
   }
   #favorite .shopping-cart-content .info {
@@ -4135,8 +4154,8 @@ select{
     background: #fff;
   }
 
-  /** 
-  * chat 訂單 
+  /**
+  * chat 訂單
   */
 
   /* shopping-cart-header */

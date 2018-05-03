@@ -240,6 +240,16 @@
 								<span class="del">399 </span>
 								$<span class="ins">280</span>
 							</div>
+							<div class="shipping-info">
+								<span class="float-left">銷量:99</span>
+								<span class="float-right">付款後將於xx天內出貨</span>
+							</div>
+							<div class="activity-info">
+								<div class="flash">店鋪活動</div>
+								<div>母親節多件好禮商品買一送一</div>
+								<div>限時下殺85折</div>
+								<div>單筆消費滿千免運</div>
+							</div>
 							<!-- 加入我的珍藏 / 敲敲話-->
 							<ul class="group-btn">
 								<li class="btn-chat"><a></a></li>
@@ -252,7 +262,6 @@
 						</div>
 						<div class="side spec-side">
 							<div class="quantity spec">
-								<h3 class="sub-title"><span>顏色</span></h3>
 								<select name="size" class="chosen-select">
 									<option value="false">請選擇顏色</option>
 									<option value="111111" data-spec="cart">行動電源</option>
@@ -266,7 +275,6 @@
 								</select>
 							</div>
 							<div class="quantity spec">
-								<h3 class="sub-title"><span>尺寸</span></h3>
 								<select name="color" class="chosen-select">
 									<option value="">請選擇尺寸</option>
 									<option value="111111" data-spec="cart">行動電源</option>
@@ -280,11 +288,36 @@
 								</select>
 							</div>
 							<div class="quantity-btn">
-								<h3 class="sub-title"><span>數量</span></h3>
 								<div class="qty_box">
-									<div class="minus btn-primary disable">&#45;</div>
+									<div class="btns btns-minus disable">&#45;</div>
 									<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
-									<div class="plus btn-primary">&#43;</div>
+									<div class="btns btns-plus">&#43;</div>
+								</div>
+							</div>
+							<div class="delivery-method-side">
+								<div class="row title" data-target="#delivery-method" data-toggle="collapse">
+									<div class="col-6 col-sm-6">運費</div>
+									<div class="col-6 col-sm-6">$0-$120
+										<i class="fa fa-angle-down" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div id="delivery-method" class="collapse row">
+									<div class="col-6 col-sm-6">
+										<ul>
+											<li>宅配</li>
+											<li>宅配(按重量收費)</li>
+											<li>全家取貨付款</li>
+											<li>7-11取貨付款</li>
+										</ul>
+									</div>
+									<div class="col-6 col-sm-6">
+										<ul>
+											<li>$0</li>
+											<li>$80</li>
+											<li>$120起</li>
+											<li>$30</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
