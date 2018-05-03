@@ -350,6 +350,10 @@ form#search .invalid{
   max-width: 80px;
   max-height: 80px;
 }
+#tpl11 .post .info a{
+  height: 50px;
+  overflow: hidden;
+}
 /* reset */
 #tpl11 .widget-recent-post li{
   padding-bottom: 0;
@@ -1331,7 +1335,6 @@ header .header.layout1 .top-links{
     float: left;
     width: 50%;
   }
-
 }
 /* 商品主圖, limit height 500px */
 #product .spec .chosen-container-single .chosen-single{
@@ -1607,9 +1610,7 @@ div.disable:active:hover{
   border: none;
   cursor: default;
 }
-/* #product .quantity-btn{
-  margin: 0;
-} */
+
 #product .quantity-btn .minus,
 #product .quantity-btn .plus{
   color: #777;
@@ -4072,7 +4073,6 @@ select{
 /* active */
 #chat-list .active .tab{
   background: #fff;
-  border-bottom: 1px solid #fff;
 }
 
 /* override PC table 框架 */
@@ -4100,6 +4100,9 @@ select{
 #chat-list .shopping-cart-header .bubble{
   text-align: right;
   padding-right: 20px;
+}
+#chat-list .shopping-cart-content{
+  border-bottom: 2px solid rgb(241, 242, 246);
 }
 #chat-list .shopping-cart-content .tbody .tr{
   background: rgb(248, 249, 251);
@@ -4132,7 +4135,27 @@ select{
 
 @media (max-width: 1000px) {
   /**
-  *order
+  * chat tab
+  */
+  #chat-list .dot{
+    background: none;
+    border: none;
+  }
+  #chat-list .dot .tab{
+    background: rgb(248, 249, 251);
+    border: 2px solid rgb(241, 241, 241);
+  }
+  #chat-list .dot li:not(:first-child){
+    left: -2px;
+    position: relative;
+  }
+  /* active */
+  #chat-list .dot .active .tab{
+    background: #fff;
+  }
+
+  /**
+  * chat 訂單
   */
 
   /* shopping-cart-header */
@@ -4151,9 +4174,10 @@ select{
   #chat-list .shopping-cart-content .info{
     width: 100%;
   }
-    /* shopping-cart-content 內容 */
+  /* shopping-cart-content 內容 */
   #chat-list .shopping-cart-content{
     border-top: 2px solid rgb(241, 242, 246);
+    border-bottom: none;
   }
   #chat-list .shopping-cart-content .tbody .td{
     padding: 5px;
@@ -4162,9 +4186,16 @@ select{
   #chat-list .shopping-cart-content .tbody .price{
     height: auto;
   }
+  #chat-list .shopping-cart-content .tbody .price span{
+    display: block;
+    max-height: 50px;
+    overflow: hidden;
+    margin-right: 35px;
+    padding-right: 35px;
+  }
   #chat-list .shopping-cart-content .tbody .info .btns{
     display: inline-block;
-    margin: 30px 0;
+    margin: 0 0 15px 0;
   }
   #chat-list .shopping-cart-content .tbody .product-thumb a,
   #chat-list .shopping-cart-content .tbody .product-name span,
@@ -4174,7 +4205,7 @@ select{
   }
 
   /**
-  *product
+  * chat 商品
   */
 
   #chat-list .product .shopping-cart-content .tbody .td{
