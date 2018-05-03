@@ -4140,6 +4140,7 @@ select{
   #chat-list .dot{
     background: none;
     border: none;
+    justify-content: center;
   }
   #chat-list .dot .tab{
     background: rgb(248, 249, 251);
@@ -4210,8 +4211,9 @@ select{
 
   #chat-list .product .shopping-cart-content .tbody .td{
     float: left;
+    padding: 0 5px;
   }
-  #chat-list .product .shopping-cart-content .product-checkbox{
+  #chat-list .product .shopping-cart-content .td.product-checkbox{
     width: 40%;
     max-width: 116px;
     padding: 10px;
