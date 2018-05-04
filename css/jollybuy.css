@@ -1,5 +1,5 @@
 /**
-*全站 reset & override
+*?��? reset & override
 */
 
 a{color: #777;}
@@ -31,7 +31,7 @@ h3.supper-title{
   width: 100%;
   background: #ccbcbc;
 }
-/* logout 分割線 */
+/* logout ?�割�?*/
 .logout::before{
   position: absolute;
   content: '';
@@ -104,7 +104,7 @@ h3.supper-title{
   border-radius: 50%;
   background-color: #333;
 }
-/*按鈕基本樣式*/
+/*?��??�本�??*/
 .btn-basic{
   text-align: center;
   font-size: 1.33em;
@@ -152,7 +152,7 @@ a.btns,
   background: rgb(146, 148, 147);
 }
 
-/* 手機的電視牆顯示前往按鈕 */
+/* ?��??�電視�?顯示?��??��? */
 .main-slideshow .slide-content-1 a.button,
 .main-slideshow .slide-content-5 a.button {
   display: none;
@@ -509,7 +509,7 @@ form#search .invalid{
   background: url(../images/icons/icon-beango.png) no-repeat center center;
   width: 26px;
 }
-/* 敲敲話 btn */
+/* ?�敲�?btn */
 .btn-chat{
   color: #777;
   cursor: pointer;
@@ -545,17 +545,17 @@ form#search .invalid{
 }
 
 @media(max-width: 576px) {
-  /* 商品小圖 */
+  /* ?��?小�? */
   .about-product #sync2{
     /* display: none; */
   }
-  /* 我的珍藏 */
+  /* ?��??��? */
   .about-product .details-info .group-button{
     margin-top: 0;
   }
 }
 
-/* 商品列表樣式選單 */
+/* ?��??�表�???�單 */
 #view-type{
   float: right;
   line-height: 0;
@@ -651,7 +651,7 @@ form#search .invalid{
   }
 }
 
-/* 商品列表 */
+/* ?��??�表 */
 .featured-products { /* supper-title center */
   text-align: center;
   margin-bottom: 20px;
@@ -667,7 +667,7 @@ form#search .invalid{
 .product-item .product-inner .info {
   text-align: center;
 }
-.list .product-item .product-inner .info { /* 清單模式 */
+.list .product-item .product-inner .info { /* 清單模�? */
   text-align: left;
 }
 .product-item .info .price .ins,
@@ -686,11 +686,11 @@ form#search .invalid{
   margin-right: 0;
 }
 @media(max-width: 372px) {
-  .list .product-item .info .product-name{ /* 清單模式下商品敘述一行 */
+  .list .product-item .info .product-name{ /* 清單模�?下�??��?述�?�?*/
     height: 25px;
     margin-bottom: 10px;
   }
-  .product-item .info .price .del{ /* 原價斷行 */
+  .product-item .info .price .del{ /* ?�價?��? */
     display: block;
   }
 }
@@ -735,7 +735,7 @@ form#search .invalid{
   font-size: 40px;
   font-weight: bold;
 }
-/* 列表商品圖縮圖垂直&水平置中呈現 */
+/* ?�表?��??�縮?��???水平置中?�現 */
 .product-grid .thumb,
 .owl-stage .thumb{
   padding-bottom: 100%;
@@ -749,7 +749,7 @@ form#search .invalid{
   top: 0;
   left: 0;
 }
-/* 電視牆, height limit to 600px */
+/* ?��??? height limit to 600px */
 .main-slideshow .owl-item img{
   max-width: 100%;
   max-height: 600px;
@@ -768,7 +768,7 @@ form#search .invalid{
   max-height: 350px;
 }
 
-/* tpl08 block-cat 分類 */
+/* tpl08 block-cat ?��? */
 .block-cat figure img{
   max-width: 60px;
   max-height: 60px;
@@ -780,13 +780,13 @@ form#search .invalid{
   max-height: 185px;
 }
 
-/* 商品分類手機預設隱藏 */
+/* ?��??��??��??�設?��? */
 @media screen and (max-width: 991px) {
   #skyline .hidden-content{
     display: none;
   }
 }
-/* 電視牆 for 04 Curtain, display using Contain on PC, using Cover on Mobile */
+/* ?��???for 04 Curtain, display using Contain on PC, using Cover on Mobile */
 @media screen and (min-width: 576px) {
   #curtain .special-banner .banner-content.show{
     background-size: contain;
@@ -1253,12 +1253,12 @@ header .header.layout1 .top-links{
 
 
 /*
-* 商品頁
+* ?��???
 */
-/*共用*/
+/*?�用*/
 /*checkbox style*/
 #product .main-content{
-  font-family: Verdana,"微軟正黑體",Arial;
+  font-family: Verdana,"微�?�??�?,Arial;
   font-size: 15px;
   line-height: 20px;
   color: #777;
@@ -1309,9 +1309,11 @@ header .header.layout1 .top-links{
 #product .activity-info{
   line-height: 22px;
 }
-#product .activity-info .flash{
+#product .activity-info span{
+  display: inline-block;
   color: #fff;
   background-color: #ff6b6b;
+  padding: 3px 5px;
   margin-bottom: 10px;
 }
 #product .delivery-method-side{
@@ -1334,7 +1336,7 @@ header .header.layout1 .top-links{
     width: 50%;
   }
 }
-/* 商品主圖, limit height 500px */
+/* ?��?主�?, limit height 500px */
 #product .spec .chosen-container-single .chosen-single{
   height: 42px;
   line-height: 42px;
@@ -1463,7 +1465,7 @@ header .header.layout1 .top-links{
   #product #sync1{margin-bottom: 0px;}
   #product #sync2{display: none;}
 }
-/* 敲敲話 我的珍藏 */
+/* ?�敲�??��??��? */
 #product .details-info .group-btn{
   position: absolute;
   right: 0;
@@ -1480,7 +1482,7 @@ header .header.layout1 .top-links{
 #product .btn-wishlist a{background: url('../images/icons/heart.png');}
 #product .btn-wishlist a:hover,
 #product .btn-wishlist .wishlist.active{background: url('../images/icons/heart-hover.png');}
-/* 分享 */
+/* ?�享 */
 #product .cart-content .submit{
   margin-top: 0px;
 }
@@ -1569,7 +1571,7 @@ header .header.layout1 .top-links{
   }
 }
 /*
-* 加/減的數量
+* ??減�??��?
 */
 /* qty */
 #product .quantity-btn .btns-minus,
@@ -1608,7 +1610,9 @@ div.disable:active:hover{
   border: none;
   cursor: default;
 }
-
+/* #product .quantity-btn{
+  margin: 0;
+} */
 #product .quantity-btn .minus,
 #product .quantity-btn .plus{
   color: #777;
@@ -1630,10 +1634,6 @@ div.disable:active:hover{
   font-size: 1.33em;
 }
 /*規格*/
-#product .details-info .spec{
-  display: inline-block;
-  margin-right: 10px;
-}
 @media(max-width: 991px) {
   #product .spec-side .quantity .chosen-container-single .chosen-single{
     padding: 0 20px;
@@ -1642,7 +1642,7 @@ div.disable:active:hover{
     min-width: 130px;
   }
 }
-/*加入購物車按鈕*/
+/*?�入購物車�???/
 .about-product .details-info .add-to-cart{
   font-size: 1.33em;
   background-color: #fff;
@@ -1657,7 +1657,7 @@ div.disable:active:hover{
   }
 }
 /*
-* 加購品
+* ?�購??
 *customize Carousel
 */
 #product #additional-product{
@@ -1766,7 +1766,7 @@ div.disable:active:hover{
     margin: 10px 0;
   }
 }
-/*產品說明*/
+/*?��?說�?*/
 #product .infomation-form{
   background-color: transparent;
 }
@@ -1796,7 +1796,7 @@ div.disable:active:hover{
     padding: 1em 10px;
   }
 }
-/*推薦商品*/
+/*?�薦?��?*/
 #product .related-product .product-item .info .product-name{
   margin-bottom: 10px;
 }
@@ -1843,7 +1843,7 @@ div.disable:active:hover{
 }
 
 /**
-*登入
+*?�入
 */
 
 .login-page .title{
@@ -1881,10 +1881,10 @@ div.disable:active:hover{
 }
 /* social media btn wording */
 .login-page .btn-fb::after{
-  content: 'Facebook 登入';
+  content: 'Facebook ?�入';
 }
 .login-page .btn-beango::after{
-  content: 'Beango 登入';
+  content: 'Beango ?�入';
 }
 
 /* reset */
@@ -1895,7 +1895,7 @@ div.disable:active:hover{
 .login-page .login .invalid{
   border: 1px solid #b83d36;
 }
-/* 登入 reset */
+/* ?�入 reset */
 .login-page .top-links > li{
   margin: 0;
   float: none;
@@ -1905,7 +1905,7 @@ div.disable:active:hover{
 
 
 /**
-* 結帳 首頁
+* 結帳 首�?
 */
 
 #pay01 input,
@@ -2073,7 +2073,7 @@ select{
   padding: 0;
   margin: 0;
 }
-/* 加購商品數量固定 */
+/* ?�購?��??��??��? */
 .fixed-num .btns{
   visibility: hidden;
 }
@@ -2110,7 +2110,7 @@ select{
 #pay02 .shopping-cart-footer{
   position: static;
 }
-/* 特別店鋪 */
+/* ?�別店鋪 */
 .disabled .shopping-cart-header,
 .disabled .shopping-cart-content,
 .disabled .shopping-cart-checkout,
@@ -2220,12 +2220,12 @@ select{
   margin-bottom: 10px;
 }
 
-/* Modal's 發票開立&運送方式，預設隱藏 */
+/* Modal's ?�票?��?&?�送方式�??�設?��? */
 #pay02 #myModal .invoice,
 #pay02 #myModal .logistics{
   display: none;
 }
-/* Modal's 發票開立 */
+/* Modal's ?�票?��? */
 #pay02 #myModal .title{
   margin-bottom: 20px;
 }
@@ -2236,7 +2236,7 @@ select{
   width: 100%;
   padding: 5px;
 }
-/* Modal's 送貨方式 */
+/* Modal's ?�貨?��? */
 #pay02 #myModal .remark{
   margin-bottom: 20px;
 }
@@ -2252,7 +2252,7 @@ select{
 #pay02 #myModal .address-new .col-xs-5{
   padding: 0;
 }
-/* 其它住址 slidedown */
+/* ?��?住�? slidedown */
 #pay02 #myModal .address-list > ul > li{
   display: none;
 }
@@ -2296,7 +2296,7 @@ select{
   -moz-transform: rotate(180deg);
 }
 
-/* Modal's 同訂購人 */
+/* Modal's ?��?購人 */
 #pay02 #myModal .sync,
 #pay02 #myModal .shipping-method{
   display: none;
@@ -2308,7 +2308,7 @@ select{
 #pay02 #myModal .shipping-method{
   position: relative;
 }
-/* Modal's 超商按鈕 */
+/* Modal's 超�??��? */
 #pay02 #myModal #store{
   margin-bottom: 15px;
 }
@@ -2316,12 +2316,12 @@ select{
   display: inline-block;
   margin-left: 0;
 }
-/* Modal's 提醒標語 */
+/* Modal's ?��?標�? */
 #pay02 #myModal .warning{
   text-align: center;
 }
 
-/* 訂購資料 */
+/* 訂購資�? */
 #pay02 .dropdown-list-cont .col-sm-6{
   padding: 0 5%;
 }
@@ -2399,7 +2399,7 @@ select{
   display: inline-block;
 }
 
-/* reset 加購品樣式 */
+/* reset ?�購?�樣�?*/
 .quantity-btn{
   margin: 0 auto;
   float: none;
@@ -2414,7 +2414,7 @@ select{
   line-height: 40px;
 }
 
-/*已下架商品*/
+/*已�??��???/
 .pay-sold-out{
   background-color: #F2F2F2;
 }
@@ -2423,7 +2423,7 @@ select{
 }
 
 /**
-* 結帳 第二步
+* 結帳 第�?�?
 */
 
 #order-list{
@@ -2447,17 +2447,17 @@ select{
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
 }
-/* 預設隱藏購物清單 */
+/* ?�設?��?購物清單 */
 #order-list .detail{
   overflow: hidden;
 }
 
-/* 可賺JUpoint點數顯示 */
+/* ?�賺JUpoint點數顯示 */
 #order-list .jupoint-gain{
   border: 2px solid rgb(241, 242, 246);
   border-top: none;
   padding: 0 20px 20px 0;
-  background-color: #fff;  /*蓋住上一個表格的bottom-border*/
+  background-color: #fff;  /*?��?上�??�表?��?bottom-border*/
   margin-top: -1px;
 }
 @media (max-width: 1000px) {
@@ -2495,7 +2495,7 @@ select{
 
 /*pay Table*/
 
-/* 各店鋪 header */
+/* ?��???header */
 .shopping-cart-header .product-checkbox{
   width: 5%;
 }
@@ -2579,7 +2579,7 @@ select{
   padding: 15px 0;
   text-align: center;
   text-transform: uppercase;
-  font-family: '微軟正黑體', sans-serif;
+  font-family: '微�?�??�?, sans-serif;
   font-weight: 500;
 }
 .table > .title .td:last-child {
@@ -2594,7 +2594,7 @@ select{
   text-align: left;
   padding-left: 20px;
 }
-/* 各店鋪小計 */
+/* ?��??��?�?*/
 .shopping-cart-checkout {
   border: solid 2px rgb(241, 242, 246);
   padding: 20px 5% 10px 5%;
@@ -2893,13 +2893,13 @@ select{
 
 
 /*
-* 結帳 第三步
+* 結帳 第�?�?
 */
 
 #order-success{
   text-align: center;
 }
-/* 訂單成立 */
+/* 訂單?��? */
 /* 訂單框架 */
 #pay03 #order-success{
   margin-top: 50px;
@@ -2982,7 +2982,7 @@ select{
   margin-left: 5px;
   cursor: pointer;
 }
-/* 信用卡支付 */
+/* 信用?�支�?*/
 #pay03 .panel-body .credit-payment h2{
   font-size: 16px;
 }
@@ -2993,7 +2993,7 @@ select{
   margin: 20px 0 10px 0;
   display: inline-block;
 }
-/* 橘子支支付 */
+/* 橘�??�支�?*/
 #pay03 .panel-body .gamapay-payment h2{
   font-size: 16px;
 }
@@ -3016,12 +3016,12 @@ select{
   right: -5px;
   top: -2px;
 }
-/* 取貨付款 */
+/* ?�貨付款 */
 #pay03 .cvs-payment .msg{
   font-size: 20px;
   margin: 10px 0;
 }
-/* 依付款方式顯示，其它隱藏 */
+/* 依�?款方式顯示�??��??��? */
 #pay03 .order-complete,
 #pay03 .atm-payment,
 #pay03 .credit-payment,
@@ -3085,7 +3085,7 @@ select{
 }
 
 /**
-* 會員資訊
+* ?�員資�?
 */
 
 /* reset & customize */
@@ -3411,7 +3411,7 @@ select{
   .shopping-cart-content.table{
     text-align: unset;
   }
-  /* 折價券按鈕縮小 */
+  /* ?�價?��??�縮�?*/
   @media (max-width: 398px) {
     .shopping-cart-header .td.product-coupon span{
       font-size: 16px;
@@ -3605,7 +3605,7 @@ select{
 
 
 /**
-* 我的珍藏
+* ?��??��?
 */
 
 /* search bar */
@@ -3667,7 +3667,7 @@ select{
 #favorite .shopping-cart-content .price{width: 35%;}
 #favorite .shopping-cart-content .info {width: 15%;}
 
-/* 無珍藏商品 */
+/* ?��??��???*/
 .favorite-empty{
   display: inline-grid;
   align-items: center;
@@ -3703,7 +3703,7 @@ select{
 
 
 /**
-* 搜尋
+* ?��?
 */
 
 #search .control{
@@ -3730,7 +3730,7 @@ select{
 
 
 /**
-* 訂單查詢
+* 訂單?�詢
 */
 #order .btn-chat a{
   width: 40px;
@@ -3743,7 +3743,7 @@ select{
 #order .btn-chat a:hover{
   background: url(../images/icons/chart_o.png);
 }
-/*收貨*/
+/*?�貨*/
 #order .cart-content .btn-receiving:hover{
   color: #ffffff;
 }
@@ -3848,7 +3848,7 @@ select{
 
 
 /**
-  退貨
+  ?��?
   */
 
   /*購物清單*/
@@ -3907,7 +3907,7 @@ select{
 #return .shopping-cart-checkout .right{
   width: 80%;
 }
-/*退貨資料*/
+/*?�貨�???/
 #return textarea{
   resize: none;
 }
@@ -3931,7 +3931,7 @@ select{
 #return02 .order-grid{
   border-bottom: solid 1px #ccc;
 }
-/*驗證未過*/
+/*驗�??��?*/
 #return input,
 #return select{
   outline:none;
@@ -3969,7 +3969,7 @@ select{
   }
 }
 
-/*結帳第二 三步 購物車清單*/
+/*結帳第�? 三步 購物車�???/
 @media screen and (max-width: 576px) {
   #pay02 .order-grid .shopping-cart-content .quantity,
   #pay03 .order-grid .shopping-cart-content .quantity{
@@ -3983,7 +3983,7 @@ select{
 
 
 /**
-*敲敲話
+*?�敲�?
 */
 
 #chat-list .ad_size{
@@ -4091,14 +4091,14 @@ select{
 #chat-list .product .shopping-cart-content .price {width: 35%;}
 #chat-list .product .shopping-cart-content .info {width: 15%;}
 
-/* 標題 */
+/* 標�? */
 #chat-list .shopping-cart-content .title .product-thumb{
   border-right: 2px solid rgb(241, 242, 246);
 }
 #chat-list .shopping-cart-content .title .price{
   border-right: none;
 }
-/* 標題內容 */
+/* 標�??�容 */
 #chat-list .shopping-cart-header .bubble{
   text-align: right;
   padding-right: 20px;
@@ -4137,27 +4137,27 @@ select{
 
 @media (max-width: 1000px) {
   /**
-  * chat tab
-  */
-  #chat-list .dot{
-    background: none;
-    border: none;
-  }
-  #chat-list .dot .tab{
-    background: rgb(248, 249, 251);
-    border: 2px solid rgb(241, 241, 241);
-  }
-  #chat-list .dot li:not(:first-child){
-    left: -2px;
-    position: relative;
-  }
-  /* active */
-  #chat-list .dot .active .tab{
-    background: #fff;
-  }
+  *order
 
-  /**
-  * chat 訂單
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   */
 
   /* shopping-cart-header */
@@ -4169,14 +4169,14 @@ select{
     bottom: -6px;
     right: 10px;
   }
-  /* shopping-cart-content 標題 */
+  /* shopping-cart-content 標�? */
   #chat-list .shopping-cart-content .product-thumb,
   #chat-list .shopping-cart-content .product-name,
   #chat-list .shopping-cart-content .price,
   #chat-list .shopping-cart-content .info{
     width: 100%;
   }
-  /* shopping-cart-content 內容 */
+  /* shopping-cart-content ?�容 */
   #chat-list .shopping-cart-content{
     border-top: 2px solid rgb(241, 242, 246);
     border-bottom: none;
@@ -4207,7 +4207,7 @@ select{
   }
 
   /**
-  * chat 商品
+  * chat ?��?
   */
 
   #chat-list .product .shopping-cart-content .tbody .td{
@@ -4247,7 +4247,7 @@ select{
 
 
 
-/* 敲敲話對話框 */
+/* ?�敲話�?話�? */
 .chat-modal .modal-body{
   padding-bottom: 0;
 }
@@ -4363,7 +4363,7 @@ select{
 
 
 /**
-* 會員中心
+* ?�員中�?
 */
 
 .title-cont h4::after{
@@ -4425,19 +4425,19 @@ select{
 }
 /* icons */
 #member-guide .icon-order span{background-image: url(../images/member/index/order.png);}
-#member-guide .icon-order a::after{content: '我的訂單';}
+#member-guide .icon-order a::after{content: '?��?訂單';}
 #member-guide .icon-chat span{background-image: url(../images/member/index/chat.png);}
-#member-guide .icon-chat a::after{content: '敲敲話';}
+#member-guide .icon-chat a::after{content: '?�敲�?;}
 #member-guide .icon-favorite span{background-image: url(../images/member/index/favorite.png);}
-#member-guide .icon-favorite a::after{content: '我的珍藏';}
+#member-guide .icon-favorite a::after{content: '?��??��?';}
 #member-guide .icon-account span{background-image: url(../images/member/index/account.png);}
-#member-guide .icon-account a::after{content: '我的帳號';}
+#member-guide .icon-account a::after{content: '?��?帳�?';}
 #member-guide .icon-level span{background-image: url(../images/member/index/level.png);}
-#member-guide .icon-level a::after{content: '我的等級';}
+#member-guide .icon-level a::after{content: '?��?等�?';}
 #member-guide .icon-coupon span{background-image: url(../images/member/index/coupon.png);}
-#member-guide .icon-coupon a::after{content: '我的優惠券';}
+#member-guide .icon-coupon a::after{content: '?��??��???;}
 #member-guide .icon-point span{background-image: url(../images/member/index/point.png);}
-#member-guide .icon-point a::after{content: '我的點數';}
+#member-guide .icon-point a::after{content: '?��?點數';}
 /* reset BS padding */
 #member-guide .col-xs-12,
 #member-guide .col-xs-4,
