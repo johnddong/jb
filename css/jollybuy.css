@@ -2552,7 +2552,7 @@ select{
 .table .title .td.product-thumb{border-right: none; padding-left: 20px;}
 .table .product-thumb{width: 10%;}
 .table .product-name{width: 30%;}
-.table .product-spec{width: 20%;}
+.table .td.product-spec{width: 20%; text-align: left; padding-left: 20px;}
 .table .quantity-item {width: 20%;}
 .table .price{width: 5%;}
 
@@ -3530,6 +3530,7 @@ select{
     overflow: hidden;
   }
   .order-grid .shopping-cart-content .product-spec{
+    width: 100%;
     clear: both;
     padding: 0 10px;
   }
