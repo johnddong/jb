@@ -2080,6 +2080,9 @@ select{
 .fixed-num input[name=qty]{
   border: none!important;
 }
+#pay01 .quantity-btn input[name=qty]{
+  font-size: 18px;
+}
 #pay02 .fixed-num input[name=qty]{
   font-size: 15px;
   font-weight: normal;
@@ -2560,8 +2563,12 @@ select{
 #pay02 .shopping-cart-content .quantity-item .quantity-btn{
   margin: 0;
 }
+#pay02 .shopping-cart-content .quantity-item .btns-minus{
+  display: none;
+}
 #pay02 .shopping-cart-content .quantity-item input{
   text-align: left;
+  padding-left: 5px;
 }
 
 .table .td {
@@ -3472,7 +3479,7 @@ select{
     padding-bottom: 30px;
   }
   #pay02 .order-grid .shopping-cart-content .each-item{
-    padding-bottom: 0;
+    padding-bottom: 5px;
   }
   @media (max-width: 1000px) {
     .order-grid .shopping-cart-header .tr{
@@ -3489,6 +3496,7 @@ select{
     width: auto;
   }
   .order-grid .shopping-cart-content .product-checkbox{
+    float: left;
     display: inline-block;
     width: 44px;
     height: 100px;
@@ -3501,12 +3509,11 @@ select{
     margin: 0;
   }
   .order-grid .shopping-cart-content .product-thumb{
-    display: inline-block;
+    float: left;
     width: 100px;
-    max-width: 35%;
-    /* width: 35%; */
     vertical-align: top;
     padding-left: 0;
+    margin-right: 10px;
   }
   .order-grid .shopping-cart-content .product-thumb img{
     max-width: 100px;
@@ -3514,15 +3521,16 @@ select{
     display: block;
   }
   .order-grid .shopping-cart-content .product-name{
-    display: inline-block;
-    width: 46.5%;
-  }
-  #pay02 .order-grid .shopping-cart-content .product-name{
-    width: 63%;
+    display: block;
+    padding-right: 0;
   }
   .order-grid .shopping-cart-content .product-title{
     height: 25px;
     overflow: hidden;
+  }
+  .order-grid .shopping-cart-content .product-spec{
+    clear: both;
+    padding: 0 10px;
   }
   #pay02 .order-grid .shopping-cart-content .product-spec{
     padding: 0 10px;
@@ -3556,6 +3564,8 @@ select{
   }
   #pay02 .order-grid .shopping-cart-content .quantity-item{
     padding: 0;
+    height: 20px;
+    line-height: 20px;
   }
   .order-grid .shopping-cart-content .quantity-item::before,
   .order-grid .shopping-cart-content .total::before{
@@ -3579,9 +3589,13 @@ select{
   #pay02 .order-grid .quantity-btn{
     margin: 0;
   }
+  #pay02 .order-grid .quantity-item .quantity-btn .btns-minus{
+    display: block;
+  }
   #pay02 .order-grid .quantity-btn input{
     text-align: left;
-    padding: 7px;
+    height: 25px;
+    padding: 0 7px 7px 7px;
     -webkit-text-fill-color:#777; /* strengthen text color for iPhone */
     opacity: 1; /* strengthen text color for iPhone */
   }
