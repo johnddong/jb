@@ -3498,13 +3498,14 @@ select{
   }
   .order-grid .shopping-cart-content .product-checkbox{
     float: left;
-    display: inline-block;
     width: 44px;
     height: 100px;
     margin-top: 10px;
     padding: 0 10px;
     display: inline-flex;
     align-items: center;
+    position: relative; /* to stay on top of full-width product name */
+    z-index: 111;
   }
   .order-grid .shopping-cart-content .product-checkbox .checkbox-cont{
     margin: 0;
