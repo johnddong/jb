@@ -1594,9 +1594,10 @@ header .header.layout1 .top-links{
   text-align:center;
   border-left:1px solid #aaa;
   border-right:1px solid #aaa;
+  padding: 0;
+  margin: 0 3%;
 }
-.quantity-btn .qty_box input{
-  padding:0;
+#pay02 .quantity-btn .qty_box .qty{
   margin:0 3.8%;
 }
 /* disable class for minus btn */
