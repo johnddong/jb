@@ -1597,7 +1597,7 @@ header .header.layout1 .top-links{
 }
 .quantity-btn .qty_box input{
   padding:0;
-  margin:0 3%;
+  margin:0 3.8%;
 }
 /* disable class for minus btn */
 div.disable,
@@ -3580,7 +3580,8 @@ select{
   }
   #pay02 .order-grid .shopping-cart-content .quantity-item::before{
     left: 10px;
-    color: #777;
+    color: #333;
+    font-weight: normal;
   }
   #pay01 .order-grid .quantity-btn {
     background-color: #fff;
@@ -3597,7 +3598,7 @@ select{
     height: 27px;
     line-height: 27px;
     padding: 0 7px 7px 7px;
-    -webkit-text-fill-color:#777; /* strengthen text color for iPhone */
+    -webkit-text-fill-color: #333; /* strengthen text color for iPhone */
     opacity: 1; /* strengthen text color for iPhone */
   }
   .order-grid .quantity{
