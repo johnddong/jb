@@ -3706,7 +3706,7 @@ select{
   #favorite .shopping-cart-header .product-checkbox{height: 40px; vertical-align: middle;}
   /* table 框架 */
   #favorite .shopping-cart-header .product-name{width: 85%;}
-  #favorite .shopping-cart-content .product-name{width: 47%;}
+  #favorite .shopping-cart-content .product-name{width: auto;}
   #favorite .shopping-cart-content .price{width: 100%; text-align: right;}
   #favorite .shopping-cart-content .info {width: 100%; text-align: center; display: inline-block;}
 
@@ -4233,19 +4233,23 @@ select{
     padding: 0 5px;
   }
   #chat-list .product .shopping-cart-content .td.product-checkbox{
-    width: 40%;
-    max-width: 116px;
+    /* width: 40%; */
+    float: left;
+    width: 116px;
     padding: 10px;
   }
-  #chat-list .product .shopping-cart-content .product-thumb,
-  #chat-list .product .shopping-cart-content .product-name,
+  #chat-list .product .shopping-cart-content .td.product-thumb,
+  #chat-list .product .shopping-cart-content .td.product-name,
   #chat-list .product .shopping-cart-content .tbody .price{
-    width: 60%;
+    overflow: hidden;
+    width: auto;
+    float: none;
   }
   #chat-list .product .shopping-cart-content .td.product-thumb{
+    float: none;
     height: 25px;
     overflow: hidden;
-    padding-top: 5px;
+    margin-top: 5px;
   }
   #chat-list .product .shopping-cart-content .tbody .price{
     height: 50px;
