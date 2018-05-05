@@ -3477,7 +3477,7 @@ select{
   .order-grid .shopping-cart-content .each-item{
     display: block;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
   }
   #pay02 .order-grid .shopping-cart-content .each-item{
     padding-bottom: 5px;
@@ -3492,7 +3492,7 @@ select{
   }
   #pay01 .order-grid .shopping-cart-content .delete-item{
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 5px;
     width: auto;
   }
@@ -3546,6 +3546,9 @@ select{
     text-align: right;
     padding-right: 10px;
   }
+  #pay01 .order-grid .shopping-cart-content .price{
+    text-align: left;
+  }
   .order-grid .shopping-cart-content .total{
     display: inline-block;
     width: 46%;
@@ -3564,6 +3567,9 @@ select{
     width: 63%;
     text-align: center;
     display: inline-block;
+  }
+  #pay01 .order-grid .shopping-cart-content .quantity-item{
+    width: 48%;
   }
   #pay02 .order-grid .shopping-cart-content .quantity-item{
     padding: 0;
