@@ -338,7 +338,7 @@
 						setTimeout(function() {Delivery.init();}, 200);
 					});
 
-
+					// 送貨方式
 					var Delivery = (function() {
 						var $myModal = $('#myModal'),
 								$deliveryType = $myModal.find('select[name="delivery"]'),
@@ -349,7 +349,9 @@
 									if ($(this).hasClass('add-address')) { // 新增運送欄位預設選取
 										$(this).click();
 									}	else if ($(this).parents('.submenu').length > 0) { // 選擇其它地址
-										$(this).parents('.address-list').find('.summary:visible').click();
+										if (!$(this).parents('.address-list').find('.summary').hasClass('active')) { // not expanded
+											$(this).parents('.address-list').find('.summary:visible').click();
+										}
 									}
 								}
 							});
