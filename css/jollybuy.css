@@ -3492,9 +3492,12 @@ select{
   }
   #pay01 .order-grid .shopping-cart-content .delete-item{
     position: absolute;
-    bottom: 10px;
+    bottom: 13px;
     right: 5px;
     width: auto;
+  }
+  #pay01 .order-grid .shopping-cart-content .pay-sold-out .delete-item{ /* 已架架 */
+    bottom: 5px;
   }
   .order-grid .shopping-cart-content .product-checkbox{
     float: left;
