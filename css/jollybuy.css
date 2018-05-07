@@ -1585,20 +1585,21 @@ header .header.layout1 .top-links{
   min-width: 133px;
 }
 .quantity-btn .qty_box{
-  font-weight:bold;
+  font-weight: bold;
 }
 .quantity-btn .qty_box .qty{
-  float:left;
-  width:42%;
-  color:#666666;
+  float: left;
+  width: 42%;
+  color :#666666;
   background-color:#fff;
-  text-align:center;
-  border-left:1px solid #aaa;
-  border-right:1px solid #aaa;
+  text-align: center;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  padding: 0;
+  margin: 0 3%;
 }
-.quantity-btn .qty_box input{
-  padding:0;
-  margin:0 3%;
+#pay02 .quantity-btn .qty_box .qty{
+  margin: 0 3.8%;
 }
 /* disable class for minus btn */
 div.disable,
@@ -2552,7 +2553,7 @@ select{
 .table .title .td.product-thumb{border-right: none; padding-left: 20px;}
 .table .product-thumb{width: 10%;}
 .table .product-name{width: 30%;}
-.table .product-spec{width: 20%;}
+.table .td.product-spec{width: 20%; text-align: left; padding-left: 20px;}
 .table .quantity-item {width: 20%;}
 .table .price{width: 5%;}
 
@@ -3501,7 +3502,7 @@ select{
   .order-grid .shopping-cart-content .each-item{
     display: block;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
   }
   #pay02 .order-grid .shopping-cart-content .each-item{
     padding-bottom: 5px;
@@ -3516,19 +3517,23 @@ select{
   }
   #pay01 .order-grid .shopping-cart-content .delete-item{
     position: absolute;
-    bottom: 0;
+    bottom: 13px;
     right: 5px;
     width: auto;
   }
+  #pay01 .order-grid .shopping-cart-content .pay-sold-out .delete-item{ /* 已下架 */
+    bottom: 5px;
+  }
   .order-grid .shopping-cart-content .product-checkbox{
     float: left;
-    display: inline-block;
     width: 44px;
     height: 100px;
     margin-top: 10px;
     padding: 0 10px;
     display: inline-flex;
     align-items: center;
+    position: relative; /* to stay on top of full-width product name */
+    z-index: 111;
   }
   .order-grid .shopping-cart-content .product-checkbox .checkbox-cont{
     margin: 0;
@@ -3554,6 +3559,7 @@ select{
     overflow: hidden;
   }
   .order-grid .shopping-cart-content .product-spec{
+    width: 100%;
     clear: both;
     padding: 0 10px;
   }
@@ -3567,6 +3573,9 @@ select{
     padding: 0;
     text-align: right;
     padding-right: 10px;
+  }
+  #pay01 .order-grid .shopping-cart-content .price{
+    text-align: left;
   }
   .order-grid .shopping-cart-content .total{
     display: inline-block;
@@ -3587,6 +3596,9 @@ select{
     text-align: center;
     display: inline-block;
   }
+  #pay01 .order-grid .shopping-cart-content .quantity-item{
+    width: 51%;
+  }
   #pay02 .order-grid .shopping-cart-content .quantity-item{
     padding: 0;
     height: 20px;
@@ -3605,7 +3617,8 @@ select{
   }
   #pay02 .order-grid .shopping-cart-content .quantity-item::before{
     left: 10px;
-    color: #777;
+    color: #333;
+    font-weight: normal;
   }
   #pay01 .order-grid .quantity-btn {
     background-color: #fff;
@@ -3619,9 +3632,10 @@ select{
   }
   #pay02 .order-grid .quantity-btn input{
     text-align: left;
-    height: 25px;
+    height: 27px;
+    line-height: 27px;
     padding: 0 7px 7px 7px;
-    -webkit-text-fill-color:#777; /* strengthen text color for iPhone */
+    -webkit-text-fill-color: #333; /* strengthen text color for iPhone */
     opacity: 1; /* strengthen text color for iPhone */
   }
   .order-grid .quantity{
@@ -3726,7 +3740,7 @@ select{
   #favorite .shopping-cart-header .product-checkbox{height: 40px; vertical-align: middle;}
   /* table 框架 */
   #favorite .shopping-cart-header .product-name{width: 85%;}
-  #favorite .shopping-cart-content .product-name{width: 47%;}
+  #favorite .shopping-cart-content .product-name{width: auto;}
   #favorite .shopping-cart-content .price{width: 100%; text-align: right;}
   #favorite .shopping-cart-content .info {width: 100%; text-align: center; display: inline-block;}
 
@@ -4253,19 +4267,23 @@ select{
     padding: 0 5px;
   }
   #chat-list .product .shopping-cart-content .td.product-checkbox{
-    width: 40%;
-    max-width: 116px;
+    /* width: 40%; */
+    float: left;
+    width: 116px;
     padding: 10px;
   }
-  #chat-list .product .shopping-cart-content .product-thumb,
-  #chat-list .product .shopping-cart-content .product-name,
+  #chat-list .product .shopping-cart-content .td.product-thumb,
+  #chat-list .product .shopping-cart-content .td.product-name,
   #chat-list .product .shopping-cart-content .tbody .price{
-    width: 60%;
+    overflow: hidden;
+    width: auto;
+    float: none;
   }
   #chat-list .product .shopping-cart-content .td.product-thumb{
+    float: none;
     height: 25px;
     overflow: hidden;
-    padding-top: 5px;
+    margin-top: 5px;
   }
   #chat-list .product .shopping-cart-content .tbody .price{
     height: 50px;

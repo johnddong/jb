@@ -14,7 +14,7 @@
 	<link href="css/chosen.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/theme-1.css" rel="stylesheet">
-	<link href="css/jollybuy.css" rel="stylesheet">
+	<link href="css/jollybuy.css?v=1.2" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 </head>
 <body id="pay02">
@@ -103,7 +103,7 @@
 												<i class="fa fa-angle-down" aria-hidden="true"></i>
 											</div> -->
 										</div>
-										<div class="td quantity-item" data-title="數量">
+										<div class="td quantity-item" data-title="數量：">
 											<div class="quantity-btn">
 												<div class="qty_box fixed-num">
 													<div class="btns btns-minus disable">&#45;</div>
@@ -141,7 +141,7 @@
 												<i class="fa fa-angle-down" aria-hidden="true"></i>
 											</div> -->
 										</div>
-										<div class="td quantity-item" data-title="數量">
+										<div class="td quantity-item" data-title="數量：">
 											<div class="quantity-btn">
 												<div class="qty_box fixed-num">
 													<div class="btns btns-minus disable">&#45;</div>
@@ -162,7 +162,7 @@
 										</div>
 										<div class="td product-spec" data-title="規格">
 										</div>
-										<div class="td quantity-item" data-title="數量">
+										<div class="td quantity-item" data-title="數量：">
 											<div class="quantity-btn">
 												<div class="qty_box fixed-num">
 													<div class="btns btns-minus disable">&#45;</div>
@@ -333,32 +333,71 @@
 						$myModal.modal('show');
 					});
 
-					// 新增運送地址 func
-					var addAddress = function(_this) {
-						$(_this).find('[type="radio"]').on('click', function() {
-							if ($(this).hasClass('add-address')) {
-								$(this).parents('li:visible').find('.sync, .shipping-method').show();
-							} else {
-								$(this).parents('li:visible').find('.sync, .shipping-method').hide();
-							}
-						});
-					};
-
-					// 運送方式
-					$myModal.find('select[name="delivery"]').on('change', function() {
-						var selectOption = $(this).find(':selected').data('option');
-						$myModal.find('.address-list > ul > li').each(function() {
-							if ($(this).data('type') == selectOption) {
-								$(this).show();
-								// 選擇其它地址下拉選單
-								$(this).toggleExp();
-								// 新增地址
-								addAddress(this);
-							} else {
-								$(this).hide();
-							}
-						});
+					// modal shown callback
+					$myModal.on('show.bs.modal', function (e) {
+						setTimeout(function() {Delivery.init();}, 200);
 					});
+
+					// 送貨方式
+					var Delivery = (function() {
+						var $myModal = $('#myModal'),
+								$deliveryType = $myModal.find('select[name="delivery"]'),
+						
+						showNewAddressInfo = function(_this) { // 新增運送地址 
+							$(_this).find('[type="radio"]').each(function() {
+								if ($(this).prop('checked')) {
+									if ($(this).hasClass('add-address')) { // 新增運送欄位預設選取
+										$(this).click();
+									}	else if ($(this).parents('.submenu').length > 0) { // 選擇其它地址
+										if (!$(this).parents('.address-list').find('.summary').hasClass('active')) { // not expanded
+											$(this).parents('.address-list').find('.summary:visible').click();
+										}
+									}
+								}
+							});
+
+							$(_this).find('[type="radio"]').on('click', function() {
+								if ($(this).hasClass('add-address')) {
+									$(this).parents('li:visible').find('.sync, .shipping-method').show();
+								} else {
+									$(this).parents('li:visible').find('.sync, .shipping-method').hide();
+								}
+							});
+						},
+
+						showDeliveryInfo = function(_this) { //送貨資料
+							var selectOption = $(_this).find(':selected').data('option');
+							$myModal.find('.address-list > ul > li').each(function() {
+								if ($(this).data('type') == selectOption) {
+									$(this).show();
+									$(this).toggleExp();        // 選擇其它地址下拉選單
+									showNewAddressInfo(this); 	// 顯示新增地址欄位
+								} else {
+									$(this).hide();
+								}
+							});
+						},
+
+						init = function() {
+							// 預設展開送貨資料
+							$deliveryType.each(function() {
+								if ($(this).find(':selected')) {
+									showDeliveryInfo(this);
+								}
+							});
+							// 顯示對應送貨資料
+							$deliveryType.on('change', function() {
+								showDeliveryInfo(this);
+							});
+						};
+
+						init();
+
+						return {
+							init: init
+						};
+
+					})();
 
   			 // 收件人地址
 				 $('.shipping-method .twzipcode').twzipcode();
@@ -462,7 +501,7 @@
 												<select name="delivery">
 													<option value="" selected>請選擇送貨方式</option>
 													<option data-option="logistics" value="0">新竹物流 $100</option>
-													<option data-option="cvs" value="1">7-11超商取貨 $100</option>
+													<option data-option="cvs" value="1" selected>7-11超商取貨 $100</option>
 												</select>
 												<i class="fa fa-angle-down" aria-hidden="true"></i>
 											</div>
@@ -589,7 +628,7 @@
 													<div class="row address-default">
 														<div class="col-xs-2 col-sm-1">
 															<label class="radio-cont">
-																<input type="radio" name="cvs-receiver" checked>
+																<input type="radio" name="cvs-receiver">
 																<span class="checkmark"></span>
 															</label>
 														</div>
@@ -604,7 +643,7 @@
 																<div class="row">
 																	<div class="col-xs-2 col-sm-1">
 																		<label class="radio-cont">
-																			<input type="radio" name="cvs-receiver">
+																			<input type="radio" name="cvs-receiver" checked>
 																			<span class="checkmark"></span>
 																		</label>
 																	</div>
