@@ -3283,6 +3283,8 @@ markup:
 		  <input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="">
 	1.2.2 按鈕文字修改
 		  <button type="submit" class="btns btn-submit">儲存新增</button>
+ 1.3快速登入:
+	<h5>快速登入</h5>
 2. 更新:
 	member.js
 	jollybuy.css

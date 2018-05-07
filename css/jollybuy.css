@@ -3105,6 +3105,9 @@ select{
 #member .cart-content .orther-info .title{
   font-size: 16px;
 }
+#member .cart-content .orther-info .supper-title::after{
+  width: 100%;
+}
 #member .breadcrumbs{
   margin-bottom: 10px;
 }
@@ -3223,9 +3226,6 @@ select{
   display: block;
   margin: 15px 0;
 }
-#member .note .supper-title{
-  display: block;
-}
 #member .active{
   background-color: transparent;
 }
@@ -3304,9 +3304,6 @@ select{
     width: 100%;
     display: block;
   }
-  /* #member .address-box{
-    padding: 10px;
-  } */
   #member .mini-address-box .btn-box a{
     display: inline-block;
     margin: 0 20%;
