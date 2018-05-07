@@ -3124,7 +3124,8 @@ markup:
 *TKT: #73818
 */
 1.markup:
-	1.1 所有商品區塊:
+	1.1 頁面: index.html 、 autumn.html、tpl13.html
+	商品區塊移除sale標記:
 		<div class="product-item layout1">
 			<div class="product-inner">
 				<div class="thumb">
@@ -3146,56 +3147,142 @@ markup:
 		1.2.3 <h3 class="sub-title"><span>數量</span></h3>
 		
 		1.2.4
-		<div class="price">
-			<span class="del">399 </span>
-			$<span class="ins">280</span>
-		</div>
-	/*----------------------新增↓-------------------------*/
-		<div class="shipping-info">
-			<span class="float-left">銷量:99</span>
-			<span class="float-right">付款後將於xx天內出貨</span>
-		</div>
-		<div class="activity-info">
-			<span>店鋪活動</span>
-			<div>母親節多件好禮商品買一送一</div>
-			<div>限時下殺85折</div>
-			<div>單筆消費滿千免運</div>
-		</div>
-	/*----------------------新增↑-------------------------*/
+			<div class="price">
+				<span class="del">399 </span>
+				$<span class="ins">280</span>
+			</div>
+			/*----------------------新增↓-------------------------*/
+			<div class="shipping-info">
+				<span class="float-left">銷量:99</span>
+				<span class="float-right">付款後將於xx天內出貨</span>
+			</div>
+			<div class="activity-info">
+				<span>店鋪活動</span>
+				<div>母親節多件好禮商品買一送一</div>
+				<div>限時下殺85折</div>
+				<div>單筆消費滿千免運</div>
+			</div>
+			/*----------------------新增↑-------------------------*/
 		1.3.2 
-		<div class="quantity-btn">
+			<div class="quantity-btn">
+				<div class="qty_box">
+					<div class="btns btns-minus disable">&#45;</div>
+					<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
+					<div class="btns btns-plus">&#43;</div>
+				</div>
+			</div>
+			/*----------------------新增↓-------------------------*/
+			<div class="delivery-method-side">
+				<div class="row header" data-target="#delivery-method" data-toggle="collapse">
+					<div class="col-6 col-sm-6">運費</div>
+					<div class="col-6 col-sm-6">$0-$120
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div id="delivery-method" class="collapse bodyer row">
+					<div class="col-6 col-sm-6">
+						<ul>
+							<li>宅配</li>
+							<li>宅配(按重量收費)</li>
+							<li>全家取貨付款</li>
+							<li>7-11取貨付款</li>
+						</ul>
+					</div>
+					<div class="col-6 col-sm-6">
+						<ul>
+							<li>$0</li>
+							<li>$80</li>
+							<li>$120起</li>
+							<li>$30</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			/*----------------------新增↑-------------------------*/
+		1.3.3 修改數量按鈕:
 			<div class="qty_box">
 				<div class="btns btns-minus disable">&#45;</div>
 				<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
 				<div class="btns btns-plus">&#43;</div>
 			</div>
-		</div>
-		/*----------------------新增↓-------------------------*/
-		<div class="delivery-method-side">
-			<div class="row header" data-target="#delivery-method" data-toggle="collapse">
-				<div class="col-6 col-sm-6">運費</div>
-				<div class="col-6 col-sm-6">$0-$120
-					<i class="fa fa-angle-down" aria-hidden="true"></i>
-				</div>
-			</div>
-			<div id="delivery-method" class="collapse bodyer row">
-				<div class="col-6 col-sm-6">
-					<ul>
-						<li>宅配</li>
-						<li>宅配(按重量收費)</li>
-						<li>全家取貨付款</li>
-						<li>7-11取貨付款</li>
-					</ul>
-				</div>
-				<div class="col-6 col-sm-6">
-					<ul>
-						<li>$0</li>
-						<li>$80</li>
-						<li>$120起</li>
-						<li>$30</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		/*----------------------新增↑-------------------------*/
 2.更新: jollybuy.css
+
+/**
+*Date: 2018/05/4
+*內容：合併商城會員中心-會員資訊-反饋調整
+*TKT: #73603
+*/
+1.頁面: member.html
+markup:
+ 1.1
+		<form name="member" action="" method="post">
+			<!-- 會員姓名/Email/訂閱 -->
+			<div class="customer-info">
+				<h3 class="title supper-title">會員資訊</h3>
+				<h5 class="text-label">姓名<span></span></h5>
+				<input type="text" name="buyer_name" class="input-info" placeholder="請填寫真實中文姓名">
+				<h5 class="text-label">暱稱<span></span></h5>
+				<input type="text" name="buyer_nickname" class="input-info" placeholder="請填寫暱稱">
+				<h5 class="text-label">E-mail<span></span></h5>
+				<input type="text" name="buyer_email" class="input-info" placeholder="請填寫有效E-mail">
+				<h5 class="text-label">手機號碼<span></span></h5>
+				<input type="text" name="buyer_mobile" class="input-info" placeholder="請填寫手機號碼">
+				<h5 class="text-label">生日<span></span></h5>
+				<div id="datepicker" class="input-group date">
+					<input id="buyer_birthday" type="text" name="buyer_birthday" class="form-control buyer-birthday" value="" placeholder="請選擇生日" data-date-end-date="0d"/>
+					<div class="input-group-addon">
+						<i class="fa fa-calendar" aria-hidden="true"></i>
+					</div>
+				</div>
+				<h5 class="text-label">聯絡地址<span></span></h5>
+				<!-- 會員地址 -->
+				<div class="twzipcode">
+					<div class="address">
+						<div class="shipping">
+							<select name="buyer-country" class="buyer-country">
+								<option value="" data-type="tw">台灣</option>
+								<option value="" data-type="other">其他</option>
+							</select>
+							<i class="fa fa-angle-down" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="address">
+						<div data-role="county" data-name="buyer_county" data-style="buyer-county"></div>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</div>
+					<div class="address">
+						<div data-role="district" data-name="buyer_area" data-style="buyer-area"></div>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</div>
+					<div data-role="zipcode" data-name="buyer_zipcode" data-style="buyer-zipcode"></div>
+					<input class="input-info buyer-address" name="buyer_address" type="text" value="" placeholder="聯絡地址" />
+				</div>
+				<!--/ 會員地址 -->
+			</div>
+			<!--/ 會員姓名/Email/訂閱 -->
+			<!-- 取消/送出按鈕 -->
+			<div class="note">
+				<!-- 已與Facebook連結 -->
+				<div class="fb-connected">
+					<h3 class="title">快速登入</h3>
+					<img src="images/temp/avatar.gif" alt="">
+					<span>
+						<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> 已與Facebook連結
+					</span>
+				</div>
+				<!--/ 已與Facebook連結 -->
+					<!-- <button type="button" class="btns">取消</button> -->
+					<div class="btn-wrapper">
+						<button type="submit" class="btns">儲存變更</button>
+					</div>
+			</div>
+			<!--/ 取消/送出按鈕 -->
+		</form>
+ 1.2 送貨門市:
+	1.2.1 收件人姓名預設文字修改
+		  <input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="">
+	1.2.2 按鈕文字修改
+		  <button type="submit" class="btns btn-submit">儲存新增</button>
+2. 更新:
+	member.js
+	jollybuy.css
