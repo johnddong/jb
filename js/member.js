@@ -80,7 +80,7 @@ var Member = (function() {
               '</label>'+
             '</div>'+
             ReceiverAddressElement+
-            '<div class="note">'+
+            '<div class="btn-wrapper">'+
               '<button type="submit" class="btns btn-submit">儲存新增</button>'+
             '</div>'+
           '</form>'
