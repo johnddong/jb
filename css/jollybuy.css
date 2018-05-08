@@ -3164,7 +3164,8 @@ select{
   overflow: hidden;
   height: 0;
 }
-#member .modify-address-box .receiver-address{
+#member .modify-address-box .receiver-address,
+#member .address-box .receiver-address{
   margin-bottom: 0;
 }
 #member .address-box{
@@ -3267,7 +3268,12 @@ select{
 #member .store-address .btn-store{
   display: inline-block;
 }
-
+#member .orther-info .shipping-method .receiver-name{
+  margin-bottom: 20px;
+}
+#member .address-box .btn-wrapper{
+  margin: 20px 0;
+}
 @media(max-width: 576px) {
   #member .fb-connected{
     width: 225px;
@@ -3277,7 +3283,7 @@ select{
   #member .btn-wrapper{
     text-align: center; /*按鈕置中*/
   }
-  #member .cart-content .note{
+  #member form[name="member"] .note{
     border-bottom: solid 2px #f8f9fb;
   }
   #member .item .radio-cont{

@@ -3208,7 +3208,7 @@ markup:
 2.更新: jollybuy.css
 
 /**
-*Date: 2018/05/4
+*Date: 2018/05/7
 *內容：合併商城會員中心-會員資訊-反饋調整
 *TKT: #73603
 */
@@ -3285,6 +3285,48 @@ markup:
 		  <button type="submit" class="btns btn-submit">儲存新增</button>
  1.3快速登入:
 	<h5>快速登入</h5>
+2. 更新:
+	member.js
+	jollybuy.css
+/**
+*Date: 2018/05/8
+*內容：合併商城會員中心-會員資訊-反饋調整
+*TKT: #73603
+*/
+1.頁面: member.html
+markup:
+	1.1 .modify-store-box內:
+		<div class="btn-wrapper">
+			<span class="btns btn-store">搜尋門市</span>
+			<button type="submit" class="btns btn-submit">儲存變更</button>
+		</div>
+	1.2 7-11編輯資料區塊:
+		<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="Jack">
+		<h5 class="text-label">收件人連絡電話<span></span></h5>
+		<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" value="0987654321">
+		<!-- 門市名稱&地址 -->
+		<div class="store">
+			<div class="row">
+				<div class="col-xs-7 col-sm-">
+					<input type="text" name="store_name" class="input-info" placeholder="門市名稱" value="內湖門市">
+					<input type="text" name="store_address" class="input-info" placeholder="門市地址" value="台北市內湖區瑞光街196號">
+	1.3 全家編輯資料區塊:
+		<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="Frank">
+		<h5 class="text-label">收件人連絡電話<span></span></h5>
+		<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" value="0987654321">
+		<!-- 門市名稱&地址 -->
+		<div class="store">
+			<div class="row">
+				<div class="col-xs-7 col-sm-">
+					<input type="text" name="store_name" class="input-info" placeholder="門市名稱" readonly="" value="文德門市">
+					<input type="text" name="store_address" class="input-info" placeholder="門市地址" readonly="" value="台北市內湖區文德路90巷49號">
+	1.4
+	<div class="btn-wrapper">
+		<a id='btn-seven' class="btns btn-add-store" href="javascript:void(0);">新增7-11送貨門市</a><span class="address-error"></span>
+	</div>
+	<div class="wrapper">
+		<a id='btn-family' class="btns btn-add-store" href="javascript:void(0);">新增全家送貨門市</a><span class="address-error"></span>
+	</div>
 2. 更新:
 	member.js
 	jollybuy.css

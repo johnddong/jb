@@ -341,7 +341,9 @@
 								<!-- 送貨門市 -->
 								<h3 class="title supper-title">送貨門市</h3>
 								<div id='seven_store' class="receiving-store shipping-method note">
-									<a id='btn-seven' class="btns btn-add-store" href="javascript:void(0);">新增7-11送貨門市</a><span class="address-error"></span>
+									<div class="btn-wrapper">
+										<a id='btn-seven' class="btns btn-add-store" href="javascript:void(0);">新增7-11送貨門市</a><span class="address-error"></span>
+									</div>
 									<div class="item">
 										<div class="mini-address-box table">
 											<div class="tr">
@@ -376,22 +378,24 @@
 												<i class="fa fa-times btn-delete" aria-hidden="true" title="移除" style="float: right;"></i>
 												<form class="seven-store-info" name="store-info01" action="" method="post">
 													<h5 class="text-label">收件人姓名<span></span></h5>
-													<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="">
+													<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="Jack">
 													<h5 class="text-label">收件人連絡電話<span></span></h5>
-													<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" value="">
+													<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" value="0987654321">
 													<!-- 門市名稱&地址 -->
 													<div class="store">
 														<div class="row">
 															<div class="col-xs-7 col-sm-">
-																<input type="text" name="store_name" class="input-info" placeholder="門市名稱" readonly="">
-																<input type="text" name="store_address" class="input-info" placeholder="門市地址" readonly="">
+																<input type="text" name="store_name" class="input-info" placeholder="門市名稱" readonly="" value="內湖門市">
+																<input type="text" name="store_address" class="input-info" placeholder="門市地址" readonly="" value="台北市內湖區瑞光街196號">
 															</div>
 															<div class="col-xs-5">
 																<span class="icon-store icon-seven"></span>
 															</div>
 														</div>
-														<span class="btns btn-store">搜尋門市</span>
-														<button type="submit" class="btns btn-submit">儲存新增</button>
+														<div class="btn-wrapper">
+															<span class="btns btn-store">搜尋門市</span>
+															<button type="submit" class="btns btn-submit">儲存變更</button>
+														</div>
 													</div>
 												</form>
 											</div>
@@ -400,7 +404,9 @@
 									</div>
 								</div>
 								<div id='family_store' class="receiving-store shipping-method note">
-									<a id='btn-family' class="btns btn-add-store" href="javascript:void(0);">新增全家送貨門市</a><span class="address-error"></span>
+									<div class="btn-wrapper">
+										<a id='btn-family' class="btns btn-add-store" href="javascript:void(0);">新增全家送貨門市</a><span class="address-error"></span>
+									</div>
 									<div class="item">
 										<div class="mini-address-box table">
 											<div class="tr">
@@ -435,22 +441,24 @@
 												<i class="fa fa-times btn-delete" aria-hidden="true" title="移除" style="float: right;"></i>
 												<form class="family-store-info" name="store-info02" action="" method="post">
 													<h5 class="text-label">收件人姓名<span></span></h5>
-													<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="">
+													<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" value="Frank">
 													<h5 class="text-label">收件人連絡電話<span></span></h5>
-													<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" value="">
+													<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" value="0987654321">
 													<!-- 門市名稱&地址 -->
 													<div class="store">
 														<div class="row">
 															<div class="col-xs-7 col-sm-">
-																<input type="text" name="store_name" class="input-info" placeholder="門市名稱" readonly="">
-																<input type="text" name="store_address" class="input-info" placeholder="門市地址" readonly="">
+																<input type="text" name="store_name" class="input-info" placeholder="門市名稱" readonly="" value="文德門市">
+																<input type="text" name="store_address" class="input-info" placeholder="門市地址" readonly="" value="台北市內湖區文德路90巷49號">
 															</div>
 															<div class="col-xs-5">
 																<span class="icon-store icon-fm"></span>
 															</div>
 														</div>
-														<span class="btns btn-store">搜尋門市</span>
-														<button type="submit" class="btns btn-submit">儲存新增</button>
+														<div class="btn-wrapper">
+															<span class="btns btn-store">搜尋門市</span>
+															<button type="submit" class="btns btn-submit">儲存變更</button>
+														</div>
 													</div>
 												</form>
 											</div>
@@ -494,8 +502,10 @@
 												'<span class="icon-store"></span>'+
 													'</div>'+
 												'</div>'+
-												'<span class="btns btn-store">搜尋門市</span>'+
-												'<button type="submit" class="btns btn-submit">儲存新增</button>'+
+												'<div class="btn-wrapper">'+
+													'<span class="btns btn-store">搜尋門市</span>'+
+													'<button type="submit" class="btns btn-submit">儲存新增</button>'+
+												'</div>'+
 											'</div>'+
 										'</form>'+
 									'</div>'+

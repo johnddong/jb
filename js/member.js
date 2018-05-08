@@ -28,7 +28,6 @@ var Member = (function() {
   ReceiverAddressElement =
     '<h5 class="text-label">收件人姓名<span></span></h5>'+
     '<input type="text" name="receiver_name[]" class="input-info receiver-name" placeholder="請填寫真實姓名" />'+
-    '<span class="buyer-note">請填入收件人真實姓名，以確保順利收件</span>'+
     '<h5 class="text-label">收件人連絡電話<span></span></h5>'+
     '<input type="text" name="receiver_mobile[]" class="input-info receiver-mobile" placeholder="請填寫連絡電話" />'+
     '<h5 class="text-label">收件人地址<span></span></h5>'+
@@ -82,7 +81,7 @@ var Member = (function() {
             '</div>'+
             ReceiverAddressElement+
             '<div class="note">'+
-              '<button type="submit" class="btns btn-submit">新增</button>'+
+              '<button type="submit" class="btns btn-submit">儲存新增</button>'+
             '</div>'+
           '</form>'
         )
@@ -210,7 +209,7 @@ var Member = (function() {
           .append(
             '<form  name="shipping-info'+formCount+'" action="" method="post">'+
               ReceiverAddressElement+
-              '<div class="note">'+
+              '<div class="btn-wrapper">'+
                 '<button type="submit" class="btn-modify btns">儲存變更</button>'+
               '</div>'+
             '</form>'
