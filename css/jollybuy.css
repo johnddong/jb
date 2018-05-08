@@ -219,6 +219,9 @@ form#search .invalid{
 .invalid{
   border: 1px solid #b83d36!important;
 }
+.text-invalid{
+  color: #b83d36;
+}
 /* breadcrumbs */
 .breadcrumbs {
   margin: 35px 0 0 0;
