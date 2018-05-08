@@ -3330,3 +3330,63 @@ markup:
 2. 更新:
 	member.js
 	jollybuy.css
+	
+/**
+*Date: 2018/05/8
+*內容：合併商城會員中心首頁天和地
+*TKT: #74429
+*/
+1.頁面:member-center.html
+  markup1 header:
+  	<!-- header -->
+	<header id="type05">
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2 logo">
+						<a href="https://www.jollybuy.com/Beango/Category/Digital">
+							<img src="images/header/type05/logo.png" alt="有閑">
+						</a>
+					</div>
+					<div id="menu-list" class="col-sm-10">
+						<ul>
+							<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+							<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+							<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+							<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--/ header -->
+	
+	markup2 footer:
+	<!--Footer -->
+	<footer class="leisure">
+		<div class="fixed-footer">
+			<ul>
+				<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+				<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+				<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+				<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+				<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+			</ul>
+		</div>
+		<div class="footer">
+			<ul>
+				<li><a href="http://dev-www.jollybuy.com/act/mb-about.html">關於有閑</a></li>
+				<li><a href="http://dev-www.jollybuy.com/act/mb-privacy.html">隱私權政策</a></li>
+				<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
+				<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
+			</ul>
+			<div class="copy-right">© 2018 JollyBuy Limited</div>
+		</div>
+	</footer>
+	<!--/Footer -->
+2. 新增圖片資料夾路徑:
+	\jollybuy\images\footer
+	\jollybuy\images\header\type05
+3.更新:
+	jollybuy.css
