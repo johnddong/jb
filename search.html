@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>jollybuy - 搜尋結果</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/flaticon.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/jquery.scrollbar.min.css" rel="stylesheet">
+	<link href="css/chosen.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme-1.css" rel="stylesheet">
+	<link href="css/jollybuy.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body id="search">
+	<!-- header -->
+	<header id="type01">
+		<div class="header layout1 layout10">
+			<div class="main-header box-has-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2 left-content">
+							<div class="logo">
+								<a href="index.html"><img src="images/temp/logo-150x60.png" alt=""></a>
+							</div>
+						</div>
+						<div class="col-xs-10 right-content pull-right">
+							<ul class="top-links">
+								<li class="menu-item-has-children account">
+									<a href="javascript:void(0);" class="member-icon"></a>
+									<!-- 登入前 -->
+									<ul class="submenu">
+										<li><a href="login.html">登入</a></li>
+										<li><a href="register">註冊</a></li>
+										<li><a href="member.html">會員資訊</a></li>
+										<li><a href="search.html">訂單查詢</a></li>
+										<li><a href="jpoint.html">JUpoint</a></li>
+									</ul>
+									<!--/ 登入前 -->
+									<!-- 登入後 -->
+									<!-- <ul class="submenu">
+										<li><a href="member.html">會員資訊</a></li>
+										<li><a href="search.html">訂單查詢</a></li>
+										<li><a href="jpoint.html">JUpoint</a></li>
+										<li class="logout"><a href="javascript:void(0);">登出</a></li>
+									</ul> -->
+									<!--/ 登入後 -->
+								</li>
+								<li>
+									<a href="favorite.html" class="wishlist-icon"></a>
+								</li>
+								<li class="box-minicart">
+									<div class="minicart">
+										<div class="cart-block">
+											<a href="pay.html" class="cart-icon"></a>
+											<span class="count">0</span>
+										</div>
+										<div class="cart-inner cart-empty">
+											<p class="content">購物車目前沒有商品喔</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav">
+				<div class="header-nav-inner">
+					<div class="box-header-nav container-wapper">
+						<div class="container main-menu-wapper">
+							<div class="row">
+								<div class="col-lg-8 col-md-7 col-sm-2 col-xs-2">
+									<a class="menu-bar mobile-navigation" href="#">
+										<span class="icon">
+											<span></span>
+											<span></span>
+											<span></span>
+										</span>
+									</a>
+									<ul id="menu-main-menu" class="main-menu clone-main-menu">
+										<li class="menu-item menu-item-has-children">
+											<a href="#" class="kt-item-title" title="首頁模板">首頁模板</a>
+											<ul class="submenu">
+												<li><a href="index.html">模板01 - Basic</a></li>
+												<li><a href="autumn.html">模板02 - Autumn</a></li>
+												<li><a href="skyline.html">模板03 - Skyline</a></li>
+												<li><a href="curtain.html">模板04 - Curtain</a></li>
+												<li><a href="section.html">模板05 - Section</a></li>
+												<li><a href="electronics.html">模板 6 - Electronics</a></li>
+												<li><a href="feature.html">模板07 - Feature</a></li>
+												<li><a href="tpl08.html">模板08 - tpl08</a></li>
+												<li><a href="tpl09.html">模板09 - tpl09</a></li>
+												<li><a href="tpl10.html">模板10 - tpl10</a></li>
+												<li><a href="tpl11.html">模板11 - tpl11</a></li>
+												<li><a href="tpl12.html">模板12 - tpl12</a></li>
+												<li><a href="tpl13.html">模板13 - tpl13</a></li>
+												<li><a href="tpl14.html">模板14 - tpl14</a></li>
+												<li><a href="tpl15.html">模板15 - tpl15</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-has-children">
+											<a href="#" class="kt-item-title" title="主頁面">主頁面</a>
+											<ul  class="submenu mega-menu">
+												<li><a href="category.html">館別頁</a></li>
+												<li><a href="product.html">商品頁</a></li>
+												<li><a href="search.html">搜尋頁</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-has-children">
+											<a href="#" class="kt-item-title" title="結帳流程">結帳流程</a>
+											<ul  class="submenu">
+												<li><a href="pay.html">STEP 1 : 我的購物車</a></li>
+												<li><a href="pay02.html">STEP 2 : 填寫資訊</a></li>
+												<li><a href="pay03.html">STEP 3 : 確認訂單</a></li>
+											</ul>
+										</li>
+										<li class="menu-item menu-item-has-children">
+											<a href="#" class="kt-item-title" title="會員專區">會員專區</a>
+											<ul  class="submenu">
+												<li><a href="login.html">登入</a>
+												<li><a href="register.html">註冊</a></li>
+												<li><a href="chat.html">敲敲話</a></li>
+												<li><a href="member.html">會員資訊</a></li>
+												<li><a href="order.html">訂單查詢</a></li>
+												<li><a href="jpoint.html">JUpoint</a></li>
+												<li><a href="favorite.html">我的珍藏</a></li>
+											</ul>
+										</li>
+										<li class="menu-item">
+											<a href="jb" class="kt-item-title" title="官網">官網</a>
+										</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-md-5 col-sm-10 col-xs-10 right-content">
+									<div class="search-form box-has-content">
+										<div class="search-block">
+											<div class="search-inner">
+												<form action="/Goods/Search?k=" method="get" name="search">
+													<input type="text" class="search-info" name="k" placeholder="請輸入商品名稱" autocomplete="off">
+													<button type="submit" class="search-button"><i class="flaticon-search3"></i></button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<script>
+	$(function() {
+	 // search bar validate
+	 $('[name="search"]').validate({
+		 event: 'keyup',
+		 ignore: '',
+		 errorClass: 'invalid',
+		 rules: {
+			 k: {
+				 required: true
+			 }
+		 },
+		 errorPlacement: function(error, el) {
+			 $(el).attr('placeholder', error.text());
+		 },
+		 success: function(label, element) {
+		 },
+		 submitHandler: function(form) {
+			 form.submit();
+		 }
+	 });
+	});
+	</script>
+	<!--/ header -->
+	<div class="main-content searchresult-page inner-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 right-content">
+					<div class="auto-clear">
+						<!-- search keyword -->
+						<div class="note-search">
+							<h3 class="title">共有 <span class="number">100</span>  筆 【搜尋條件】關鍵字：“<i>筆電</i> ”</h3>
+							<span class="search-content"> <span class="text">相似搜尋: </span><a href="#">桌上型電腦</a>, <a href="#">手機</a>, <a href="#">螢幕</a></span>
+						</div>
+						<!--/ search keyword -->
+						<!-- search control -->
+						<div class="control">
+							<span class="title">顯示 1–9 / 100 筆</span>
+							<a href="javascript:void(0);" class="filter-more">篩選 <span><i class="fa fa-angle-down fa-lg ease" aria-hidden="true"></i></span></a>
+							<div class="filters-content">
+								<div class="filter-inner">
+									<div class="row">
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+											<h3 class="title">館別</h3>
+											<ul class="list-filter">
+												<li><a href="#">New Arrivals</a></li>
+												<li><a href="#">3C</a></li>
+											</ul>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+											<h3 class="title">熱門標籤</h3>
+											<ul class="list-tags">
+												<li><a href="#">特價商品</a></li>
+												<li><a href="#">配件</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+						$(function() {
+							var $control = $('.control');
+							$control.find('.filter-more').on('click', function() {
+								var $this = $(this)
+									, active = 'active';
+								$this.toggleClass(active);
+								if ($this.hasClass(active)) {
+									$control.find('.filter-inner').css({opacity: 1, visibility: 'visible'});
+								} else {
+									$control.find('.filter-inner').css({opacity: 0, visibility: 'hidden'});
+								}
+							});
+						});
+						</script>
+						<!--/ search control -->
+						<!-- search result w/ grid display of products -->
+						<div class="row product-grid">
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product1.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-flash">
+												<span class="flash sale">sale</span>
+											</div>
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product2.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<a href="#" class="product-name">經典藍色 T-Shirt</a>
+										<a href="#" class="add-to-cart">+ 放入購物車</a>
+										<div class="price">
+											<span class="del">$100.00 </span>
+											<span class="ins">$75</span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product3.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product4.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product5.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-flash">
+												<span class="flash new">new</span>
+											</div>
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product6.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product7.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product8.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+								<div class="product-item layout1">
+									<div class="product-inner">
+										<div class="thumb">
+											<div class="group-button">
+												<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											</div>
+											<a href="#"><img src="images/product9.jpg" alt=""></a>
+										</div>
+										<div class="info">
+											<a href="#" class="product-name">經典藍色 T-Shirt</a>
+											<a href="#" class="add-to-cart">+ 放入購物車</a>
+											<div class="price">
+												<span class="del">$100.00 </span>
+												<span class="ins">$75</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ search result w/ grid display of products -->
+						<script type="text/javascript">
+						$(function() {
+							$('.wishlist-button').on('click', function() {
+								Cart.wish(this);
+							});
+						});
+						</script>
+						<!-- pagination -->
+						<div class="pagination">
+							<ul class="list-page">
+								<li><a href="#" class="page-number prev">Previous</a></li>
+								<li><a href="#" class="page-number">1</a></li>
+								<li><a href="#" class="page-number">2</a></li>
+								<li><a href="#" class="page-number current">3</a></li>
+								<li><a href="#" class="page-number">4</a></li>
+								<li><a href="#" class="page-number">5</a></li>
+								<li><a href="#" class="page-number">6</a></li>
+								<li><a href="#" class="page-number next">Next</a></li>
+							</ul>
+						</div>
+						<!--/ pagination -->
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 left-sidebar">
+					<div class="widget widget_product_categories">
+						<h3 class="widgettitle">館別</h3>
+						<ul class="product-categories">
+							<li><a href="#">New Arrivals</a></li>
+							<li><a href="#">3C</a></li>
+						</ul>
+					</div>
+					<div class="widget widget_tags">
+						<h3 class="widgettitle">熱門標籤</h3>
+						<ul class="list-tags">
+							<li><a href="#">特價商品</a></li>
+							<li><a href="#">配件</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Footer -->
+	<footer>
+		<div class="footer layout1 ">
+			<div class="container">
+				<div class="main-footer">
+					<div class="widget custom-menu">
+						<ul>
+							<li><a href="#">商店介紹</a></li>
+							<li><a href="#">退換貨政策</a></li>
+							<li><a href="#">條款及細節</a></li>
+							<li><a href="#">聯絡我們</a></li>
+						</ul>
+						<div class="coppy-right">
+							<h3 class="content">© 2017 Powered By Jollywiz</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/Footer -->
+	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/magnific-popup.min.js"></script>
+	<script type="text/javascript" src="js/mobilemenu.min.js"></script>
+	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/masonry.min.js"></script>
+	<script type="text/javascript" src="js/chosen.min.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
+	<script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+</body>
+</html>
