@@ -3344,7 +3344,7 @@ markup:
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2 logo">
-						<a href="https://www.jollybuy.com/Beango/Category/Digital">
+						<a href="https://www.jollybuy.com/beango/IndexNew">
 							<img src="images/header/type05/logo.png" alt="有閑">
 						</a>
 					</div>
@@ -3390,3 +3390,89 @@ markup:
 	\jollybuy\images\header\type05
 3.更新:
 	jollybuy.css
+
+/**
+*Date: 2018/05/8
+*內容：合併敲敲話、我的珍藏、我的帳號天和地 & 會員中心修改
+*TKT: #74475、#74476、#74476
+*/
+1.頁面:
+	1.1 member.html、chat.html、favorite.html
+		1.1.1 markup1: 
+			<!-- header -->
+			<header id="type05">
+				<div class="header">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-2 logo">
+								<a href="https://www.jollybuy.com/beango/IndexNew">
+									<img src="images/header/type05/logo.png" alt="有閑">
+								</a>
+							</div>
+							<div id="menu-list" class="col-sm-10">
+								<ul>
+									<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+									<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+									<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+									<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!--/ header -->
+			移除:
+				<script>
+				$(function() {
+				 // search bar validate
+				 $('[name="search"]').validate({
+					 event: 'keyup',
+					 ignore: '',
+					 errorClass: 'invalid',
+					 rules: {
+						 k: {
+							 required: true
+						 }
+					 },
+					 errorPlacement: function(error, el) {
+						 $(el).attr('placeholder', error.text());
+					 },
+					 success: function(label, element) {
+					 },
+					 submitHandler: function(form) {
+						 form.submit();
+					 }
+				 });
+				});
+				</script>
+		1.1.2 markup2:
+			<!--Footer -->
+			<footer class="leisure merge">
+				<div class="fixed-footer">
+					<ul>
+						<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+						<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+						<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+						<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+						<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+					</ul>
+				</div>
+				<div class="footer">
+					<ul>
+						<li><a href="http://dev-www.jollybuy.com/act/mb-about.html">關於有閑</a></li>
+						<li><a href="http://dev-www.jollybuy.com/act/mb-privacy.html">隱私權政策</a></li>
+						<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
+						<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
+					</ul>
+					<div class="copy-right">© 2018 JollyBuy Limited</div>
+				</div>
+			</footer>
+			<!--/Footer -->
+	1.2 member-center.html:
+		markup: <footer class="leisure merge">
+		
+2.更新:
+	jollybuy.css
+	frontend.js
+		

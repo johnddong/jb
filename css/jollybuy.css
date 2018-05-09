@@ -27,6 +27,9 @@ h3.supper-title{
   padding-bottom: 10px;
   font-weight: bold;
 }
+.back-to-top{
+  bottom: 80px;
+}
 .supper-title::after{
   width: 100%;
   background: #ccbcbc;
@@ -1254,13 +1257,11 @@ header .header.layout1 .top-links{
 }
 /*合併footer*/
 /*mobile fixed footer*/
-footer.leisure{
+footer.leisure .fixed-footer{
   width: 100%;
   position: fixed;
   bottom: 0;
   z-index: 990;
-}
-footer.leisure .fixed-footer{
   overflow: hidden;
   background-color: #fff;
   border-top: 2px solid #d4d7d9;
@@ -4639,9 +4640,6 @@ select{
   padding: 0;
 }
 @media(max-width: 767px) {
-  #member-center .main-content{
-    margin-bottom: 70px;
-  }
   #member-guide .member-header{
     display: block;
   }
