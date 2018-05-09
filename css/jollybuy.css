@@ -4216,6 +4216,7 @@ select{
 }
 
 /* search bar */
+.searchbar,
 #chat-list .chat-search{
   max-width: 490px;
   width: 100%;
@@ -4224,6 +4225,7 @@ select{
   overflow: hidden;
   margin-bottom: 20px;
 }
+.searchbar .search-info,
 #chat-list .chat-search .search-info{
   outline: 0;
   width: 84.49%;
@@ -4232,6 +4234,7 @@ select{
   border: none!important;
   padding-left: 2%;
 }
+.searchbar .search-button,
 #chat-list .chat-search .search-button{
   color: rgb(101, 101, 101);
   float: right;
@@ -4242,6 +4245,7 @@ select{
   background: transparent;
   padding: 0;
 }
+
 #chat-list .ad{
   margin-top: 20px;
 }
