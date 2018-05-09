@@ -260,7 +260,7 @@
 		</div>
 		<div class="container">
 			<!--Blog -->
-			<div class="from-blogs">
+			<!-- <div class="from-blogs">
 				<div class="owl-carousel products-list nav-style4" data-autoplay="false" data-nav="false" data-loop="true" data-slidespeed="800" data-margin="30" data-autoheight="true" data-responsive = '{"0":{"items":1}, "640":{"items":2}, "768":{"items":2}, "1024":{"items":3}, "1200":{"items":3}}'>
 					<div class="post-item layout1">
 						<div class="post-format">
@@ -293,7 +293,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!--/Blog -->
 			<!-- products -->
 			<div class="row">
@@ -397,6 +397,13 @@
 								});
 								/* infinite scroll */
 								infiniteScroll.init({_this: 'product-grid'});
+								/* sliders */
+								loadScript('js/owl.carousel.min.js', function() {
+									var sliders = ['main-slideshow', 'logo-brand', 'from-blogs'];
+									for (var i = 0; i < sliders.length; i++) {
+										kt_innit_carousel({_this: sliders[i]});
+									}
+								});
 							});
 						</script>
 					</div>
@@ -419,7 +426,7 @@
 							<li><a href="#">聯絡我們</a></li>
 						</ul>
 						<div class="coppy-right">
-							<h3 class="content">© 2017 Powered By JollyBuy</h3>
+							<h3 class="content">© 2017 Powered By Jollywiz</h3>
 						</div>
 					</div>
 				</div>
@@ -428,9 +435,10 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/load_script.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<!-- <script type="text/javascript" src="js/owl.carousel.min.js"></script> -->
 	<script type="text/javascript" src="js/owl.thumbs.min.js"></script>
 	<script type="text/javascript" src="js/magnific-popup.min.js"></script>
 	<script type="text/javascript" src="js/mobilemenu.min.js"></script>
