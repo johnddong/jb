@@ -2388,8 +2388,11 @@ select{
 #pay02 #myModal .address-list > ul > li{
   display: none;
 }
-#pay02 #myModal .address-list .icon-arrow{
+#pay02 #myModal .address-list .summary{
   text-align: right;
+}
+#pay02 #myModal .address-list .summary .text-invalid{
+  float: left;
 }
 #pay02 #myModal .address-list .detail{
   height: 0;

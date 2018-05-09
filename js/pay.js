@@ -98,7 +98,7 @@ var Pay = (function() {
       if($(this).hasClass('pay-sold-out')) {
     	  subTotal += 0; //已下架商品金額不列入小計
       } else {
-        if ($(this).find('[type="checkbox"]').is(':checked')) {
+        if ($(this).find('[type="checkbox"]').prop('checked')) {
           qty = parseInt($(this).find('input[name="qty"]').val(), 10);
           price = trim($(this).find('.price span').text());
           subTotal += qty * price;
@@ -161,7 +161,6 @@ var Pay = (function() {
         , count = 0;
       $cartContent.find('.'+c.eachItem).each(function() {
         if ($(this).data(attr.relatedId) == orderId && $(this).data(attr.relatedId) != undefined) { // 刪除加購商品
-          console.log(orderId);
           additional += '<li>'+ $(this).find('.'+c.productTitle).text() +'</li>';
           count++;
         }
@@ -213,7 +212,7 @@ var Pay = (function() {
     $('.product-coupon .btns-primary').on('click', function() {
       $myModal.modal('show').find('.btn-primary').on('click', function () {
         // $('#coupon').find('input').each(function() {
-        //   if ($(this).is(':checked')) {
+        //   if ($(this).prop('checked')) {
         //   }
         // });
         $myModal.modal('hide');
@@ -241,8 +240,19 @@ $(function() {
   (function() {
     var  
     $cartContent = $('.cart-content'),
+    c = {
+      headerCheckbox: 'shopping-cart-header [type="checkbox"]',
+      bodyerCheckbox: 'shopping-cart-content [type="checkbox"]',
+      footerCheckbox: 'shopping-cart-footer .pull-left [type="checkbox"]',
+      generalStore: 'general-store',
+      specialStore: 'special-store'
+    },
+    $headerCheckbox = $cartContent.find('.'+c.headerCheckbox),
+    $bodyerCheckbox = $cartContent.find('.'+c.bodyerCheckbox),
+    $footerCheckbox = $cartContent.find('.'+c.footerCheckbox),
   
     init = function() {
+      // checkbox checked onload
       $cartContent.find('.checkbox-cont').each(function() {
         if ($(this).find('[type="checkbox"]').data('status') == 'checked') {
           $(this).click().checked();
@@ -250,25 +260,24 @@ $(function() {
         }
       });
 
-      //select all, excluding speical store
-      //checkAll();
-
       // store header
-      $cartContent.find('.shopping-cart-header [type="checkbox"]').on('click', function() {
+      $headerCheckbox.on('click', function() {
         headerCheckbox(this);
       });
 
       // store header's children
-      $cartContent.find('.shopping-cart-content [type="checkbox"]').on('click', function() {
+      $bodyerCheckbox.on('click', function() {
         childrenCheckbox(this);
       });
+
+      //select all, excluding special store
+      //checkAll();
     },
     
     headerCheckbox = function(_this) {
       var storeType = $(_this).parents('li').eq(0).data('type')
-      , specialStore = 'special-store'
-      , payResult = {};
-      if ($(_this).is(':checked')) {
+        , payResult = {};
+      if ($(_this).prop('checked')) {
         allHeaderCheck(storeType);
         childrenCheck(_this);
       } else {
@@ -277,36 +286,28 @@ $(function() {
       }
       // cal grand total
       payResult = Pay.subTotal($(_this));
-      // uncheck 選擇全部
-      if (payResult.grandTotal == 0) {
-        //$('.shopping-cart-footer').find('.pull-left [type="checkbox"]').click();
-      }
     },
 
     childrenCheckbox = function(_this) {
       var storeType = $(_this).parents('li').eq(0).data('type')
-      , specialStore = 'special-store'
-      , payResult = {};
-      if ($(_this).is(':checked')) {
+        , payResult = {};
+      if ($(_this).prop('checked')) {
         allHeaderCheck(storeType);
         childCheck(_this);
-
-      
       } else {
-        // console.log($cartContent.find('.shopping-cart-footer [type="checkbox"]').is(':checked'));
-        // if ($cartContent.find('.shopping-cart-footer [type="checkbox"]').is(':checked')) {
-        //   $cartContent.find('.shopping-cart-footer [type="checkbox"]').click();
-        //   return;
-        // }
-        
         allHeaderUncheck(storeType);
         childCheck(_this);
+        headerUncheck(_this);
       }
       // cal grand total
       payResult = Pay.subTotal($(_this));
-      // uncheck 選擇全部
-      if (payResult.grandTotal == 0) {
-        //$('.shopping-cart-footer').find('.pull-left [type="checkbox"]').click();
+    },
+
+    headerUncheck = function(_this) {
+      // uncheck header 
+      var isHeaderChecked = $(_this).parents('li').eq(0).find('.'+c.headerCheckbox);
+      if (isHeaderChecked.prop('checked')) { // header checked 
+        isHeaderChecked.prop('checked' , false).next().remove();
       }
     },
 
@@ -314,39 +315,27 @@ $(function() {
       var isChildChecked = 0
         , childrenLen = $(_this).parents('.tbody').eq(0).find('[type="checkbox"]:not(":disabled")').length;
       $(_this).parents('.tbody').eq(0).find('[type="checkbox"]').each(function() {
-        if ($(this).is(':checked')) {
+        if ($(this).prop('checked')) {
           isChildChecked++;
         }
       });
-      if (isChildChecked == 0) { // children clear
-        if ($(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').is(':checked')) { // header checked 
-          $(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').click();
+      if (isChildChecked == childrenLen) { // children all checked
+        if (!$(_this).parents('li').eq(0).find('.'+c.headerCheckbox).prop('checked')) { // header not check
+          $(_this).parents('li').eq(0).find('.'+c.headerCheckbox).click();
         }
-      } else if (isChildChecked == childrenLen) { // children all checked
-        if (!$(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').is(':checked')) { // header not check
-          $(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').click();
-        }
-      } else {
-        // if($(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').is(':checked')) {
-        //   $(_this).parents('li').eq(0).find('.shopping-cart-header [type="checkbox"]').click();
-        // }
-        //console.log(_this);
-        //console.log(' child < len');
       }
     },
   
     allHeaderCheck = function(storeType) {
-      var disabled = 'disabled'
-        , specialStore = 'special-store';
-
-      $cartContent.find('.shopping-cart-header [type="checkbox"]').each(function() {
+      var disabled = 'disabled';
+      $headerCheckbox.each(function() {
         if ($(this).parents('li').eq(0).data('type') == storeType) { 
           if ($(this).parents('li').eq(0).hasClass(disabled)) {
             $(this).parents('li').eq(0).removeClass(disabled); // rm disabled bg
           }
         } else {
           $(this).parents('li').eq(0).addClass(disabled); // add disabled bg
-          if ($(this).is(':checked')) { // uncheck store's header
+          if ($(this).prop('checked')) { // uncheck store's header
             $(this).click();
           } else { // uncheck store's children
             childrenUnCheck(this);
@@ -356,21 +345,18 @@ $(function() {
     },
   
     allHeaderUncheck = function(storeType) {
-      var specialStore = 'special-store'
-        , generalStore = 'general-store'
-        , disabled = 'disabled';
-
+      var disabled = 'disabled';
       switch (storeType) {
         case 'general-store':
           var generalStoreChecked = 0;
           $cartContent.find('li [type="checkbox"]').each(function() {
-            if ($(this).parents('li').eq(0).data('type') == generalStore && $(this).is(':checked')) {
+            if ($(this).parents('li').eq(0).data('type') == c.generalStore && $(this).prop('checked')) {
               generalStoreChecked++;
             }
           });
-          if (generalStoreChecked == 0) { // none speical-store selected
+          if (generalStoreChecked == 0) { // none general-store selected
             $cartContent.find('li [type="checkbox"]').each(function() {
-              if ($(this).parents('li').eq(0).data('type') == specialStore) {
+              if ($(this).parents('li').eq(0).data('type') == c.specialStore) {
                 if ($(this).parents('li').eq(0).hasClass(disabled)) {
                   $(this).parents('li').eq(0).removeClass(disabled);
                 }
@@ -381,13 +367,13 @@ $(function() {
         case 'special-store':
           var specialStoreChecked = 0;
           $cartContent.find('li [type="checkbox"]').each(function() {
-            if ($(this).parents('li').eq(0).data('type') == specialStore && $(this).is(':checked')) {
+            if ($(this).parents('li').eq(0).data('type') == c.specialStore && $(this).prop('checked')) {
               specialStoreChecked++;
             }
           });
           if (specialStoreChecked == 0) { // none speical-store selected
             $cartContent.find('li [type="checkbox"]').each(function() {
-              if ($(this).parents('li').eq(0).data('type') == generalStore) {
+              if ($(this).parents('li').eq(0).data('type') == c.generalStore) {
                 if ($(this).parents('li').eq(0).hasClass(disabled)) {
                   $(this).parents('li').eq(0).removeClass(disabled);
                 }
@@ -399,51 +385,35 @@ $(function() {
     },
     
     childrenCheck = function(_this) {
-      $(_this).parents('li').find('.shopping-cart-content [type="checkbox"]').each(function() {
-        if (!$(this).is(':checked')) $(this).click();
+      $(_this).parents('li').find('.'+c.bodyerCheckbox).each(function() {
+        if (!$(this).prop('checked')) $(this).click();
       });
     },
   
     childrenUnCheck = function(_this) {
-      $(_this).parents('li').find('.shopping-cart-content [type="checkbox"]').each(function() {
-        if ($(this).is(':checked')) {
+      $(_this).parents('li').find('.'+c.bodyerCheckbox).each(function() {
+        if ($(this).prop('checked')) {
           $(this).click();
         }
       });
     },
   
     checkAll = function() {
-      var specialStore = 'special-store';
-      $cartContent.find('.shopping-cart-footer .pull-left [type="checkbox"]').on('click', function() {
-        if ($(this).is(':checked')) {
-          //allHeaderCheck('general-store');
-          //childrenCheck('.shopping-cart-header');
+      $footerCheckbox.on('click', function() {
+        if ($(this).prop('checked')) {
+          $headerCheckbox.each(function() {
+            if ($(this).parents('li').eq(0).data('type') != c.specialStore && !$(this).prop('checked')) { // 選擇全部 not checked
+              $(this).click();
+            }
+          });
         } else {
-          //childrenUnCheck('.shopping-cart-header');
+          $headerCheckbox.each(function() {
+            if ($(this).parents('li').eq(0).data('type') != c.specialStore && $(this).prop('checked')) { // 選擇全部 checked
+              $(this).click();
+            }
+          });
         }
-        // if ($(this).is(':checked')) {
-        //   $cartContent.find('.shopping-cart-header [type="checkbox"]').each(function() {
-        //     if ($(this).parents('li').eq(0).data('type') != specialStore && !$(this).is(':checked')) { // 選擇全部 not checked
-        //       $(this).click();
-        //     }
-        //   });
-        // } else {
-        //   $cartContent.find('.shopping-cart-header [type="checkbox"]').each(function() {
-        //     if ($(this).parents('li').eq(0).data('type') != specialStore && $(this).is(':checked')) { // 選擇全部 checked
-        //       $(this).click();
-        //     }
-        //   });
-        // }
       });
-
-      // $cartContent.find('.shopping-cart-content [type="checkbox"]').on('click', function() {
-      //   if (!$(this).is(':checked')) { // uncheck
-      //     if ($cartContent.find('.shopping-cart-footer .pull-left [type="checkbox"]').is(':checked')) {
-      //       console.log('clicked');
-      //       $cartContent.find('.shopping-cart-footer .pull-left [type="checkbox"]').click();
-      //     }
-      //   }
-      // });
     };
   
     init();
