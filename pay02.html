@@ -342,8 +342,8 @@
 					var Delivery = (function() {
 						var $myModal = $('#myModal'),
 								$deliveryType = $myModal.find('select[name="delivery"]'),
-						
-						showNewAddressInfo = function(_this) { // 新增運送地址 
+
+						showNewAddressInfo = function(_this) { // 新增運送地址
 							$(_this).find('[type="radio"]').each(function() {
 								if ($(this).prop('checked')) {
 									if ($(this).hasClass('add-address')) { // 新增運送欄位預設選取
@@ -769,5 +769,6 @@
 	<script type="text/javascript" src="js/twzipcode/jquery.twzipcode.min.js"></script>
   <script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/pay.js"></script>
+	<script type="text/javascript" src="js/jollybuy.js"></script>
 </body>
 </html>

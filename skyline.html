@@ -376,9 +376,6 @@
 								<div class="product-item layout1">
 									<div class="product-inner">
 										<div class="thumb">
-											<div class="group-flash">
-												<span class="flash sale">sale</span>
-											</div>
 											<div class="group-button">
 												<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
 												<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
@@ -551,6 +548,7 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/load_script.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 	<script type="text/javascript" src="js/magnific-popup.min.js"></script>
@@ -565,16 +563,17 @@
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/cart.js"></script>
 	<script type="text/javascript" src="js/tab.js"></script>
+	<script type="text/javascript" src="js/jollybuy.js"></script>
 	<script>
-	(function(d, s, f, h) {
-    var f = f + (new Date().getTime())
-      , s = d.createElement(s);
-    s.src = f;
-    d.getElementsByTagName(h)[0].appendChild(s);
-  })(document, 'script', 'js/owl.carousel.min.js?v=', 'head');
-	setTimeout(function() {
-		kt_innit_carousel();
-	}, 100);
+	$(function() {
+		loadScript('js/owl.carousel.min.js', function() {
+			// sliders
+			var sliders = ['main-slideshow', 'special-products'];
+			for (var i = 0; i < sliders.length; i++) {
+				kt_innit_carousel({_this: sliders[i]});
+			}
+		});
+	});
 	</script>
 </body>
 </html>

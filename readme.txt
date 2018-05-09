@@ -3475,4 +3475,5 @@ markup:
 2.更新:
 	jollybuy.css
 	frontend.js
-		
+3.新增:
+	全站引入→jollybuy.js
