@@ -1,20 +1,19 @@
+$.fn.checked = function() {
+  var
+  $this = $(this),
+  input = $this.find('input'),
+  fa = '<i class="fa fa-check" aria-hidden="true"></i>';
+  if (input.prop('checked')) {
+    $this.append(fa);
+  }else{
+    $this.find($('.fa')).remove();
+  }
+};
+
+$('.checkbox-cont').on('click',function(){
+  $(this).checked();
+});
 $(function(){
-  $.fn.checked = function() {
-    var
-    $this = $(this),
-    input = $this.find('input'),
-    fa = '<i class="fa fa-check" aria-hidden="true"></i>';
-    if (input.prop('checked')) {
-      $this.append(fa);
-    }else{
-      $this.find($('.fa')).remove();
-    }
-  };
-
-  $('.checkbox-cont').on('click',function(){
-    $(this).checked();
-  });
-
   /*手機版捲軸到底移除fixed*/
   var
   $mainContent = $('.main-content'),
