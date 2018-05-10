@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>jollybuy - 結帳第二步 填寫資訊</title>
+	<title>jollybuy - 我的訂單</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
 	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
@@ -100,6 +100,8 @@
 												<li><a href="tpl11.html">模板11 - tpl11</a></li>
 												<li><a href="tpl12.html">模板12 - tpl12</a></li>
 												<li><a href="tpl13.html">模板13 - tpl13</a></li>
+												<li><a href="tpl14.html">模板14 - tpl14</a></li>
+												<li><a href="tpl15.html">模板15 - tpl15</a></li>
 											</ul>
 										</li>
 										<li class="menu-item menu-item-has-children">
@@ -181,13 +183,13 @@
 	<div class="main-content checkout-page">
 		<div class="container">
 			<div class="breadcrumbs">
-				<a href="#">Home</a> / <span class="current">訂單查詢</span>
+				<a href="#">Home</a> / <span class="current">我的訂單</span>
 			</div>
 			<div class="cart-content">
 				<!-- 訂單列表 -->
 				<div id="order-list">
-					<div class="clearfix">
-						<div class="pull-left"><h3 class="title supper-title">訂單查詢</h3></div>
+					<div class="title-cont">
+						<h3 class="title supper-title">我的訂單</h3><span></span>
 					</div>
 					<!-- 無任何訂單 -->
 					<!--
@@ -197,6 +199,217 @@
 					</div>
 					-->
 					<!--/ 無任何訂單-->
+					<!-- 搜尋 bar -->
+					<div class="searchbar">
+						<form action="" method="get" name="order-search">
+							<input type="text" class="search-info" name="k" placeholder="搜尋訂單編號或店舖名稱" autocomplete="off">
+							<button type="submit" class="search-button"><i class="flaticon-search3"></i></button>
+						</form>
+					</div>
+					<!--/ 搜尋bar -->
+
+
+					<!-- 我的訂單 -->
+					<div id="chat-list">
+						<div class="ad_size">
+							<ul class="dot">
+								<li>
+									<div class="tab bubble">
+										<div class="title">全部</div>
+									</div>
+								</li>
+								<li>
+									<div class="tab bubble">
+										<div class="title">待付款</div>
+									</div>
+								</li>
+							</ul>
+							<div class="line"></div>
+							<ul class="ad">
+								<li class="order"><!-- 全部 -->
+									<ul class="store">
+										<li data-type="special-store"> <!-- 特別店鋪 -->
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td product-thumb">訂單編號</div>
+													<div class="td product-name">提問時間</div>
+													<div class="td price">訂單提問</div>
+													<div class="td info"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td product-thumb" data-title="訂單編號"><a href="#">JBO180326123333333</a></div>
+														<div class="td product-name" data-title="時間"><span>2018/03/30 18:55</span></div>
+														<div class="td price" data-title="提問"><span>訂單提問訂單提問訂單提問訂單提問訂單提問</span></div>
+														<div class="td info" data-title="">
+															<span class="btns btn-chat">提問</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-type="general-store"> <!-- 一般店鋪 -->
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>吉室商行</span>
+													</div>
+													<div class="td product-checkbox bubble">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td product-thumb">訂單編號</div>
+													<div class="td product-name">提問時間</div>
+													<div class="td price">訂單提問</div>
+													<div class="td info"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td product-thumb" data-title="訂單編號"><a href="#">JBO180326123333333</a></div>
+														<div class="td product-name" data-title="時間"><span>2018/03/30 18:55</span></div>
+														<div class="td price" data-title="提問"><span>訂單提問訂單提問訂單提問訂單提問訂單提問</span></div>
+														<div class="td info" data-title="">
+															<span class="btns btn-chat">提問</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li>	<!--/ 全部 -->
+
+								<li class="product"><!-- 商品敲敲話 -->
+									<ul class="store">
+										<li data-type="special-store"> <!-- 特別店鋪 -->
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td product-checkbox">商品名稱</div>
+													<div class="td product-thumb"></div>
+													<div class="td product-name">提問時間</div>
+													<div class="td price">商品提問</div>
+													<div class="td info"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td product-checkbox" data-title="商品名稱"><a href=""><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+														<div class="td product-thumb" data-title="">商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品</div>
+														<div class="td product-name" data-title="提問時間">2018/03/30 18:55</div>
+														<div class="td price" data-title="訂單提問">訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問</div>
+														<div class="td info" data-title="">
+															<span class="btns btn-chat">提問</span>
+														</div>
+													</div>
+													<div class="tr each-item" data-orderid="">
+														<div class="td product-checkbox" data-title="商品名稱"><a href=""><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+														<div class="td product-thumb" data-title="">商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品</div>
+														<div class="td product-name" data-title="提問時間">2018/03/30 18:55</div>
+														<div class="td price" data-title="訂單提問">訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問</div>
+														<div class="td info" data-title="">
+															<span class="btns btn-chat">提問</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li data-type="general-store"> <!-- 一般店鋪 -->
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>吉室商行</span>
+													</div>
+													<div class="td product-checkbox bubble">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td product-checkbox">商品名稱</div>
+													<div class="td product-thumb"></div>
+													<div class="td product-name">提問時間</div>
+													<div class="td price">商品提問</div>
+													<div class="td info"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td product-checkbox" data-title="商品名稱"><a href=""><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+														<div class="td product-thumb" data-title="">商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品</div>
+														<div class="td product-name" data-title="提問時間">2018/03/30 18:55</div>
+														<div class="td price" data-title="訂單提問">訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問</div>
+														<div class="td info" data-title="">
+															<span class="btns btn-chat">提問</span>
+														</div>
+													</div>
+													<div class="tr each-item" data-orderid="">
+														<div class="td product-checkbox" data-title="商品名稱"><a href=""><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+														<div class="td product-thumb" data-title="">商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品</div>
+														<div class="td product-name" data-title="提問時間">2018/03/30 18:55</div>
+														<div class="td price" data-title="訂單提問">訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問訂單提問</div>
+														<div class="td info" data-title="">
+															<span class="btns btn-chat">提問</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</li><!--/ 商品敲敲話 -->
+							</ul>
+						</div>
+					</div>
+					<!--/ 我的訂單 -->
+					<script>
+						$(function() {
+							$('#order').Rotate({click_speed: 1, target: 0});
+						});
+					</script>
+
+
+
+					
 					<table class="shopping-cart-content">
 						<tr class="title">
 							<td class="order-date">訂單日期</td>
@@ -310,8 +523,9 @@
 					</table>
 				</div>
 				<!--/ 訂單列表 -->
+
 				<!-- 分頁 -->
-				<div class="pagination">
+				<!-- <div class="pagination">
 					<ul class="list-page">
 						<li><a href="#" class="page-number prev">上一頁</a></li>
 						<li><a href="#" class="page-number">1</a></li>
@@ -322,43 +536,34 @@
 						<li><a href="#" class="page-number">6</a></li>
 						<li><a href="#" class="page-number next">下一頁</a></li>
 					</ul>
-				</div>
+				</div> -->
 				<!--/ 分頁 -->
 			</div>
 
 		</div>
 	</div>
 
+	<!--Footer -->
 	<footer>
 		<div class="footer layout1 ">
 			<div class="container">
 				<div class="main-footer">
-					<div class="row">
-						<div class="col-xs-12 col-sm-6">
-							<div class="widget custom-menu">
-								<ul>
-									<li><a href="#">商店介紹</a></li>
-									<li><a href="#">退換貨政策</a></li>
-									<li><a href="#">條款及細節</a></li>
-									<li><a href="#">聯絡我們</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<div class="widget custom-menu align-right">
-								<ul>
-									<li><a href="#">商店介紹</a></li>
-									<li><a href="#">退換貨政策</a></li>
-									<li><a href="#">條款及細節</a></li>
-									<li><a href="#">聯絡我們</a></li>
-								</ul>
-							</div>
+					<div class="widget custom-menu">
+						<ul>
+							<li><a href="#">商店介紹</a></li>
+							<li><a href="#">退換貨政策</a></li>
+							<li><a href="#">條款及細節</a></li>
+							<li><a href="#">聯絡我們</a></li>
+						</ul>
+						<div class="coppy-right">
+							<h3 class="content">© 2017 Powered By Jollywiz</h3>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
+	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
 	<!-- Modal -->
 	<div id="myModal" class="chat-modal modal fade">
@@ -477,10 +682,10 @@
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
 	<script type="text/javascript" src="js/twzipcode/jquery.twzipcode.min.js"></script>
-  <script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="js/rotate.js"></script>
   <script type="text/javascript" src="js/pay.js"></script>
 	<script type="text/javascript" src="js/order.js"></script>
 	<script type="text/javascript" src="js/chat.js"></script>
-	<script type="text/javascript" src="js/jollybuy.js"></script>
 </body>
 </html>
