@@ -3381,7 +3381,7 @@ markup:
 				<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
 				<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
 			</ul>
-			<div class="copy-right">© 2018 JollyBuy Limited</div>
+			<div class="copy-right">© 2018 Jollywiz Limited</div>
 		</div>
 	</footer>
 	<!--/Footer -->
@@ -3392,7 +3392,7 @@ markup:
 	jollybuy.css
 
 /**
-*Date: 2018/05/8
+*Date: 2018/05/9
 *內容：合併敲敲話、我的珍藏、我的帳號天和地 & 會員中心修改
 *TKT: #74475、#74476、#74476
 */
@@ -3465,7 +3465,7 @@ markup:
 						<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
 						<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
 					</ul>
-					<div class="copy-right">© 2018 JollyBuy Limited</div>
+					<div class="copy-right">© 2018 Jollywiz Limited</div>
 				</div>
 			</footer>
 			<!--/Footer -->
@@ -3477,3 +3477,144 @@ markup:
 	frontend.js
 3.新增:
 	全站引入→jollybuy.js
+
+/**
+*Date: 2018/05/10
+*內容：店鋪合併有閑商城Header&Footer
+*TKT: #73608
+*/
+1.頁面:
+	1.1所有模組和分類頁、搜尋頁、Jpoint相關頁
+		1.1.1 header部分:
+		  A. 在<header>前面新增下方markup:
+			<div id="type05" class="mobile-hide">
+					<div class="header05">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-2 logo">
+									<a href="https://www.jollybuy.com/beango/IndexNew">
+										<img src="images/header/type05/logo.png" alt="有閑">
+									</a>
+								</div>
+								<div id="menu-list" class="col-sm-10">
+									<ul>
+										<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+										<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+										<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+										<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			B. 移除下方markup:
+				<div class="col-xs-5 col-sm-4 pull-right">
+					<ul class="top-links">
+						<li class="menu-item-has-children account">
+							<a href="javascript:void(0);" class="member-icon"></a>
+							<!-- 登入前 -->
+							<ul class="submenu">
+								<li><a href="login.html">登入</a></li>
+								<li><a href="register.html">註冊</a></li>
+								<li><a href="chat.html">敲敲話</a></li>
+								<li><a href="member.html">會員資訊</a></li>
+								<li><a href="search.html">訂單查詢</a></li>
+								<li><a href="jpoint.html">JUpoint</a></li>
+							</ul>
+							<!--/ 登入前 -->
+							<!-- 登入後 -->
+							<!-- <ul class="submenu">
+								<li><a href="chat.html">敲敲話</a></li>
+								<li><a href="member.html">會員資訊</a></li>
+								<li><a href="search.html">訂單查詢</a></li>
+								<li><a href="jpoint.html">JUpoint</a></li>
+								<li class="logout"><a href="javascript:void(0);">登出</a></li>
+							</ul> -->
+							<!--/ 登入後 -->
+						</li>
+						<li class="whistlist">
+							<a href="favorite.html" class="wishlist-icon"></a>
+						</li>
+						<li class="box-minicart">
+							<div class="minicart">
+								<div class="cart-block">
+									<a href="pay.html" class="cart-icon"></a>
+									<span class="count">0</span>
+								</div>
+								<div class="cart-inner cart-empty">
+									<p class="content">購物車目前沒有商品喔</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+		1.1.2 foooter部分:
+			在</footer>之前新增下方markup:
+			<div class="leisure">
+				<div class="fixed-footer">
+					<ul>
+						<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+						<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+						<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+						<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+						<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+					</ul>
+				</div>
+			</div>
+	1.2所有模組和分類頁、搜尋頁、Jpoint相關頁、商品頁:
+		markupn→手機側欄選單#menu-main-menu內:
+			<li class="menu-item">
+					<a href="jb" class="kt-item-title" title="官網">官網</a>
+				</li>
+			/*----------------新增↓-------------------------*/
+				<li class="menu-item">
+					<a href="javascript:void(0);" class="kt-item-title beango" title="分享店鋪">分享店鋪</a>
+				</li>
+			/*-----------------新增↑-------------------------*/
+			</ul>
+	1.2 商品頁:
+		移除下方markup:
+				<div class="col-xs-5 col-sm-4 pull-right">
+					<ul class="top-links">
+						<li class="menu-item-has-children account">
+							<a href="javascript:void(0);" class="member-icon"></a>
+							<!-- 登入前 -->
+							<ul class="submenu">
+								<li><a href="login.html">登入</a></li>
+								<li><a href="register.html">註冊</a></li>
+								<li><a href="chat.html">敲敲話</a></li>
+								<li><a href="member.html">會員資訊</a></li>
+								<li><a href="search.html">訂單查詢</a></li>
+								<li><a href="jpoint.html">JUpoint</a></li>
+							</ul>
+							<!--/ 登入前 -->
+							<!-- 登入後 -->
+							<!-- <ul class="submenu">
+								<li><a href="chat.html">敲敲話</a></li>
+								<li><a href="member.html">會員資訊</a></li>
+								<li><a href="search.html">訂單查詢</a></li>
+								<li><a href="jpoint.html">JUpoint</a></li>
+								<li class="logout"><a href="javascript:void(0);">登出</a></li>
+							</ul> -->
+							<!--/ 登入後 -->
+						</li>
+						<li class="whistlist">
+							<a href="favorite.html" class="wishlist-icon"></a>
+						</li>
+						<li class="box-minicart">
+							<div class="minicart">
+								<div class="cart-block">
+									<a href="pay.html" class="cart-icon"></a>
+									<span class="count">0</span>
+								</div>
+								<div class="cart-inner cart-empty">
+									<p class="content">購物車目前沒有商品喔</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+	
+2.更新:
+jollybuy.css
