@@ -2162,9 +2162,6 @@ select{
   }
 }
 
-#order-list li{
-  margin-bottom: 30px;
-}
 #pay01 #order-list .quantity,
 #pay02 #order-list .quantity{
   display: inline-block;
@@ -2649,9 +2646,9 @@ select{
 }
 /* active */
 #order-list .active{
-  background: #fff;
+  /* background: #fff;
   border: 1px solid #ccc;
-  border-bottom: none;
+  border-bottom: none; */
 }
 #order-list .active i{
   transform: rotate(180deg);
@@ -3485,6 +3482,49 @@ select{
 * order
 */
 
+#order .order-status{width: 10%;}
+#order .order-number{width: 15%}
+#order .order-date{width: 15%;}
+#order .order-amount{width: 15%;}
+#order .order-eval{width: 15%;}
+#order .order-chat{width: 30%;}
+
+/* center title */
+#order #chat-list .shopping-cart-content .tbody .td{
+  text-align: center;
+}
+#order #chat-list .shopping-cart-content .tbody .order-status{
+  color: red;
+}
+/* btns */
+#order #chat-list .shopping-cart-content .tbody .btns{
+  display: inline-block;
+}
+
+
+@media (max-width: 1000px) {
+  /**
+  *  訂單首頁
+  */
+
+  #order #chat-list .shopping-cart-content .tbody .td{
+    width: 100%;
+  }
+
+  /* shopping-cart-content */
+  #order #chat-list .shopping-cart-content .tbody .order-number,
+  #order #chat-list .shopping-cart-content .tbody .order-date,
+  #order #chat-list .shopping-cart-content .tbody .order-amount{
+    text-align: left;
+  }
+  #order .shopping-cart-content .tbody .order-number span,
+  #order .shopping-cart-content .tbody .order-date span,
+  #order .shopping-cart-content .tbody .order-amount span{
+    position: relative;
+    left: 70px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   #order #order-list table,
   #jpoint .shopping-cart-content{
@@ -4248,7 +4288,7 @@ select{
 }
 
 /* search bar */
-.searchbar,
+.chat-search,
 #chat-list .chat-search{
   max-width: 490px;
   width: 100%;
@@ -4257,7 +4297,7 @@ select{
   overflow: hidden;
   margin-bottom: 20px;
 }
-.searchbar .search-info,
+.chat-search .search-info,
 #chat-list .chat-search .search-info{
   outline: 0;
   width: 84.49%;
@@ -4266,7 +4306,7 @@ select{
   border: none!important;
   padding-left: 2%;
 }
-.searchbar .search-button,
+.chat-search .search-button,
 #chat-list .chat-search .search-button{
   color: rgb(101, 101, 101);
   float: right;
