@@ -200,7 +200,7 @@
 					-->
 					<!--/ 無任何訂單-->
 					<!-- 搜尋 bar -->
-					<div class="searchbar">
+					<div class="chat-search">
 						<form action="" method="get" name="order-search">
 							<input type="text" class="search-info" name="k" placeholder="搜尋訂單編號或店舖名稱" autocomplete="off">
 							<button type="submit" class="search-button"><i class="flaticon-search3"></i></button>
@@ -221,6 +221,26 @@
 								<li>
 									<div class="tab bubble">
 										<div class="title">待付款</div>
+									</div>
+								</li>
+								<li>
+									<div class="tab bubble">
+										<div class="title">待發貨</div>
+									</div>
+								</li>
+								<li>
+									<div class="tab bubble">
+										<div class="title">已發貨</div>
+									</div>
+								</li>
+								<li>
+									<div class="tab bubble">
+										<div class="title">訂單完成</div>
+									</div>
+								</li>
+								<li>
+									<div class="tab bubble">
+										<div class="title">退貨/取消</div>
 									</div>
 								</li>
 							</ul>
@@ -245,21 +265,30 @@
 											<div class="shopping-cart-content table">
 												<!-- table 標題 -->
 												<div class="tr title">
-													<div class="td product-thumb">訂單編號</div>
-													<div class="td product-name">提問時間</div>
-													<div class="td price">訂單提問</div>
-													<div class="td info"></div>
+													<div class="td order-status">訂單狀態</div>
+													<div class="td order-number">訂單編號</div>
+													<div class="td order-date">訂單日期</div>
+													<div class="td order-amount">訂單金額</div>
+													<div class="td order-eval">評價</div>
+													<div class="td order-chat"></div>
 												</div>
 												<!--/ table 標題 -->
 												<div class="tbody">
+													<!-- 新訂單 -->
 													<div class="tr each-item" data-orderid="">
-														<div class="td product-thumb" data-title="訂單編號"><a href="#">JBO180326123333333</a></div>
-														<div class="td product-name" data-title="時間"><span>2018/03/30 18:55</span></div>
-														<div class="td price" data-title="提問"><span>訂單提問訂單提問訂單提問訂單提問訂單提問</span></div>
-														<div class="td info" data-title="">
-															<span class="btns btn-chat">提問</span>
+														<div class="td order-status" data-title="">新訂單</div>
+														<div class="td order-number" data-title="訂單編號："><a href="#"><span>A1234567890</span></a></div>
+														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
+														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
+														<div class="td order-eval">
+															<span class="btns">去評價</span>
+														</div>
+														<div class="td order-chat" data-title="">
+															<span class="btns">取消訂單</span>
+															<span class="btns">立即付款</span>
 														</div>
 													</div>
+													<!--/ 新訂單 -->
 												</div>
 											</div>
 										</li>
