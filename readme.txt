@@ -3689,3 +3689,54 @@ jollybuy.js
 		</div>
 	</div>
 </div>
+
+/**
+*Date: 2018/05/11
+*內容：登入頁加上有閑header&footer
+*TKT: #74465
+*/
+1.頁面: login.htmls、register.html、forget_password.html
+header markup:
+	<header id="type05">
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2 logo">
+						<a href="https://www.jollybuy.com/beango/IndexNew">
+							<img src="images/header/type05/logo.png" alt="有閑">
+						</a>
+					</div>
+					<div id="menu-list" class="col-sm-10">
+						<ul>
+							<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+							<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+							<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+							<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+footer markup:
+	<footer class="leisure merge">
+		<div class="fixed-footer">
+			<ul>
+				<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+				<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+				<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+				<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+				<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+			</ul>
+		</div>
+		<div class="footer">
+			<ul>
+				<li><a href="http://dev-www.jollybuy.com/act/mb-about.html">關於有閑</a></li>
+				<li><a href="http://dev-www.jollybuy.com/act/mb-privacy.html">隱私權政策</a></li>
+				<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
+				<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
+			</ul>
+			<div class="copy-right">© 2018 Jollywiz Limited</div>
+		</div>
+	</footer>
