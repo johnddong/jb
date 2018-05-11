@@ -433,8 +433,9 @@ form#search .invalid{
 #tpl13 .featured-products{
   margin-bottom: 40px;
 }
-#tpl13 .main-content-home9 .featrue-box-list{
-  margin: 0 0 40px 0;;
+#tpl13 .logo-brand{
+  padding: 0 0;
+  margin: 0 0 40px 0;
 }
 #tpl13 .owl-carousel.nav-style1 .owl-nav .owl-prev{
   left:-31px;
@@ -473,7 +474,7 @@ form#search .invalid{
   #tpl13 .main-slideshow,
   #tpl13 .banner,
   #tpl13 .featured-products,
-  #tpl13 .main-content-home9 .featrue-box-list{
+  #tpl13 .logo-brand{
     margin-bottom: 20px;
   }
 }
