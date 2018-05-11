@@ -3489,6 +3489,12 @@ select{
 #order .order-eval{width: 15%;}
 #order .order-chat{width: 30%;}
 
+/* tab */
+#order #chat-list .tab{
+  min-width: 100px;
+  justify-content: center;
+}
+
 /* center title */
 #order #chat-list .shopping-cart-content .tbody .td{
   text-align: center;
@@ -3507,6 +3513,20 @@ select{
   *  訂單首頁
   */
 
+
+  /* tab */
+  #order #chat-list .dot{
+    display: inline-block;
+  }
+  #order #chat-list .dot li{
+    float: left;
+    width: 33.3%;
+  }
+  #order #chat-list .dot .tab{
+    width: 100%;
+  }
+
+  /* shopping-cart-content 框架 */
   #order #chat-list .shopping-cart-content .tbody .td{
     width: 100%;
   }
