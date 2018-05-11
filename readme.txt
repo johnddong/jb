@@ -3740,3 +3740,93 @@ footer markup:
 			<div class="copy-right">© 2018 Jollywiz Limited</div>
 		</div>
 	</footer>
+
+/**
+*Date: 2018/05/11
+*內容：tpl13 模組修改
+*TKT: #70660
+*/
+1. 頁面: tpl13.html
+ 1.1.移除markup:
+	<!-- 分類 -->
+	<div class="special-container rules-box">
+		<div class="box-has-content featrue-box-list owl-carousel nav-style1" data-autoplay="false" data-nav="false" data-dots="true" data-loop="false" data-slidespeed="800" data-margin="15" data-autoheight="true" data-responsive = '{"0":{"items":1}, "640":{"items":2}, "768":{"items":3}, "1024":{"items":4}, "1200":{"items":4}}'>
+				<div class="featrue-box layout4 ">
+					<div class="block-icon">
+						<a href="#">
+							<img src="images/temp/tpl13/truck_128.png" alt="">
+						</a>
+					</div>
+					<div class="block-inner">
+						<h3 class="title">售後服務</h3>
+						<p class="des">如屬於民宿/旅遊票券，您於使用前可隨時申請退票，惟如您已經預定日期前往事後取消，且未經民宿/旅遊業者同意延期者，本店有權依據「觀光旅館業與旅館業及民宿訂房定型化契約應記載不得記載事項」規定，向您收取必要之手續費用。</p>
+					</div>
+				</div>
+				<div class="featrue-box layout4 ">
+					<div class="block-icon">
+						<a href="#">
+							<img src="images/temp/tpl13/dollar.png" alt="">
+						</a>
+					</div>
+					<div class="block-inner">
+						<h3 class="title">30 Days Money Back</h3>
+						<p class="des">Lorem ipsum dolor sit amet consec adipiscing elit vestibulum.</p>
+					</div>
+				</div>
+				<div class="featrue-box layout4 ">
+					<div class="block-icon">
+						<a href="#">
+							<img src="images/temp/tpl13/shield.png" alt="">
+						</a>
+					</div>
+					<div class="block-inner">
+						<h3 class="title">Payment Secured</h3>
+						<p class="des">Lorem ipsum dolor sit amet consec adipiscing elit vestibulum.</p>
+					</div>
+				</div>
+				<div class="featrue-box layout4 ">
+					<div class="block-icon">
+						<a href="#">
+							<img src="images/temp/tpl13/headset.png" alt="">
+						</a>
+					</div>
+					<div class="block-inner">
+						<h3 class="title">Online Support 24/7</h3>
+						<p class="des">如屬於民宿/旅遊票券，您於使用前可隨時申請退票</p>
+					</div>
+				</div>
+				<div class="featrue-box layout4 ">
+					<div class="block-icon">
+						<a href="#">
+							<img src="images/temp/tpl13/card.png" alt="">
+						</a>
+					</div>
+					<div class="block-inner">
+						<h3 class="title">Free Gift Card</h3>
+						<p class="des">如屬於民宿/旅遊票券，您於使用前可隨時申請退票</p>
+					</div>
+				</div>
+		</div>
+	</div>
+	<!--/ 分類 -->
+ 1.2 新增markup:在<!--/ 熱門商品 -->後面新增下方內容
+	<!--Logo brand -->
+	<div class="logo-brand">
+		<div class="owl-carousel brands-list nav-style4" data-autoplay="false" data-nav="false" data-loop="true" data-slidespeed="800" data-margin="20"  data-responsive = '{"0":{"items":2}, "640":{"items":2}, "768":{"items":3}, "1024":{"items":4}, "1200":{"items":4}}'>
+			<div class="brand-item">
+				<a href="#"><img src="images/temp/tpl09/product3.jpg" alt=""></a>
+			</div>
+			<div class="brand-item">
+				<a href="#"><img src="images/temp/tpl09/brand2.jpg" alt=""></a>
+			</div>
+			<div class="brand-item">
+				<a href="#"><img src="images/temp/tpl09/brand3.jpg" alt=""></a>
+			</div>
+			<div class="brand-item">
+				<a href="#"><img src="images/temp/tpl09/brand4.jpg" alt=""></a>
+			</div>
+		</div>
+	</div>
+	<!--/Logo brand -->
+2.更新:
+jollybuy.css
