@@ -3480,6 +3480,45 @@ markup:
 
 /**
 *Date: 2018/05/10
+*內容：合併商城購物車header&footer
+*TKT: #74540
+*/
+1.頁面:
+pay.html
+pay02.html
+pay03.html
+
+2.markup:
+ 2.1在<body>之後新增markup，範例如下:
+	<body id="pay02">
+   /*-------------------新增↓-------------------------*/
+	<!-- header -->
+	<header id="type05">
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2 logo">
+						<a href="https://www.jollybuy.com/beango/IndexNew">
+							<img src="images/header/type05/logo.png" alt="有閑">
+						</a>
+					</div>
+					<div id="menu-list" class="col-sm-10">
+						<ul>
+							<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+							<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+							<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+							<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--/ header -->
+	/*-------------------新增↑-------------------------*/
+	
+/**
+*Date: 2018/05/10
 *內容：店鋪合併有閑商城Header&Footer
 *TKT: #73608
 */
@@ -3618,3 +3657,35 @@ markup:
 	
 2.更新:
 jollybuy.css
+jollybuy.js
+
+/**
+*Date: 2018/05/11
+*內容：移除搜尋及分類頁商品 SALE icon
+*TKT: #74492
+*/
+全站頁面:
+<div class="product-item layout1">
+	<div class="product-inner">
+		<div class="thumb">
+	/*------------------移除↓------------------*/
+			<div class="group-flash">
+				<span class="flash new">new</span>
+			</div>
+	/*------------------移除↑------------------*/
+			<div class="group-button">
+				<a href="javascript:void(0);" class="wishlist-button" data-sku="12345" data-type="wishlist"></a>
+				<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+			</div>
+			<a href="#"><img src="images/product6.jpg" alt=""></a>
+		</div>
+		<div class="info">
+			<a href="#" class="product-name">經典藍色 T-Shirt</a>
+			<a href="#" class="add-to-cart">+ 放入購物車</a>
+			<div class="price">
+				<span class="del">$100.00 </span>
+				<span class="ins">$75</span>
+			</div>
+		</div>
+	</div>
+</div>
