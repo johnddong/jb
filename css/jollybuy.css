@@ -2163,7 +2163,7 @@ select{
   }
 }
 
-#order-list > li{
+#order-list > ul > li{
   margin: 30px 0;
 }
 
