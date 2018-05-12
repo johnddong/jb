@@ -3525,6 +3525,9 @@ select{
 */
 
 /* 共用 */
+#order #myModal .modal-content{
+  overflow: auto;
+}
 #order #myModal .modal-footer{
   text-align: center;
   clear: both;
