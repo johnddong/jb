@@ -3843,3 +3843,14 @@ pay03.html
 			<div class="copy-right">© 2018 Jollywiz Limited</div>
 		</div>
 	</footer>
+
+
+
+/**
+*Date: 2018/05/11
+*內容：合併會員中心-訂單
+*TKT: #74388
+*/
+
+1. 新增圖片：
+  images/order
