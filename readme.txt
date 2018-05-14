@@ -3794,7 +3794,7 @@ jollybuy.css
 
 
 /**
-*Date: 2018/05/10
+*Date: 2018/05/11
 *內容：合併商城購物車header&footer
 *TKT: #74540
 */
@@ -3843,3 +3843,65 @@ pay03.html
 			<div class="copy-right">© 2018 Jollywiz Limited</div>
 		</div>
 	</footer>
+
+/**
+*Date: 2018/05/15
+*內容：店鋪新版有閑Header&Footer
+*TKT: #74691
+*/
+1.頁面:所有模組、分類頁、商品頁、搜尋頁。
+ 1.1移除 markup
+	<div id="type05" class="mobile-hide">
+		<div class="header05">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2 logo">
+						<a href="https://www.jollybuy.com/beango/IndexNew">
+							<img src="images/header/type05/logo.png" alt="有閑">
+						</a>
+					</div>
+					<div id="menu-list" class="col-sm-10">
+						<ul>
+							<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+							<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+							<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+							<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+ 1.2新增markup:
+	<!-- header -->
+/*---------------------------新增↓-----------------------------*/
+	<div id="type06" class="mobile-hide">
+			<div class="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2 home">
+							<a href="https://www.jollybuy.com/beango/IndexNew">
+								有閑商城首頁
+							</a>
+						</div>
+						<div id="menu-list" class="col-sm-10">
+							<ul>
+								<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+								<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+								<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+								<li class="cart"><a href="javascript:void(0);">購物車</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+/*---------------------------新增↑-----------------------------*/
+	<header id="type01">
+
+2.更新:
+ jollybuy.css
+ 
+3.新增圖片路徑:
+ \jollybuy\images\header\type06

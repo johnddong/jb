@@ -1198,28 +1198,36 @@ header .header.layout1 .top-links{
   }
   /*pc menu*/
   #type05 .header #menu-list,
-  #type05 .header05 #menu-list{
+  #type05 .header05 #menu-list,
+  #type06 .header #menu-list{
     display: block;
     text-align: right;
+  }
+  #type05 .header #menu-list,
+  #type05 .header05 #menu-list{
     padding-top: 10px;
-    padding-right: 0px; /*隱藏購物車*/
   }
   #type05 .header #menu-list ul li,
-  #type05 .header05 #menu-list ul li{
+  #type05 .header05 #menu-list ul li,
+  #type06 .header #menu-list ul li{
     display: inline-block;
+  }
+  #type05 .header #menu-list li a,
+  #type05 .header05 #menu-list li a,
+  #type06 .header #menu-list ul li a,
+  #type06 .header .home a{
+    display: block;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-top: 3px;
+    padding-right: 6px;
+    padding-left: 30px;
   }
   #type05 .header #menu-list li a,
   #type05 .header05 #menu-list li a{
     font-size: 14px;
     color: #ffa8bd;
-    display: block;
-    height: 30px;
-    background-repeat: no-repeat;
-    background-position: left top;
-    padding-top: 5px;
-    padding-right: 6px; /*隱藏購物車*/
-    /* padding-right: 10px; */
-    padding-left: 30px;
   }
   #type05 .header #menu-list li a:hover,#type05 .header05 #menu-list li a:hover{color: #fff;}
   #type05 .header #menu-list li.shop a,#type05 .header05 #menu-list li.shop a{background-image: url("../images/header/type05/icon-shop.png");}
@@ -1230,6 +1238,33 @@ header .header.layout1 .top-links{
   #type05 .header #menu-list li.member a:hover,#type05 .header05 #menu-list li.member a:hover{background-image: url("../images/header/type05/icon-member-hover.png");}
   #type05 .header #menu-list li.cart a,#type05 .header05 #menu-list li.cart a{background-image: url("../images/header/type05/icon-cart.png");}
   #type05 .header #menu-list li.cart a:hover,#type05 .header05 #menu-list li.cart a:hover{background-image: url("../images/header/type05/icon-cart-hover.png");}
+
+  #type06 .header{
+    border-bottom: solid 1px #dbdbdb;
+	  background-color:#f3f3f3;
+  }
+  #type06 .header a{
+    font-size: 13px;
+  }
+  #type06 .header #menu-list li a{
+    color: #aaa;
+    font-size:13px;
+  }
+  #type06 .header #menu-list li a:hover,
+  #type06 .header .home a:hover{
+    color:#ea0d44;
+  }
+  #type06 .header .home a{background-image: url("../images/header/type06/icon-home.png");}
+  #type06 .header .home a:hover{background-image: url("../images/header/type06/icon-home-hover.png");}
+  #type06 .header #menu-list li.shop a{background-image: url("../images/header/type06/icon-shop.png");}
+  #type06 .header #menu-list li.shop a:hover{background-image: url("../images/header/type06/icon-shop-hover.png");}
+  #type06 .header #menu-list li.dollar a{background-image: url("../images/header/type06/icon-dollar.png");}
+  #type06 .header #menu-list li.dollar a:hover{background-image: url("../images/header/type06/icon-dollar-hover.png");}
+  #type06 .header #menu-list li.member a{background-image: url("../images/header/type06/icon-member.png");}
+  #type06 .header #menu-list li.member a:hover{background-image: url("../images/header/type06/icon-member-hover.png");}
+  #type06 .header #menu-list li.cart a{background-image: url("../images/header/type06/icon-cart.png");}
+  #type06 .header #menu-list li.cart a:hover{background-image: url("../images/header/type06/icon-cart-hover.png");}
+
 }
 
 
