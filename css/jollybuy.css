@@ -2107,12 +2107,18 @@ div.disable:active:hover{
 /**
 * 結帳 首頁
 */
-
 #pay01 input,
 textarea,
 select{
   border: 1px solid #ccc;
 }
+
+@media (max-width: 1000px){
+  #pay01,#pay02{
+    font-size: 15px;
+  }
+}
+
 
 /* pay steps */
 #pay-steps {
@@ -2302,7 +2308,7 @@ select{
   color: #777;
 }
 #pay01 .tbody .price span{
-  font-size: 24px;
+  font-size: 15px;
 }
 #pay02 .tbody .price span{
   font-size: 15px;
@@ -2326,6 +2332,7 @@ select{
 }
 @media (max-width: 1000px) {
   .shopping-cart-footer{
+    font-size: 12px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -2333,6 +2340,26 @@ select{
     background: #fff;
     padding: 10px 15px 20px 15px;
     margin-top: 0;
+  }
+  #pay01 .shopping-cart-footer .title{margin-bottom: 10px;}
+  #pay01 .shopping-cart-footer .shipping span{
+    color: #ff0000;
+    font-size: 20px;
+  }
+  #pay01 .shopping-cart-footer .checkbox-cont{
+    top:6px;
+    height: 20px;
+    width: 20px;
+  }
+  #pay01 .shopping-cart-footer .checkbox-cont .fa{
+    top:-3px;
+  }
+  #pay01 .shopping-cart-footer .btns,
+  #pay01 .shopping-cart-footer .btns{
+    margin-top: 10px;
+  }
+  #pay01 .shopping-cart-footer{
+    padding: 10px;
   }
 }
 .shopping-cart-footer .checkbox-cont{
@@ -2663,7 +2690,7 @@ select{
 #order-list .jupoint-gain{
   border: 2px solid rgb(241, 242, 246);
   border-top: none;
-  padding: 0 20px 20px 0;
+  padding: 0 20px 10px 0;
   background-color: #fff;  /*蓋住上一個表格的bottom-border*/
   margin-top: -1px;
 }
@@ -3102,6 +3129,27 @@ select{
   margin-bottom: 10px;
 }
 
+/**
+  #74606 購物清單間距 字體調小
+**/
+/* @media (max-width: 1000px) {
+  #pay01 #order-list > ul > li{margin-bottom: 20px;}
+  #pay01 .shopping-cart-checkout{margin-top: 10px;}
+  #pay01 .shopping-cart-checkout .subtotal-cont .total{margin-top: 10px;}
+  #pay01 .shopping-cart-checkout .subtotal-cont .total,
+  #pay02 .shopping-cart-checkout .subtotal-cont .total,
+  #pay01 .shopping-cart-checkout .subtotal-cont h3,
+  #pay01 .shopping-cart-checkout .methods .row,
+  #pay01 .shopping-cart-checkout .subtotal-cont .total span,
+  #pay02 .shopping-cart-checkout .subtotal-cont h3,
+  #pay02 .shopping-cart-checkout .methods .row,
+  #pay02 .shopping-cart-checkout .subtotal-cont .total span{
+    font-size: 15px;
+  }
+  #pay01 #order-list .jupoint-gain .td,
+  #pay01 .shopping-cart-header .td.product-coupon span,
+  #pay02 .shopping-cart-checkout .subtotal-cont .gain-point{font-size: 12px;}
+} */
 
 
 /*
@@ -3559,7 +3607,7 @@ select{
   display: inline-block;
 }
 
-/** 
+/**
 *modal
 */
 
@@ -3589,19 +3637,19 @@ select{
 
 /* 顯示 */
 /* 訂單取消 */
-#order #myModal.order-cancel .order-cancel, 
+#order #myModal.order-cancel .order-cancel,
 #order #myModal.order-cancel .common-btn,
 /* 確認收貨 */
-#order #myModal.order-confirm .order-confirm, 
+#order #myModal.order-confirm .order-confirm,
 #order #myModal.order-confirm .common-btn,
 /* 我要退貨 */
-#order #myModal.order-return .order-return, 
+#order #myModal.order-return .order-return,
 #order #myModal.order-return .common-btn,
 /* 物流狀態 */
-#order #myModal.logistics-status .logistics-status, 
+#order #myModal.logistics-status .logistics-status,
 #order #myModal.logistics-status .common-btn,
 /* 敲敲話 */
-#order #myModal.chat-dialog .chat-dialog, 
+#order #myModal.chat-dialog .chat-dialog,
 #order #myModal.chat-dialog .chat-btn{
   display: block;
 }
@@ -3724,7 +3772,7 @@ select{
     left: 70px;
   }
 
-  /** 
+  /**
   *modal
   */
   /* #order #myModal .return-complete .ob_body{
