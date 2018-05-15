@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>jollybuy -JUPoint</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
+	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/flaticon.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/jquery.scrollbar.min.css" rel="stylesheet">
+	<link href="css/chosen.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme-1.css" rel="stylesheet">
+	<link href="css/jollybuy.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body id="jpoint">
+	<!-- header -->
+	<header id="type05">
+		<div class="header05">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2 logo">
+						<a href="https://www.jollybuy.com/beango/IndexNew">
+							<img src="images/header/type05/logo.png" alt="有閑">
+						</a>
+					</div>
+					<div id="menu-list" class="col-sm-10">
+						<ul>
+							<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+							<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+							<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+							<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--/ header -->
+	<div class="main-content checkout-page">
+		<div class="container">
+			<div class="breadcrumbs">
+				<a href="#">Home</a> / <span class="current">可使用JUPoint</span>
+			</div>
+			<div class="cart-content">
+				<!-- 訂單列表 -->
+				<div id="order-list">
+					<div class="clearfix">
+						<div class="pull-left"><h3 class="title supper-title">JUPoint 積點紀錄</h3></div>
+					</div>
+					<!-- JUPoint 積點記錄 Brief -->
+					<div class="brief">
+						<h3 class="title">可使用 JUPoint<span></span></h3>
+						<table class="shopping-cart-content">
+							<tr>
+								<td class="title">BeanGo點數(<span>已綁定</span>)</td>
+								<td width="80%" class="beango-point" data-title="BeanGo點數(未綁定)">0</td>
+							</tr>
+							<tr >
+								<td class="title">可使用 JUPoint 積點</td>
+								<td data-title="可使用 JUPoint 積點" class="jpoint-left">20</td>
+							</tr>
+							<tr >
+								<td class="title">待生效 JUPoint 積點</td>
+								<td data-title="待生效 JUPoint 積點"><a href="jpoint-pending.html">50</a></td>
+							</tr>
+						</table>
+						<div class="btn-beango">
+							<a href="javascript:void(0);" class="submit" data-type="Bind" data-service-id="229" data-identity-code="5702cf1e-2d76-4daa-b373-7d74af4fdbde" data-auth-code="ZWE2ZDQyZThkNTljYWFhM2EzZDFmZDMzOTA5ZmI3MzRkMzU3NTg3N2JiZjdmYTMzY2M5YWJiNmYxNGQ0MTFlZg=="><span>綁定BeanGo</span><img src="images/icons/beango.png" alt="BeanGo!"></a>
+							<!-- 確認轉點按鈕 -->
+							<!-- 判斷已綁定, 顯示此按鈕
+							<a href="javascript:void(0);" class="submit" data-status="availablePoints"><span>轉出至BeanGo</span><img src="images/icons/beango.png" alt="BeanGo!"></a>
+							-->
+							<!--/ 確認轉點按鈕 -->
+						</div>
+					</div>
+					<!--/ JUPoint 積點記錄 Brief -->
+
+					<!-- JUPoint 積點記錄 Detail -->
+					<div class="detail no-record">
+						<table class="shopping-cart-content">
+							<tr class="title">
+								<td>日期</td>
+								<td>JUPoint項目</td>
+								<td>JUPoint金額</td>
+								<td>失效日期</td>
+							</tr>
+							<tr class="each-item">
+								<td data-title="日期">2017-10-17</td>
+								<td data-title="JUPoint項目"><a href="pay03.html?list=1">20171017110256987</a></td>
+								<td data-title="JUPoint金額">+20</td>
+								<td data-title="失效日期">2018-01-17</td>
+							</tr>
+							<tr class="each-item">
+								<td data-title="日期">2017-10-16</td>
+								<td data-title="JUPoint項目"><a href="pay03.html?list=1">20171017110256987</a></td>
+								<td data-title="JUPoint金額">+30</td>
+								<td data-title="失效日期">2018-01-16</td>
+							</tr>
+						</table>
+						<!-- 無任何記錄 -->
+						<!--
+						<div class="text-center">
+							<h4 class="title">目前尚無任何記錄</h4>
+							<a href="" class="submit" target="_blank">繼續購物</a>
+						</div>
+						-->
+						<!--/ 無任何記錄-->
+					</div>
+				</div>
+				<!--/ JUPoint 積點記錄 Detail -->
+
+				<!-- 分頁 -->
+				<div class="pagination">
+					<ul class="list-page">
+						<li><a href="#" class="page-number prev">上一頁</a></li>
+						<li><a href="#" class="page-number">1</a></li>
+						<li><a href="#" class="page-number">2</a></li>
+						<li><a href="#" class="page-number current">3</a></li>
+						<li><a href="#" class="page-number">4</a></li>
+						<li><a href="#" class="page-number">5</a></li>
+						<li><a href="#" class="page-number">6</a></li>
+						<li><a href="#" class="page-number next">下一頁</a></li>
+					</ul>
+				</div>
+				<!--/ 分頁 -->
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="footer layout1 ">
+			<div class="container">
+				<div class="main-footer">
+					<div class="widget custom-menu">
+						<ul>
+							<li><a href="#">商店介紹</a></li>
+							<li><a href="#">退換貨政策</a></li>
+							<li><a href="#">條款及細節</a></li>
+							<li><a href="#">聯絡我們</a></li>
+						</ul>
+						<div class="coppy-right">
+							<h3 class="content">© 2017 Powered By Jollywiz</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="leisure">
+			<div class="fixed-footer">
+				<ul>
+					<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+					<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+					<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+					<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+					<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<a class="back-to-top" href="#"></a>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade cart-content">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+				<form name="beango_verify" action="" method="post" autocomplete="off">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body orther-info">
+						<!-- 欲轉出點數 -->
+						<div class="row jpoint-field">
+							<div class="col-xs-6 col-sm-6">
+								請輸入欲轉出點數(可轉點數20)
+							</div>
+							<div class="col-xs-6 col-sm-6">
+								<div class="jpoint">
+									<input type="tel" name="points" class="points input-info" data-min="0" data-max="20" placeholder="欲轉出點數" />
+									<h5 class="text-label"><span></span></h5>
+								</div>
+							</div>
+						</div>
+						<!--/ 欲轉出點數 -->
+						<!-- 圖形驗證碼 -->
+						<div class="row graph-code-box">
+							<div class="col-xs-6">
+								<h5 class="text-label"><span></span></h5>
+								<input type="text" name="graph_code" class="input-info" placeholder="請填入圖行驗證碼" />
+							</div>
+							<div class="col-xs-6"><img src="images/temp/valid.jpg">&nbsp;<a href="javascript:void(0);">更新</a></div>
+						</div>
+						<!--/ 圖形驗證碼 -->
+						<!-- QRcode -->
+						<div class="row qr-box">
+							<div class="col-xs-12 text-center">
+								<canvas id="qr"></canvas>
+							</div>
+						</div>
+						<!--/ QRcode -->
+		      </div>
+		      <div class="modal-footer">
+						<div class="text-center">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+			        <!-- <button type="submit" class="btn btn-primary btn-verify">帳戶綁定</button> -->
+							<button type="submit" class="btn btn-primary btn-transfer">確認轉點</button>
+						</div>
+		      </div>
+				</form>
+	    </div>
+	  </div>
+	</div>
+	<!--/ Modal -->
+
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/owl.thumbs.min.js"></script>
+  <script type="text/javascript" src="js/magnific-popup.min.js"></script>
+  <script type="text/javascript" src="js/mobilemenu.min.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/masonry.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/chosen.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
+	<script type="text/javascript" src="js/twzipcode/jquery.twzipcode.min.js"></script>
+	<script type="text/javascript" src="js/qrious.min.js"></script>
+  <script type="text/javascript" src="js/frontend.js"></script>
+  <script type="text/javascript" src="js/jpoint.js"></script>
+	<script type="text/javascript" src="js/jollybuy.js"></script>
+</body>
+</html>
