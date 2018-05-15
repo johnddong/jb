@@ -2966,10 +2966,10 @@ frontend.js
   pay.html
 
 4. 反饋調整：
-  4.1 移除天&地 
+  4.1 移除天&地
   4.2 加購品新增 fixed-num class
   ex: <div class="qty_box fixed-num">
-  4.3 規格 
+  4.3 規格
     4.3.1 註解 dropdown class
     4.3.2 替換<div>元素
     ex:
@@ -3020,10 +3020,10 @@ frontend.js
       var type = $(this).find(':selected').data('type')
         , $countrySel = $(this).parents('.twzipcode').eq(0).find('.address:gt(0)');
       switch (type) {
-        case 'tw': 
+        case 'tw':
           $countrySel.show();
         break;
-        case 'other': 
+        case 'other':
           $countrySel.hide();
         break;
       }
@@ -3117,7 +3117,7 @@ markup:
 
 2. 頁面 markup
   chat.html
-  
+
 /**
 *Date: 2018/05/3
 *內容：店鋪首頁商品展示及商品頁面UI(修改原介面及增加資訊)
@@ -3129,7 +3129,7 @@ markup:
 		<div class="product-item layout1">
 			<div class="product-inner">
 				<div class="thumb">
-			/*------------------------ 移除↓ --------------------------*/	
+			/*------------------------ 移除↓ --------------------------*/
 					<div class="group-flash">
 						<span class="flash sale">sale</span>
 					</div>
@@ -3139,13 +3139,13 @@ markup:
 					</div>
 					<a href="#"><img src="images/product-details-470x470.jpg" alt=""></a>
 				</div>
-	
+
 	1.2 product.html
 	移除:
 		1.2.1 <h3 class="sub-title"><span>顏色</span></h3>
 		1.2.2 <h3 class="sub-title"><span>尺寸</span></h3>
 		1.2.3 <h3 class="sub-title"><span>數量</span></h3>
-		
+
 		1.2.4
 			<div class="price">
 				<span class="del">399 </span>
@@ -3163,7 +3163,7 @@ markup:
 				<div>單筆消費滿千免運</div>
 			</div>
 			/*----------------------新增↑-------------------------*/
-		1.3.2 
+		1.3.2
 			<div class="quantity-btn">
 				<div class="qty_box">
 					<div class="btns btns-minus disable">&#45;</div>
@@ -3330,7 +3330,7 @@ markup:
 2. 更新:
 	member.js
 	jollybuy.css
-	
+
 /**
 *Date: 2018/05/8
 *內容：合併商城會員中心首頁天和地
@@ -3361,7 +3361,7 @@ markup:
 		</div>
 	</header>
 	<!--/ header -->
-	
+
 	markup2 footer:
 	<!--Footer -->
 	<footer class="leisure">
@@ -3398,7 +3398,7 @@ markup:
 */
 1.頁面:
 	1.1 member.html、chat.html、favorite.html
-		1.1.1 markup1: 
+		1.1.1 markup1:
 			<!-- header -->
 			<header id="type05">
 				<div class="header">
@@ -3471,13 +3471,13 @@ markup:
 			<!--/Footer -->
 	1.2 member-center.html:
 		markup: <footer class="leisure merge">
-		
+
 2.更新:
 	jollybuy.css
 	frontend.js
 3.新增:
 	全站引入→jollybuy.js
-	
+
 /**
 *Date: 2018/05/10
 *內容：店鋪合併有閑商城Header&Footer
@@ -3615,7 +3615,7 @@ markup:
 						</li>
 					</ul>
 				</div>
-	
+
 2.更新:
 jollybuy.css
 jollybuy.js
@@ -3872,12 +3872,12 @@ pay03.html
 			</div>
 		</div>
 	</div>
-	
+
  1.2新增markup:
 	<!-- header -->
 /*---------------------------新增↓-----------------------------*/
 	<div id="type06" class="mobile-hide">
-			<div class="header">
+			<div class="header06">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-2 home">
@@ -3902,6 +3902,15 @@ pay03.html
 
 2.更新:
  jollybuy.css
- 
+
 3.新增圖片路徑:
  \jollybuy\images\header\type06
+ 
+ /**
+*Date: 2018/05/15
+*內容：會員有閑Header調整
+*/
+1.頁面:會員相關頁面
+markup:
+<header id="type05">
+	<div class="header05"> →Class 原 header 改為 header05
