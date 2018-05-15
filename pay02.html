@@ -367,6 +367,14 @@
 								$deliveryType = $myModal.find('select[name="delivery"]'),
 
 						showNewAddressInfo = function(_this) { // 新增運送地址
+							$(_this).find('[type="radio"]').on('click', function() {
+								if ($(this).hasClass('add-address')) {
+									$(this).parents('li:visible').find('.sync, .shipping-method').show();
+								} else {
+									$(this).parents('li:visible').find('.sync, .shipping-method').hide();
+								}
+							});
+
 							$(_this).find('[type="radio"]').each(function() {
 								if ($(this).prop('checked')) {
 									if ($(this).hasClass('add-address')) { // 新增運送欄位預設選取
@@ -376,14 +384,6 @@
 											$(this).parents('.address-list').find('.summary:visible').click();
 										}
 									}
-								}
-							});
-
-							$(_this).find('[type="radio"]').on('click', function() {
-								if ($(this).hasClass('add-address')) {
-									$(this).parents('li:visible').find('.sync, .shipping-method').show();
-								} else {
-									$(this).parents('li:visible').find('.sync, .shipping-method').hide();
 								}
 							});
 						},
@@ -533,8 +533,8 @@
 											<div class="quantity">
 												<select name="delivery">
 													<option value="" selected>請選擇送貨方式</option>
-													<option data-option="logistics" value="0">新竹物流 $100</option>
-													<option data-option="cvs" value="1" selected>7-11超商取貨 $100</option>
+													<option data-option="logistics" value="0" selected>新竹物流 $100</option>
+													<option data-option="cvs" value="1">7-11超商取貨 $100</option>
 												</select>
 												<i class="fa fa-angle-down" aria-hidden="true"></i>
 											</div>

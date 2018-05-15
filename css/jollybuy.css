@@ -2202,6 +2202,13 @@ select{
   }
 }
 
+#order-list > ul > li{
+  margin: 30px 0;
+}
+
+#pay02 #order-list ul{
+  margin-bottom: 30px;
+}
 #pay01 #order-list .quantity,
 #pay02 #order-list .quantity{
   display: inline-block;
@@ -2214,7 +2221,7 @@ select{
 #pay02 #order-list .pay-info{
   clear: both;
   font-weight: bold;
-  padding: 10px 0 10px 15px;
+  padding: 0 0 10px 15px;
 }
 @media (max-width: 1000px) {
   #pay02 #order-list .pay-info{
@@ -2629,9 +2636,6 @@ select{
 * 結帳 第二步
 */
 
-#order-list{
-  margin-bottom: 30px;
-}
 #order-list .summary{
   font-size: 16px;
   font-weight: 600;
@@ -2685,16 +2689,16 @@ select{
   height: 0;
 }
 /* active */
-#order-list .active{
-  /* background: #fff;
+/* #order-list .active{
+  background: #fff;
   border: 1px solid #ccc;
-  border-bottom: none; */
+  border-bottom: none;
 }
 #order-list .active i{
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
-}
+} */
 
 /*pay Table*/
 
@@ -2726,7 +2730,7 @@ select{
   margin-right: 30px;
 }
 .shopping-cart-header img{
-  max-width: 40px;
+  max-height: 40px;
   margin-right: 20px;
 }
 /* table */
@@ -3518,8 +3522,11 @@ select{
     padding-right: 0px;
   }
 }
+
+
+
 /**
-* order
+* order 訂單首頁
 */
 
 #order .order-status{width: 10%;}
@@ -3531,8 +3538,12 @@ select{
 
 /* tab */
 #order #chat-list .tab{
+  display: inline-block;
   min-width: 100px;
-  justify-content: center;
+  text-align: center;
+}
+#order #chat-list .dot .active .tab{
+  border-bottom: none;
 }
 
 /* center title */
@@ -3541,41 +3552,170 @@ select{
 }
 #order #chat-list .shopping-cart-content .tbody .order-status{
   color: red;
+  font-weight: bold;
 }
 /* btns */
 #order #chat-list .shopping-cart-content .tbody .btns{
   display: inline-block;
 }
 
+/** 
+*modal
+*/
+
+/* 共用 */
+#order #myModal .modal-content{
+  overflow: auto;
+}
+#order #myModal .modal-footer{
+  text-align: center;
+  clear: both;
+}
+#order #myModal .rating-btn .tip{
+  text-align: left;
+}
+
+/* 隱藏 */
+#order #myModal .order-cancel,     /* 訂單取消 */
+#order #myModal .order-confirm,    /* 確認收貨 */
+#order #myModal .order-return,     /* 我要退貨 */
+#order #myModal .logistics-status, /* 物流狀態 */
+#order #myModal .chat-dialog,      /* 敲敲話 */
+#order #myModal .common-btn,       /* 共用按鈕 */
+#order #myModal .chat-btn,         /* 敲敲話按鈕 */
+#order #myModal .rating-btn{       /* 評價按鈕 */
+  display: none;
+}
+
+/* 顯示 */
+/* 訂單取消 */
+#order #myModal.order-cancel .order-cancel, 
+#order #myModal.order-cancel .common-btn,
+/* 確認收貨 */
+#order #myModal.order-confirm .order-confirm, 
+#order #myModal.order-confirm .common-btn,
+/* 我要退貨 */
+#order #myModal.order-return .order-return, 
+#order #myModal.order-return .common-btn,
+/* 物流狀態 */
+#order #myModal.logistics-status .logistics-status, 
+#order #myModal.logistics-status .common-btn,
+/* 敲敲話 */
+#order #myModal.chat-dialog .chat-dialog, 
+#order #myModal.chat-dialog .chat-btn{
+  display: block;
+}
+
+/* 物流狀態 */
+#order #myModal .logistics-status .ob_head{
+  text-align: center;
+  margin-bottom: 20px;
+}
+#order #myModal .logistics-status .side1,
+#order #myModal .logistics-status .side2{
+  display: inline-block;
+}
+#order #myModal .logistics-status .side2{
+  text-align: left;
+  padding-left: 10px;
+}
+#order #myModal .logistics-status .ob_body{
+  width: 270px;
+  margin: auto;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+#order #myModal .logistics-status .status-line{
+  background: url("../images/order/status-line.png") no-repeat center center;
+  width: 100%;
+}
+#order #myModal .logistics-status .status-line,
+#order #myModal .logistics-status .datetime,
+#order #myModal .logistics-status .status{
+  float: left;
+  line-height: 40px;
+}
+#order #myModal .logistics-status .status{
+  position: relative;
+  left: 40px;
+}
+
+/* 退貨/退款申請已成立 */
+#order #myModal .return-complete .ob_head{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#order #myModal .return-complete .ob_body{
+  width: 320px;
+  margin: auto;
+}
+#order #myModal .return-complete .ob_body span{
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  margin-right: 10px;
+  vertical-align: top;
+}
+#order #myModal .return-complete .ob_body .info{
+  display: inline-block;
+  width: 178px;
+}
+#order #myModal .return-complete .ob_foot{
+  text-align: center;
+  margin-top: 20px;;
+}
+
+
 
 @media (max-width: 1000px) {
   /**
-  *  訂單首頁
+  *   order 訂單首頁
   */
 
-
   /* tab */
-  #order #chat-list .dot{
-    display: inline-block;
+  #order #chat-list ul.dot{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px;
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(241, 241, 241);
   }
   #order #chat-list .dot li{
-    float: left;
-    width: 33.3%;
-  }
-  #order #chat-list .dot .tab{
+    position: static;
+    float: none;
     width: 100%;
   }
+  #order #chat-list .tab{
+    width: 100%;
+    min-width: 100px;
+    justify-content: center;
+    border: none;
+  }
+  /*active*/
+  #order #chat-list .active .tab{
+    border-bottom: none;
+  }
 
-  /* shopping-cart-content 框架 */
+  /* shopping-cart-content row */
   #order #chat-list .shopping-cart-content .tbody .td{
     width: 100%;
+    padding: 0;
   }
 
-  /* shopping-cart-content */
+  /* shopping-cart-content  custom alignment */
+  #order #chat-list .shopping-cart-content .tbody .order-status{
+    padding: 5px 0;
+  }
   #order #chat-list .shopping-cart-content .tbody .order-number,
   #order #chat-list .shopping-cart-content .tbody .order-date,
   #order #chat-list .shopping-cart-content .tbody .order-amount{
     text-align: left;
+    padding: 5px;
+  }
+  #order #chat-list .shopping-cart-content .tbody .order-eval span,
+  #order #chat-list .shopping-cart-content .tbody .order-chat span{
+    margin-bottom: 15px;
   }
   #order .shopping-cart-content .tbody .order-number span,
   #order .shopping-cart-content .tbody .order-date span,
@@ -3583,6 +3723,13 @@ select{
     position: relative;
     left: 70px;
   }
+
+  /** 
+  *modal
+  */
+  /* #order #myModal .return-complete .ob_body{
+    max-width: 100%;
+  } */
 }
 
 @media screen and (max-width: 576px) {
@@ -3861,7 +4008,7 @@ select{
     display: inline-block;
   }
   #pay01 .order-grid .shopping-cart-content .quantity-item{
-    width: 51%;
+    max-width: 174px;
   }
   #pay02 .order-grid .shopping-cart-content .quantity-item{
     padding: 0;
@@ -4049,46 +4196,6 @@ select{
 /**
 * 訂單查詢
 */
-#order .btn-chat a{
-  width: 40px;
-  height: 40px;
-  display: block;
-  background: url(../images/icons/chart.png);
-  padding: 0px;
-  margin: 0 auto;
-}
-#order .btn-chat a:hover{
-  background: url(../images/icons/chart_o.png);
-}
-/*收貨*/
-#order .cart-content .btn-receiving:hover{
-  color: #ffffff;
-}
-#order .cart-content .finished{
-  color: #333;
-  cursor: default;
-}
-#order #myModal .modal-content{
-  /*max-height: 600px;*/
-  overflow-y: auto;
-}
-#order #myModal .confirm,
-#order .modal-footer{
-  text-align: center;
-}
-#order #myModal .confirm .title{
-  font-size: 18px;
-  font-weight: bold;
-  padding: 12px 0px;
-}
-#order #myModal .modal-footer .tip{
-  display: none;
-  text-align: left;
-  margin-top: 15px;
-}
-#order #myModal .btn-eval{
-  display: none;
-}
 
 /*評價訊息*/
 #order .eval-dialog{
@@ -4393,7 +4500,6 @@ select{
 /* active */
 #chat-list .dot .active .tab{
   background: #fff;
-  border-bottom: 2px solid #fff;
 }
 
 /* override PC table 框架 */

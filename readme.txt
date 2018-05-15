@@ -3844,6 +3844,7 @@ pay03.html
 		</div>
 	</footer>
 
+<<<<<<< HEAD
 /**
 *Date: 2018/05/15
 *內容：店鋪新版有閑Header&Footer
@@ -3914,3 +3915,15 @@ pay03.html
 markup:
 <header id="type05">
 	<div class="header05"> →Class 原 header 改為 header05
+=======
+
+
+/**
+*Date: 2018/05/11
+*內容：合併會員中心-訂單
+*TKT: #74388
+*/
+
+1. 新增圖片：
+  images/order
+>>>>>>> 3bdbeaaaa19b6b517bbe5662f37c2d5e7bba5a10
