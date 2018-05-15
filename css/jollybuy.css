@@ -3806,6 +3806,9 @@ select{
   text-align: left;
   padding-left: 20px;
 }
+#order-info .shopping-cart-header .td span{
+  margin-left: 10px;
+}
 /* quantity */
 #order-info .shopping-cart-content .quantity-item .quantity-btn{
   margin: 0;
