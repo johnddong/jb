@@ -2341,7 +2341,7 @@ select{
     padding: 10px 15px 20px 15px;
     margin-top: 0;
   }
-  #pay01 .shopping-cart-footer .title{margin-bottom: 10px;}
+  #pay01 .shopping-cart-footer .title{margin-bottom: 0px;}
   #pay01 .shopping-cart-footer .shipping span{
     color: #ff0000;
     font-size: 20px;
@@ -2356,10 +2356,11 @@ select{
   }
   #pay01 .shopping-cart-footer .btns,
   #pay01 .shopping-cart-footer .btns{
-    margin-top: 10px;
+    margin-top: 0px;
   }
   #pay01 .shopping-cart-footer{
     padding: 10px;
+    padding-top: 5px;
   }
 }
 .shopping-cart-footer .checkbox-cont{
