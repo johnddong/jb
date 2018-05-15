@@ -3844,7 +3844,6 @@ pay03.html
 		</div>
 	</footer>
 
-<<<<<<< HEAD
 /**
 *Date: 2018/05/15
 *內容：店鋪新版有閑Header&Footer
@@ -3932,3 +3931,15 @@ pay03.html
  \jollybuy\images\header\type06
  
 
+/**
+*Date: 2018/05/15
+*內容：結帳step1 置底footer間距、文字大小調整
+*TKT: #74606
+*/
+1.頁面:pay.html
+ 移除markup:
+	<div class="td left">
+		<a href="#" class="continue-shopping submit">繼續購物</a>
+	</div>
+2.更新:
+	jollybuy.css
