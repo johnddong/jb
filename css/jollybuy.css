@@ -4721,6 +4721,7 @@ select{
   /* active */
   #chat-list .dot .active .tab{
     background: #fff;
+    border-bottom: none;
   }
 
   /**
@@ -4766,9 +4767,9 @@ select{
     display: inline-block;
     margin: 0 0 15px 0;
   }
-  #chat-list .shopping-cart-content .tbody .product-thumb a,
-  #chat-list .shopping-cart-content .tbody .product-name span,
-  #chat-list .shopping-cart-content .tbody .price span{
+  #chat-list .order .shopping-cart-content .tbody .product-thumb a,
+  #chat-list .order .shopping-cart-content .tbody .product-name span,
+  #chat-list .order .shopping-cart-content .tbody .price span{
     position: relative;
     left: 70px;
   }
