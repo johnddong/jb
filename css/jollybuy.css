@@ -242,6 +242,9 @@ form#search .invalid{
   font-size: 18px;
   font-weight: bold;
 }
+.breadcrumbs .current::before{
+  content: "// ";
+}
 /* loader */
 .loader{
   background:url(../images/spinner/spinner.gif) no-repeat center center;
