@@ -44,7 +44,7 @@
 	<div class="main-content checkout-page">
 		<div class="container">
 			<div class="breadcrumbs">
-				<a href="#">Home</a> / <span class="current">我的訂單</span>
+				<a href="#">首頁</a> / <a href="member-center.html">會員中心</a> <span class="current">我的訂單</span>
 			</div>
 			<div class="cart-content">
 				<!-- 訂單列表 -->
@@ -314,7 +314,7 @@
 														<div class="td order-eval"></div>
 														<div class="td order-chat" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
-															<span class="btns btn-chat" data-type="order-return">我要退貨</span>
+															<a href="return.html"><span class="btns" data-type="">我要退貨</span></a>
 														</div>
 													</div>
 												</div>
@@ -451,7 +451,7 @@
 										</li>
 										<!--/ 退貨完成 -->
 
-										<!-- 訂單完成已評價 -->
+										<!-- 訂單完成未評價 -->
 										<li data-type=""> 
 											<!-- table header -->
 											<div class="shopping-cart-header table">
@@ -484,18 +484,19 @@
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval">
-															<span class="btns"><a href="javascript: void(0);">去評價</a></span>
+															<span>未評價</span>
 														</div>
-														<div class="td order-chat" data-title="">
+														<div class="td order-chat order-eval" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
+															<span class="btns"><a href="javascript: void(0);">去評價</a></span>
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
-										<!--/ 訂單完成已評價 -->
+										<!--/ 訂單完成未評價 -->
 
-										<!-- 訂單完成未評價 -->
+										<!-- 訂單完成已評價 -->
 										<li data-type=""> 
 											<!-- table header -->
 											<div class="shopping-cart-header table">
@@ -537,7 +538,7 @@
 												</div>
 											</div>
 										</li>
-										<!--/ 訂單完成未評價 -->
+										<!--/ 訂單完成已評價 -->
 									</ul>
 								</li>	
 								<!--/ tab: 全部 -->
@@ -680,13 +681,6 @@
 						<div class="title">已收到商品?</div>
 					</div>
 					<!--/ 已發貨 -->
-
-					<!-- 我要退貨 -->
-					<div class="order-return">
-						<div class="title">是否確定申請退貨?</div>
-						<div class="title">確定後訂單將無法更改</div>
-					</div>
-					<!--/ 我要退貨 -->
 
 					<!-- 物流狀態 -->
 					<div class="logistics-status">

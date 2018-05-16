@@ -3637,7 +3637,6 @@ select{
 /* 隱藏 */
 #order #myModal .order-cancel,     /* 訂單取消 */
 #order #myModal .order-confirm,    /* 確認收貨 */
-#order #myModal .order-return,     /* 我要退貨 */
 #order #myModal .logistics-status, /* 物流狀態 */
 #order #myModal .chat-dialog,      /* 敲敲話 */
 #order #myModal .common-btn,       /* 共用按鈕 */
@@ -3654,9 +3653,6 @@ select{
 /* 確認收貨 */
 #order #myModal.order-confirm .order-confirm,
 #order #myModal.order-confirm .common-btn,
-/* 我要退貨 */
-#order #myModal.order-return .order-return,
-#order #myModal.order-return .common-btn,
 /* 物流狀態 */
 #order #myModal.logistics-status .logistics-status,
 #order #myModal.logistics-status .logistics-btn,
@@ -3690,14 +3686,16 @@ select{
   width: 100%;
 }
 #order #myModal .logistics-status .status-line,
-#order #myModal .logistics-status .datetime,
-#order #myModal .logistics-status .status{
+#order #myModal .logistics-status .datetime{
   float: left;
   line-height: 40px;
 }
 #order #myModal .logistics-status .status{
-  position: relative;
-  left: 40px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  line-height: 20px;
+  padding-left: 40px;
 }
 
 /* 退貨/退款申請已成立 */
