@@ -30,8 +30,11 @@ h3.supper-title{
 .back-to-top{
   bottom: 80px;
 }
+h3.supper-title{
+  font-size: 16px!important;
+}
 .supper-title::after{
-  width: 100%;
+  width: 100%!important;
   background: #ccbcbc;
 }
 /*menu*/
@@ -234,6 +237,13 @@ form#search .invalid{
 /* breadcrumbs */
 .breadcrumbs {
   margin: 35px 0 0 0;
+}
+.breadcrumbs .current{
+  font-size: 18px;
+  font-weight: bold;
+}
+.breadcrumbs .current::before{
+  content: "// ";
 }
 /* loader */
 .loader{
@@ -3782,6 +3792,84 @@ select{
   #order #order-list table,
   #jpoint .shopping-cart-content{
     border-bottom: 1px solid #ccc;
+  }
+}
+
+
+
+/**
+* 訂單詳情
+*/
+
+#order-info .td.price{width: 20%;}
+#order-info .shopping-cart-header .td{
+  text-align: left;
+  padding-left: 20px;
+}
+#order-info .shopping-cart-header .td span{
+  margin-left: 10px;
+}
+/* quantity */
+#order-info .shopping-cart-content .quantity-item .quantity-btn{
+  margin: 0;
+}
+#order-info .shopping-cart-content .quantity-item .btns-minus{
+  display: none;
+}
+#order-info .shopping-cart-content .quantity-item input{
+  text-align: left;
+  padding-left: 5px;
+}
+/* orther info */
+#order-info .orther-info .order-info,
+#order-info .orther-info .shipping-info{
+  margin-bottom: 20px;
+}
+#order-info .orther-info .order-info .flash{
+  background: rgb(244, 6, 6);
+}
+
+@media (max-width: 1000px) {
+  #order-info .td.price{ /* override width */
+    width: 35%;
+  }
+  #order-info .shopping-cart-header .td{ /* reset */
+    padding: 0;
+  }
+  /* 商品數量 */
+  #order-info .order-grid .shopping-cart-content .quantity-item{
+    padding: 0;
+    height: 20px;
+    line-height: 20px;
+  }
+  #order-info .order-grid .shopping-cart-content .quantity-item::before{
+    left: 10px;
+    color: #333;
+    font-weight: normal;
+  }
+  #order-info .order-grid .quantity-btn{
+    margin: 0;
+  }
+  #order-info .order-grid .quantity-btn .btns-minus{
+    display: block;
+  }
+  #order-info .btns-plus, 
+  #order-info .btns-minus {
+    float: left;
+    width: 40px;
+    cursor: pointer;
+    margin: 0;
+  }
+  #order-info .order-grid .quantity-btn input{
+    margin: 0 3.8%;
+    font-size: 15px;
+    font-weight: normal;
+    color: #777;
+    height: 27px;
+    line-height: 27px;
+    padding: 0 7px 7px 7px;
+    -webkit-text-fill-color: #333; /* strengthen text color for iPhone */
+    opacity: 1; /* strengthen text color for iPhone */
   }
 }
 
