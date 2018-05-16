@@ -2238,6 +2238,9 @@ select{
   padding: 10px 0 10px 15px;
 }
 @media (max-width: 1000px) {
+  #pay01 #order-list{
+    margin-top: 20px;
+  }
   #pay02 #order-list .pay-info{
     padding: 0;
   }
