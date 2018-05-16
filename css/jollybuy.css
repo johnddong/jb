@@ -2124,9 +2124,7 @@ select{
 }
 
 @media (max-width: 1000px){
-  #pay01 .main-content{
-    margin-bottom: 75px;
-  }
+  #pay01 .main-content{margin-bottom: 75px;}
 }
 
 
@@ -3854,7 +3852,7 @@ select{
   #order-info .order-grid .quantity-btn .btns-minus{
     display: block;
   }
-  #order-info .btns-plus, 
+  #order-info .btns-plus,
   #order-info .btns-minus {
     float: left;
     width: 40px;
