@@ -2114,8 +2114,8 @@ select{
 }
 
 @media (max-width: 1000px){
-  #pay01,#pay02{
-    font-size: 15px;
+  #pay01 .main-content{
+    margin-bottom: 75px;
   }
 }
 
@@ -2208,9 +2208,7 @@ select{
   }
 }
 
-#order-list > ul > li{
-  margin: 30px 0;
-}
+
 
 #pay02 #order-list ul{
   margin-bottom: 30px;
@@ -2988,7 +2986,6 @@ select{
 .cart-content .orther-info .margin-top{
   margin-top: 10px;
 }
-
 .customer-info #datepicker{
   margin-bottom: 20px;
 }
