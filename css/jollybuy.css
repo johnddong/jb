@@ -2217,7 +2217,9 @@ select{
 }
 
 
-
+#order-list > ul > li{
+  margin-bottom: 30px;
+}
 #pay02 #order-list ul{
   margin-bottom: 30px;
 }
@@ -2227,13 +2229,13 @@ select{
 }
 #pay01 #order-list .quantity input,
 #pay02 #order-list .quantity input{
-  border: 1px solid #ccc
+  border: 1px solid #ccc;
 }
 #pay01 #order-list .pay-info,
 #pay02 #order-list .pay-info{
   clear: both;
   font-weight: bold;
-  padding: 0 0 10px 15px;
+  padding: 10px 0 10px 15px;
 }
 @media (max-width: 1000px) {
   #pay02 #order-list .pay-info{
