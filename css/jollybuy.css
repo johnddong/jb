@@ -3638,6 +3638,7 @@ select{
 #order #myModal .logistics-status, /* 物流狀態 */
 #order #myModal .chat-dialog,      /* 敲敲話 */
 #order #myModal .common-btn,       /* 共用按鈕 */
+#order #myModal .logistics-btn,    /* 物流狀態按鈕 */
 #order #myModal .chat-btn,         /* 敲敲話按鈕 */
 #order #myModal .rating-btn{       /* 評價按鈕 */
   display: none;
@@ -3655,7 +3656,7 @@ select{
 #order #myModal.order-return .common-btn,
 /* 物流狀態 */
 #order #myModal.logistics-status .logistics-status,
-#order #myModal.logistics-status .common-btn,
+#order #myModal.logistics-status .logistics-btn,
 /* 敲敲話 */
 #order #myModal.chat-dialog .chat-dialog,
 #order #myModal.chat-dialog .chat-btn{
