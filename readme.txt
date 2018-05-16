@@ -3932,14 +3932,13 @@ pay03.html
  
 
 /**
-*Date: 2018/05/15
+*Date: 2018/05/16
 *內容：結帳step1 置底footer間距、文字大小調整
 *TKT: #74606
 */
-1.頁面:pay.html
- 移除markup:
-	<div class="td left">
-		<a href="#" class="continue-shopping submit">繼續購物</a>
-	</div>
+1.頁面:pay.html、pay02.html、pay03.html
+ markup: <header id="type05">
+		<div class="header05">→Class 原 header 改為 header05
+
 2.更新:
 	jollybuy.css
