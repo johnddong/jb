@@ -3592,7 +3592,7 @@ select{
 #order .order-number{width: 15%}
 #order .order-date{width: 15%;}
 #order .order-amount{width: 15%;}
-#order .order-eval{width: 15%;}
+#order .order-eval-status{width: 15%;}
 #order .order-chat{width: 30%;}
 
 /* tab */
@@ -3771,10 +3771,15 @@ select{
     text-align: left;
     padding: 5px;
   }
+  #order #chat-list .shopping-cart-content .tbody .order-eval-status span{
+    padding: 5px 0;
+    display: block;
+  }
   #order #chat-list .shopping-cart-content .tbody .order-eval span,
   #order #chat-list .shopping-cart-content .tbody .order-chat span{
     margin-bottom: 15px;
   }
+
   #order .shopping-cart-content .tbody .order-number span,
   #order .shopping-cart-content .tbody .order-date span,
   #order .shopping-cart-content .tbody .order-amount span{
