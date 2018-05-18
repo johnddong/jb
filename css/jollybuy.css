@@ -152,6 +152,12 @@ a.btns,
   background: #fff;
   box-shadow: none;
 }
+.btns.disable{
+  background:#ddd;
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: not-allowed;
+}
 .mark{
   clear: both;
   padding: 2px 5px;
