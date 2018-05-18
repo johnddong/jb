@@ -3973,6 +3973,18 @@ select{
   margin-bottom: 10px;
 }
 
+/* modal */
+#order-confirm #myModal .ob_head{
+  font-size: 16px;
+}
+#order-confirm #myModal .ob_head,
+#order-confirm #myModal .ob_foot{
+  text-align: center;
+}
+#order-confirm #myModal .ob_body{
+  margin: 20px 0;
+}
+
 @media(max-width: 1000px) {
   /* reset shopping-cart-checkout margin */
   #order-confirm .shopping-cart-checkout{

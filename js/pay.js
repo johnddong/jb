@@ -245,7 +245,12 @@ $(function() {
       bodyerCheckbox: 'shopping-cart-content [type="checkbox"]',
       footerCheckbox: 'shopping-cart-footer .pull-left [type="checkbox"]',
       generalStore: 'general-store',
-      specialStore: 'special-store'
+      specialStore: 'special-store',
+      return: { // 退貨申請 on 退貨確認頁
+        reason: 'return-reason',
+        disable: 'disable',
+        btn: 'btns'
+      }
     },
     $headerCheckbox = $cartContent.find('.'+c.headerCheckbox),
     $bodyerCheckbox = $cartContent.find('.'+c.bodyerCheckbox),
@@ -256,6 +261,9 @@ $(function() {
       $cartContent.find('.checkbox-cont').each(function() {
         if ($(this).find('[type="checkbox"]').data('status') == 'checked') {
           $(this).click().checked();
+          if ($('.'+c.return.reason).length > 0) { // 退貨申請
+            $('.'+c.return.reason).find('.'+c.return.btn).removeClass(c.return.disable);
+          }
           Pay.subTotal($(this));
         }
       });
@@ -290,14 +298,21 @@ $(function() {
 
     childrenCheckbox = function(_this) {
       var storeType = $(_this).parents('li').eq(0).data('type')
-        , payResult = {};
+        , payResult = {}
+        , isChildChecked;
       if ($(_this).prop('checked')) {
         allHeaderCheck(storeType);
-        childCheck(_this);
+        isChildChecked = childCheck(_this);
+        if ($('.'+c.return.reason).length > 0) { // 退貨申請
+          if (isChildChecked > 0) $('.'+c.return.reason).find('.'+c.return.btn).removeClass(c.return.disable);
+        }
       } else {
         allHeaderUncheck(storeType);
-        childCheck(_this);
         headerUncheck(_this);
+        isChildChecked = childCheck(_this);
+        if ($('.'+c.return.reason).length > 0) { // 退貨申請
+          if (isChildChecked == 0) $('.'+c.return.reason).find('.'+c.return.btn).addClass(c.return.disable);
+        }
       }
       // cal grand total
       payResult = Pay.subTotal($(_this));
@@ -324,6 +339,7 @@ $(function() {
           $(_this).parents('li').eq(0).find('.'+c.headerCheckbox).click();
         }
       }
+      return isChildChecked;
     },
   
     allHeaderCheck = function(storeType) {

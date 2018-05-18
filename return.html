@@ -203,6 +203,7 @@
 										<!-- 退貨原因 -->
 										<div class="col-xs-12 col-md-7 return-reason">
 											<!-- 加上判斷是否顯示 -->
+											<!--
 											<div class="dropdown-list">
 												<div class="shipping">
 													<div class="quantity">
@@ -221,7 +222,7 @@
 													<button id="btn-return" type="button" class="btns disable">申請退貨/退款</button>
 												</div>
 											</div>
-											<!-- -->
+											-->
 										</div>
 										<!--/ 退貨原因 -->
 										<!-- 小計 -->
@@ -300,6 +301,7 @@
 							// modal
 							var $myModal = $('#myModal');
 							$('.return-reason').find('.btns').on('click', function() {
+								if ($(this).hasClass('disable')) return;
 								$myModal.modal('show');
 							});
 							// modal close
@@ -386,7 +388,6 @@
 	</div>
 	<!--Footer -->
 	<footer class="leisure merge">
-<<<<<<< HEAD
 		<div class="fixed-footer">
 			<ul>
 				<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
@@ -406,28 +407,6 @@
 		</div>
 	</footer>
 	<!--/Footer -->
-=======
-			<div class="fixed-footer">
-				<ul>
-					<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
-					<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
-					<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
-					<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
-					<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
-				</ul>
-			</div>
-			<div class="footer">
-				<ul>
-					<li><a href="http://dev-www.jollybuy.com/act/mb-about.html">關於有閑</a></li>
-					<li><a href="http://dev-www.jollybuy.com/act/mb-privacy.html">隱私權政策</a></li>
-					<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
-					<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
-				</ul>
-				<div class="copy-right">© 2018 Jollywiz Limited</div>
-			</div>
-		</footer>
-		<!--/Footer -->
->>>>>>> 24c9969d07136fa5c97c705ad381af3f7b7661d2
 	<a class="back-to-top" href="#"></a>
 	
 	<!-- Modal -->
@@ -440,6 +419,51 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
+					<!-- 退貨申請成立 -->
+					<!--
+					<div class="return-comlete">
+						<div class="ob_head">
+							<div>感謝您！</div>
+							<div>您的退貨/退款申請已成立</div>
+						</div>
+						<div class="ob_body">
+							<div class="row">
+								<div class="col-xs-4 col-sm-2">
+									訂單號碼
+								</div>
+								<div class="col-xs-8 col-sm-10">
+									JBO1832811292280
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 col-sm-2">
+									退貨單號碼
+								</div>
+								<div class="col-xs-8 col-sm-10">
+									RO180329180127250
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4 col-sm-2">
+									退貨說明
+								</div>
+								<div class="col-xs-8 col-sm-10">
+									退貨訂單成立後將於3-5天內至您所填寫的送貨地址向您收取退貨商品，屆時請買家自行負擔退貨運費
+								</div>
+							</div>
+						</div>
+						<div class="ob_foot">
+							<div>
+								退貨確認信件已發送到您的電子信箱：
+							</div>
+							<div>
+								xxx.xxx@gmail.com
+							</div>
+						</div>
+					</div>
+					-->
+					<!--/ 退貨申請成立 -->
+
 					<!-- 退貨申請 -->
 					<div class="order-cancel">
 						<div class="title">是否確定申請退貨?</div>
@@ -452,6 +476,12 @@
 						<button type="button" class="btns" data-dismiss="modal">取消</button>
 						<button type="button" class="btns">確定</button>
 					</div>
+					<!--
+					<div class="complete-btn">
+						<button type="button" class="btns"><a href="">返回首頁</a></button>
+						<button type="button" class="btns"><a href="">退貨查詢</a></button>
+					</div>
+					-->
 	      </div>
 	    </div>
 	  </div>
