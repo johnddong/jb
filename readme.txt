@@ -3942,3 +3942,51 @@ pay03.html
 
 2.更新:
 	jollybuy.css
+
+/**
+*Date: 2018/05/18
+*內容：Header加回購物車icon，移除賺導購金
+*TKT: #74801
+*/
+1.頁面:	member-center.html、chat.html、favorite.html、member.html、結帳step1、結帳step2、結帳step3
+markup1:
+	<div id="menu-list" class="col-sm-10">
+		<ul>
+			<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+			<li class="member"><a href="https://dev-www.jollybuy.com/Member/IndexNew">購物會員</a></li>
+			<li class="cart"><a href="javascript:void(0);">購物車</a></li>
+		</ul>
+	</div>
+markup2:
+	<div class="fixed-footer">
+		<ul>
+			<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+			<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+			<li class="member"><a href="https://dev-www.jollybuy.com/Member/IndexNew">購物會員</a></li>
+			<li class="cart"><a href="javascript:void(0);">購物車</a></li>
+		</ul>
+	</div>
+
+/**
+*Date: 2018/05/18
+*內容：店鋪Header&Footer(新版)-移除"賺導購金"
+*TKT: #74932
+*/
+1.頁面: category.html、product.html、search.html、所有模組頁面
+ markup1:
+	<div id="menu-list" class="col-sm-9">
+		<ul>
+			<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+			<li class="member"><a href="https://dev-www.jollybuy.com/Member/IndexNew">購物會員</a></li>
+			<li class="cart"><a href="javascript:void(0);">購物車</a></li>
+		</ul>
+	</div>
+ markup2:
+	<div class="fixed-footer">
+		<ul>
+			<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+			<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+			<li class="member"><a href="https://dev-www.jollybuy.com/Member/IndexNew">購物會員</a></li>
+			<li class="cart"><a href="javascript:void(0);">購物車</a></li>
+		</ul>
+	</div>
