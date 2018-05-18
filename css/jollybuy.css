@@ -1367,7 +1367,7 @@ header .header.layout1 .top-links{
 .leisure .fixed-footer .shop a{background-image: url("../images/footer/icon-shop.png");}
 .leisure .fixed-footer .member a{background-image: url("../images/footer/icon-member.png");}
 .leisure .fixed-footer .cart a{background-image: url("../images/footer/icon-cart.png");}
-.leisure .fixed-footer .cart a:hover{background-image: url("../images/footer/icon-cart-hover.png");}
+
 @media (min-width: 767px) {
   .leisure .fixed-footer{display: none;}
   }
