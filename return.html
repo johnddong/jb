@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>jollybuy - 確認退貨</title>
+	<title>jollybuy - 退貨確認</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -13,10 +13,10 @@
 	<link href="css/chosen.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/theme-1.css" rel="stylesheet">
-	<link href="css/jollybuy.css" rel="stylesheet">
+	<link href="css/jollybuy.css?v=1.4" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 </head>
-<body id="return">
+<body id="order-confirm">
 	<!-- header -->
 	<header id="type05">
 		<div class="header">
@@ -39,260 +39,341 @@
 		</div>
 	</header>
 	<!--/ header -->
-	<div class="main-content checkout-page">
+	<div id="pay01" class="main-content checkout-page">
 		<div class="container">
 			<div class="breadcrumbs">
-				<a href="#">Home</a> / <span class="current">確認退貨</span>
+				<a href="#">Home</a> / <a href="member-center.html">會員中心</a> <span class="current">退貨確認</span>
 			</div>
-			<div class="cart-content">
-				<form action="" method="post" name="return_product">
-				<!-- 購物清單 -->
-				<div id="order-list">
-					<!-- 購物清單概要 -->
-					<div class="summary">
-						<div>合計：NT$1,840</div>
-						<div class="cart-qty">購物車：2件</div>
-						<i class="fa fa-angle-down fa-lg ease" aria-hidden="true"></i>
-					</div>
-					<!--/ 購物清單概要 -->
-					<div class="detail ease order-grid">
-						<div id="list-table" class="list-table">
-							<div class="mobile-select-all"><input class="select-all" type="checkbox">全選</div>
-							<div class="shopping-cart-content table">
-								<div class="tr title">
-									<div class="td product-checkbox"><input class="select-all" type="checkbox"></div>
-									<div class="td product-thumb">商品圖片</div>
-									<div class="td product-name">商品名稱</div>
-									<div class="td quantity-item">數量</div>
-									<div class="td price">單價</div>
-									<div class="td total">小計</div>
+			<form name="checkout" action="pay02.html" method="post">
+				<div class="cart-content">
+					<!-- 購物車清單 -->
+					<div id="order-list" class="order-grid">
+						<div class="title-cont">
+							<h3 class="title supper-title">選擇退貨商品</h3><span></span>
+						</div>
+						<ul>
+							<li data-type="">
+								<!-- table header -->
+								<div class="shopping-cart-header table">
+									<div class="tr">
+										<div class="td product-checkbox">
+											<label class="checkbox-cont" data-title="商品選取">
+												<input type="checkbox" value="1" data-sku="">
+											</label>
+										</div>
+										<div class="td product-name">全選</div>
+										<div class="td product-coupon"></div>
+									</div>
 								</div>
-								<div class="tbody">
-									<div class="tr each-item" data-orderid ='12345'>
-										<div class="td product-checkbox"><input type="checkbox" value="12345" name="returnProduct[]"></div>
-										<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/270x270.jpg" alt="" /></a></div>
-										<div class="td product-name" data-title="商品名稱"><a href="#" class="product-name">經典藍色 T-Shirt</a></div>
-										<div class="td quantity-item" data-title="數量">
-											<div class="quantity">1</div>
-										</div>
-										<div class="td price" data-title="單價">NT$<span>1,750</span></div>
-										<div class="td total" data-title="小計">NT$<span>1,750</span></div>
-									</div>
-									<div class="tr each-item" data-orderid ='2222'>
-										<div class="td product-checkbox"><input type="checkbox" value="12345" name="returnProduct[]"></div>
-										<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/270x270.jpg" alt="" /></a></div>
-										<div class="td product-name" data-title="商品名稱"><a href="#" class="product-name">經典藍色 T-Shirt</a></div>
-										<div class="td quantity-item" data-title="數量">
-											<div class="quantity">1</div>
-										</div>
-										<div class="td price" data-title="單價">NT$<span>1,750</span></div>
-										<div class="td total" data-title="小計">NT$<span>1,750</span></div>
-									</div>
-									<div class="tr each-item" data-relatedid="22222" data-orderid="33333">
+								<!-- table header -->
+								<div class="shopping-cart-content table">
+									<!-- table 標題 -->
+									<div class="tr title">
 										<div class="td product-checkbox"></div>
-										<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/270x270.jpg" alt="" /></a></div>
-										<div class="td product-name" data-title="商品名稱">
-											<div class="flash">加購商品</div>
-											<div class="product-title">加購經典 Jeans</div>
+										<div class="td product-thumb">商品</div>
+										<div class="td product-name"></div>
+										<div class="td product-spec">規格</div>
+										<div class="td quantity-item">數量</div>
+										<div class="td price">單價(NT$)</div>
+										<!-- <div class="td total">小計</div> -->
+										<!-- <div class="td delete-item">移除</div> -->
+									</div>
+									<!--/ table 標題 -->
+									<div class="tbody">
+										<!-- 一般商品 -->
+										<div class="tr each-item" data-orderid="11111">
+											<div class="td product-checkbox">
+												<label class="checkbox-cont" data-title="商品選取">
+													<input type="checkbox" value="1" data-sku="" data-status="checked">
+												</label>
+											</div>
+											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
+											<div class="td product-name" data-title="商品名稱">
+												<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
+												<div><span class="mark">符合優惠</span><span>全館滿100000折1000</span></div>
+												<div><span class="mark">符合優惠</span><span>好友推薦折扣20%</span></div>
+											</div>
+											<div class="td product-spec" data-title="規格">
+												<div>顏色：圓領白色</div>
+												<div>尺寸：S</div>
+												<!-- <div class="dropdown">
+													<select name="color">
+														<option value="">請選擇顏色</option>
+														<option value="0">黑色</option>
+														<option value="1">白色</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div>
+												<div class="dropdown">
+													<select name="size">
+														<option value="">請選擇尺寸</option>
+														<option value="0">XS</option>
+														<option value="1">SM</option>
+														<option value="2">L</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div> -->
+											</div>
+											<div class="td quantity-item" data-title="數量">
+												<div class="quantity-btn">
+													<div class="qty_box">
+														<div class="btns btns-minus disable">&#45;</div>
+														<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
+														<div class="btns btns-plus">&#43;</div>
+													</div>
+												</div>
+											</div>
+											<div class="td price" data-title="單價">$<span>1,000</span></div>
 										</div>
-										<div class="td quantity-item" data-title="數量">
-											<div class="quantity">1</div>
+										<div class="tr each-item" data-orderid="22222">
+											<div class="td product-checkbox">
+												<label class="checkbox-cont" data-title="商品選取">
+													<input type="checkbox" value="1" data-sku="">
+												</label>
+											</div>
+											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images02.jpg" alt="" /></a></div>
+											<div class="td product-name" data-title="商品名稱">
+												<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
+												<span class="mark mark-gray">本商品不適用任何優惠</span>
+											</div>
+											<div class="td product-spec" data-title="規格">
+												<div>顏色：圓領白色</div>
+												<div>尺寸：S</div>
+												<!-- <div class="dropdown">
+													<select name="color">
+														<option value="">請選擇顏色</option>
+														<option value="0">黑色</option>
+														<option value="1">白色</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div>
+												<div class="dropdown">
+													<select name="size">
+														<option value="">請選擇尺寸</option>
+														<option value="0">XS</option>
+														<option value="1">SM</option>
+														<option value="2">L</option>
+													</select>
+													<i class="fa fa-angle-down" aria-hidden="true"></i>
+												</div> -->
+											</div>
+											<div class="td quantity-item" data-title="數量">
+												<div class="quantity-btn">
+													<div class="qty_box">
+														<div class="btns btns-minus disable">&#45;</div>
+														<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
+														<div class="btns btns-plus">&#43;</div>
+													</div>
+												</div>
+											</div>
+											<div class="td price" data-title="單價">$<span>2,000</span></div>
 										</div>
-										<div class="td price" data-title="單價">NT$<span>75</span></div>
-										<div class="td total" data-title="小計">NT$<span>75</span></div>
+										<!--/ 一般商品 -->
+										<!-- 加購商品 -->
+										<div class="tr each-item" data-relatedid="22222" data-orderid="33333">
+											<div class="td product-checkbox">
+												<label class="checkbox-cont" data-title="商品選取">
+													<input type="checkbox" value="1" data-sku="">
+												</label>
+											</div>
+											<div class="td product-thumb" data-title="商品圖片"><img src="images/temp/470x470/images03.jpg" alt="" /></div>
+											<div class="td product-name" data-title="商品名稱">
+												<div class="product-title">加購商品：公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</div>
+												<div class="flash">加購商品</div>
+											</div>
+											<div class="td product-spec" data-title="規格">
+
+											</div>
+											<div class="td quantity-item" data-title="數量">
+												<div class="quantity-btn">
+													<div class="qty_box fixed-num">
+														<div class="btns btns-minus disable">&#45;</div>
+														<input class="qty" name="qty" type="tel" value="1" disabled>
+														<div class="btns btns-plus disable">&#43;</div>
+													</div>
+												</div>
+											</div>
+											<div class="td price" data-title="單價">$<span>100</span></div>
+										</div>
+										<!--/ 加購商品 -->
 									</div>
 								</div>
+								<div class="shopping-cart-checkout table">
+									<div class="row">
+										<!-- 退貨原因 -->
+										<div class="col-xs-12 col-md-7 return-reason">
+											<!-- 加上判斷顯示 
+											<div class="dropdown-list">
+												<div class="shipping">
+													<div class="quantity">
+														<select class="" name="return_reason">
+															<option value="">請選擇退貨原因</option>
+															<option value="0">未收到商品</option>
+															<option value="1">商品有瑕疵</option>
+															<option value="2">商品運送過程受損</option>
+															<option value="3">商品規格不符(如尺寸、顏色)</option>
+															<option value="4">商品質量與刊登的描述不符</option>
+															<option value="5">買方依法主張鑑賞期內退貨</option>
+															<option value="6">買賣雙方達成協議退貨</option>
+														</select>
+														<i class="fa fa-angle-down" aria-hidden="true"></i>
+													</div>
+													<button id="btn-return" type="submit" class="btns disable" disabled="true">申請退貨/退款</button>
+												</div>
+											</div>
+											-->
+										</div>
+										<!--/ 退貨原因 -->
+										<!-- 小計 -->
+										<div class="col-xs-12 col-md-5">
+											<div class="subtotal-cont">
+												<h3 class="subtitle total"><div class="txt">小計 </div>$<span>3,100</span></h3>
+											</div>
+										</div>
+										<!--/ 小計 -->
+									</div>
+									<div class="row atm-info">
+										<!-- 退款資料 & 退款備註 -->
+										<div class="return-info">
+											<div class="col-xs-12 col-md-5">
+												<div class="orther-info">
+													<h3>退款資料</h3>
+													<div class="dropdown-list">
+														<div class="shipping">
+															<div class="quantity">
+																<select name="bank_name">
+																	<option value="">請選擇銀行名稱</option>
+																	<option value="0">台灣銀行(004)</option>
+																	<option value="1">第一銀行(007)</option>
+																</select>
+																<i class="fa fa-angle-down" aria-hidden="true"></i>
+															</div>
+															<div class="quantity">
+																<select name="branch_name">
+																	<option value="">請選擇分行名稱</option>
+																	<option value="0">臺灣銀行館前分行(0040071)</option>
+																	<option value="1">臺灣銀行臺南分行(0040093)</option>
+																</select>
+																<i class="fa fa-angle-down" aria-hidden="true"></i>
+															</div>
+														</div>
+													</div>
+													<input type="text" name="account_name" class="input-info" placeholder="請填寫帳戶名稱" value="">
+													<input type="text" name="account_number" class="input-info" placeholder="請填寫帳戶號碼" value="">
+													<h3 class="remark">退款備註</h3>
+													<textarea name="remark" class="input-info" class="input-info" placeholder="請填寫退款備註說明"></textarea>
+												</div>
+											</div>
+											<!--/ 退款資料 & 退款備註 -->
+											<div class="col-sm-12 col-md-2 line-cont">
+												<div class="line"></div>
+											</div>
+											<!-- 退貨原因 -->
+											<div class="col-xs-12 col-md-5 return-reason">
+												<div class="dropdown-list">
+													<div class="shipping">
+														<div class="quantity">
+															<select class="" name="return_reason">
+																<option value="">請選擇退貨原因</option>
+																<option value="0">未收到商品</option>
+																<option value="1">商品有瑕疵</option>
+																<option value="2">商品運送過程受損</option>
+																<option value="3">商品規格不符(如尺寸、顏色)</option>
+																<option value="4">商品質量與刊登的描述不符</option>
+																<option value="5">買方依法主張鑑賞期內退貨</option>
+																<option value="6">買賣雙方達成協議退貨</option>
+															</select>
+															<i class="fa fa-angle-down" aria-hidden="true"></i>
+														</div>
+														<button id="btn-return" type="submit" class="btns disable" disabled="true">申請退貨/退款</button>
+													</div>
+												</div>
+											</div>
+											<!--/ 退貨原因 -->
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- 退貨說明 & 訂單詳情 & 配送資訊 -->
+						<div class="orther-info">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<!-- 退貨說明 -->
+									<div class="return-desc">
+										<h3 class="title supper-title">退貨說明</h3>
+										<div>
+											退貨訂單成立後將於3-5天內至您所填寫的送貨地址向您收取退貨商品，屆時請買家自行負擔退貨運費
+										</div>
+									</div>
+									<!--/ 退貨說明 -->
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<!-- 訂單詳情 -->
+									<div class="order-info">
+										<h3 class="title supper-title">訂單詳情</h3>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">訂單日期</div>
+											<div class="col-xs-8 col-sm-9">2018-03-23 15:39</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">訂單狀態</div>
+											<div class="col-xs-8 col-sm-9"><span class="flash">已發貨</span></div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">訂單備註</div>
+											<div class="col-xs-8 col-sm-9">訂單備註內容內容內容內容內容內容內容內容內容內容</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">付款日期</div>
+											<div class="col-xs-8 col-sm-9">2018-03-28 15:39</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">付款狀態</div>
+											<div class="col-xs-8 col-sm-9"><span class="flash">已付款</span></div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">付款方式</div>
+											<div class="col-xs-8 col-sm-9">ATM</div>
+										</div>
+									</div>
+									<!--/ 訂單詳情 -->
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<!-- 發票資訊 -->
+									<h3 class="title supper-title">配送資訊</h3>
+									<div class="shipping-info">
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">收件人</div>
+											<div class="col-xs-8 col-sm-9">王大寶</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">電話號碼</div>
+											<div class="col-xs-8 col-sm-9">0912345678</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">送貨方式</div>
+											<div class="col-xs-8 col-sm-9">新竹物流</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4 col-sm-3">送貨地址</div>
+											<div class="col-xs-8 col-sm-9">台北市內湖區瑞光路528巷35號</div>
+										</div>
+									</div>
+									<!--/ 發票資訊 -->
+								</div>
 							</div>
 						</div>
+						<!--/ 訂單詳情 & 配送方式 & 發票資訊-->
 					</div>
-				</div>
-				<!--/ 購物清單 -->
-				<div id="order-success">
-					<!-- 請依付款方式判斷顯示或隱藏 -->
-					<!-- ATM轉帳 -->
-					<div class="refund-info panel panel-default">
-						<div class="panel-heading"><h2>ATM轉帳 退款資料</h2></div>
-						<div class="panel-body">
-							<div class="row orther-info">
-								<div class="col-xs-12 col-sm-6">
-									<h3 class="title supper-title">退款資料</h3>
-									<div class="quantity">
-										<select name="bank_name">
-											<option value="">銀行名稱</option>
-											<option value="0">台灣銀行(004)</option>
-											<option value="1">第一銀行(007)</option>
-									 	</select>
-										<i class="fa fa-angle-down" aria-hidden="true"></i>
-			            </div>
-									<div class="quantity">
-										<select name="branch_name">
-											<option value="">分行名稱</option>
-											<option value="0">臺灣銀行館前分行(0040071)</option>
-											<option value="1">臺灣銀行臺南分行(0040093)</option>
-									 	</select>
-										<i class="fa fa-angle-down" aria-hidden="true"></i>
-			            </div>
-									<input type="text" name="account_name" class="input-info" placeholder="帳戶名稱" value="">
-									<input type="text" name="account_number" class="input-info" placeholder="帳戶" value="">
-								</div>
-								<div class="col-xs-12 col-sm-6">
-									<h3 class="title supper-title">退款原因</h3>
-									<div class="return-reason">買方依法主張鑑賞期內退貨</div>
-									<h3 class="title supper-title">退款備註</h3>
-									<textarea name="remark" class="remark"></textarea>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--/ 請依付款方式判斷顯示或隱藏 -->
-					<div class="shopping-cart-checkout table">
-						<div class="tr">
-							<div class="td left">
-								<a href="order.html" class="submit">回上一頁</a>
-							</div>
-							<div class="td right">
-								<div class="select-wrap">
-									<select class="" name="return_reason">
-										<option value="">退貨原因</option>
-										<option value="0">未收到商品</option>
-										<option value="1">商品有瑕疵</option>
-										<option value="2">商品運送過程受損</option>
-										<option value="3">商品規格不符(如尺寸、顏色)</option>
-										<option value="4">商品質量與刊登的描述不符</option>
-										<option value="5">買方依法主張鑑賞期內退貨</option>
-										<option value="6">買賣雙方達成協議退貨</option>
-									</select>
-									<i class="fa fa-angle-down" aria-hidden="true"></i>
-								</div>
-								<button id="btn-return" type="submit" class="disable" disabled="true">申請退貨/退款</button>
-							</div>
-						</div>
-					</div>
-					<div class="panel panel-default">
-					  <div class="panel-heading"><h2>訂單編號</h2></div>
-					  <div class="panel-body">
-							<div>訂單號碼：00000000000000000</div>
-							<div>訂單確認電郵已經發送到您的電子郵箱：****@g.com </div>
-					  </div>
-					</div>
+					<!--/ 購物車清單 -->
 				</div>
 			</form>
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 order-info">
-						<!--- 訂單資訊 -->
-						<h3 class="title supper-title">訂單資訊</h3>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">訂單日期：</div>
-							<div class="col-xs-8 col-sm-7">017-10-07 05:21PM</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">訂單狀態：</div>
-							<div class="col-xs-8 col-sm-7">
-								<!-- 運送貨態 -->
-								<div class="shipping-status">
-									<div class="summary">全家付款完成 <i class="fa fa-angle-down fa-lg ease" aria-hidden="true"></i></div>
-									<div class="detail ease">
-										<ul class="submenu">
-											<li class="current fa fa-check" aria-hidden="true"><span>訂單成立 11/27 22:54</span></li>
-											<li class="current fa fa-check" aria-hidden="true"><span>付款完成 11/27 22:58</span></li>
-											<li><span>訂單處理中</span></li>
-											<li><span>商品已出貨</span></li>
-											<li><span>商品送達門市</span></li>
-											<li><span>買家取件完成</span></li>
-										</ul>
-									</div>
-								</div>
-								<!--/ 運送貨態 -->
-							</div>
-						</div>
-						<h3 class="title supper-title">送貨資訊</h3>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">收件人名稱：</div>
-							<div class="col-xs-8 col-sm-7">Peter Pan</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">收件人電話號碼：</div>
-							<div class="col-xs-8 col-sm-7">0927717798</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">送貨方式：</div>
-							<div class="col-xs-8 col-sm-7">全家取貨 70 元（提供貨到付款，信用卡 or ATM匯款）2-4 天到貨</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">送貨狀態：</div>
-							<div class="col-xs-8 col-sm-7">備貨中</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">送貨方式指示：</div>
-							<div class="col-xs-8 col-sm-7">付款後可選擇超商取貨</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">全家門市名稱：</div>
-							<div class="col-xs-8 col-sm-7">全家中賓店</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">全家門市地址：</div>
-							<div class="col-xs-8 col-sm-7">台北市南港區xxx</div>
-						</div>
-						<!---/ 選擇運送及付款方式 -->
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 customer-info">
-						<!-- 顧客資訊 -->
-						<h3 class="title supper-title">顧客資訊</h3>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">名稱：</div>
-							<div class="col-xs-8 col-sm-7">Louise Kim</div>
-						</div>
-						<h3 class="title supper-title">付款狀態</h3>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">付款方式：</div>
-							<div class="col-xs-8 col-sm-7">銀行轉帳</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">付款狀態：</div>
-							<div class="col-xs-8 col-sm-7">未付款</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">付款方式簡介：</div>
-							<div class="col-xs-8 col-sm-7">
-								ATM 匯款後寄出 (收款後1－3天出貨)
-								可選擇超商取貨 or 宅配寄送
-								玉山銀行代碼：808  忠孝分行
-								銀行帳號：0875-979-152016
-								請注意！匯款後請留言告知帳號末五碼，確定收到匯款就會馬上出貨囉！
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">發票狀態：</div>
-							<div class="col-xs-8 col-sm-7">處理中</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-4 col-sm-5">發票申請類型：</div>
-							<div class="col-xs-8 col-sm-7">電子發票</div>
-						</div>
-						<!--/ 小計清單&提交訂單 -->
-					</div>
-				</div>
-				<script>
-				// 貨態 toggle
-				$(function() {
-					$('.shipping-status').toggleExp();
-				});
-				</script>
-				<!-- 叮嚀訊息 -->
-				<div class="note">
-					<ul>
-						<li>叮嚀訊息xxx</li>
-						<li>叮嚀訊息xxx</li>
-					</ul>
-				</div>
-				<!--/ 叮嚀訊息 -->
-			</div>
 		</div>
 	</div>
-
 	<!--Footer -->
 	<footer class="leisure merge">
+<<<<<<< HEAD
 		<div class="fixed-footer">
 			<ul>
 				<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
@@ -312,7 +393,30 @@
 		</div>
 	</footer>
 	<!--/Footer -->
+=======
+			<div class="fixed-footer">
+				<ul>
+					<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew">回首頁</a></li>
+					<li class="dollar"><a href="https://dev-admin.jollybuy.com/">賺導購金</a></li>
+					<li class="shop"><a href="https://dev-admin.jollybuy.com/">我的店舖</a></li>
+					<li class="member"><a href="http://dev-www.jollybuy.com/act/construction.html">購物會員</a></li>
+					<!-- <li class="cart"><a href="javascript:void(0);">購物車</a></li> -->
+				</ul>
+			</div>
+			<div class="footer">
+				<ul>
+					<li><a href="http://dev-www.jollybuy.com/act/mb-about.html">關於有閑</a></li>
+					<li><a href="http://dev-www.jollybuy.com/act/mb-privacy.html">隱私權政策</a></li>
+					<li><a href="http://dev-www.jollybuy.com/act/mb-Terms.html">有閑條款</a></li>
+					<li><a href="mailto:Jollybuy_cs@jollywiz.com">聯絡我們</a></li>
+				</ul>
+				<div class="copy-right">© 2018 Jollywiz Limited</div>
+			</div>
+		</footer>
+		<!--/Footer -->
+>>>>>>> 24c9969d07136fa5c97c705ad381af3f7b7661d2
 	<a class="back-to-top" href="#"></a>
+	
 	<!-- Modal -->
 	<div id="myModal" class="modal fade">
 	  <div class="modal-dialog" role="document">
@@ -323,7 +427,43 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <p>是否確認從購物車移除?</p>
+					<!-- 選擇優惠券 -->
+					<div id="coupon">
+						<div class="title">選擇優惠券</div>
+						<ul>
+							<li>
+								<label for="coupon01">
+									<input type="radio" value="1" name="coupon" id="coupon01" data-value="10">&nbsp;周年慶特惠! 全館不限金額再打9折
+								</label>
+							</li>
+							<li>
+								<label for="coupon02">
+									<input type="radio" value="1" name="coupon" id="coupon02" data-value="10">&nbsp;周年慶特惠! 全館不限金額再打9折
+								</label>
+							</li>
+							<li>
+								<label for="coupon03">
+									<input type="radio" value="1" name="coupon" id="coupon03" data-value="30">&nbsp;訂單滿299現折$30
+								</label>
+							</li>
+							<li>
+								<label for="coupon04">
+									<input type="radio" value="1" name="coupon" id="coupon04" data-value="30">&nbsp;訂單滿299現折$30
+								</label>
+							</li>
+							<li>
+								<label for="coupon05">
+									<input type="radio" value="1" name="coupon" id="coupon05" data-value="100">&nbsp;老會員現折$100
+								</label>
+							</li>
+							<li>
+								<label for="coupon06">
+									<input type="radio" value="1" name="coupon" id="coupon06" data-value="100">&nbsp;老會員現折$100
+								</label>
+							</li>
+						</ul>
+					</div>
+					<!--/ 選擇優惠券 -->
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-primary">確定</button>
@@ -332,40 +472,7 @@
 	    </div>
 	  </div>
 	</div>
-	<script>
-	$(function() {
-	 // search bar validate
-	 $('[name="return_product"]').validate({
-		 event: 'keyup',
-		 ignore: '',
-		 errorClass: 'invalid',
-		 rules: {
-			 return_reason: {
-				 required: true
-			 },
-			 bank_name:{
-				 required: true
-			 },
-			 branch_name:{
-				 required: true
-			 },
-			 account_name:{
-				 required: true
-			 },
-			 account_number:{
-				 required: true
-			 }
-		 },
-		 errorPlacement: function(error, el) {
-		 },
-		 success: function(label, element) {
-		 },
-		 submitHandler: function(form) {
-			 form.submit();
-		 }
-	 });
-	});
-	</script>
+
 	<!--/ Modal -->
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
   <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
@@ -381,8 +488,8 @@
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
   <script type="text/javascript" src="js/frontend.js"></script>
-  <script type="text/javascript" src="js/pay.js"></script>
-	<script type="text/javascript" src="js/return.js"></script>
+  <script type="text/javascript" src="js/pay.js?v=1"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>
 </body>
 </html>
