@@ -203,18 +203,22 @@ textarea,
 }
 /* placeholder */
 .cart-content input::-webkit-input-placeholder,
+.cart-content textarea::-webkit-input-placeholder,
 .modal input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #ccc;
 }
 .cart-content input::-moz-placeholder,
+.cart-content textarea::-moz-placeholder,
 .modal input::-moz-placeholder { /* Firefox 19+ */
   color: #ccc;
 }
 .cart-content input:-ms-input-placeholder,
+.cart-content textarea:-ms-input-placeholder,
 .modal input:-ms-input-placeholder { /* IE 10+ */
   color: #ccc;
 }
 .cart-content input:-moz-placeholder,
+.cart-content textarea:-moz-placeholder,
 .modal input:-moz-placeholder { /* Firefox 18- */
   color: #ccc;
 }
@@ -3880,6 +3884,136 @@ select{
   }
 }
 
+
+/**
+*訂單確認
+ */
+
+
+#order-confirm .td.price{
+  width: 20%;
+}
+
+/* add bottom border line */
+#order-confirm .shopping-cart-checkout{
+  border-bottom: 2px solid rgb(241, 242, 246);
+}
+/* 退貨原因 */
+#order-confirm .return-reason{
+  padding-top: 10px;
+}
+#order-confirm .return-reason .dropdown-list{
+  text-align: left;
+}
+#order-confirm .return-reason .dropdown-list .quantity{
+  margin-bottom: 0;
+}
+/* ATM 退貨資訊左側 */
+#order-confirm .return-info h3{
+  font-size: 14px;
+  text-align: left;
+  margin-top: 0;
+}
+#order-confirm .return-info .quantity{
+  float: left;
+  width: 49%;
+}
+#order-confirm .return-info .quantity:nth-child(n+2){
+  float: right;
+}
+#order-confirm .return-info select{
+  height: 40px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+#order-confirm .shipping .quantity i{
+  position: absolute;
+  top: 13px;
+}
+#order-confirm .return-info .remark{
+  margin-top: 20px;
+}
+#order-confirm .return-info textarea{
+  width: 100%;
+  height: 80px;
+  margin-bottom: 0;
+}
+/* ATM 中間分割線 */
+#order-confirm .return-info .line-cont .line{
+  margin-top: 0;
+  height: 317px;
+}
+/* ATM 退貨資訊右側 */
+#order-confirm .return-info .return-reason{
+  display: flex;
+  height: 337px;
+  align-items: center;
+}
+#order-confirm .return-info .return-reason .dropdown-list,
+#order-confirm .return-info .return-reason .quantity{
+  width: 100%;
+  text-align: center;
+}
+#order-confirm .return-info .return-reason .btns{
+  margin-top: 20px;
+}
+#order-confirm .orther-info .order-info .flash{
+  background: rgb(244, 6, 6);
+}
+/* override margin bottom */
+#order-confirm .return-info .quantity,
+#order-confirm .return-info input{
+  margin-bottom: 10px;
+}
+
+@media(max-width: 1000px) {
+  /* reset shopping-cart-checkout margin */
+  #order-confirm .shopping-cart-checkout{
+    margin-top: 0;
+  }
+  /* reset cart-content padding */
+  #order-confirm .cart-content .orther-info{
+    padding-bottom: 0;
+    margin-top: 10px;
+  }
+  /* reset quantity margin */
+  #order-confirm .order-grid .quantity{
+    width: 100%;
+    margin-left: 0;
+  }
+  /* ATM input/select */
+  #order-confirm .return-info .quantity,
+  #order-confirm .return-info input{
+    width: 100%;
+    margin-left: 0;
+  }
+  /* ATM 分割線 */
+  #order-confirm .return-info .line-cont .line{
+    display: none;
+  }
+  /* ATM 退貨原因 */
+  #order-confirm .return-info .return-reason{
+    display: block;
+    height: auto;
+  }
+  /* ATM 退貨按鈕 */
+  #order-confirm .return-reason .dropdown-list{
+    text-align: center;
+  }
+  #order-confirm .return-reason .btns{
+    margin-top: 20px;
+  }
+  /* rm bottom border line */
+  #order-confirm .shopping-cart-checkout{
+    border-bottom: none;
+  }
+  /* add 退貨說明&訂單詳情 margin */
+  #order-confirm .orther-info .return-desc, 
+  #order-confirm .orther-info .order-info{
+    margin-bottom: 20px;
+  }
+}
 
 
 /**
