@@ -203,7 +203,7 @@
 									<div class="row">
 										<!-- 退貨原因 -->
 										<div class="col-xs-12 col-md-7 return-reason">
-											<!-- 加上判斷顯示 
+											<!-- 加上判斷是否顯示 -->
 											<div class="dropdown-list">
 												<div class="shipping">
 													<div class="quantity">
@@ -219,10 +219,10 @@
 														</select>
 														<i class="fa fa-angle-down" aria-hidden="true"></i>
 													</div>
-													<button id="btn-return" type="submit" class="btns disable" disabled="true">申請退貨/退款</button>
+													<button id="btn-return" type="button" class="btns disable">申請退貨/退款</button>
 												</div>
 											</div>
-											-->
+											<!-- -->
 										</div>
 										<!--/ 退貨原因 -->
 										<!-- 小計 -->
@@ -286,7 +286,7 @@
 															</select>
 															<i class="fa fa-angle-down" aria-hidden="true"></i>
 														</div>
-														<button id="btn-return" type="submit" class="btns disable" disabled="true">申請退貨/退款</button>
+														<button id="btn-return" type="button" class="btns disable">申請退貨/退款</button>
 													</div>
 												</div>
 											</div>
@@ -296,6 +296,19 @@
 								</div>
 							</li>
 						</ul>
+						<script>
+							$(function() {
+							// modal
+							var $myModal = $('#myModal');
+							$('.return-reason').find('.btns').on('click', function() {
+								$myModal.modal('show');
+							});
+							// modal close
+							$myModal.on("hidden.bs.modal", function () {
+								//if (btnType != undefined) $myModal.removeClass(btnType);
+							});
+						});
+						</script>
 						<!-- 退貨說明 & 訂單詳情 & 配送資訊 -->
 						<div class="orther-info">
 							<div class="row">
@@ -406,47 +419,18 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-					<!-- 選擇優惠券 -->
-					<div id="coupon">
-						<div class="title">選擇優惠券</div>
-						<ul>
-							<li>
-								<label for="coupon01">
-									<input type="radio" value="1" name="coupon" id="coupon01" data-value="10">&nbsp;周年慶特惠! 全館不限金額再打9折
-								</label>
-							</li>
-							<li>
-								<label for="coupon02">
-									<input type="radio" value="1" name="coupon" id="coupon02" data-value="10">&nbsp;周年慶特惠! 全館不限金額再打9折
-								</label>
-							</li>
-							<li>
-								<label for="coupon03">
-									<input type="radio" value="1" name="coupon" id="coupon03" data-value="30">&nbsp;訂單滿299現折$30
-								</label>
-							</li>
-							<li>
-								<label for="coupon04">
-									<input type="radio" value="1" name="coupon" id="coupon04" data-value="30">&nbsp;訂單滿299現折$30
-								</label>
-							</li>
-							<li>
-								<label for="coupon05">
-									<input type="radio" value="1" name="coupon" id="coupon05" data-value="100">&nbsp;老會員現折$100
-								</label>
-							</li>
-							<li>
-								<label for="coupon06">
-									<input type="radio" value="1" name="coupon" id="coupon06" data-value="100">&nbsp;老會員現折$100
-								</label>
-							</li>
-						</ul>
+					<!-- 退貨申請 -->
+					<div class="order-cancel">
+						<div class="title">是否確定申請退貨?</div>
+						<div class="title">確定訂單將無法更改</div>
 					</div>
-					<!--/ 選擇優惠券 -->
+					<!--/ 退貨申請 -->
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-primary">確定</button>
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+					<div class="common-btn">
+						<button type="button" class="btns" data-dismiss="modal">取消</button>
+						<button type="button" class="btns">確定</button>
+					</div>
 	      </div>
 	    </div>
 	  </div>
