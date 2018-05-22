@@ -3930,14 +3930,17 @@ select{
 }
 /* quantity */
 #order-info .shopping-cart-content .quantity-item .quantity-btn,
+#return-confirm .shopping-cart-content .quantity-item .quantity-btn,
 #return-complete .shopping-cart-content .quantity-item .quantity-btn{
   margin: 0;
 }
 #order-info .shopping-cart-content .quantity-item .btns-minus,
+#return-confirm .shopping-cart-content .quantity-item .btns-minus,
 #return-complete .shopping-cart-content .quantity-item .btns-minus{
   display: none;
 }
 #order-info .shopping-cart-content .quantity-item input,
+#return-confirm .shopping-cart-content .quantity-item input,
 #return-complete .shopping-cart-content .quantity-item input{
   text-align: left;
   padding-left: 5px;
@@ -3960,27 +3963,33 @@ select{
   }
   /* 商品數量 */
   #order-info .order-grid .shopping-cart-content .quantity-item,
+  #return-confirm .order-grid .shopping-cart-content .quantity-item,
   #return-complete .order-grid .shopping-cart-content .quantity-item{
     padding: 0;
     height: 20px;
     line-height: 20px;
   }
   #order-info .order-grid .shopping-cart-content .quantity-item::before,
+  #return-confirm .order-grid .shopping-cart-content .quantity-item::before,
   #return-complete .order-grid .shopping-cart-content .quantity-item::before{
     left: 10px;
     color: #333;
     font-weight: normal;
   }
   #order-info .order-grid .quantity-btn,
+  #return-confirm .order-grid .quantity-btn,
   #return-complete .order-grid .quantity-btn{
     margin: 0;
   }
   #order-info .order-grid .quantity-btn .btns-minus,
+  #return-confirm .order-grid .quantity-btn .btns-minus,
   #return-complete .order-grid .quantity-btn .btns-minus{
     display: block;
   }
   #order-info .btns-plus,
   #order-info .btns-minus,
+  #return-confirm .btns-plus,
+  #return-confirm .btns-minus,
   #return-complete .btns-plus,
   #return-complete .btns-minus{
     float: left;
@@ -3989,6 +3998,7 @@ select{
     margin: 0;
   }
   #order-info .order-grid .quantity-btn input,
+  #return-confirm .order-grid .quantity-btn input,
   #return-complete .order-grid .quantity-btn input{
     margin: 0 3.8%;
     font-size: 15px;
@@ -4097,6 +4107,11 @@ select{
 }
 
 @media(max-width: 1000px) {
+  #return-confirm .order-grid .shopping-cart-content .td.price{ /* override width */
+    width: 35%;
+    text-align: right;
+    padding-right: 0;
+  }
   /* reset shopping-cart-checkout margin */
   #return-confirm .shopping-cart-checkout{
     margin-top: 0;
@@ -4436,7 +4451,6 @@ select{
     font-weight: normal;
   }
   #pay01 .order-grid .quantity-btn {
-    background-color: #fff;
     margin: 0;
   }
   #pay02 .order-grid .quantity-btn{
