@@ -42,7 +42,7 @@
 	<div id="pay01" class="main-content checkout-page">
 		<div class="container">
 			<div class="breadcrumbs">
-				<a href="#">Home</a> / <a href="member-center.html">會員中心</a> <span class="current">退貨確認</span>
+				<a href="#">首頁</a> / <a href="member-center.html">會員中心</a> <span class="current">退貨確認</span>
 			</div>
 			<form name="checkout" action="pay02.html" method="post">
 				<div class="cart-content">
@@ -90,8 +90,6 @@
 											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images01.jpg" alt="" /></a></div>
 											<div class="td product-name" data-title="商品名稱">
 												<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
-												<div><span class="mark">符合優惠</span><span>全館滿100000折1000</span></div>
-												<div><span class="mark">符合優惠</span><span>好友推薦折扣20%</span></div>
 											</div>
 											<div class="td product-spec" data-title="規格">
 												<div>顏色：圓領白色</div>
@@ -116,10 +114,10 @@
 											</div>
 											<div class="td quantity-item" data-title="數量">
 												<div class="quantity-btn">
-													<div class="qty_box">
+													<div class="qty_box fixed-num">
 														<div class="btns btns-minus disable">&#45;</div>
-														<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
-														<div class="btns btns-plus">&#43;</div>
+														<input class="qty" name="qty" type="tel" value="1" disabled>
+														<div class="btns btns-plus disable">&#43;</div>
 													</div>
 												</div>
 											</div>
@@ -134,7 +132,6 @@
 											<div class="td product-thumb" data-title="商品圖片"><a href="#"><img src="images/temp/470x470/images02.jpg" alt="" /></a></div>
 											<div class="td product-name" data-title="商品名稱">
 												<a href="#" class="product-title" target="_blank">公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</a>
-												<span class="mark mark-gray">本商品不適用任何優惠</span>
 											</div>
 											<div class="td product-spec" data-title="規格">
 												<div>顏色：圓領白色</div>
@@ -159,10 +156,10 @@
 											</div>
 											<div class="td quantity-item" data-title="數量">
 												<div class="quantity-btn">
-													<div class="qty_box">
+													<div class="qty_box fixed-num">
 														<div class="btns btns-minus disable">&#45;</div>
-														<input class="qty" name="qty" type="tel" value="1" min="1" max="5" maxlength="3" autocomplete="off">
-														<div class="btns btns-plus">&#43;</div>
+														<input class="qty" name="qty" type="tel" value="1" disabled>
+														<div class="btns btns-plus disable">&#43;</div>
 													</div>
 												</div>
 											</div>
@@ -179,7 +176,6 @@
 											<div class="td product-thumb" data-title="商品圖片"><img src="images/temp/470x470/images03.jpg" alt="" /></div>
 											<div class="td product-name" data-title="商品名稱">
 												<div class="product-title">加購商品：公司正貨公司正貨原廠公司正規正貨公司正貨公司正貨原廠公司正規正貨</div>
-												<div class="flash">加購商品</div>
 											</div>
 											<div class="td product-spec" data-title="規格">
 
@@ -286,7 +282,7 @@
 															</select>
 															<i class="fa fa-angle-down" aria-hidden="true"></i>
 														</div>
-														<button id="btn-return" type="button" class="btns disable">申請退貨/退款</button>
+														<button id="btn-return" type="button" class="btns disable" data-type="return-apply">申請退貨/退款</button>
 													</div>
 												</div>
 											</div>
@@ -298,17 +294,21 @@
 						</ul>
 						<script>
 							$(function() {
-							// modal
-							var $myModal = $('#myModal');
-							$('.return-reason').find('.btns').on('click', function() {
-								if ($(this).hasClass('disable')) return;
-								$myModal.modal('show');
+								// modal
+								var $myModal = $('#myModal')
+								, btnType;
+								$('.return-reason').find('.btns').on('click', function() {
+									if ($(this).hasClass('disable')) return;
+									btnType = $(this).data('type');
+									if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+								});
+								// 退貨確定
+								$myModal.find('.return-yes').on('click', function () {
+									if (btnType != undefined) $myModal.removeClass(btnType);
+									btnType = $(this).data('type');
+									if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+								});
 							});
-							// modal close
-							$myModal.on("hidden.bs.modal", function () {
-								//if (btnType != undefined) $myModal.removeClass(btnType);
-							});
-						});
 						</script>
 						<!-- 退貨說明 & 訂單詳情 & 配送資訊 -->
 						<div class="orther-info">
@@ -420,8 +420,7 @@
 	      </div>
 	      <div class="modal-body">
 					<!-- 退貨申請成立 -->
-					<!--
-					<div class="return-comlete">
+					<div class="return-complete">
 						<div class="ob_head">
 							<div>感謝您！</div>
 							<div>您的退貨/退款申請已成立</div>
@@ -437,7 +436,7 @@
 							</div>
 							<div class="row">
 								<div class="col-xs-4 col-sm-2">
-									退貨單號碼
+									退貨單號
 								</div>
 								<div class="col-xs-8 col-sm-10">
 									RO180329180127250
@@ -461,28 +460,42 @@
 							</div>
 						</div>
 					</div>
-					-->
 					<!--/ 退貨申請成立 -->
 
 					<!-- 退貨申請 -->
-					<div class="order-cancel">
+					<div class="return-apply">
 						<div class="title">是否確定申請退貨?</div>
-						<div class="title">確定訂單將無法更改</div>
+						<div class="title">確定後訂單將無法更改</div>
 					</div>
 					<!--/ 退貨申請 -->
-	      </div>
-	      <div class="modal-footer">
-					<div class="common-btn">
-						<button type="button" class="btns" data-dismiss="modal">取消</button>
-						<button type="button" class="btns">確定</button>
-					</div>
-					<!-- 退貨申請成立按鈕 -->
+					<!-- 提示訊息 -->
 					<!--
-					<div class="complete-btn">
-						<button type="button" class="btns"><a href="">返回首頁</a></button>
-						<button type="button" class="btns"><a href="">退貨查詢</a></button>
+					<div class="return-message">
+						<div>請填寫退款資料</div>
 					</div>
 					-->
+					<!--/ 提示訊息 -->
+	      </div>
+	      <div class="modal-footer">
+					<!-- 共用按鈕 -->
+					<div class="common-btn">
+						<button type="button" class="btns" data-dismiss="modal">取消</button>
+						<button type="button" class="btns return-yes" data-type="return-complete">確定</button>
+					</div>
+					<!--/ 共用按鈕 -->
+					<!-- 退貨申請成立按鈕 -->
+					<div class="return-complete-btn">
+						<button type="button" class="btns"><a href="index.html">返回首頁</a></button>
+						<button type="button" class="btns"><a href="return-complete.html">退貨查詢</a></button>
+					</div>
+					<!-- /退貨申請成立按鈕 -->
+					<!-- 提示訊息按鈕 -->
+					<!--
+					<div class="return-message-btn">
+						<button type="button" class="btns" data-dismiss="modal">確定</button>
+					</div>
+					-->
+					<!--/ 提示訊息按鈕 -->
 	      </div>
 	    </div>
 	  </div>
