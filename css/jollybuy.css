@@ -4017,6 +4017,9 @@ select{
 *訂單確認
  */
 
+ #return-confirm #pay01 .order-grid .shopping-cart-content .quantity-item{ /* reset max-width */
+   max-width: initial;
+ }
 /* set width for price column */
 #return-confirm .td.price{
   width: 20%;
@@ -4106,11 +4109,26 @@ select{
   margin: 20px 0;
 }
 
+/* modal */
+/* 隱藏 */
+#return-confirm #myModal .return-complete,      /* 退貨申請成立 */
+#return-confirm #myModal .return-complete-btn,
+#return-confirm #myModal .return-apply,         /* 退貨申請 */
+#return-confirm #myModal .common-btn{
+  display: none;
+}
+/* 顯示 */
+#return-confirm #myModal.return-complete .return-complete,     /* 退貨申請成立 */
+#return-confirm #myModal.return-complete .return-complete-btn,
+#return-confirm #myModal.return-apply .return-apply,           /* 退貨申請 */
+#return-confirm #myModal.return-apply .common-btn{
+  display: block;
+}
+
 @media(max-width: 1000px) {
   #return-confirm .order-grid .shopping-cart-content .td.price{ /* override width */
     width: 35%;
     text-align: right;
-    padding-right: 0;
   }
   /* reset shopping-cart-checkout margin */
   #return-confirm .shopping-cart-checkout{
@@ -4781,23 +4799,6 @@ select{
 #return .invalid{
   border: 1px solid #b83d36;
 }
-
-/* modal */
-/* 隱藏 */
-#return-confirm #myModal .return-complete,      /* 退貨申請成立 */
-#return-confirm #myModal .return-complete-btn,
-#return-confirm #myModal .return-apply,         /* 退貨申請 */
-#return-confirm #myModal .common-btn{
-  display: none;
-}
-/* 顯示 */
-#return-confirm #myModal.return-complete .return-complete,     /* 退貨申請成立 */
-#return-confirm #myModal.return-complete .return-complete-btn,
-#return-confirm #myModal.return-apply .return-apply,           /* 退貨申請 */
-#return-confirm #myModal.return-apply .common-btn{
-  display: block;
-}
-
 
 @media screen and (max-width: 576px) {
   #return .select-wrap{
