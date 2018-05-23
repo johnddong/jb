@@ -261,13 +261,33 @@ $(function() {
       $cartContent.find('.checkbox-cont').each(function() {
         if ($(this).find('[type="checkbox"]').data('status') == 'checked') {
           $(this).click().checked();
-          if ($('.'+c.return.reason).length > 0) { // 退貨申請
-            $('.'+c.return.reason).find('.'+c.return.btn).removeClass(c.return.disable);
+          // 退貨申請
+          var $returnReason = $(this).parents('li').eq(0).find('.'+c.return.reason);
+          if ($returnReason.length > 0 && $returnReason.find('option:selected').val() != '') { 
+            $returnReason.find('.'+c.return.btn).removeClass(c.return.disable);
           }
           Pay.subTotal($(this));
         }
       });
 
+      // 退貨申請
+      if ($('.'+c.return.reason).length > 0) {
+        $('.'+c.return.reason).on('change', function() {
+          var isChecked = 0
+            , $this = $(this);
+          $(this).parents('li').eq(0).find('[type="checkbox"]').each(function() {
+            if ($(this).prop('checked')) {
+              isChecked++;
+            }
+          });
+          if (isChecked > 0 && $this.find('option:selected').val() != '') // none checked && select val != ''
+            $this.find('.'+c.return.btn).attr('data-type', 'return-apply').removeClass(c.return.disable);
+          else {
+            $this.find('.'+c.return.btn).attr('data-type', 'return-message').addClass(c.return.disable);
+          }
+        });
+      }
+     
       // store header
       $headerCheckbox.on('click', function() {
         headerCheckbox(this);
@@ -297,21 +317,25 @@ $(function() {
     },
 
     childrenCheckbox = function(_this) {
-      var storeType = $(_this).parents('li').eq(0).data('type')
+      var $li = $(_this).parents('li').eq(0)
         , payResult = {}
         , isChildChecked;
       if ($(_this).prop('checked')) {
-        allHeaderCheck(storeType);
+        allHeaderCheck($li.data('type'));
         isChildChecked = childCheck(_this);
         if ($('.'+c.return.reason).length > 0) { // 退貨申請
-          if (isChildChecked > 0) $('.'+c.return.reason).find('.'+c.return.btn).removeClass(c.return.disable);
+          if (isChildChecked > 0 && $li.find('.'+c.return.reason + ' option:selected').val() != '') { // checked && select val != ''
+            $li.find('.'+c.return.btn).attr('data-type', 'return-apply').removeClass(c.return.disable);
+          }
         }
       } else {
-        allHeaderUncheck(storeType);
+        allHeaderUncheck($li.data('type'));
         headerUncheck(_this);
         isChildChecked = childCheck(_this);
         if ($('.'+c.return.reason).length > 0) { // 退貨申請
-          if (isChildChecked == 0) $('.'+c.return.reason).find('.'+c.return.btn).addClass(c.return.disable);
+          if (isChildChecked == 0 || $li.find('.'+c.return.reason + ' option:selected').val() == '') { // unchecked && select val == ''
+            $li.find('.'+c.return.btn).attr('data-type', 'return-message').addClass(c.return.disable);
+          }
         }
       }
       // cal grand total

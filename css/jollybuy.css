@@ -4114,14 +4114,18 @@ select{
 #return-confirm #myModal .return-complete,      /* 退貨申請成立 */
 #return-confirm #myModal .return-complete-btn,
 #return-confirm #myModal .return-apply,         /* 退貨申請 */
-#return-confirm #myModal .common-btn{
+#return-confirm #myModal .common-btn,
+#return-confirm #myModal .return-message,       /* 提示訊息 */
+#return-confirm #myModal .return-message-btn{
   display: none;
 }
 /* 顯示 */
 #return-confirm #myModal.return-complete .return-complete,     /* 退貨申請成立 */
 #return-confirm #myModal.return-complete .return-complete-btn,
 #return-confirm #myModal.return-apply .return-apply,           /* 退貨申請 */
-#return-confirm #myModal.return-apply .common-btn{
+#return-confirm #myModal.return-apply .common-btn,
+#return-confirm #myModal.return-message .return-message,       /* 提示訊息 */
+#return-confirm #myModal.return-message .return-message-btn{
   display: block;
 }
 
@@ -4862,7 +4866,7 @@ select{
   text-align: left;
 }
 #return-complete .line-cont .line{
-  height: 150px;
+  height: 130px;
   margin-top: 0;
 }
 

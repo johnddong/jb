@@ -282,7 +282,7 @@
 															</select>
 															<i class="fa fa-angle-down" aria-hidden="true"></i>
 														</div>
-														<button id="btn-return" type="button" class="btns disable" data-type="return-apply">申請退貨/退款</button>
+														<button id="btn-return" type="button" class="btns disable" data-type="return-message">申請退貨/退款</button>
 													</div>
 												</div>
 											</div>
@@ -296,11 +296,31 @@
 							$(function() {
 								// modal
 								var $myModal = $('#myModal')
-								, btnType;
-								$('.return-reason').find('.btns').on('click', function() {
-									if ($(this).hasClass('disable')) return;
-									btnType = $(this).data('type');
+								, btnType
+								checkATMForm = function() { // ATM退貨申請
+									var bankNameSelect = $('[name="bank_name"]').find('option:selected').val()
+										, branchNameSelect = $('[name="branch_name"]').find('option:selected').val()
+										, accountName = $('[name="account_name"]').val()
+										, accountNumber = $('[name="account_number"]').val();
+									if (bankNameSelect == '' || branchNameSelect == '' || accountName == '' || accountNumber == '') {
+										return false ;
+									} else {
+										return true;
+									}
+								};
+								// 申請退貨/退款
+								$('#btn-return').on('click', function() {
+									btnType = $(this).attr('data-type');
+									if ($('.atm-info').length > 0) { // ATM 退款表單
+										if (!checkATMForm()) {
+											btnType = 'return-message';
+										}
+									}
 									if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+								});
+								// modal close
+								$myModal.on("hidden.bs.modal", function () {
+									if (btnType != undefined) $myModal.removeClass(btnType);
 								});
 								// 退貨確定
 								$myModal.find('.return-yes').on('click', function () {
@@ -469,11 +489,9 @@
 					</div>
 					<!--/ 退貨申請 -->
 					<!-- 提示訊息 -->
-					<!--
 					<div class="return-message">
-						<div>請填寫退款資料</div>
+						<div>請填妥退款資料及原因，以利退款作業!</div>
 					</div>
-					-->
 					<!--/ 提示訊息 -->
 	      </div>
 	      <div class="modal-footer">
@@ -490,11 +508,9 @@
 					</div>
 					<!-- /退貨申請成立按鈕 -->
 					<!-- 提示訊息按鈕 -->
-					<!--
 					<div class="return-message-btn">
 						<button type="button" class="btns" data-dismiss="modal">確定</button>
 					</div>
-					-->
 					<!--/ 提示訊息按鈕 -->
 	      </div>
 	    </div>
