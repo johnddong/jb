@@ -3775,34 +3775,34 @@ select{
 }
 
 /* 物流狀態 */
-#order #myModal .logistics-status .ob_head{
+#order .logistics-status .ob_head{
   text-align: center;
   margin-bottom: 20px;
 }
-#order #myModal .logistics-status .side1,
-#order #myModal .logistics-status .side2{
+#order .logistics-status .side1,
+#order .logistics-status .side2{
   display: inline-block;
 }
-#order #myModal .logistics-status .side2{
+#order .logistics-status .side2{
   text-align: left;
   padding-left: 10px;
 }
-#order #myModal .logistics-status .ob_body{
+#order .logistics-status .ob_body{
   width: 270px;
   margin: auto;
   overflow: hidden;
   padding-bottom: 20px;
 }
-#order #myModal .logistics-status .status-line{
+#order .logistics-status .status-line{
   background: url("../images/order/status-line.png") no-repeat center center;
   width: 100%;
 }
-#order #myModal .logistics-status .status-line,
-#order #myModal .logistics-status .datetime{
+#order .logistics-status .status-line,
+#order .logistics-status .datetime{
   float: left;
   line-height: 40px;
 }
-#order #myModal .logistics-status .status{
+#order .logistics-status .status{
   display: flex;
   align-items: center;
   height: 40px;
@@ -4852,6 +4852,19 @@ select{
 #return-complete .return-reason .product-thumb{
   border-right: 2px solid rgb(241, 242, 246);
 }
+/* ATM 退款資料 */
+#return-complete .atm-info h3{
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 10px;
+}
+#return-complete .atm-info .col-xs-9{
+  text-align: left;
+}
+#return-complete .line-cont .line{
+  height: 150px;
+  margin-top: 0;
+}
 
 /* flash */
 #return-complete .orther-info .order-info .flash{
@@ -4873,10 +4886,22 @@ select{
   #return-complete .shopping-cart-content .return-reason .price{
     display: none;
   }
+  /* remove shopping-cart-checkout margin */
+  #return-complete .shopping-cart-checkout{
+    margin-top: 0;
+  }
   /* 退貨原因 remove right border line */
   #return-complete .return-reason .product-thumb{
     border-right: none;
   }
+  #return-complete .atm-info .col-xs-9{
+    text-align: right;
+  }
+  /* hide middle line */
+  #return-complete .line-cont .line{
+    display: none;
+  }
+
   /* add 退貨說明&訂單詳情 margin */
   #return-complete .orther-info .return-desc, 
   #return-complete .orther-info .order-info{
