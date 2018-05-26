@@ -166,7 +166,7 @@
 	<div class="main-content product-single-page">
 		<div class="container">
 			<div class="breadcrumbs">
-				<a href="#">首頁</a> / <a href="#">衣服</a> / <span class="current">經典藍色 T-Shirt</span>
+				<a href="#">首頁</a> / <a href="#">衣服</a> <span class="current">經典藍色 T-Shirt</span>
 			</div>
 			<div class="product-single-content">
 				<div class="about-product">
@@ -231,23 +231,24 @@
 								<span class="float-left">銷量:99</span>
 								<span class="float-right">付款後將於xx天內出貨</span>
 							</div>
+							<div class="group-info">
+								<div class="flash flash-info">3人拼團價</div>
+								<div>限時24小時，3人即可成團</div>
+							</div>
 							<div class="activity-info">
-								<div class="flash">店鋪活動</div>
+								<div class="flash flash-info">店鋪活動</div>
 								<div>母親節多件好禮商品買一送一</div>
 								<div>限時下殺85折</div>
 								<div>單筆消費滿千免運</div>
 							</div>
 							<!-- 加入我的珍藏 / 敲敲話-->
 							<ul class="group-btn">
-								<li class="btn-chat"><a></a></li>
+								<li class="btn-chat"><a href="javascript:void(0);" data-type="chat-dialog"></a></li>
 								<li class="btn-wishlist"><a class="wishlist" href="javascript:void(0);" data-sku="12345" data-type="wishlist"></a></li>
 							</ul>
-							<!--/ 加入我的珍藏 /敲敲話-->
-							<!-- <ul class="icon-group">
-								<li class=""><a href="javascript:void(0);" class="wishlist" data-sku="12345" data-type="wishlist"></a></li>
-							</ul> -->
 						</div>
 						<div class="side spec-side">
+							<!-- 規格 -->
 							<div class="quantity spec">
 								<select name="size" class="chosen-select">
 									<option value="false">請選擇顏色</option>
@@ -274,6 +275,8 @@
 									<option value="333333" data-spec="">L</option>
 								</select>
 							</div>
+							<!--/ 規格 -->
+							<!-- 數量 -->
 							<div class="quantity-btn">
 								<div class="qty_box">
 									<div class="btns btns-minus disable">&#45;</div>
@@ -281,6 +284,121 @@
 									<div class="btns btns-plus">&#43;</div>
 								</div>
 							</div>
+							<!--/ 數量 -->
+							<!-- 拼團狀態 -->
+							<div class="group-join">
+								<div class="ob_head">
+									<div class="row">
+										<div class="col-xs-9"><span class="member-joined">254</span>人正在拼團 可直接加入 <i class="fa fa-exclamation-circle fa-lg" data-type="group-join-info"></i></div>
+										<div class="col-xs-3 text-right group-join-more" data-type="group-join-more"><a href="javascript:void(0);">查看更多></a></div>
+									</div>
+								</div>
+								<div class="ob_body">
+									<ul>
+										<li>
+											<div class="line"></div>
+											<div class="photo member-portrait">
+												<img src="images/product/group-join/member-portrait.png" /> 
+											</div>
+											<div class="info">
+												<div class="content">
+													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="d" data-timer="100000"></span></span></div>
+												</div>
+											</div>
+											<div class="group-btns">
+												<span class="btns btns-group disable" data-type="group-join-friend">去拼團</span>
+											</div>
+										</li>
+										<li>
+											<div class="line"></div>
+											<div class="photo member-portrait">
+												<img src="images/product/group-join/member-portrait.png" /> 
+											</div>
+											<div class="info">
+												<div class="content">
+													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="h" data-timer="10000"></span></span></div>
+												</div>
+											</div>
+											<div class="group-btns">
+												<span class="btns btns-group" data-type="group-join-friend">去拼團</span>
+											</div>
+										</li>
+										<li>
+											<div class="line"></div>
+											<div class="photo member-portrait">
+												<img src="images/product/group-join/member-portrait.png" /> 
+											</div>
+											<div class="info">
+												<div class="content">
+													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="m" data-timer="1000"></span></span></div>
+												</div>
+											</div>
+											<div class="group-btns">
+												<span class="btns btns-group" data-type="group-join-friend">去拼團</span>
+											</div>
+										</li>
+										<li>
+											<div class="line"></div>
+											<div class="photo member-portrait">
+												<img src="images/product/group-join/member-portrait.png" /> 
+											</div>
+											<div class="info">
+												<div class="content">
+													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
+												</div>
+											</div>
+											<div class="group-btns">
+												<span class="btns btns-group" data-type="group-join-friend">去拼團</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<script>
+							 $(function() {
+								// modal
+								var $groupJoin = $('.group-join')
+									, $myModal = $('#myModal')
+									, btnType;
+								/**
+								* 拼團詳情
+								* 敲敲話
+								* 拼團看更多
+								* 去拼團
+								*/
+								$('.ob_head i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
+									btnType = $(this).data('type');
+									if ($(this).hasClass('disable')) {
+										btnType = 'group-join-warning';
+									}
+									console.log(btnType);
+									if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+								});
+								// modal close
+								$myModal.on("hidden.bs.modal", function () {
+									if (btnType != undefined) $myModal.removeClass(btnType);
+								});
+
+								/* 倒數 */
+								$groupJoin.find('.countdown').each(function(){
+									var 
+									$this = $(this), 
+									sec = $this.data('timer'),
+									countto = $this.data('countto');
+									$this.digit_countdown({
+										counttime: sec,
+										count_to: countto,
+										digit_unit: countto == 's' ? ['','','','秒'] : ['天',':',':',''], 
+									});
+								});
+							});
+							</script>
+							<!--/ 拼團狀態 -->
+							<!-- 運費說明 -->
 							<div class="delivery-method-side">
 								<div class="row title" data-target="#delivery-method" data-toggle="collapse">
 									<div class="col-6 col-sm-6">運費</div>
@@ -307,6 +425,7 @@
 									</div>
 								</div>
 							</div>
+							<!--/ 運費說明 -->
 						</div>
 						<!-- 加入購物車/立即結帳/商品捕貨中按鈕 -->
 						<div class="side btn-side">
@@ -443,22 +562,22 @@
 					<li><a data-animated="zoomInUp" data-toggle="pill" href="#tab2">注意事項</a></li>
 				</ul>
 				<div class="tab-content">
-						<div id="tab1" class="tab-panel active">
-							<div class="description-content">
-								<p>產品說明 xxxxxxx</p>
-								<img src="images/banner-1200x600.jpg" alt="" style="margin-bottom: 20px;">
-								<p>內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容
-								內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容
-							內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容</p>
-								<iframe width="100%" src="https://www.youtube.com/embed/4V3hxNyiwaA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen style="max-width: 560px; min-height: 315px;"></iframe>
-							</div>
-						</div>
-						<div id="tab2" class="tab-panel">
-							<div class="description-content">
-								<p>注意事項 xxxxxxx</p>
-							</div>
+					<div id="tab1" class="tab-panel active">
+						<div class="description-content">
+							<p>產品說明 xxxxxxx</p>
+							<img src="images/banner-1200x600.jpg" alt="" style="margin-bottom: 20px;">
+							<p>內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容
+							內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容
+						內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容</p>
+							<iframe width="100%" src="https://www.youtube.com/embed/4V3hxNyiwaA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen style="max-width: 560px; min-height: 315px;"></iframe>
 						</div>
 					</div>
+					<div id="tab2" class="tab-panel">
+						<div class="description-content">
+							<p>注意事項 xxxxxxx</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -567,8 +686,15 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+
+	<style>
+	.modal-body {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+	}
+	</style>
 	<!-- Modal -->
-	<div id="myModal" class="chat-modal modal fade">
+	<div id="myModal" class="chat-modal modal fade group-join">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -577,6 +703,234 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
+					<!-- 請先選擇商品規格訊息 -->
+					<div class="group-join-warning">
+						請先選擇商品規格
+					</div>
+					<!--/ 請先選擇商品規格訊息 -->
+
+					<!-- 去拼團 - 加入好有拼團 -->
+					<div class="group-join-friend">
+						<div class="ob_head">
+							<div class="title-cont">
+								<h3 class="title supper-title">加入好友拼團</h3><span></span>
+							</div>
+						</div>
+						<div class="ob_body">
+							<div class="info">
+								<div>參與 <span class="flash flash-label">好友</span>Pter Pan 的拼團</div>
+								<div>還差 <span class="group-member-short">1</span>個名額</div>
+							</div>
+							<div class="time-left">即將於 <span class="countdown" data-countto="h" data-timer="100000"></span> 結束</div>
+							<div class="photo">
+								<!-- 角色 class
+								團長 -> role-chief
+								您   -> role-self
+								-->
+								<ul>
+									<li>
+										<img src="images/product/group-join/member-portrait.png" />
+										<span class="flash flash-label role-chief">團長</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-default.png" />
+										<span class="flash flash-label role-self">您</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+							</div>
+						</div>
+					</div>
+					<!--/ 去拼團 - 加入好有拼 -->
+					
+					<!-- 看更多正在拼團 -->
+					<div class="group-join-more">
+						<div class="group-join">
+							<div class="ob_head">
+								<div class="title-cont">
+									<h3 class="title supper-title">正在拼團</h3><span></span>
+								</div>
+							</div>
+							<div class="ob_body">
+								<ul>
+									<li>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="d" data-timer="100000"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group disable">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="h" data-timer="10000"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="m" data-timer="1000"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="d" data-timer="100000"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group disable">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="h" data-timer="10000"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="m" data-timer="1000"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+									<li>
+										<div class="line"></div>
+										<div class="photo member-portrait">
+											<img src="images/product/group-join/member-portrait.png" /> 
+										</div>
+										<div class="info">
+											<div class="content">
+												<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+												<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
+											</div>
+										</div>
+										<div class="group-btns">
+											<span class="btns btns-group">去拼團</span>
+										</div>
+									</li>
+								</ul>
+								<div class="line"></div>
+								<div class="text-center">最多僅顯示10筆拼團</div>
+							</div>
+						</div>
+					</div>
+					<!--/ 看更多正在拼團 -->
+
+					<!-- 拚團玩法介紹 -->
+					<div class="group-join-info">
+						<div class="title-cont">
+							<h3 class="title supper-title">拚團玩法介紹</h3><span></span>
+						</div>
+						<div class="ob_head">
+							只要加入拼團或者開新團成為團主，即可享受超優惠的拼團價！
+						</div>
+						<div class="ob_body">
+							<ul>
+								<li>1. <span>3</span>人就成團，每團限時 <span>24</span> 小時。</li>
+								<li>2. 需先付款才可加入拼團或開新團。逾時若未成團將會全額退款。</li>
+								<li>3. 每位拼團的團員各可指定不同的收件地址。</li>
+								<li>4. 可加入好友開的團或隨機加入其他人的拼團，享受一樣的的拼團價！</li>
+								<li>5. 成為團主並拼團成功將可另外享有推薦佣金！</li>
+							</ul>
+						</div>
+					</div>
+					<!--/ 拚團玩法介紹 -->
+					
 					<!-- 敲敲話對話窗 -->
 					<div class="chat-dialog">
 						<div class="content">
@@ -649,11 +1003,22 @@
 							</form>
 						</div>
 					</div>
-					<!-- 提問 -->
+					<!-- 提問按鈕 -->
 					<div class="request-btn">
 						<button type="button" class="btn btn-primary">提問</button>
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
 					</div>
+					<!--/ 提問按鈕 -->
+					<!-- 拚團玩法介紹按鈕 -->
+					<div class="group-join-info-btn">
+						<button type="button" class="btns" data-dismiss="modal">我瞭解了</button>
+					</div>
+					<!--/ 拚團玩法介紹按鈕 -->
+					<!-- 加入拼團按鈕 -->
+					<div class="group-join-friend-btn">
+						<button type="button" class="btns btns-group"><div>$99,999</div><div>加入拼團</div></button>
+					</div>
+					<!--/ 加入拼團按鈕 -->
 	      </div>
 	    </div>
 	  </div>
@@ -675,6 +1040,7 @@
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/cart.js?v=1"></script>
 	<script type="text/javascript" src="js/chat.js"></script>
+	<script type="text/javascript" src="js/digit_countdown.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>
 </body>
 </html>

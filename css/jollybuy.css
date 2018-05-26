@@ -152,11 +152,10 @@ a.btns,
   background: #fff;
   box-shadow: none;
 }
-.btns.disable{
+div .btns.disable{
   background:#ddd;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-shadow: none;
   cursor: not-allowed;
 }
 .mark{
@@ -1543,6 +1542,11 @@ header .header.layout1 .top-links{
   background-color: #ff6b6b;
   margin-bottom: 5px;
 }
+
+/*
+* 拼團
+*/
+
 /* group btn */
 .group-join .btns-group{
   font-size: 14px;
@@ -1553,6 +1557,15 @@ header .header.layout1 .top-links{
   box-shadow: 0 4px 0 rgb(216, 71, 78);
   padding: 5px;
 }
+.group-join .btns-group:hover{
+  background: #ed6568;
+}
+.group-join .btns.disable{
+  background: rgb(231, 231, 231);
+  border-color: rgb(231, 231, 231);
+  box-shadow: 0 4px 0 rgb(221, 221, 221);
+}
+
 /* group join */
 .group-join{
   margin: 20px 0;
@@ -1567,11 +1580,14 @@ header .header.layout1 .top-links{
 .group-join .ob_head .col-xs-3{
   padding-left: 0;
 }
-.group-join .ob_head .col-xs-8 span{
+.group-join .member-joined{
   color: rgb(249, 3, 16);
 }
 .group-join .ob_body ul{
   clear: both;
+}
+.group-join .ob_body li{
+  position: relative;
 }
 .group-join .ob_body .line{
   background: #f1f3f5;
@@ -1579,54 +1595,136 @@ header .header.layout1 .top-links{
   height: 2px;
   margin: 10px 0;
 }
-.group-join .col-xs-8{ /* reset BS padding */
-  padding-right: 0;
+.group-join .photo{
+  float: left;
+  padding-right: 10px;
 }
-.group-join .ob_body .group-member img{
-  max-width: 40px;
+.group-join .info{
+  width: 80%;
+  display: block;
 }
-.group-join .ob_body .group-member-short{
+.group-join .ob_body .info .content{
+  font-size: 16px;
+  display: grid;
+  align-items: center;
+  padding-bottom: 0;
+}
+.group-join .flash-label{
+  font-size: 13px;
+  background: rgb(250, 118, 116);
+  border-radius: 0;
+  margin-right: 5px;
+}
+.group-join .group-btns{
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.group-join .ob_body .member-portrait img{
+  min-width: 60px;
+}
+.group-join .ob_body .member-name{
+  font-size: 15px;
+}
+.group-join .group-member-short{
   color: rgb(249, 3, 16);
-  font-size: 22px;
+  font-size: 30px;
   font-weight: bold;
   font-family: '微軟正黑體', sans-serif;
+}
+.group-join .ob_body .time-left{
+  font-size: 15px;
+  color: #aaa;
 }
 .group-join .ob_body .group-btns{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   height: 60px;
+  padding: 0;
 }
 
 /* modal */
+
 /* 隱藏 */
-#product #myModal .group-join,      /* 拚團 */
-#product #myModal .group-join-btn,
-#product #myModal .chat-dialog,     /* 敲敲話 */
-#product #myModal .textarea-block,
-#product #myModal .request-btn{
+#product .modal .group-join-info,      /* 拚團 */
+#product .modal .group-join-info-btn,
+#product .modal .chat-dialog,          /* 敲敲話 */
+#product .modal .textarea-block,
+#product .modal .request-btn,
+#product .modal .group-join-more,      /* 看更多正在拼團 */
+#product .modal .group-join-warning,   /* 請先選擇商品規格 */
+#product .modal .group-join-friend,    /* 去拼團 - 加入好有拼團 */
+#product .modal .group-join-friend-btn{
   display: none;
 }
 /* 顯示 */
-#product #myModal.group-join .group-join,     /* 拚團 */
-#product #myModal.group-join .group-join-btn,
-#product #myModal.chat-dialog .chat-dialog,   /* 敲敲話 */
-#product #myModal.chat-dialog .textarea-block,
-#product #myModal.chat-dialog .request-btn{
+#product .modal.group-join-info .group-join-info,        /* 拚團 */
+#product .modal.group-join-info .group-join-info-btn,
+#product .modal.chat-dialog .chat-dialog,                /* 敲敲話 */
+#product .modal.chat-dialog .textarea-block,
+#product .modal.chat-dialog .request-btn,
+#product .modal.group-join-more .group-join-more,        /* 看更多正在拼團 */
+#product .modal.group-join-warning .group-join-warning,  /* 請先選擇商品規格 */
+#product .modal.group-join-warning .group-join-info-btn,
+#product .modal.group-join-friend .group-join-friend,    /* 去拼團 - 加入好有拼團 */
+#product .modal.group-join-friend .group-join-friend-btn{
   display: block;
 }
 
+/*  去拼團 - 加入好有拼團 */
+.modal .group-join-friend{
+  font-size: 15px;
+}
+.modal .group-join-friend .info,
+.modal .group-join-friend .time-left{
+  width: 100%;
+  text-align: center;
+}
+.modal .group-join-friend .info div{
+  margin: 10px 0;
+}
+.modal .group-join-friend .photo{
+  margin: 20px 0;
+}
+.modal .group-join-friend .photo li{
+  width: 32.4%;
+  display: inline-block;
+  text-align: center;
+}
+.modal .group-join-friend-btn .btns-group{
+  padding: 2px 30px;
+}
+.modal .group-join-friend li{
+  position: relative;
+}
+.modal .group-join-friend li span{
+  width: 38px;
+  font-size: 14px;
+  position: absolute;
+  bottom: -5px;
+  left: 25px;
+  margin-right: 0;
+}
+.modal .group-join-friend li .role-self{
+  background: rgb(102, 102, 102);
+}
+
 /* reset */
-#product #myModal .group-join{
+.modal .group-join{
   margin: 0;
 }
-#product #myModal .group-join-btn{
+.modal .group-join-friend .photo{
+  float: none;
+  padding-right: 0;
+}
+.modal .group-join-btn{
   text-align: center;
   margin-top: 15px;
 }
 
 @media(max-width: 350px) { /* 查看更多字級 */
-  .group-join .ob_head .see-more{
+  .group-join .ob_head .group-join-more{
     font-size: 13px;
   }
 }
@@ -1667,7 +1765,6 @@ header .header.layout1 .top-links{
 #product .details-info .side{
   position: relative;
   border-bottom: solid 2px #f1f3f5;
-  padding-bottom: 30px;
   margin-bottom: 30px;
 }
 #product .details-info .product-name{
@@ -3788,7 +3885,7 @@ select{
   padding-left: 10px;
 }
 #order .logistics-status .ob_body{
-  width: 270px;
+  width: 100%;
   margin: auto;
   overflow: hidden;
   padding-bottom: 20px;
@@ -3796,6 +3893,12 @@ select{
 #order .logistics-status .status-line{
   background: url("../images/order/status-line.png") no-repeat center center;
   width: 100%;
+}
+#order .logistics-status .datetime{
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  padding-right: 20px;
 }
 #order .logistics-status .status-line,
 #order .logistics-status .datetime{
@@ -3805,9 +3908,10 @@ select{
 #order .logistics-status .status{
   display: flex;
   align-items: center;
+  width: 50%;
   height: 40px;
   line-height: 20px;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 /* 退貨/退款申請已成立 */
