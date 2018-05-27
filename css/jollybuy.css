@@ -1655,7 +1655,9 @@ header .header.layout1 .top-links{
 #product .modal .group-join-more,      /* 看更多正在拼團 */
 #product .modal .group-join-warning,   /* 請先選擇商品規格 */
 #product .modal .group-join-friend,    /* 去拼團 - 加入好有拼團 */
-#product .modal .group-join-friend-btn{
+#product .modal .group-join-friend-btn,
+#product .modal .group-join-success,     /* 加入拼團成功  */
+#product .modal .group-join-success-btn{
   display: none;
 }
 /* 顯示 */
@@ -1668,7 +1670,9 @@ header .header.layout1 .top-links{
 #product .modal.group-join-warning .group-join-warning,  /* 請先選擇商品規格 */
 #product .modal.group-join-warning .group-join-info-btn,
 #product .modal.group-join-friend .group-join-friend,    /* 去拼團 - 加入好有拼團 */
-#product .modal.group-join-friend .group-join-friend-btn{
+#product .modal.group-join-friend .group-join-friend-btn,
+#product .modal.group-join-success .group-join-success,        /* 加入拼團成功 */
+#product .modal.group-join-success .group-join-success-btn{
   display: block;
 }
 
@@ -1689,25 +1693,37 @@ header .header.layout1 .top-links{
 }
 .modal .group-join-friend .photo li{
   width: 32.4%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
   text-align: center;
-}
-.modal .group-join-friend-btn .btns-group{
-  padding: 2px 30px;
-}
-.modal .group-join-friend li{
-  position: relative;
 }
 .modal .group-join-friend li span{
   width: 38px;
   font-size: 14px;
   position: absolute;
-  bottom: -5px;
-  left: 25px;
+  bottom: -11px;
   margin-right: 0;
 }
 .modal .group-join-friend li .role-self{
   background: rgb(102, 102, 102);
+}
+.modal .group-join-friend-btn .btns-group{
+  padding: 2px 30px;
+}
+/* 去拼團加入成功 */
+.modal .group-join-success{
+  font-size: 18px;
+  text-align: center;
+  padding: 50px 0;
+}
+.modal .group-join-success-btn .btns-group{
+  font-size: 18px;
+  height: 40px; 
+  padding: 10px 15px;
+}
+.modal .group-join-success-btn .btns-group a{
+  color: #fff
 }
 
 /* reset */
