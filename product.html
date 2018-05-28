@@ -224,11 +224,12 @@
 						<!-- <div class="product-id">商品編號:A123456789</div> -->
 						<div class="side price-side">
 							<div class="price">
-								<span class="del">399 </span>
-								$<span class="ins">280</span>
+								<div class="origional">原價：$<span>3,999 </span></div>
+								<div class="sale">特價：$<span>2,800</span></div>
+								<div class="group promo">拚團價：$<span>2,000</span></div>
 							</div>
 							<div class="shipping-info">
-								<span class="float-left">銷量:99</span>
+								<span class="float-left">銷量：99</span>
 								<span class="float-right">付款後將於xx天內出貨</span>
 							</div>
 							<div class="group-info">
@@ -372,7 +373,7 @@
 									, btnType;
 								$('.ob_head i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
 									btnType = $(this).data('type');
-									if (btnType == 'group-join-success') { // 去拼團加入成功 & 看更多拚團
+									if (btnType == 'group-join-success' || btnType == 'group-join-friend') { // 去拼團加入成功 & 加入好友拚團
 										if ($myModal.hasClass('group-join-friend') || $myModal.hasClass('group-join-more') || $myModal.hasClass('group-join-warning')) 
 											$myModal.removeClass('group-join-friend group-join-more group-join-warning');
 									}
@@ -436,11 +437,21 @@
 						<!-- 加入購物車/立即結帳/商品捕貨中按鈕 -->
 						<div class="side btn-side">
 							<div class="bk"></div>
+							<!-- 加入購物車按鈕 -->
 							<a href="javascript:void(0);" class="add-to-cart" data-sku="12345" data-type="add-to-cart">放入購物車</a>
 							<a href="javascript:void(0);" class="add-to-cart checkout" data-sku="12345" data-type="checkout">立即購買</a>
 							<div class="sold-out">商品補貨中</div>
+							<!--/ 加入購物車按鈕 -->
+							<!-- 拚團按鈕 -->
+							<div class="add-to-group-cart">
+								<span class="btns"><span>$100,000</span><span>單獨購買</span></span>
+								<span class="btns btns-group"><span>$99,000</span><span>開新團</span></span>
+							</div>
+							<!--/ 拚團按鈕 -->
 						</div>
 						<!--/ 加入購物車/立即結帳/商品捕貨中按鈕 -->
+						
+
 						<!-- social media -->
 						<div class="share">
 							<h3 class="sub-title"><span>分享</span></h3>
@@ -490,6 +501,7 @@
 										<div class="info">
 											<span class="product-name"><a href="javascript:(0);">經典藍色 T-Shirt經典藍色</a></span>
 											<div class="price">
+												<div class="del">$<span>175</span></div>
 												<div class="ins">$<span>75</span></div>
 											</div>
 										</div>
@@ -664,9 +676,17 @@
 		</div>
 		<!-- 手機:加入購物車/立即結帳/商品捕貨中按鈕 -->
 		<div class="fixed-section">
-				<a href="javascript:void(0);" class="btn-basic add-to-cart" data-sku="12345" data-type="add-to-cart">放入購物車</a>
-				<a href="javascript:void(0);" class="btn-basic add-to-cart checkout" data-sku="12345" data-type="checkout">立即購買</a>
-				<!-- <div class="sold-out">商品補貨中</div> -->
+			<!-- 加入購物車按鈕 -->
+			<a href="javascript:void(0);" class="btn-basic add-to-cart" data-sku="12345" data-type="add-to-cart">放入購物車</a>
+			<a href="javascript:void(0);" class="btn-basic add-to-cart checkout" data-sku="12345" data-type="checkout">立即購買</a>
+			<!-- <div class="sold-out">商品補貨中</div> -->
+			<!-- 加入購物車按鈕 -->
+			<!-- 拚團按鈕 -->
+			<div class="add-to-group-cart">
+				<span class="btns"><span>$100,000</span><span>單獨購買</span></span>
+				<span class="btns btns-group"><span>$99,000</span><span>開新團</span></span>
+			</div>
+			<!--/ 拚團按鈕 -->
 		</div>
 		<!--/手機: 加入購物車/立即結帳/商品捕貨中按鈕 -->
 	</div>
@@ -729,7 +749,7 @@
 							</div>
 							<div class="time-left">即將於 <span class="countdown" data-countto="h" data-timer="100000"></span> 結束</div>
 							<div class="photo">
-								<!-- 角色 class
+								<!-- 角色 class:
 								團長 -> role-chief
 								您   -> role-self
 								-->
@@ -793,7 +813,7 @@
 											</div>
 										</div>
 										<div class="group-btns">
-											<span class="btns btns-group" data-type="group-join-success">去拼團</span>
+											<span class="btns btns-group" data-type="group-join-friend">去拼團</span>
 										</div>
 									</li>
 									<li>
@@ -823,7 +843,7 @@
 											</div>
 										</div>
 										<div class="group-btns">
-											<span class="btns btns-group">去拼團</span>
+											<span class="btns btns-group" data-type="group-join-success">去拼團</span>
 										</div>
 									</li>
 									<li>
