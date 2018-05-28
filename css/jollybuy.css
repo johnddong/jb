@@ -1537,6 +1537,7 @@ header .header.layout1 .top-links{
   margin: 20px 0;
 }
 #product .shipping-info{
+  overflow: hidden;
   display: flow-root;
   font-weight: bold;
 }
@@ -1948,10 +1949,14 @@ header .header.layout1 .top-links{
 #product .btn-wishlist a:hover,
 #product .btn-wishlist .wishlist.active{background: url('../images/icons/heart-hover.png');}
 /* 分享 */
+#product .cart-content{
+  padding: 0;
+}
 #product .cart-content .submit{
   margin-top: 0px;
 }
 #product .share{
+  overflow: hidden;
   margin-top: 30px;
 }
 #product .share ul{
