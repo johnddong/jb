@@ -1682,6 +1682,10 @@ header .header.layout1 .top-links{
 }
 
 /* modal */
+.modal .modal-body {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
 
 /* 隱藏 */
 #product .modal .group-join-info,      /* 拚團 */
@@ -1776,7 +1780,12 @@ header .header.layout1 .top-links{
   margin-top: 15px;
 }
 
-@media(max-width: 350px) { /* 查看更多字級 */
+@media(max-width: 576px){
+  .group-join .time-left{ /* 倒數斷行 */
+    display: block;
+  }
+}
+@media(max-width: 350px){ /* 查看更多字級 */
   .group-join .ob_head .group-join-more{
     font-size: 13px;
   }

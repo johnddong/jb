@@ -379,11 +379,11 @@
 									}
 									if ($(this).hasClass('disable')) {  // 去拼團 disabled
 										btnType = 'group-join-warning';
-										console.log(`btnType: ${btnType}`);
+										//console.log(`btnType: ${btnType}`);
 									}
-									console.log(this);
+									//console.log(this);
 									if (btnType != undefined) $myModal.addClass(btnType).modal('show');
-									return false;
+									//return false;
 								});
 								// modal close
 								$myModal.on("hidden.bs.modal", function () {
@@ -717,12 +717,6 @@
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
 
-	<style>
-	.modal-body {
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-	}
-	</style>
 	<!-- Modal -->
 	<div id="myModal" class="chat-modal modal fade group-join">
 	  <div class="modal-dialog" role="document">
