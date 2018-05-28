@@ -155,8 +155,8 @@ a.btns-group,
   border-color: rgb(216, 71, 78);
   box-shadow: 0 4px 0 rgb(216, 71, 78);
 }
-.btns-group:hover{
-  background: #ed6568!important;
+span.btns-group:hover{
+  background: #ed6568;
 }
 .btns:hover{
   background: #fff;
