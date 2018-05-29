@@ -1682,38 +1682,48 @@ header .header.layout1 .top-links{
 }
 
 /* modal */
+.modal .title-cont{
+  margin-top: 0;
+}
+.modal .modal-footer{
+  margin-top: 10px;
+}
 .modal .modal-body {
   max-height: calc(100vh - 120px);
   overflow-y: auto;
 }
 
 /* 隱藏 */
-#product .modal .group-join-info,      /* 拚團 */
+#product .modal .group-join-info,        /* 拚團 */
 #product .modal .group-join-info-btn,
-#product .modal .chat-dialog,          /* 敲敲話 */
+#product .modal .chat-dialog,            /* 敲敲話 */
 #product .modal .textarea-block,
 #product .modal .request-btn,
-#product .modal .group-join-more,      /* 看更多正在拼團 */
-#product .modal .group-join-warning,   /* 請先選擇商品規格 */
-#product .modal .group-join-friend,    /* 去拼團 - 加入好有拼團 */
+#product .modal .group-join-more,        /* 看更多正在拼團 */
+#product .modal .group-join-warning,     /* 請先選擇商品規格 */
+#product .modal .group-join-friend,      /* 去拼團 - 加入好有拼團 */
 #product .modal .group-join-friend-btn,
 #product .modal .group-join-success,     /* 加入拼團成功  */
-#product .modal .group-join-success-btn{
+#product .modal .group-join-success-btn,
+#product .modal .group-join-expired,
+#product .modal .group-join-expired-btn{ /* 加入拚團逾期 */
   display: none;
 }
 /* 顯示 */
-#product .modal.group-join-info .group-join-info,        /* 拚團 */
+#product .modal.group-join-info .group-join-info,           /* 拚團 */
 #product .modal.group-join-info .group-join-info-btn,
-#product .modal.chat-dialog .chat-dialog,                /* 敲敲話 */
+#product .modal.chat-dialog .chat-dialog,                   /* 敲敲話 */
 #product .modal.chat-dialog .textarea-block,
 #product .modal.chat-dialog .request-btn,
-#product .modal.group-join-more .group-join-more,        /* 看更多正在拼團 */
-#product .modal.group-join-warning .group-join-warning,  /* 請先選擇商品規格 */
+#product .modal.group-join-more .group-join-more,           /* 看更多正在拼團 */
+#product .modal.group-join-warning .group-join-warning,     /* 請先選擇商品規格 */
 #product .modal.group-join-warning .group-join-info-btn,
-#product .modal.group-join-friend .group-join-friend,    /* 去拼團 - 加入好有拼團 */
+#product .modal.group-join-friend .group-join-friend,       /* 去拼團 - 加入好有拼團 */
 #product .modal.group-join-friend .group-join-friend-btn,
-#product .modal.group-join-success .group-join-success,        /* 加入拼團成功 */
-#product .modal.group-join-success .group-join-success-btn{
+#product .modal.group-join-success .group-join-success,     /* 加入拼團成功 */
+#product .modal.group-join-success .group-join-success-btn,
+#product .modal.group-join-expired .group-join-expired,     /* 加入拚團逾期 */
+#product .modal.group-join-expired .group-join-expired-btn{       
   display: block;
 }
 
@@ -1765,6 +1775,20 @@ header .header.layout1 .top-links{
 }
 .modal .group-join-success-btn .btns-group a{
   color: #fff
+}
+/* 去拼團加入逾期 */
+.modal .group-join-expired .ob_head .title{
+  font-size: 18px;
+  text-align: center;
+}
+.modal .group-join-expired .ob_body{
+  text-align: center;
+  padding-top: 20px;
+}
+.modal .group-join-expired-btn .btns{
+  background: rgb(231, 231, 231);
+  border: 1px solid rgb(231, 231, 231);
+  box-shadow: 0 4px 0 rgb(221, 221, 221); 
 }
 
 /* reset */

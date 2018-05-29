@@ -230,7 +230,8 @@
 							</div>
 							<div class="shipping-info">
 								<span class="float-left">銷量：99</span>
-								<span class="float-right">付款後將於xx天內出貨</span>
+								<!-- <span class="float-right">付款後將於xx天內出貨</span> -->
+								<span class="float-right">成團後將於xx天內出貨</span>
 							</div>
 							<div class="group-info">
 								<div class="flash flash-info">3人拼團價</div>
@@ -304,7 +305,7 @@
 											<div class="info">
 												<div class="content">
 													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
-													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="d" data-timer="100000"></span></span></div>
+													<div>還差<span class="group-member-short">1</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="d" data-timer="100000"></span></span></div>
 												</div>
 											</div>
 											<div class="group-btns">
@@ -319,7 +320,22 @@
 											<div class="info">
 												<div class="content">
 													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
-													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="h" data-timer="10000"></span></span></div>
+													<div>還差<span class="group-member-short">1</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="h" data-timer="10000"></span></span></div>
+												</div>
+											</div>
+											<div class="group-btns">
+												<span class="btns btns-group" data-type="group-join-expired">去拼團</span>
+											</div>
+										</li>
+										<li>
+											<div class="line"></div>
+											<div class="photo member-portrait">
+												<img src="images/product/group-join/member-portrait.png" /> 
+											</div>
+											<div class="info">
+												<div class="content">
+													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
+													<div>還差<span class="group-member-short">1</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="m" data-timer="1000"></span></span></div>
 												</div>
 											</div>
 											<div class="group-btns">
@@ -334,22 +350,7 @@
 											<div class="info">
 												<div class="content">
 													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
-													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="m" data-timer="1000"></span></span></div>
-												</div>
-											</div>
-											<div class="group-btns">
-												<span class="btns btns-group" data-type="group-join-friend">去拼團</span>
-											</div>
-										</li>
-										<li>
-											<div class="line"></div>
-											<div class="photo member-portrait">
-												<img src="images/product/group-join/member-portrait.png" /> 
-											</div>
-											<div class="info">
-												<div class="content">
-													<div class="member-name"><span class="flash flash-label"> 好友</span>Peter Pan</div>
-													<div>還差<span class="group-member-short">3</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
+													<div>還差<span class="group-member-short">1</span>人成團 <span class="time-left">剩餘<span class="countdown" data-countto="s" data-timer="100"></span></span></div>
 												</div>
 											</div>
 											<div class="group-btns">
@@ -373,15 +374,16 @@
 									, btnType;
 								$('.ob_head i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
 									btnType = $(this).data('type');
-									if (btnType == 'group-join-success' || btnType == 'group-join-friend') { // 去拼團加入成功 & 加入好友拚團
-										if ($myModal.hasClass('group-join-friend') || $myModal.hasClass('group-join-more') || $myModal.hasClass('group-join-warning')) 
-											$myModal.removeClass('group-join-friend group-join-more group-join-warning');
+								
+									if (btnType == 'group-join-success' || btnType == 'group-join-friend' || btnType == 'group-join-expired') { // 去拼團加入成功 & 加入好友拚團
+										if ($myModal.hasClass('group-join-friend') || $myModal.hasClass('group-join-more') || $myModal.hasClass('group-join-warning') || $myModal.hasClass('group-join-expired')) 
+											$myModal.removeClass('group-join-friend group-join-more group-join-warning group-join-expired');
 									}
 									if ($(this).hasClass('disable')) {  // 去拼團 disabled
 										btnType = 'group-join-warning';
-										//console.log(`btnType: ${btnType}`);
+										console.log(`btnType: ${btnType}`);
 									}
-									//console.log(this);
+									console.log(this);
 									if (btnType != undefined) $myModal.addClass(btnType).modal('show');
 									//return false;
 								});
@@ -447,7 +449,7 @@
 							<!-- 拚團按鈕 -->
 							<div class="add-to-group-cart">
 								<span class="btns"><span>$100,000</span><span>單獨購買</span></span>
-								<span class="btns btns-group"><span>$99,000</span><span>開新團</span></span>
+								<span class="btns btns-group" data-type="group-join-success"><span>$99,000</span><span>開新團</span></span>
 							</div>
 							<!--/ 拚團按鈕 -->
 						</div>
@@ -688,7 +690,7 @@
 			<!-- 拚團按鈕 -->
 			<div class="add-to-group-cart">
 				<span class="btns"><span>$100,000</span><span>單獨購買</span></span>
-				<span class="btns btns-group"><span>$99,000</span><span>開新團</span></span>
+				<span class="btns btns-group" data-type="group-join-success"><span>$99,000</span><span>開新團</span></span>
 			</div>
 			<!--/ 拚團按鈕 -->
 		</div>
@@ -768,6 +770,22 @@
 						</div>
 					</div>
 					<!--/ 去拼團 - 加入好友拼團 -->
+
+					<!-- 加入拚團逾期 -->
+					<div class="group-join-expired">
+						<div class="ob_head">
+							<div class="title-cont">
+								<h3 class="title supper-title">加入拼團</h3><span></span>
+							</div>
+							<div class="title">參與 Peter Pan 的拚團</div>
+						</div>
+						<div class="ob_body">
+							<div>此團已逾期，下次請早喔！</div>
+							<!-- <div>此團已滿，下次請早喔！</div> -->
+							<div>您也可以自己當團主立刻開一個新團</div>
+						</div>
+					</div>
+					<!--/ 加入拚團逾期 -->
 
 					<!-- 去拼團加入成功 -->
 					<div class="group-join-success">
@@ -1062,6 +1080,12 @@
 						<button type="button" class="btns btns-group"><a href="pay.html">立即結帳</a></button>
 					</div>
 					<!--/ 去拼團加入成功  -->
+
+					<!-- 加入拚團逾期 -->
+					<div class="group-join-expired-btn">
+						<button type="button" class="btns" data-dismiss="modal">我瞭解了</button>
+					</div>
+					<!--/ 加入拚團逾期 -->
 	      </div>
 	    </div>
 	  </div>
