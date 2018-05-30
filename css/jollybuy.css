@@ -4171,13 +4171,14 @@ select{
 /* 拚團查看/立即分享 modal */
 
 /* 隱藏 */
-#order-info .modal .group-join-friend{ /* 立即分享 */
+#order-info .modal .group-join-share, /* 立即分享 */
+#order-info .modal .group-join-check{  /* 查看拚團 */
   display: none;
 }
 /* 顯示 */
-#order-info .modal.group-join-friend .group-join-friend,     /* 立即分享 */      /* 拚團 */
-#order-info .modal.group-join-friend .group-join-friend-btn{
-  display: block;
+#order-info .modal.group-join-share .group-join-share,     /* 立即分享 */      
+#order-info .modal.group-join-check .group-join-check{       /* 查看拚團 */
+  display: block; 
 }
 /* 立即分享 */
 #order-info .line{
@@ -4189,6 +4190,8 @@ select{
 #order-info .share-link #group-join-link{
   border: 1px solid rgb(204, 204, 204);
   border-radius: 3px;
+  overflow: auto;
+  text-align: left;
   padding: 10px 5px;
   margin: 10px 0;
 }
@@ -4199,6 +4202,17 @@ select{
 #order-info .share{
   margin-top: 0;
   text-align: center;
+}
+#order-info .share ul{
+  margin-top: 10px;
+}
+#order-info .share li{
+  float: none;
+  display: inline-block;  
+}
+#order-info .group-join-friend .modal-footer{
+  padding: 0;
+  margin: 0;
 }
 
 
