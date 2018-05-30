@@ -1837,6 +1837,7 @@ header .header.layout1 .top-links{
 }
 #product .delivery-method-side table.shipping tr td{
   white-space: nowrap;
+  vertical-align: top;
 }
 @media (max-width: 991px){
   #product .delivery-method-side{
