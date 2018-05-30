@@ -1818,7 +1818,7 @@ header .header.layout1 .top-links{
 
 
 #product .delivery-method-side{
-  width: 300px;
+  width: 400px;
   overflow: hidden;
   margin: 20px 0;
 }
@@ -1827,6 +1827,16 @@ header .header.layout1 .top-links{
   border-bottom: solid 2px #f1f3f5;
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+#product .delivery-method-side .row{
+  margin: 0;
+}
+#product .delivery-method-side table.shipping tr th,
+#product .delivery-method-side table.shipping tr td{ 
+  padding: 5px;
+}
+#product .delivery-method-side table.shipping tr td{
+  white-space: nowrap;
 }
 @media (max-width: 991px){
   #product .delivery-method-side{
