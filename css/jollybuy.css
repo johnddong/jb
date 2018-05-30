@@ -1988,33 +1988,37 @@ header .header.layout1 .top-links{
 #product .cart-content .submit{
   margin-top: 0px;
 }
-#product .share{
+.share{
   overflow: hidden;
   margin-top: 30px;
 }
-#product .share ul{
+.share ul{
   display: flow-root;
 }
-#product .share li {
+.share li {
   float: left;
   margin-right: 20px;
 }
-#product .share li a{
+.share li a{
   width: 40px;
   height: 40px;
   padding: 0;
   cursor:pointer;
+  display: block;
 }
-#product .btn-beango a{background: url('../images/icons/share/beango.png');}
-#product .btn-beango a:hover{background: url('../images/icons/share/beango-hover.png');}
-#product .btn-fb a{background: url('../images/icons/share/fb.png');}
-#product .btn-fb a:hover{background: url('../images/icons/share/fb-hover.png');}
-#product .btn-line a{background: url('../images/icons/share/line.png');}
-#product .btn-line a:hover{background: url('../images/icons/share/line-hover.png');}
-#product .btn-ig a{background: url('../images/icons/share/ig.png');}
-#product .btn-ig a:hover{background: url('../images/icons/share/ig-hover.png');}
-#product .btn-twitter a{background: url('../images/icons/share/twitter.png');}
-#product .btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
+.share li a.submit{ /* reset */
+  background-color: #fff;
+}
+.btn-beango a{background: url('../images/icons/share/beango.png');}
+.btn-beango a:hover{background: url('../images/icons/share/beango-hover.png');}
+.btn-fb a{background: url('../images/icons/share/fb.png');}
+.btn-fb a:hover{background: url('../images/icons/share/fb-hover.png');}
+.btn-line a{background: url('../images/icons/share/line.png');}
+.btn-line a:hover{background: url('../images/icons/share/line-hover.png');}
+.btn-ig a{background: url('../images/icons/share/ig.png');}
+.btn-ig a:hover{background: url('../images/icons/share/ig-hover.png');}
+.btn-twitter a{background: url('../images/icons/share/twitter.png');}
+.btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
 
 /* retina */
 @media (min--moz-device-pixel-ratio: 1.5),
@@ -2022,43 +2026,43 @@ header .header.layout1 .top-links{
 			 (-webkit-min-device-pixel-ratio: 1.5),
 			 (min-device-pixel-ratio: 1.5),
 			 (min-resolution: 1.5dppx){
-   #product .btn-beango a{
+   .btn-beango a{
      background: url('../images/2x/icons/share/beango.png') no-repeat center center;
      background-size: 100% auto;
    }
-   #product .btn-beango a:hover{
+   .btn-beango a:hover{
      background: url('../images/2x/icons/share/beango-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-fb a{
+   .btn-fb a{
      background: url('../images/2x/icons/share/fb.png');
      background-size: 100% auto;
    }
-   #product .btn-fb a:hover{
+   .btn-fb a:hover{
      background: url('../images/2x/icons/share/fb-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-line a{
+   .btn-line a{
      background: url('../images/2x/icons/share/line.png');
      background-size: 100% auto;
    }
-   #product .btn-line a:hover{
+   .btn-line a:hover{
      background: url('../images/2x/icons/share/line-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-ig a{
+   .btn-ig a{
      background: url('../images/2x/icons/share/ig.png');
      background-size: 100% auto;
    }
-   #product .btn-ig a:hover{
+   .btn-ig a:hover{
      background: url('../images/2x/icons/share/ig-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-twitter a{
+   .btn-twitter a{
      background: url('../images/2x/icons/share/twitter.png');
      background-size: 100% auto;
    }
-   #product .btn-twitter a:hover{
+   .btn-twitter a:hover{
      background: url('../images/2x/icons/share/twitter-hover.png');
      background-size: 100% auto;
    }
@@ -2069,7 +2073,7 @@ header .header.layout1 .top-links{
   display: none;
 }
 @media (max-width:640px) {
-  #product .share li{
+  .share li{
     margin-right: 2%;
   }
 }
@@ -4153,6 +4157,41 @@ select{
 #order-info .orther-info .order-info .flash{
   background: rgb(244, 6, 6);
 }
+
+/* 拚團查看/立即分享 modal */
+
+/* 隱藏 */
+#order-info .modal .group-join-friend{ /* 立即分享 */
+  display: none;
+}
+/* 顯示 */
+#order-info .modal.group-join-friend .group-join-friend,     /* 立即分享 */      /* 拚團 */
+#order-info .modal.group-join-friend .group-join-friend-btn{
+  display: block;
+}
+/* 立即分享 */
+#order-info .line{
+  height: 1px;
+}
+#order-info .share-link{
+  text-align: center;
+}
+#order-info .share-link #group-join-link{
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 3px;
+  padding: 10px 5px;
+  margin: 10px 0;
+}
+#order-info .share-link .btns{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+#order-info .share{
+  margin-top: 0;
+  text-align: center;
+}
+
+
 
 @media (max-width: 1000px) {
   #order-info .td.price{ /* override width */
