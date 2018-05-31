@@ -208,7 +208,10 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-4 col-sm-3">訂單狀態</div>
-										<div class="col-xs-8 col-sm-9"><span class="flash">已發貨</span></div>
+										<div class="col-xs-8 col-sm-9">
+											<span class="flash">待分享</span> <a class="btns-group-join" href="javascript:void(0);" data-type="group-join-share">立即分享></a>
+											<span class="flash">待發貨</span> <a class="btns-group-join" href="javascript:void(0);" data-type="group-join-check">查看拚團></a>
+										</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-4 col-sm-3">訂單備註</div>
@@ -269,6 +272,45 @@
 							</div>
 						</div>
 					</div>
+					<script>
+					$(function() {
+						/**
+					 * Modal:
+					 * 敲敲話
+					 * 拼團詳情
+					 * 拼團看更多
+					 * 去拼團 & 加入拼團成功 
+					 */
+						var $groupJoin = $('.group-join')
+							, $myModal = $('.modal')
+							, btnType;
+						$('.btns-group-join').on('click', function() {
+							btnType = $(this).data('type');
+						
+							if ($myModal.hasClass('group-join-share') || $myModal.hasClass('group-join-check')) { // 立即分享 & 查看拚團
+								$myModal.removeClass('group-join-share group-join-check');
+							}
+							if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+						});
+						// modal close
+						$myModal.on("hidden.bs.modal", function () {
+							if (btnType != undefined) $myModal.removeClass(btnType);
+						});
+
+						/* 倒數 */
+						$groupJoin.find('.countdown').each(function(){
+							var 
+							$this = $(this), 
+							sec = $this.data('timer'),
+							countto = $this.data('countto');
+							$this.digit_countdown({
+								counttime: sec,
+								count_to: countto,
+								digit_unit: countto == 's' ? ['','','','秒'] : ['天',':',':',''], 
+							});
+						});
+					});
+					</script>
 					<!--/ 訂單詳情 & 配送方式 & 發票資訊-->
 				</div>
 				<!--/ 購物車清單 -->
@@ -298,6 +340,161 @@
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
 
+	<!-- Modal -->
+	<div id="myModal" class="modal fade group-join">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- 立即分享 -->
+					<div class="group-join-friend group-join-share">
+						<div class="ob_head">
+							<div class="title-cont">
+								<h3 class="title supper-title">立即分享</h3><span></span>
+							</div>
+						</div>
+						<div class="ob_body">
+							<div class="info">
+								<div>再邀請<span class="group-member-short">2</span>位好友</div>
+								<div>即可滿團</div>
+							</div>
+							<div class="time-left">即將於 <span class="countdown" data-countto="h" data-timer="86400"></span> 結束</div>
+							<div class="photo">
+								<!-- 角色 class:
+								團長 -> role-chief
+								您   -> role-self
+								-->
+								<ul>
+									<li>
+										<img src="images/product/group-join/member-default.png" />
+										<span class="flash flash-label role-self">您</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+								</ul>
+							</div>
+							<div class="line"></div>
+							<div class="share-link">
+								<div>分享連結</div>
+								<div id="group-join-link">https://leisure178.firebaseapp.com/</div>
+								<span class="btns copy-link" data-clipboard-target="#group-join-link">複製連結</span>
+							</div>
+							<div class="line"></div>
+							<!-- social media -->
+							<div class="share">
+								<div>點擊分享給好友</div>
+								<ul>
+									<li>
+										<div class="btn-beango">
+											<a href="javascript:void(0)" class="submit" title="BeanGo!"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-fb">
+											<a href="http://www.facebook.com/share.php?u=http://15fun.jollybuy.com/Goods/Detail/J020000000000179-81" class="submit" title="Facebook"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-line">
+											<a href="http://line.naver.jp/R/msg/text/?潑寶不鏽鋼開瓶神器%20%0ahttp://15fun.jollybuy.com/Goods/Detail/J020000000000182" class="submit" title="LINE"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-ig">
+											<a href="javascript:void(0)" class="submit" title="Instagram"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-twitter">
+											<a href="javascript:void(0)" class="submit" title="Twitter"></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!--/ social media -->
+						</div>
+					</div>
+					<script>
+					$(function() {
+						if (!(document.queryCommandSupported && document.queryCommandSupported('copy'))) { // old iOS not support
+							$('.copy-link').hide();
+						}
+						var clipboard = new ClipboardJS('.copy-link');
+						console.log(clipboard);
+						clipboard.on('success', function() {
+							$.notify({
+								message: '分享連結複製完成'
+							});
+						});
+						clipboard.on('error', function() {
+							$.notify({
+								message: '分享連結複製失敗'
+							});
+						});
+					});
+					</script>
+					<!--/ 立即分享 -->
+
+					<!-- 查看拚團 -->
+					<div class="group-join-friend group-join-check">
+						<div class="ob_head">
+							<div class="title-cont">
+								<h3 class="title supper-title">查看拚團</h3><span></span>
+							</div>
+						</div>
+						<div class="ob_body">
+							<div class="info">
+								<!-- 未額滿 -->
+								<div>Pter Pan 的拼團</div>
+								<div>拚團名額還差<span class="group-member-short">1</span>人即可拚團成功</div>
+								<!--/ -->
+								<!-- 已額滿
+								<div>拚團名額已滿，拚團成功</div>
+							  -->
+								<!-- 已額滿(團主)
+								<div>您的拚團名額已滿</div>
+								<div>拚團成功</div>
+								-->
+							</div>
+							<div class="photo">
+								<!-- 角色 class:
+								團長 -> role-chief
+								您   -> role-self
+								-->
+								<ul>
+									<li>
+										<img src="images/product/group-join/member-portrait.png" />
+										<span class="flash flash-label role-chief">團長</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-default.png" />
+										<span class="flash flash-label role-self">您</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+								</ul>
+							</div>
+							<div class="time-left">即將於 <span class="countdown" data-countto="h" data-timer="86400"></span> 結束</div>
+						</div>
+					</div>
+					<!--/ 查看拚團 -->
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ Modal -->
+
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
@@ -315,6 +512,8 @@
 	<script type="text/javascript" src="js/twzipcode/jquery.twzipcode.min.js"></script>
   <script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/pay.js"></script>
+	<script type="text/javascript" src="js/digit_countdown.js"></script>
+	<script type="text/javascript" src="js/clipboard.min.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>
 </body>
 </html>
