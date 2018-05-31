@@ -3636,6 +3636,9 @@ select{
 }
 
 /* 拚團：邀請好友一起拚團 / 已成功加入的拚團 / 此商品已拚團成功 */
+#pay03 #order-list{
+  margin-top: 20px;
+}
 
 /* table border */
 #pay03 .table{
