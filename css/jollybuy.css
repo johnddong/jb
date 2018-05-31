@@ -3651,12 +3651,13 @@ select{
 #pay03 .shopping-cart-footer{
   border-top: none;
 }
+#pay03 .shopping-cart-footer .td{
+  border-top: none;
+}
 #pay03 #order-list li{
   margin-bottom: 0;
 }
-.table .td{
-  border-top: none;
-}
+
 /* table 框架
 * 邀請好友一起拚團 
 */
