@@ -1635,6 +1635,9 @@ header .header.layout1 .top-links{
   float: left;
   padding-right: 10px;
 }
+.group-join .photo img{
+  max-width: 75px;
+}
 .group-join .info{
   width: 80%;
   display: block;
@@ -2321,12 +2324,6 @@ div.disable:active:hover{
     padding: 1em 10px;
   }
 }
-/*產品說明內嵌youtube*/
-#product .infomation-form .tab-content .tab-panel iframe{
-  max-width: 560px;
-  min-height: 315px;
-}
-
 /*推薦商品*/
 #product .related-product .product-item .info .product-name{
   margin-bottom: 10px;
@@ -3638,52 +3635,52 @@ select{
   display: inline-block;
 }
 
-/* 邀請好友一起拚團 / 已成功加入的拚團 / 此商品已拚團成功 */
-/* tabl 框架 */
+/* 拚團：邀請好友一起拚團 / 已成功加入的拚團 / 此商品已拚團成功 */
+
+/* table border */
 #pay03 .table{
   border: 2px solid rgb(218, 80, 80);
-  border-top: none;
-  border-bottom: none;
 }
+#pay03 .shopping-cart-content{
+  border-bottom: none;
+  border-top: none;
+}
+#pay03 .shopping-cart-footer{
+  border-top: none;
+}
+#pay03 #order-list li{
+  margin-bottom: 0;
+}
+.table .td{
+  border-top: none;
+}
+/* table 框架
+* 邀請好友一起拚團 
+*/
 .table .product-thumb{width: 10%;}
 .table .product-name{width: 39%;}
 .table .product-line{width: 2%;}
 .table .product-share {width: 49%;}
 
-@media(max-width: 1000px) {
-  #pay03 .shopping-cart-content .product-line, /* 分割線 */
-  #pay03 .shopping-cart-content .product-share .title{ /* 分享連結標題 */
-    display: none;
-  }
-  #pay03 .product-thumb{
-    padding-left: 10px;
-  }
-  #pay03 .product-share{
-    clear: both;
-  }
-  #pay03 .product-share{
-    clear: both;
-  }
-  #pay03 .product-share .link-box{
-    width: 90%;
-    margin: auto;
-    display: block;
-  }
-  #pay03 .product-share .share{
-    margin-top: 0;
-  }
-  #pay03 .product-share .share ul{
-    width: 100%;
-    padding-left: 0;
-  }
-  #pay03 .product-share .share li{
-    float: none;
-    display: inline-block;
-  }
-  #pay03 .product-share .btns{
-    display: inline-block;
-    margin-top: 10px;
-  }
+/* table 框架 
+* 已成功加入的拚團
+* 此商品已拚團成功 
+*/
+.group-join-joined .product-thumb,
+.group-join-success .product-thumb{width: 10%;}
+.group-join-joined .product-name,
+.group-join-success .product-name{width: 40%;}
+.group-join-joined .product-line,
+.group-join-success .product-line{width: 25%;}
+.group-join-joined .product-share,
+.group-join-success .product-share {width: 25%; text-align: center;}
+
+.group-join-invite,
+.group-join-joined{
+  margin-bottom: 40px;
+}
+.group-join-success{
+  margin-bottom: 20px;
 }
 
 /* shopping-cart-header */
@@ -3698,8 +3695,12 @@ select{
 }
 /* shopping-cart-footer */
 #pay03 .shopping-cart-footer{ /* reset */
+  position: static;
   margin-top: 0; 
+  padding-top: 0;
+  padding-bottom: 0;
   font-size: 15px;
+  border-top: none;
 }
 #pay03 .shopping-cart-footer .td{
   text-align: left;
@@ -3738,36 +3739,110 @@ select{
 }
 
 /* 分享連結 */
-#pay03 .product-share{
+.group-join-invite .product-share{
   text-align: left;
 }
-#pay03 .share-link,
-#pay03 .share{
+.group-join-invite .share-link,
+.group-join-invite .share{
   text-align: center;
   justify-content: center;
 }
-#pay03 .share-link span{
+.group-join-invite .share-link span{
   margin-right: 5px;
 }
-#pay03 .share-link .link-box{
+.group-join-invite .share-link .link-box{
   border: 1px solid rgb(204, 204, 204);
   border-radius: 3px;
   text-align: left;
   padding: 10px 5px;
 }
-#pay03 .share-link .btns{
+.group-join-invite .share-link .btns{
   display: inline-block;
 }
-#pay03 .share{
+.group-join-invite .share{
   display: flex;
 }
-#pay03 .share .title{
+.group-join-invite .share .title{
   display: flex;
   height: 57px;
   align-items: center;
 }
-#pay03 .share li a:hover{
+.group-join-invite .share li a:hover{
   background-color: #fff;
+}
+
+/* btns */
+#pay03 .group-join-btns{
+  margin-top: 40px;
+}
+
+@media(max-width: 1000px) {
+  /* 邀請好友一起拚團 */
+  #pay03 .shopping-cart-header .product-name{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+  #pay03 .shopping-cart-content .product-line, /* 分割線 */
+  #pay03 .shopping-cart-content .product-share .title{ /* 分享連結標題 */
+    display: none;
+  }
+  #pay03 .product-thumb{
+    padding-left: 10px;
+  }
+  #pay03 .each-item,
+  #pay03 .product-share{
+    clear: both;
+    padding-bottom: 0;
+  }
+  #pay03 .product-share .link-box{
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+  #pay03 .product-share .share{
+    margin-top: 0;
+  }
+  #pay03 .product-share .share ul{
+    width: 100%;
+    padding-left: 0;
+  }
+  #pay03 .product-share .share li{
+    float: none;
+    display: inline-block;
+  }
+  #pay03 .product-share .btns{
+    display: inline-block;
+    margin-top: 10px;
+  }
+  #pay03 .shopping-cart-footer .td{
+    padding: 0;
+  }
+  /* 已成功加入的拚團 */
+  #pay03 .group-join-joined .product-line,
+  #pay03 .group-join-success .product-line{
+    display: block;
+  }
+  #pay03 .group-join-joined .product-name,
+  #pay03 .group-join-success .product-name{
+    padding-bottom: 0;
+  }
+  #pay03 .group-join-joined .product-line,
+  #pay03 .group-join-success .product-line{
+    padding-top: 0;
+  }
+  #pay03 .group-join-joined .product-share,
+  #pay03 .group-join-success .product-share{
+    text-align: center;
+    padding: 0 0 5px 0;
+  }
+  #pay03 .group-join-joined .product-share .btns{
+    margin-top: 0;
+  }
+  /* 此商品已拚團成功 */
+  #pay03 .group-join-success .product-share{
+    margin-bottom: 10px;
+  }
 }
 
 
