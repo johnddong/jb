@@ -3632,6 +3632,141 @@ select{
   display: inline-block;
 }
 
+/* 邀請好友一起拚團 / 已成功加入的拚團 / 此商品已拚團成功 */
+/* tabl 框架 */
+#pay03 .table{
+  border: 2px solid rgb(218, 80, 80);
+  border-top: none;
+  border-bottom: none;
+}
+.table .product-thumb{width: 10%;}
+.table .product-name{width: 39%;}
+.table .product-line{width: 2%;}
+.table .product-share {width: 49%;}
+
+@media(max-width: 1000px) {
+  #pay03 .shopping-cart-content .product-line, /* 分割線 */
+  #pay03 .shopping-cart-content .product-share .title{ /* 分享連結標題 */
+    display: none;
+  }
+  #pay03 .product-thumb{
+    padding-left: 10px;
+  }
+  #pay03 .product-share{
+    clear: both;
+  }
+  #pay03 .product-share{
+    clear: both;
+  }
+  #pay03 .product-share .link-box{
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+  #pay03 .product-share .share{
+    margin-top: 0;
+  }
+  #pay03 .product-share .share ul{
+    width: 100%;
+    padding-left: 0;
+  }
+  #pay03 .product-share .share li{
+    float: none;
+    display: inline-block;
+  }
+  #pay03 .product-share .btns{
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
+
+/* shopping-cart-header */
+#pay03 .shopping-cart-header .tr{
+  font-size: 16px;
+  color: #fff;
+  background: rgb(255, 117, 117);
+}
+#pay03 .shopping-cart-header .td{
+  text-align: center;
+  border-top: none;
+}
+/* shopping-cart-footer */
+#pay03 .shopping-cart-footer{ /* reset */
+  margin-top: 0; 
+  font-size: 15px;
+}
+#pay03 .shopping-cart-footer .td{
+  text-align: left;
+  padding-left: 20px;
+}
+#pay03 .shopping-cart-footer .td div{
+  padding: 10px 0;
+}
+
+#pay03 .shopping-cart-footer .group-member-short{
+  color: rgb(249, 3, 16);
+  font-size: 30px;
+}
+#pay03 .shopping-cart-footer .countdown{
+  color: rgb(249, 3, 16);
+}
+#pay03 .shopping-cart-footer .remark{
+  color: #aaa;
+}
+#pay03 .shopping-cart-footer i{ /* reset */
+  position: static;
+}
+
+/* 拚團價 */
+#pay03 .group-price{
+  color: #ff0000;
+}
+#pay03 .group-price span{
+  font-size: 25px;
+}
+
+#pay03 .product-line .line{
+  background: rgb(231, 231, 231);
+  width: 1px;
+  height: 100px;
+}
+
+/* 分享連結 */
+#pay03 .product-share{
+  text-align: left;
+}
+#pay03 .share-link,
+#pay03 .share{
+  text-align: center;
+  justify-content: center;
+}
+#pay03 .share-link span{
+  margin-right: 5px;
+}
+#pay03 .share-link .link-box{
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 3px;
+  text-align: left;
+  padding: 10px 5px;
+}
+#pay03 .share-link .btns{
+  display: inline-block;
+}
+#pay03 .share{
+  display: flex;
+}
+#pay03 .share .title{
+  display: flex;
+  height: 57px;
+  align-items: center;
+}
+#pay03 .share li a:hover{
+  background-color: #fff;
+}
+
+
+
+
 /* address */
 .twzipcode select,
 .twzipcode .buyer-county,
@@ -4215,7 +4350,6 @@ select{
   padding: 0;
   margin: 0;
 }
-
 
 
 @media (max-width: 1000px) {
