@@ -3661,10 +3661,26 @@ select{
 /* table 框架
 * 邀請好友一起拚團 
 */
-.table .product-thumb{width: 10%;}
-.table .product-name{width: 39%;}
-.table .product-line{width: 2%;}
-.table .product-share {width: 49%;}
+.group-join-invite .product-thumb,
+.group-join-joined .product-thumb,
+.group-join-success .product-thumb{
+  width: 10%;
+}
+.group-join-invite .product-name,
+.group-join-joined .product-name,
+.group-join-success .product-name{
+  width: 39%;
+}
+.group-join-invite .product-line,
+.group-join-joined .product-line,
+.group-join-success .product-line{
+  width: 2%;
+}
+.group-join-invite .product-share,
+.group-join-joined .product-share,
+.group-join-success .product-share{
+  width: 49%;
+}
 
 /* table 框架 
 * 已成功加入的拚團
