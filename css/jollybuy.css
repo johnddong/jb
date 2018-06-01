@@ -2334,6 +2334,12 @@ div.disable:active:hover{
     padding: 1em 10px;
   }
 }
+/*產品說明內嵌youtube*/
+#product .infomation-form .tab-content .tab-panel iframe{
+  max-width: 560px;
+  min-height: 315px;
+}
+
 /*推薦商品*/
 #product .related-product .product-item .info .product-name{
   margin-bottom: 10px;
