@@ -2020,16 +2020,18 @@ header .header.layout1 .top-links{
 .share li a.submit{ /* reset */
   background-color: #fff;
 }
-.btn-beango a{background: url('../images/icons/share/beango.png');}
-.btn-beango a:hover{background: url('../images/icons/share/beango-hover.png');}
-.btn-fb a{background: url('../images/icons/share/fb.png');}
-.btn-fb a:hover{background: url('../images/icons/share/fb-hover.png');}
-.btn-line a{background: url('../images/icons/share/line.png');}
-.btn-line a:hover{background: url('../images/icons/share/line-hover.png');}
-.btn-ig a{background: url('../images/icons/share/ig.png');}
-.btn-ig a:hover{background: url('../images/icons/share/ig-hover.png');}
-.btn-twitter a{background: url('../images/icons/share/twitter.png');}
-.btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
+#product .btn-beango a{background: url('../images/icons/share/beango.png');}
+#product .btn-beango a:hover{background: url('../images/icons/share/beango-hover.png');}
+#product .btn-fb a{background: url('../images/icons/share/fb.png');}
+#product .btn-fb a:hover{background: url('../images/icons/share/fb-hover.png');}
+#product .btn-line a{background: url('../images/icons/share/line.png');}
+#product .btn-line a:hover{background: url('../images/icons/share/line-hover.png');}
+#product .btn-ig a{background: url('../images/icons/share/ig.png');}
+#product .btn-ig a:hover{background: url('../images/icons/share/ig-hover.png');}
+#product .btn-twitter a{background: url('../images/icons/share/twitter.png');}
+#product .btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
+#product .btn-app-share a{background: url('../images/icons/share/app-share.png');}
+#product .btn-app-share a:hover{background: url('../images/icons/share/app-share-hover.jpg');}
 
 /* retina */
 @media (min--moz-device-pixel-ratio: 1.5),
@@ -2077,6 +2079,14 @@ header .header.layout1 .top-links{
      background: url('../images/2x/icons/share/twitter-hover.png');
      background-size: 100% auto;
    }
+   #product .btn-app-share a{
+    background: url('../images/2x/icons/share/app-share.png') no-repeat center center;
+    background-size: 100% auto;
+  }
+  #product .btn-app-share a:hover{
+    background: url('../images/2x/icons/share/app-share-hover.png') no-repeat center center;
+    background-size: 100% auto;
+  }
 }
 /* hide Carousel thumb's text of next & prev */
 #product .has-thumbs .owl-nav,
