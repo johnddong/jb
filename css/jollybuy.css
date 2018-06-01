@@ -1635,6 +1635,9 @@ header .header.layout1 .top-links{
   float: left;
   padding-right: 10px;
 }
+.group-join .photo img{
+  max-width: 75px;
+}
 .group-join .info{
   width: 80%;
   display: block;
@@ -2331,12 +2334,6 @@ div.disable:active:hover{
     padding: 1em 10px;
   }
 }
-/*產品說明內嵌youtube*/
-#product .infomation-form .tab-content .tab-panel iframe{
-  max-width: 560px;
-  min-height: 315px;
-}
-
 /*推薦商品*/
 #product .related-product .product-item .info .product-name{
   margin-bottom: 10px;
@@ -3648,6 +3645,270 @@ select{
   display: inline-block;
 }
 
+/* 拚團：邀請好友一起拚團 / 已成功加入的拚團 / 此商品已拚團成功 */
+#pay03 #order-list{
+  margin-top: 20px;
+}
+
+/* table border */
+#pay03 .table{
+  border: 2px solid rgb(218, 80, 80);
+}
+#pay03 .shopping-cart-content{
+  border-bottom: none;
+  border-top: none;
+}
+#pay03 .shopping-cart-footer{
+  border-top: none;
+}
+#pay03 .shopping-cart-footer .td{
+  border-top: none;
+}
+#pay03 #order-list li{
+  margin-bottom: 0;
+}
+
+/* table 框架
+* 邀請好友一起拚團 
+*/
+.group-join-invite .product-thumb,
+.group-join-joined .product-thumb,
+.group-join-success .product-thumb{
+  width: 10%;
+}
+.group-join-invite .product-name,
+.group-join-joined .product-name,
+.group-join-success .product-name{
+  width: 39%;
+}
+.group-join-invite .product-line,
+.group-join-joined .product-line,
+.group-join-success .product-line{
+  width: 2%;
+}
+.group-join-invite .product-share,
+.group-join-joined .product-share,
+.group-join-success .product-share{
+  width: 49%;
+}
+
+/* table 框架 
+* 已成功加入的拚團
+* 此商品已拚團成功 
+*/
+.group-join-joined .product-thumb,
+.group-join-success .product-thumb{width: 10%;}
+.group-join-joined .product-name,
+.group-join-success .product-name{width: 40%;}
+.group-join-joined .product-line,
+.group-join-success .product-line{width: 25%;}
+.group-join-joined .product-share,
+.group-join-success .product-share {width: 25%; text-align: center;}
+
+.group-join-invite,
+.group-join-joined{
+  margin-bottom: 40px;
+}
+.group-join-success{
+  margin-bottom: 20px;
+}
+
+/* shopping-cart-header */
+#pay03 .shopping-cart-header .tr{
+  font-size: 16px;
+  color: #fff;
+  background: rgb(255, 117, 117);
+}
+#pay03 .shopping-cart-header .td{
+  text-align: center;
+  border-top: none;
+}
+/* shopping-cart-footer */
+#pay03 .shopping-cart-footer{ /* reset */
+  position: static;
+  margin-top: 0; 
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 15px;
+  border-top: none;
+}
+#pay03 .shopping-cart-footer .td{
+  text-align: left;
+  padding-left: 20px;
+}
+#pay03 .shopping-cart-footer .td div{
+  padding: 10px 0;
+}
+
+#pay03 .shopping-cart-footer .group-member-short{
+  color: rgb(249, 3, 16);
+  font-size: 30px;
+}
+#pay03 .shopping-cart-footer .countdown{
+  color: rgb(249, 3, 16);
+}
+#pay03 .shopping-cart-footer .remark{
+  color: #aaa;
+}
+#pay03 .shopping-cart-footer i{ /* reset */
+  position: static;
+}
+
+/* 拚團價 */
+#pay03 .group-price{
+  color: #ff0000;
+}
+#pay03 .group-price span{
+  font-size: 25px;
+}
+
+#pay03 .product-line .line{
+  background: rgb(231, 231, 231);
+  width: 1px;
+  height: 100px;
+}
+
+/* 分享連結 */
+.group-join-invite .product-share{
+  text-align: left;
+}
+.group-join-invite .share-link,
+.group-join-invite .share{
+  text-align: center;
+  justify-content: center;
+}
+.group-join-invite .share-link{
+  margin: 10px 0;
+}
+.group-join-invite .share-link span{
+  margin-right: 5px;
+}
+.group-join-invite .share-link .link-box{
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 3px;
+  text-align: left;
+  padding: 10px 5px;
+}
+.group-join-invite .share-link .btns{
+  display: inline-block;
+}
+.group-join-invite .share{
+  display: flex;
+  margin-top: 0;
+}
+.group-join-invite .share .title{
+  display: flex;
+  height: 57px;
+  align-items: center;
+}
+.group-join-invite .share li a:hover{
+  background-color: #fff;
+}
+/* btns */
+#pay03 .group-join-btns{
+  margin-top: 40px;
+}
+
+/* 拚團查看/立即分享 modal */
+
+/* reset */
+#pay03 .modal .group-join-joined{
+  margin-bottom: 0;
+}
+#pay03 .modal .group-join-success{ 
+  font-size: 15px;
+  text-align: left;
+  padding: 0;
+}
+#pay03 .modal .modal-footer{
+  padding: 0;
+}
+/* 隱藏 */
+#pay03 .modal .group-join-joined,  /*  已成功加入此商品 */
+#pay03 .modal .group-join-success{ /* 商品拚團成功 */
+  display: none;
+}
+/* 顯示 */
+#pay03 .modal.group-join-joined .group-join-joined,     /* 立即分享 */      
+#pay03 .modal.group-join-success .group-join-success{       /* 查看拚團 */
+  display: block; 
+}
+
+@media(max-width: 1000px) {
+  /* 邀請好友一起拚團 */
+  #pay03 .shopping-cart-header .product-name{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+  #pay03 .shopping-cart-content .product-line, /* 分割線 */
+  #pay03 .shopping-cart-content .product-share .title{ /* 分享連結標題 */
+    display: none;
+  }
+  #pay03 .product-thumb{
+    margin: 0 10px;
+  }
+  #pay03 .each-item,
+  #pay03 .product-share{
+    clear: both;
+    padding-bottom: 0;
+  }
+  #pay03 .product-share .share-link{
+    margin: 0;
+  }
+  #pay03 .product-share .link-box{
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+  #pay03 .product-share .share{
+    margin-top: 0;
+  }
+  #pay03 .product-share .share ul{
+    width: 100%;
+    padding-left: 0;
+  }
+  #pay03 .product-share .share li{
+    float: none;
+    display: inline-block;
+  }
+  #pay03 .product-share .btns{
+    display: inline-block;
+    margin-top: 10px;
+  }
+  #pay03 .shopping-cart-footer .td{
+    padding: 0;
+  }
+  /* 已成功加入的拚團 */
+  #pay03 .group-join-joined .product-line,
+  #pay03 .group-join-success .product-line{
+    display: block;
+  }
+  #pay03 .group-join-joined .product-name,
+  #pay03 .group-join-success .product-name{
+    padding-bottom: 0;
+  }
+  #pay03 .group-join-joined .product-line,
+  #pay03 .group-join-success .product-line{
+    padding-top: 0;
+  }
+  #pay03 .group-join-joined .product-share,
+  #pay03 .group-join-success .product-share{
+    text-align: center;
+    padding: 0 0 5px 0;
+  }
+  #pay03 .group-join-joined .product-share .btns{
+    margin-top: 0;
+  }
+  /* 此商品已拚團成功 */
+  #pay03 .group-join-success .product-share{
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
 /* address */
 .twzipcode select,
 .twzipcode .buyer-county,
@@ -4231,7 +4492,6 @@ select{
   padding: 0;
   margin: 0;
 }
-
 
 
 @media (max-width: 1000px) {
