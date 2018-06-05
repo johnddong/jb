@@ -2042,43 +2042,43 @@ header .header.layout1 .top-links{
 			 (-webkit-min-device-pixel-ratio: 1.5),
 			 (min-device-pixel-ratio: 1.5),
 			 (min-resolution: 1.5dppx){
-   .btn-beango a{
+   #product .btn-beango a{
      background: url('../images/2x/icons/share/beango.png') no-repeat center center;
      background-size: 100% auto;
    }
-   .btn-beango a:hover{
+   #product .btn-beango a:hover{
      background: url('../images/2x/icons/share/beango-hover.png');
      background-size: 100% auto;
    }
-   .btn-fb a{
+   #product .btn-fb a{
      background: url('../images/2x/icons/share/fb.png');
      background-size: 100% auto;
    }
-   .btn-fb a:hover{
+   #product .btn-fb a:hover{
      background: url('../images/2x/icons/share/fb-hover.png');
      background-size: 100% auto;
    }
-   .btn-line a{
+   #product .btn-line a{
      background: url('../images/2x/icons/share/line.png');
      background-size: 100% auto;
    }
-   .btn-line a:hover{
+   #product .btn-line a:hover{
      background: url('../images/2x/icons/share/line-hover.png');
      background-size: 100% auto;
    }
-   .btn-ig a{
+   #product .btn-ig a{
      background: url('../images/2x/icons/share/ig.png');
      background-size: 100% auto;
    }
-   .btn-ig a:hover{
+   #product .btn-ig a:hover{
      background: url('../images/2x/icons/share/ig-hover.png');
      background-size: 100% auto;
    }
-   .btn-twitter a{
+   #product .btn-twitter a{
      background: url('../images/2x/icons/share/twitter.png');
      background-size: 100% auto;
    }
-   .btn-twitter a:hover{
+   #product .btn-twitter a:hover{
      background: url('../images/2x/icons/share/twitter-hover.png');
      background-size: 100% auto;
    }
@@ -2336,6 +2336,8 @@ div.disable:active:hover{
 }
 /*產品說明內嵌youtube*/
 #product .infomation-form .tab-content .tab-panel iframe{
+  width: 100%;
+  height: auto;
   max-width: 560px;
   min-height: 315px;
 }
@@ -3247,11 +3249,23 @@ select{
 }
 .shopping-cart-checkout .methods .row .pull-left{
   text-align: left;
+  line-height: 35px;
 }
 .shopping-cart-checkout .methods .row .pull-right{
   text-align: right;
   font-size: 14px;
   cursor: pointer;
+}
+.shopping-cart-checkout .methods .row .pull-right .input-info{
+  width: 100%;
+  border: 1px solid #bbb !important;
+  text-align: left;
+  cursor: pointer;
+}
+.shopping-cart-checkout .methods .row .pull-right .fa{
+  position: absolute;
+  top: 10px;
+  right: 25px;
 }
 .shopping-cart-checkout .methods .unbold{
   font-weight: normal;
