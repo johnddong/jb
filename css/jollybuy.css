@@ -3315,9 +3315,6 @@ select{
   background: none;
 	color: #777;
 }
-.shopping-cart-checkout .subtotal-cont .total{
-  margin: 20px 0 10px 0;
-}
 
 .shopping-cart-content .news,
 .shopping-cart-checkout .news{
@@ -4903,7 +4900,7 @@ select{
   .order-grid .shopping-cart-content .td{
     border: none;
     text-align: left;
-    padding: 0 5px;
+    padding: 10px 5px;
   }
   .order-grid .shopping-cart-content .each-item{
     display: block;
