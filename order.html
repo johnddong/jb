@@ -109,7 +109,93 @@
 								<!-- tab: 全部 -->
 								<li>
 									<ul class="store">
-										<!-- 新訂單 -->
+										<!-- 新訂單：橘子支未綁定，進行綁定-->
+										<li data-type="">
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/logo-150x60.png" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble btn-chat" data-type="chat-dialog">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td order-status">訂單狀態</div>
+													<div class="td order-number">訂單編號</div>
+													<div class="td order-date">訂單日期</div>
+													<div class="td order-amount">訂單金額</div>
+													<div class="td order-eval-status">評價</div>
+													<div class="td order-chat"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td order-status" data-title="">新訂單</div>
+														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
+														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
+														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
+														<div class="td order-eval-status"></div>
+														<div class="td order-chat" data-title="">
+															<span class="btns btn-chat" data-type="order-cancel">取消訂單</span>
+															<span class="btns btn-chat" data-type="gamapay-not-verified">立即付款</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!--/ 新訂單：橘子支未綁定，進行綁定 -->
+
+										<!-- 新訂單：橘子支已綁定，立即付款 -->
+										<li data-type="">
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/logo-150x60.png" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble btn-chat" data-type="chat-dialog">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td order-status">訂單狀態</div>
+													<div class="td order-number">訂單編號</div>
+													<div class="td order-date">訂單日期</div>
+													<div class="td order-amount">訂單金額</div>
+													<div class="td order-eval-status">評價</div>
+													<div class="td order-chat"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td order-status" data-title="">新訂單</div>
+														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
+														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
+														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
+														<div class="td order-eval-status"></div>
+														<div class="td order-chat" data-title="">
+															<span class="btns btn-chat" data-type="order-cancel">取消訂單</span>
+															<span class="btns btn-chat" data-type="gamapay-verified">立即付款</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!--/ 新訂單：橘子支已綁定，立即付款 -->
+
+										<!-- 新訂單：前往付款 -->
 										<li data-type="">
 											<!-- table header -->
 											<div class="shopping-cart-header table">
@@ -150,7 +236,7 @@
 												</div>
 											</div>
 										</li>
-										<!--/ 新訂單 -->
+										<!--/ 新訂單：前往付款 -->
 
 										<!-- 訂單取消 -->
 										<li data-type="">
@@ -666,6 +752,88 @@
 					</button>
 				</div>
 				<div class="modal-body">
+					<!-- 橘子支：未綁定帳號 -->
+					<div class="gamapay-not-verified">
+						<div class="form-group">
+							<label for="account">橘子支帳號</label>
+							<input type="text" id="account" name="account" class="form-control" placeholder="請輸入橘子支帳號" value="">
+						</div>
+						<div class="form-group">
+							<label for="password">簡訊驗證碼</label>
+							<input type="text" id="password" name="password" class="form-control" placeholder="請輸入驗證碼" value="">
+							<button class="btns dynamic-pw" type="submit" id="send">取得動態密碼</button>
+						</div>
+					</div>
+					<script>
+						(function() {
+							var 
+							$accountBtn = $('.gamapay-not-verified').find('.dynamic-pw')
+							, timer = null
+							, counter = 60
+							, flag = true;
+
+							init = function() {
+								$accountBtn.on('click', function() {
+									var $this = $(this);
+									if (flag) {
+										$this.addClass('disable');
+										flag = false;
+										$this.css({backgroundColor: '#ccc', cursor: 'text'}).html('發送新驗證碼(<span>'+counter+'</span>s)');
+										timer = setInterval(function() {
+											counter--;
+											$this.find('span').text(counter);
+											if (counter == 0) {
+												$this.removeClass('disable').removeAttr('style').text('取得動態密碼');
+												clearInterval(timer);
+												counter = 60;
+												flag = true;
+											}
+										}, 1000);
+									}
+								});
+							};
+
+							init();
+
+						})();
+					</script>
+					<!--/ 橘子支：未綁定帳號 -->
+
+					<!-- 橘子支：已綁定立即付款 -->
+					<div class="gamapay gamapay-verified">
+						<div id="pay03">
+							<div class="gamapay">
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<!-- 橘子支支付 -->
+										<div class="gamapay-payment">
+											<h2>請開啟您的橘子支</h2>
+											<h2>點擊 立即付款 進行支付</h2>
+										</div>
+										<!--/ 橘子支支付 -->
+									</div>
+									<div class="panel-footer">
+										<!-- 橘子支支付 -->
+										<div class="gamapay-payment">
+											<div class="gamapay-logo"></div>
+											<div id="gama-pay">
+												<span id="gamapayBtn" class="btns btns-checkout">立即付款</span>
+											</div>
+											<div class="remark">請於繳款期限2018-03-28 23:59:59前完成付款</div>
+											<!-- 拚團訊息 -->
+											<div class="remark">提醒您：此訂單含有拚團商品，請盡速付款</div>
+											<div class="remark">若為團主需付款完成後才可獲得拚團分享連結</div>
+											<div class="remark">若參加拚團，該團逾期將需重新下單</div>
+											<!--/ 拚團訊息 -->
+										</div>
+										<!--/ 橘子支支付 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/ 橘子支：已綁定立即付款 -->
+
 					<!-- 取消訂單 -->
 					<div class="order-cancel">
 						<div class="title">是否確定取消此訂單?</div>
@@ -699,7 +867,7 @@
 							<ul>
 								<li class="status-line">
 									<div class="datetime">
-										2018-01-20 10:20
+										2018-01-20
 									</div>
 									<div class="status">
 										訂單成立
@@ -707,7 +875,7 @@
 								</li>
 								<li class="status-line">
 									<div class="datetime">
-										2018-01-20 11:20
+										2018-01-20
 									</div>
 									<div class="status">
 										賣家已發貨
@@ -715,7 +883,7 @@
 								</li>
 								<li class="status-line">
 									<div class="datetime">
-										2018-01-20 12:20
+										2018-01-20
 									</div>
 									<div class="status">
 										包裹已送達集貨中心
@@ -723,7 +891,7 @@
 								</li>
 								<li class="status-line">
 									<div class="datetime">
-										2018-01-20 13:20
+										2018-01-20
 									</div>
 									<div class="status">
 										已送達取件門市
@@ -731,7 +899,7 @@
 								</li>
 								<li class="status-line">
 									<div class="datetime">
-										2018-01-20 14:20
+										2018-01-20
 									</div>
 									<div class="status">
 										買家已取貨
@@ -739,7 +907,7 @@
 								</li>
 								<li class="status-line">
 									<div class="datetime">
-										2018-01-20 15:20
+										2018-01-20
 									</div>
 									<div class="status">
 										7日未取門市已退回
@@ -812,6 +980,12 @@
 					<!--/ 敲敲話對話窗 -->
 				</div>
 				<div class="modal-footer">
+					<!-- 橘子支：未綁定帳號 btns-->
+					<div class="gamapay-not-verified-btn">
+						<button type="button" class="btns" data-dismiss="modal">取消</button>
+						<button type="button" class="btns">確認綁定</button>
+					</div>
+					<!--/ 橘子支：未綁定帳號 btns -->
 					<!-- 共用 btns-->
 					<div class="common-btn">
 						<button type="button" class="btns" data-dismiss="modal">取消</button>

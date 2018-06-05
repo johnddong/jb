@@ -4243,18 +4243,26 @@ select{
 }
 
 /* 隱藏 */
-#order #myModal .order-cancel,     /* 訂單取消 */
-#order #myModal .order-confirm,    /* 確認收貨 */
-#order #myModal .logistics-status, /* 物流狀態 */
-#order #myModal .chat-dialog,      /* 敲敲話 */
-#order #myModal .common-btn,       /* 共用按鈕 */
-#order #myModal .logistics-btn,    /* 物流狀態按鈕 */
-#order #myModal .chat-btn,         /* 敲敲話按鈕 */
-#order #myModal .rating-btn{       /* 評價按鈕 */
+#order #myModal .gamapay-not-verified, /* 橘子支：未綁定帳號 */
+#order #myModal .gamapay-not-verified-btn, 
+#order #myModal .gamapay-verified,     /* 橘子支：已綁定立即付款 */
+#order #myModal .order-cancel,         /* 訂單取消 */
+#order #myModal .order-confirm,        /* 確認收貨 */
+#order #myModal .logistics-status,     /* 物流狀態 */
+#order #myModal .chat-dialog,          /* 敲敲話 */
+#order #myModal .common-btn,           /* 共用按鈕 */
+#order #myModal .logistics-btn,        /* 物流狀態按鈕 */
+#order #myModal .chat-btn,             /* 敲敲話按鈕 */
+#order #myModal .rating-btn{           /* 評價按鈕 */
   display: none;
 }
 
 /* 顯示 */
+/* 橘子支：未綁定帳號 */
+#order #myModal.gamapay-not-verified .gamapay-not-verified,
+#order #myModal.gamapay-not-verified .gamapay-not-verified-btn,
+/* 橘子支：已綁定立即付款 */
+#order #myModal.gamapay-verified .gamapay-verified,
 /* 訂單取消 */
 #order #myModal.order-cancel .order-cancel,
 #order #myModal.order-cancel .common-btn,
@@ -4268,6 +4276,34 @@ select{
 #order #myModal.chat-dialog .chat-dialog,
 #order #myModal.chat-dialog .chat-btn{
   display: block;
+}
+
+/* 橘子支：未綁定帳號 */
+#order .gamapay-not-verified .form-group{
+  position: relative;
+}
+#order .gamapay-not-verified .dynamic-pw{
+  position: absolute;
+  right: 1px;
+  top: 30px;
+  font-size: 15px;
+  padding: 0 5px;
+  margin: 0;
+  line-height: 16px;
+  height: 32px;
+  text-align: right;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+#order .gamapay-not-verified .dynamic-pw span{
+  float: none;
+  margin-right: 0;
+  width: 18px;
+}
+/* 橘子支：已綁定立即付款 */
+#order .gamapay-verified{
+  text-align: center;
 }
 
 /* 物流狀態 */
