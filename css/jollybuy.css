@@ -2548,6 +2548,7 @@ select{
     display: none;
   }
   #pay01 .pay-sold-out .quantity-item{
+    padding: 0 10px;
     text-align: left;
   }
 }
@@ -2575,7 +2576,7 @@ select{
 }
 @media (max-width: 1000px) {
   #pay01 #order-list{
-    margin-top: 20px;
+    margin: 20px 0 70px;
   }
   #pay02 #order-list .pay-info{
     padding: 0;
@@ -4961,7 +4962,7 @@ select{
     width: auto;
   }
   #pay01 .order-grid .shopping-cart-content .pay-sold-out .delete-item{ /* 已下架 */
-    bottom: 5px;
+    bottom: -5px;
   }
   .order-grid .shopping-cart-content .product-checkbox{
     float: left;
