@@ -2675,7 +2675,7 @@ select{
   #pay02 .shopping-cart-footer .shipping span{
     display: inline-block;
     width: 50%;
-    font-size: 12px;
+    font-size: 15px;
     text-align: left;
     color: #777;
   }
