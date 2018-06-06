@@ -3898,7 +3898,7 @@ select{
   #pay03 .shopping-cart-footer .td{
     padding: 0;
   }
-  /* 已成功加入的拚團 */
+  /* 已成功加入的拚團 / 此商品已拚團成功 */
   #pay03 .group-join-joined .product-line,
   #pay03 .group-join-success .product-line{
     display: block;
@@ -3922,6 +3922,11 @@ select{
   /* 此商品已拚團成功 */
   #pay03 .group-join-success .product-share{
     margin-bottom: 10px;
+  }
+  /* shopping-cart-footer padding */
+  #pay03 .group-join-invite .shopping-cart-footer .td,
+  #pay03 .group-join-joined .shopping-cart-footer .td{
+    padding: 0 10px;
   }
 }
 
