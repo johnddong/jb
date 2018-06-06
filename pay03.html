@@ -514,7 +514,6 @@
 							, btnType;
 						$('.btns-group, .btns-checkout').on('click', function() {
 							btnType = $(this).data('type');
-							console.log(btnType);
 						
 							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功
 								$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');
