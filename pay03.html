@@ -84,7 +84,7 @@
 								橘子支支付 => gamapay
 								取貨付款 => cvs
 							 / -->
-							<div class="order">
+							<div class="gamapay">
 								<div class="panel panel-default">
 									<div class="panel-body">
 										<!-- 付款完成 -->
@@ -182,7 +182,12 @@
 										<!-- 橘子支支付 -->
 										<div class="gamapay-payment">
 											<div class="gamapay-logo"></div>
-											<span id="gama-pay" class="btns btns-checkout">立即付款<span class="icon-gamapay"></span></span>
+											<div id="gama-pay">
+												<span id="gamapayBtn" class="btns btns-checkout" data-type="gamapay-not-verified">立即付款</span>
+											</div>
+											<!-- <span id="gama-pay" class="btns btns-checkout">
+												立即付款<span class="icon-gamapay"></span>
+											</span> -->
 											<div class="remark">請於繳款期限2018-03-28 23:59:59前完成付款</div>
 											<!-- 拚團訊息 -->
 											<div class="remark">提醒您：此訂單含有拚團商品，請盡速付款</div>
@@ -510,11 +515,12 @@
 						/* modal */
 						var $myModal = $('.modal')
 							, btnType;
-						$('.btns-group').on('click', function() {
+						$('.btns-group, .btns-checkout').on('click', function() {
 							btnType = $(this).data('type');
+							console.log(btnType);
 						
-							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success')) { // 已成功加入此商品 / 商品拚團成功
-								$myModal.removeClass('group-join-joined group-join-success');
+							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功
+								$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');
 							}
 							if (btnType != undefined) $myModal.addClass(btnType).modal('show');
 						});
@@ -564,6 +570,53 @@
 					</button>
 				</div>
 				<div class="modal-body">
+					<!-- 橘子支：未綁定帳號 -->
+					<div class="gamapay-not-verified">
+						<div class="form-group">
+							<label for="account">橘子支帳號</label>
+							<input type="text" id="account" name="account" class="form-control" placeholder="請輸入橘子支帳號" value="">
+						</div>
+						<div class="form-group">
+							<label for="password">動態簡訊驗證碼</label>
+							<input type="text" id="password" name="password" class="form-control" placeholder="請輸入動態簡訊驗證碼" value="">
+							<button class="btns dynamic-pw" type="submit" id="send">取得動態密碼</button>
+						</div>
+					</div>
+					<script>
+						(function() {
+							var 
+							$accountBtn = $('.gamapay-not-verified').find('.dynamic-pw')
+							, timer = null
+							, counter = 60
+							, flag = true;
+
+							init = function() {
+								$accountBtn.on('click', function() {
+									var $this = $(this);
+									if (flag) {
+										$this.addClass('disable');
+										flag = false;
+										$this.css({backgroundColor: '#ccc', borderRadius: 0, border: 'none', boxShadow: 'none', cursor: 'text'}).html('發送動態密碼(<span>'+counter+'</span>s)');
+										timer = setInterval(function() {
+											counter--;
+											$this.find('span').text(counter);
+											if (counter == 0) {
+												$this.removeClass('disable').removeAttr('style').text('發送動態密碼');
+												clearInterval(timer);
+												counter = 60;
+												flag = true;
+											}
+										}, 1000);
+									}
+								});
+							};
+
+							init();
+
+						})();
+					</script>
+					<!--/ 橘子支：未綁定帳號 -->
+
 					<!-- 已成功加入此商品 -->
 					<div class="group-join-friend group-join-joined">
 						<div class="ob_head">
@@ -636,6 +689,12 @@
 					<!--/ 商品拚團成功 -->
 				</div>
 				<div class="modal-footer">
+					<!-- 橘子支：未綁定帳號 btns-->
+					<div class="gamapay-not-verified-btn">
+						<button type="button" class="btns" data-dismiss="modal">取消</button>
+						<button type="button" class="btns">確認綁定</button>
+					</div>
+					<!--/ 橘子支：未綁定帳號 btns -->
 				</div>
 			</div>
 		</div>
@@ -657,7 +716,7 @@
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
   <script type="text/javascript" src="js/frontend.js"></script>
   <script type="text/javascript" src="js/pay.js"></script>
-	<script type="text/javascript" src="js/gama-pay.js"></script>
+	<!-- <script type="text/javascript" src="js/gama-pay.js"></script> -->
 	<script type="text/javascript" src="js/digit_countdown.js"></script>
 	<script type="text/javascript" src="js/clipboard.min.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>

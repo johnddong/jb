@@ -3835,14 +3835,21 @@ select{
 #pay03 .modal .modal-footer{
   padding: 0;
 }
+#pay03 .gamapay-not-verified .modal-footer{
+  padding-bottom: 15px;
+}
 /* 隱藏 */
-#pay03 .modal .group-join-joined,  /*  已成功加入此商品 */
-#pay03 .modal .group-join-success{ /* 商品拚團成功 */
+#pay03 .modal .gamapay-not-verified,     /* 橘子支：未綁定帳號 */
+#pay03 .modal .gamapay-not-verified-btn, 
+#pay03 .modal .group-join-joined,        /*  已成功加入此商品 */
+#pay03 .modal .group-join-success{       /* 商品拚團成功 */
   display: none;
 }
 /* 顯示 */
-#pay03 .modal.group-join-joined .group-join-joined,     /* 立即分享 */      
-#pay03 .modal.group-join-success .group-join-success{       /* 查看拚團 */
+#pay03 .modal.gamapay-not-verified .gamapay-not-verified,    /* 橘子支：未綁定帳號 */
+#pay03 .modal.gamapay-not-verified .gamapay-not-verified-btn,
+#pay03 .modal.group-join-joined .group-join-joined,          /* 立即分享 */      
+#pay03 .modal.group-join-success .group-join-success{        /* 查看拚團 */
   display: block; 
 }
 
@@ -4280,10 +4287,10 @@ select{
 }
 
 /* 橘子支：未綁定帳號 */
-#order .gamapay-not-verified .form-group{
+.gamapay-not-verified .form-group{
   position: relative;
 }
-#order .gamapay-not-verified .dynamic-pw{
+.gamapay-not-verified .dynamic-pw{
   position: absolute;
   right: 1px;
   top: 30px;
@@ -4297,7 +4304,7 @@ select{
   border-radius: 0;
   box-shadow: none;
 }
-#order .gamapay-not-verified .dynamic-pw span{
+.gamapay-not-verified .dynamic-pw span{
   float: none;
   margin-right: 0;
   width: 18px;
