@@ -514,8 +514,7 @@
 							, btnType;
 						$('.btns-group, .btns-checkout').on('click', function() {
 							btnType = $(this).data('type');
-						
-							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功
+							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功 / 橘子支：未綁定帳號
 								$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');
 							}
 							if (btnType != undefined) $myModal.addClass(btnType).modal('show');
