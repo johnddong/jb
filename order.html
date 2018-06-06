@@ -759,8 +759,8 @@
 							<input type="text" id="account" name="account" class="form-control" placeholder="請輸入橘子支帳號" value="">
 						</div>
 						<div class="form-group">
-							<label for="password">簡訊驗證碼</label>
-							<input type="text" id="password" name="password" class="form-control" placeholder="請輸入驗證碼" value="">
+							<label for="password">動態簡訊驗證碼</label>
+							<input type="text" id="password" name="password" class="form-control" placeholder="請輸入動態簡訊驗證碼" value="">
 							<button class="btns dynamic-pw" type="submit" id="send">取得動態密碼</button>
 						</div>
 					</div>
@@ -778,12 +778,12 @@
 									if (flag) {
 										$this.addClass('disable');
 										flag = false;
-										$this.css({backgroundColor: '#ccc', cursor: 'text'}).html('發送新驗證碼(<span>'+counter+'</span>s)');
+										$this.css({backgroundColor: '#ccc', borderRadius: 0, border: 'none', boxShadow: 'none', cursor: 'text'}).html('發送動態密碼(<span>'+counter+'</span>s)');
 										timer = setInterval(function() {
 											counter--;
 											$this.find('span').text(counter);
 											if (counter == 0) {
-												$this.removeClass('disable').removeAttr('style').text('取得動態密碼');
+												$this.removeClass('disable').removeAttr('style').text('發送動態密碼');
 												clearInterval(timer);
 												counter = 60;
 												flag = true;
