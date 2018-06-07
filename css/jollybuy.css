@@ -37,6 +37,21 @@ h3.supper-title{
   width: 100%!important;
   background: #ccbcbc;
 }
+/* gamapay disable */
+#gama-pay .disabled{
+  background: rgb(231, 231, 231);
+  color: rgb(204, 204, 204);
+  border: 1px solid rgb(221, 221, 221);
+  box-shadow: rgb(221, 221, 221) 0px 4px 0px;
+  padding: 10px 34px;
+  cursor: not-allowed;
+  width: 124px;
+}
+#gama-pay #gamapayBtn span{
+  height: auto;
+  float: none;
+}
+
 /*menu*/
 .kt-panel > ul > li.menu-item .beango{
   background: url('../images/icons/share/beango-hover.png');
