@@ -1293,8 +1293,8 @@ header .header.layout1 .top-links{
   }
   #type06 .header06 .home a{background-image: url("../images/header/type06/icon-home.png");}
   #type06 .header06 .home a:hover{background-image: url("../images/header/type06/icon-home-hover.png");}
-  #type06 .header06 #menu-list li.shop a{background-image: url("../images/header/type06/icon-shop.png");}
-  #type06 .header06 #menu-list li.shop a:hover{background-image: url("../images/header/type06/icon-shop-hover.png");}
+  #type06 .header06 #menu-list li.shop a{background-image: url("../images/header/type06/icon-shop.png"); background-size: 30px auto;}
+  #type06 .header06 #menu-list li.shop a:hover{background-image: url("../images/header/type06/icon-shop-hover.png");  background-size: 30px auto;}
   #type06 .header06 #menu-list li.dollar a{background-image: url("../images/header/type06/icon-dollar.png");}
   #type06 .header06 #menu-list li.dollar a:hover{background-image: url("../images/header/type06/icon-dollar-hover.png");}
   #type06 .header06 #menu-list li.member a{background-image: url("../images/header/type06/icon-member.png");}
