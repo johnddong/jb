@@ -37,7 +37,7 @@ h3.supper-title{
   width: 100%!important;
   background: #ccbcbc;
 }
-/* gamapay disable */
+/* gamapay disabled */
 #gama-pay .disabled{
   background: rgb(231, 231, 231);
   color: rgb(204, 204, 204);
@@ -3811,10 +3811,16 @@ select{
   margin-right: 5px;
 }
 .group-join-invite .share-link .link-box{
+  display: inline-flex;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 3px;
   text-align: left;
-  padding: 10px 5px;
+  padding: 5px;
+  width: 45%;
+}
+.group-join-invite .link-box input{
+  width: 100%;
+  border: none!important;
 }
 .group-join-invite .share-link .btns{
   display: inline-block;
