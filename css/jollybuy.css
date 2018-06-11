@@ -1400,11 +1400,11 @@ header .header.layout1 .top-links{
   background-repeat: no-repeat;
   padding-top: 30px;
 }
-.leisure .fixed-footer .goback a{background-image: url("../images/footer/icon-home.png");}
+.leisure .fixed-footer .goback a{background-image: url("../images/footer/icon-home.png"); background-size: 30px auto;}
 .leisure .fixed-footer .dollar a{background-image: url("../images/footer/icon-dollar.png");}
-.leisure .fixed-footer .shop a{background-image: url("../images/footer/icon-shop.png");}
-.leisure .fixed-footer .member a{background-image: url("../images/footer/icon-member.png");}
-.leisure .fixed-footer .cart a{background-image: url("../images/footer/icon-cart.png");}
+.leisure .fixed-footer .shop a{background-image: url("../images/footer/icon-shop.png"); background-size: 30px auto;}
+.leisure .fixed-footer .member a{background-image: url("../images/footer/icon-member.png"); background-size: 30px auto;}
+.leisure .fixed-footer .cart a{background-image: url("../images/footer/icon-cart.png"); background-size: 30px auto;}
 
 @media (min-width: 767px) {
   .leisure .fixed-footer{display: none;}
