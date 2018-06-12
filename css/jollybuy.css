@@ -279,7 +279,7 @@ form#search .invalid{
   font-weight: bold;
 }
 .breadcrumbs .current::before{
-  content: "// ";
+  content: "/ ";
 }
 /* loader */
 .loader{
@@ -4701,6 +4701,11 @@ select{
   height: 337px;
   align-items: center;
 }
+#return-confirm .return-info .return-reason-reset{
+  height: auto;
+  padding-bottom: 10px;
+  padding-top: 0;
+}
 #return-confirm .return-info .return-reason .dropdown-list,
 #return-confirm .return-info .return-reason .quantity{
   width: 100%;
@@ -4708,6 +4713,7 @@ select{
 }
 #return-confirm .return-info .return-reason .btns{
   margin-top: 20px;
+  box-shadow: none;
 }
 #return-confirm .orther-info .order-info .flash{
   background: rgb(244, 6, 6);
