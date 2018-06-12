@@ -298,8 +298,8 @@ $(function() {
         childrenCheckbox(this);
       });
 
-      //select all, excluding special store
-      //checkAll();
+      //check all, excluding special stores
+      checkAll();
     },
     
     headerCheckbox = function(_this) {
@@ -352,7 +352,12 @@ $(function() {
 
     childCheck = function(_this) {
       var isChildChecked = 0
-        , childrenLen = $(_this).parents('.tbody').eq(0).find('[type="checkbox"]:not(":disabled")').length;
+        , childrenLen = $(_this).parents('.tbody').eq(0).find('[type="checkbox"]:not(":disabled")').length
+          // checkAll check
+        , bagCheckedCount = 0
+        , $orderList = $cartContent.find('#order-list li')
+        , bagCheckedLen = $orderList.not('.disabled').find('.'+c.headerCheckbox).length;
+        
       $(_this).parents('.tbody').eq(0).find('[type="checkbox"]').each(function() {
         if ($(this).prop('checked')) {
           isChildChecked++;
@@ -363,6 +368,20 @@ $(function() {
           $(_this).parents('li').eq(0).find('.'+c.headerCheckbox).click();
         }
       }
+      // checkAll checked or unchecked 
+      $orderList.not('.disabled').each(function() {
+        if ($(this).find('.'+c.headerCheckbox).prop('checked')) bagCheckedCount++;
+      });
+      if (bagCheckedCount == bagCheckedLen) {
+        if ($footerCheckbox.prop('checked', true).parent().find('i').length == 0) {
+          $footerCheckbox.prop('checked', true).parent().append('<i class="fa fa-check" aria-hidden="true"></i>'); // checkAll checked
+        }
+      } else {
+        if ($footerCheckbox.prop('checked')) { 
+          $footerCheckbox.prop('checked', false).parent().find('i').remove(); // checkAll unChecked 
+        }
+      }
+
       return isChildChecked;
     },
   
@@ -448,7 +467,8 @@ $(function() {
           });
         } else {
           $headerCheckbox.each(function() {
-            if ($(this).parents('li').eq(0).data('type') != c.specialStore && $(this).prop('checked')) { // 選擇全部 checked
+            // if ($(this).parents('li').eq(0).data('type') != c.specialStore && $(this).prop('checked')) { // 選擇全部 checked
+            if ($(this).prop('checked')) { // 選擇全部 checked
               $(this).click();
             }
           });
