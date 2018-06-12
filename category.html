@@ -341,6 +341,7 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/load_script.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -355,6 +356,18 @@
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
+	<script type="text/javascript" src="js/infiniteScroll.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>
+	
+	<script>	
+		$(function() {
+			/* wishlist */
+			$('.wishlist').on('click', function() {
+				Cart.wish(this);
+			});
+			/* infinite scroll */
+			infiniteScroll.init({_this: 'product-grid'});
+		});						
+	</script>
 </body>
 </html>
