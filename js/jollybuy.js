@@ -13,27 +13,22 @@ $.fn.checked = function() {
 $('.checkbox-cont').on('click',function(){
   $(this).checked();
 });
+
 $(function(){
-  /*手機版捲軸到底移除fixed*/
+  /* 手機版捲軸底部時，設定底部margin */
   var
   $mainContent = $('.main-content'),
   is_mobile = mobilecheck();
   if(is_mobile){
-    if($('footer').hasClass('merge')){
-      $mainContent.css('margin-bottom','76px');
-      $(window).scroll(function(){
-        var window_height = $(window).height(),
-            window_scrollTop = $(window).scrollTop(),
-            document_height = $( document ).height(),
-            footer = $('.fixed-footer');
-        if(window_height + window_scrollTop == document_height){
-          footer.css('position','relative');
-          $mainContent.css('margin-bottom','0px');
-        }else if(document_height-window_height-window_scrollTop<76){
-          footer.css('position','fixed');
-          $mainContent.css('margin-bottom','76px');
+    if ($('.fixed-footer').length > 0) { // 有閑 fixed footer
+      if ($('.footer').is(':visible')) { // 一般 footer 
+        $('html').css({height: 'auto'}); // reset to enable setting margin
+        $('.footer').css({marginBottom: 76}); 
+      } else {
+        if ($('#order-list').length == 0) {
+          $mainContent.css({marginBottom: 36});
         }
-      });
+      }
     }
   }
 });
