@@ -1703,11 +1703,8 @@ header .header.layout1 .top-links{
 .modal .title-cont{
   margin-top: 0;
 }
-.modal .modal-footer{
-  margin-top: 10px;
-}
 .modal .modal-body {
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 220px);
   overflow-y: auto;
 }
 
@@ -3287,9 +3284,10 @@ select{
 }
 .shopping-cart-checkout .methods .row .pull-right .input-info{
   width: 100%;
-  border: 1px solid #bbb !important;
+  border: 1px solid #ccc !important;
   text-align: left;
   cursor: pointer;
+  opacity: 1;
 }
 .shopping-cart-checkout .methods .row .pull-right .fa{
   position: absolute;

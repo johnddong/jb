@@ -209,7 +209,7 @@
 													送貨方式
 												</div>
 												<div class="col-xs-12 col-md-6 pull-right logistics" data-type="logistics">
-													<input type="text" class="input-info" placeholder="請選擇送貨方式" value="">
+													<input type="text" class="input-info" placeholder="請選擇送貨方式" value="" disabled>
 													<i class="fa fa-angle-down" aria-hidden="true"></i>
 												</div>
 											</div>
@@ -218,7 +218,7 @@
 													發票開立方式
 												</div>
 												<div class="col-xs-12 col-md-6 pull-right invoice" data-type="invoice">
-													<input type="text" class="input-info" placeholder="請選擇發票開立方式" value="">
+													<input type="text" class="input-info" placeholder="請選擇發票開立方式" value="" disabled>
 													<i class="fa fa-angle-down" aria-hidden="true"></i>
 												</div>
 											</div>
@@ -343,14 +343,21 @@
 					// 填寫送貨方式 or 開立發票方式
 					$('.shopping-cart-checkout .logistics, .shopping-cart-checkout .invoice').on('click', function() {
 						var type = $(this).data('type');
+						console.log(type);
 						switch (type) {
 							case 'invoice':
 								$myModal.find('.logistics').hide();
 								$myModal.find('.'+type).show();
+								$myModal.find('.modal-body').css({
+									'overflow-y': 'visible'
+								});
 							break;
 							case 'logistics':
 								$myModal.find('.invoice').hide();
 								$myModal.find('.'+type).show();
+								$myModal.find('.modal-body').css({
+									'overflow-y': 'auto'
+								});
 							break;
 						}
 						$myModal.modal('show');
