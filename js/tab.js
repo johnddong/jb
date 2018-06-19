@@ -4,7 +4,7 @@
 * @param: URL?type= (brick, grid, list)
 */
 
-(function() {
+var Tab = (function() {
   var
     $viewType = $('#view-type')
   , $productGrid = $('.product-grid')
@@ -74,6 +74,7 @@
   },
 
   init = function(_this, type) {
+    if ($viewType.length == 0) return; 
     /* icons preload */
     iconPreload();
     type = (_get('type') != '') ? _get('type') : c.grid.name;
@@ -97,5 +98,9 @@
   };
 
   init();
+
+  return {
+    init: init
+  };
 
 })();
