@@ -343,7 +343,6 @@
 					// 填寫送貨方式 or 開立發票方式
 					$('.shopping-cart-checkout .logistics, .shopping-cart-checkout .invoice').on('click', function() {
 						var type = $(this).data('type');
-						console.log(type);
 						switch (type) {
 							case 'invoice':
 								$myModal.find('.logistics').hide();
