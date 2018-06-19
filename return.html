@@ -256,7 +256,7 @@
 														</div>
 													</div>
 													<input type="text" name="account_name" class="input-info" placeholder="請填寫帳戶名稱" value="">
-													<input type="text" name="account_number" class="input-info" placeholder="請填寫帳戶號碼" value="">
+													<input type="text" name="account_number" class="input-info" placeholder="請填寫帳戶號碼" value="" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
 													<h3 class="remark">退款備註</h3>
 													<textarea name="remark" class="input-info" class="input-info" placeholder="請填寫退款備註說明"></textarea>
 												</div>
