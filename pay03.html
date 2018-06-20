@@ -242,7 +242,7 @@
 											<div class="td product-share" data-title="">
 												<div class="share-link">
 													<span class="title">分享連結</span>
-													<span class="link-box">https://leisure178.firebaseapp.com/</span>
+													<span class="link-box"><input type="text" value="https://leisure178.firebaseapp.com/"></span>
 													<span class="btns copy-it" data-clipboard-text="https://leisure178.firebaseapp.com/">複製連結</span>
 												</div>
 												<!-- social media -->
@@ -512,7 +512,7 @@
 						/* modal */
 						var $myModal = $('.modal')
 							, btnType;
-						$('.btns-group, .btns-checkout').on('click', function() {
+						$('.btns-group, .btns-gamapay').on('click', function() {
 							btnType = $(this).data('type');
 							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功 / 橘子支：未綁定帳號
 								$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');

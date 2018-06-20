@@ -385,10 +385,11 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/load_script.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="js/owl.thumbs.min.js"></script>
+	<!-- <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/owl.thumbs.min.js"></script> -->
 	<script type="text/javascript" src="js/magnific-popup.min.js"></script>
 	<script type="text/javascript" src="js/mobilemenu.min.js"></script>
 	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
@@ -400,5 +401,16 @@
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/cart.js"></script>
+	<script>
+		$(function() {
+			loadScript('js/owl.carousel.min.js', function() {
+				// sliders
+				var sliders = ['main-slideshow', 'new-arrivals'];
+				for (var i = 0; i < sliders.length; i++) {
+					kt_innit_carousel({_this: sliders[i]});
+				}
+			});
+		});
+	</script>
 </body>
 </html>

@@ -2032,21 +2032,23 @@ header .header.layout1 .top-links{
   cursor:pointer;
   display: block;
 }
-.share li a.submit{ /* reset */
+.share li a.submit,
+.share li a.submit:hover{ /* reset */
   background-color: #fff;
 }
-#product .btn-beango a{background: url('../images/icons/share/beango.png');}
-#product .btn-beango a:hover{background: url('../images/icons/share/beango-hover.png');}
-#product .btn-fb a{background: url('../images/icons/share/fb.png');}
-#product .btn-fb a:hover{background: url('../images/icons/share/fb-hover.png');}
-#product .btn-line a{background: url('../images/icons/share/line.png');}
-#product .btn-line a:hover{background: url('../images/icons/share/line-hover.png');}
-#product .btn-ig a{background: url('../images/icons/share/ig.png');}
-#product .btn-ig a:hover{background: url('../images/icons/share/ig-hover.png');}
-#product .btn-twitter a{background: url('../images/icons/share/twitter.png');}
-#product .btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
-#product .btn-app-share a{background: url('../images/icons/share/app-share.png');}
-#product .btn-app-share a:hover{background: url('../images/icons/share/app-share-hover.jpg');}
+/* social media */
+.share .btn-beango a{background: url('../images/icons/share/beango.png');}
+.share .btn-beango a:hover{background: url('../images/icons/share/beango-hover.png');}
+.share .btn-fb a{background: url('../images/icons/share/fb.png');}
+.share .btn-fb a:hover{background: url('../images/icons/share/fb-hover.png');}
+.share .btn-line a{background: url('../images/icons/share/line.png');}
+.share .btn-line a:hover{background: url('../images/icons/share/line-hover.png');}
+.share .btn-ig a{background: url('../images/icons/share/ig.png');}
+.share .btn-ig a:hover{background: url('../images/icons/share/ig-hover.png');}
+.share .btn-twitter a{background: url('../images/icons/share/twitter.png');}
+.share .btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
+.share .btn-app-share a{background: url('../images/icons/share/app-share.png');}
+.share .btn-app-share a:hover{background: url('../images/icons/share/app-share-hover.jpg');}
 
 /* retina */
 @media (min--moz-device-pixel-ratio: 1.5),
@@ -2054,51 +2056,51 @@ header .header.layout1 .top-links{
 			 (-webkit-min-device-pixel-ratio: 1.5),
 			 (min-device-pixel-ratio: 1.5),
 			 (min-resolution: 1.5dppx){
-   #product .btn-beango a{
+   .share .btn-beango a{
      background: url('../images/2x/icons/share/beango.png') no-repeat center center;
      background-size: 100% auto;
    }
-   #product .btn-beango a:hover{
+   .share .btn-beango a:hover{
      background: url('../images/2x/icons/share/beango-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-fb a{
+   .share .btn-fb a{
      background: url('../images/2x/icons/share/fb.png');
      background-size: 100% auto;
    }
-   #product .btn-fb a:hover{
+   .share .btn-fb a:hover{
      background: url('../images/2x/icons/share/fb-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-line a{
+   .share .btn-line a{
      background: url('../images/2x/icons/share/line.png');
      background-size: 100% auto;
    }
-   #product .btn-line a:hover{
+   .share .btn-line a:hover{
      background: url('../images/2x/icons/share/line-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-ig a{
+   .share .btn-ig a{
      background: url('../images/2x/icons/share/ig.png');
      background-size: 100% auto;
    }
-   #product .btn-ig a:hover{
+   .share .btn-ig a:hover{
      background: url('../images/2x/icons/share/ig-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-twitter a{
+   .share .btn-twitter a{
      background: url('../images/2x/icons/share/twitter.png');
      background-size: 100% auto;
    }
-   #product .btn-twitter a:hover{
+   .share .btn-twitter a:hover{
      background: url('../images/2x/icons/share/twitter-hover.png');
      background-size: 100% auto;
    }
-   #product .btn-app-share a{
+   .share .btn-app-share a{
     background: url('../images/2x/icons/share/app-share.png') no-repeat center center;
     background-size: 100% auto;
   }
-  #product .btn-app-share a:hover{
+  .share .btn-app-share a:hover{
     background: url('../images/2x/icons/share/app-share-hover.png') no-repeat center center;
     background-size: 100% auto;
   }
@@ -3736,6 +3738,9 @@ select{
 }
 .group-join-success{
   margin-bottom: 20px;
+}
+.group-join-success .shopping-cart-footer .td{
+  padding: 0;
 }
 
 /* shopping-cart-header */

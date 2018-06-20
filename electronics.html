@@ -205,7 +205,7 @@
 
 	<div class="main-content home-page main-content-home9">
 		<!-- 電視牆 -->
-		<div class="main-slideshow ">
+		<div class="main-slideshow">
 			<!-- 全景模式 -->
 			<div class="owl-carousel dots-style1 nav-style2" data-autoplay="true" data-nav="true" data-dots="false" data-loop="true" data-slidespeed="800" data-margin="15" data-autoheight="true" data-responsive = '{"0":{"items":1}, "640":{"items":1}, "768":{"items":2}, "1024":{"items":3}, "1200":{"items":3}}'>
 				<div class="slide-item">
@@ -234,7 +234,6 @@
 								<div class="thumb">
 									<div class="group-button">
 										<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
-										<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
 									</div>
 									<a href="#"><img src="images/product69.jpg" alt=""></a>
 								</div>
@@ -252,7 +251,6 @@
 								<div class="thumb">
 									<div class="group-button">
 										<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
-										<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
 									</div>
 									<a href="#"><img src="images/product70.jpg" alt=""></a>
 								</div>
@@ -270,7 +268,6 @@
 								<div class="thumb">
 									<div class="group-button">
 										<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
-										<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
 									</div>
 									<a href="#"><img src="images/product71.jpg" alt=""></a>
 								</div>
@@ -288,7 +285,6 @@
 								<div class="thumb">
 									<div class="group-button">
 										<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
-										<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
 									</div>
 									<a href="#"><img src="images/product72.jpg" alt=""></a>
 								</div>
@@ -306,7 +302,6 @@
 								<div class="thumb">
 									<div class="group-button">
 										<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
-										<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
 									</div>
 									<a href="#"><img src="images/product73.jpg" alt=""></a>
 								</div>
@@ -324,7 +319,6 @@
 								<div class="thumb">
 									<div class="group-button">
 										<a href="javascript:void(0);" class="wishlist-button wishlist" data-sku="12345" data-type="wishlist"></a>
-										<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
 									</div>
 									<a href="#"><img src="images/product74.jpg" alt=""></a>
 								</div>
@@ -390,10 +384,11 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/load_script.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="js/owl.thumbs.min.js"></script>
+	<!-- <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/owl.thumbs.min.js"></script> -->
 	<script type="text/javascript" src="js/magnific-popup.min.js"></script>
 	<script type="text/javascript" src="js/mobilemenu.min.js"></script>
 	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
@@ -406,5 +401,16 @@
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/cart.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>
+	<script>
+		$(function() {
+			loadScript('js/owl.carousel.min.js', function() {
+				// sliders
+				var sliders = ['main-slideshow', 'featured-products'];
+				for (var i = 0; i < sliders.length; i++) {
+					kt_innit_carousel({_this: sliders[i]});
+				}
+			});
+		});
+		</script>
 </body>
 </html>
