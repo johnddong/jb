@@ -163,6 +163,11 @@ a.btns,
   -ms-user-select: none;
   user-select: none;
 }
+.btns-group-cart{
+  font-size: 14px;
+  height: auto;
+  padding: 2px 25px;
+}
 a.btns-group,
 .btns-group,
 .btns-group-cart{
@@ -172,7 +177,8 @@ a.btns-group,
   box-shadow: 0 4px 0 rgb(216, 71, 78);
 }
 span.btns-group:hover,
-span.btns-group-cart:hover{
+span.btns-group-cart:hover,
+button.btns-group-cart:hover{
   background: #ed6568;
 }
 .btns:hover{
