@@ -353,3 +353,17 @@ var Cart = (function() {
   }
 
 })();
+
+
+
+/**
+ * 顯示 Modal 
+ * @param {string} btnType data-type of the button
+ */
+
+var showModal = function(btnType) {
+  if (btnType != undefined) {
+    $myModal = $('.modal');
+    $myModal.addClass(btnType).modal('show');
+  }
+};

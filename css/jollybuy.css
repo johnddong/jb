@@ -164,13 +164,15 @@ a.btns,
   user-select: none;
 }
 a.btns-group,
-.btns-group{
+.btns-group,
+.btns-group-cart{
   color: #fff;
   background: rgb(255, 117, 120);
   border-color: rgb(216, 71, 78);
   box-shadow: 0 4px 0 rgb(216, 71, 78);
 }
-span.btns-group:hover{
+span.btns-group:hover,
+span.btns-group-cart:hover{
   background: #ed6568;
 }
 .btns:hover{
@@ -1514,7 +1516,7 @@ header .header.layout1 .top-links{
   line-height: 20px;
   color: #777;
 }
-#product .main-content a{
+#product .main-content .btn-side a{
   color: #777;
   cursor: pointer;
 }
