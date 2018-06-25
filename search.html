@@ -168,7 +168,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 right-content">
-					<div class="auto-clear">
+					<div class="">
 						<!-- search keyword -->
 						<div class="note-search">
 							<h3 class="title">共有 <span class="number">100</span>  筆 【搜尋條件】關鍵字：“<i>筆電</i> ”</h3>
@@ -216,6 +216,15 @@
 						});
 						</script>
 						<!--/ search control -->
+						<!-- display mode -->
+						<div id="view-type">
+							<ul>
+								<li><div class="icon icon-brick" data-type="brick"></div></li>
+								<li><div class="icon icon-grid" data-type="grid"></div></li>
+								<li><div class="icon icon-list" data-type="list"></div></li>
+							</ul>
+						</div>
+						<!--/ display mode -->
 						<!-- search result w/ grid display of products -->
 						<div class="row product-grid">
 							<div class="col-ss-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
@@ -391,15 +400,18 @@
 							</div>
 						</div>
 						<!--/ search result w/ grid display of products -->
+						<input type="hidden" name="pageSize" value="3" />
 						<script type="text/javascript">
 						$(function() {
 							$('.wishlist-button').on('click', function() {
 								Cart.wish(this);
 							});
+							/* infinite scroll */
+							infiniteScroll.init({_this: 'product-grid', col: 3});
 						});
 						</script>
 						<!-- pagination -->
-						<div class="pagination">
+						<!-- <div class="pagination">
 							<ul class="list-page">
 								<li><a href="#" class="page-number prev">Previous</a></li>
 								<li><a href="#" class="page-number">1</a></li>
@@ -410,7 +422,7 @@
 								<li><a href="#" class="page-number">6</a></li>
 								<li><a href="#" class="page-number next">Next</a></li>
 							</ul>
-						</div>
+						</div> -->
 						<!--/ pagination -->
 					</div>
 				</div>
@@ -465,6 +477,7 @@
 	</footer>
 	<!--/Footer -->
 	<a class="back-to-top" href="#"></a>
+	<script type="text/javascript" src="js/tab.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -479,6 +492,7 @@
 	<script type="text/javascript" src="js/localization/messages_zh_TW.min.js"></script>
 	<script type="text/javascript" src="js/frontend.js"></script>
 	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript" src="js/infiniteScroll.js"></script>
 	<script type="text/javascript" src="js/jollybuy.js"></script>
 </body>
 </html>
