@@ -144,7 +144,7 @@ var infiniteScroll = (function($, win, doc) {
 	populate = function(json) {
 		var productEl = '';
 		if (json.not_found) { /* not found */
-			$('#'+viewType.id).hide();
+			$('#'+viewType.id).css({visibility: 'hidden'});
 			productEl = '<div id="not_found" class="col-xs-12">'+json.not_found+'</div>';
 			$this.empty().append(productEl);
 			return;
@@ -152,7 +152,7 @@ var infiniteScroll = (function($, win, doc) {
 
 		if (json.search != null) { /* search results */
 			rmLoader();
-			$('#'+viewType.id).show();
+			$('#'+viewType.id).css({visibility: 'visible'});
 			var 
 			anchor,
 			mobileColClass = '',  // bootstrap col class 
