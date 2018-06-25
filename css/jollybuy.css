@@ -5274,6 +5274,12 @@ select{
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
 }
+/* not found */
+#search #not_found{
+  font-size: 18px;
+  margin: 50px 0 ;
+  text-align: center;
+}
 /* active */
 #search .control .active{
   color: #168de7;

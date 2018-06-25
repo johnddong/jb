@@ -1,0 +1,125 @@
+{
+	"success": true,
+	"_not_found": "Oops! <br /> 找不到相關產品",
+	"result": {
+		"keyword": "尿布",
+		"total": 100,
+		"pageSize": 3
+	},
+	"search": [
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog2.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog3.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 21650,
+			"sale_price": 20550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog4.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/banner5.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog2.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog3.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 21650,
+			"sale_price": 20550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog4.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/banner5.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog2.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 12650,
+			"sale_price": 11550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		},
+		{
+			"url": "",
+			"image": "images/temp/tpl09/blog3.jpg",
+			"desc": "【義大利 GIOTTO】可洗式寶寶塗鴉樂禮盒(紅)幼兒超軟黏土禮物桶",
+			"fixed_price": 21650,
+			"sale_price": 20550,
+			"btn": {
+				"status": true,
+				"pid": 12345
+			}
+		}
+	]
+}       
+
+ 
+
+

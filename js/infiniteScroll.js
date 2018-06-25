@@ -142,22 +142,30 @@ var infiniteScroll = (function($, win, doc) {
 	},
 
 	populate = function(json) {
-		if (json.search != null) {
+		var productEl = '';
+		if (json.not_found) { /* not found */
+			$('#'+viewType.id).hide();
+			productEl = '<div id="not_found" class="col-xs-12">'+json.not_found+'</div>';
+			$this.empty().append(productEl);
+			return;
+		}
+
+		if (json.search != null) { /* search results */
 			rmLoader();
+			$('#'+viewType.id).show();
 			var 
 			anchor,
-			productEl = '',
 			mobileColClass = '',  // bootstrap col class 
 			colClass = '',
+			mobileColClass = (getViewType() == viewType.default) ? 'col-ss-6' : 'col-ss-12';
+			colClass = (col == 4) ? 
+				mobileColClass + ' col-xs-6 col-sm-4 col-md-4 col-lg-3"' : // 4 columns on PC
+				mobileColClass + ' col-xs-6 col-sm-6 col-md-6 col-lg-4"';  // 3 columns on PC
 			pageNum = parseInt(_get(page), 10);
 
 			if (json.search == '') return;
 			$.each(json.search, function(i, e) {
 				anchor = (i == 0) ? '<a name="pg'+pageNum+'"></a>' : '';
-				mobileColClass = (getViewType() == viewType.default) ? 'col-ss-6' : 'col-ss-12';
-				colClass = (col == 4) ? 
-					mobileColClass + ' col-xs-6 col-sm-4 col-md-4 col-lg-3"' : // 4 columns on PC
-					mobileColClass + ' col-xs-6 col-sm-6 col-md-6 col-lg-4"';  // 3 columns on PC
 				productEl =
 					anchor +
 					'<div class="'+colClass+'">'+
