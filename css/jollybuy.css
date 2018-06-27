@@ -1681,7 +1681,7 @@ header .header.layout1 .top-links{
   background: rgb(250, 118, 116);
   border-radius: 0;
   margin-right: 5px;
-  display: none; /* for temp hidden */
+  display: none; /* for temp hidden*/
 }
 .group-join .group-btns{
   position: absolute;
