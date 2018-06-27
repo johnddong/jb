@@ -1659,8 +1659,6 @@ header .header.layout1 .top-links{
 }
 .group-join .photo{
   float: left;
-  width: 75px;
-  text-align: center;
   padding-right: 10px;
 }
 .group-join .photo img{
@@ -1689,7 +1687,10 @@ header .header.layout1 .top-links{
   top: 20px;
   right: 0;
 }
-
+.group-join .ob_body .member-portrait{
+  width: 75px;
+  text-align: center;
+}
 .group-join .ob_body .member-portrait img{
   min-width: 60px;
 }
