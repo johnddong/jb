@@ -90,7 +90,7 @@
 								</li>
 								<li>
 									<div class="tab">
-										<div class="title">已發貨</div>
+										<div class="title">待收貨</div>
 									</div>
 								</li>
 								<li>
@@ -321,7 +321,7 @@
 										</li>
 										<!--/ 待發貨 -->
 
-										<!-- 已發貨 -->
+										<!-- 待收貨 -->
 										<li data-type="">
 											<!-- table header -->
 											<div class="shopping-cart-header table">
@@ -349,7 +349,7 @@
 												<!--/ table 標題 -->
 												<div class="tbody">
 													<div class="tr each-item" data-orderid="">
-														<div class="td order-status" data-title="">已發貨</div>
+														<div class="td order-status" data-title="">待收貨</div>
 														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
@@ -362,7 +362,7 @@
 												</div>
 											</div>
 										</li>
-										<!--/ 已發貨 -->
+										<!--/ 待收貨 -->
 
 										<!-- 已收貨 -->
 										<li data-type="">
@@ -571,9 +571,9 @@
 														<div class="td order-eval-status">
 															<span>未評價</span>
 														</div>
-														<div class="td order-chat order-eval" data-title="">
+														<div class="td order-chat" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
-															<span class="btns"><a href="javascript: void(0);">去評價</a></span>
+															<span class="btns order-eval"><a href="javascript: void(0);" data-type="eval-dialog">去評價</a></span>
 														</div>
 													</div>
 												</div>
@@ -613,8 +613,8 @@
 														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
-														<div class="td order-eval-status">
-															<span>已評價</span>
+														<div class="td order-eval-status order-eval">
+															<a href="javascript: void(0);" data-type="eval-dialog">已評價</a>
 														</div>
 														<div class="td order-chat" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
@@ -678,18 +678,153 @@
 								<!--/ 待付款 -->
 								<!-- tab: 待發貨 -->
 								<li data-type="">
+										待發貨
 								</li>
 								<!--/ tab: 待發貨 -->
-								<!-- tab: 已發貨 -->
+								<!-- tab: 待收貨 -->
 								<li data-type="">
+										待收貨
 								</li>
-								<!--/ tab: 已發貨 -->
+								<!--/ tab: 待收貨 -->
 								<!-- tab: 訂單完成 -->
 								<li data-type="">
+									<ul class="store">
+										<!-- 已收貨&可退貨 -->
+										<li data-type="">
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble btn-chat" data-type="chat-dialog">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td order-status">訂單狀態</div>
+													<div class="td order-number">訂單編號</div>
+													<div class="td order-date">訂單日期</div>
+													<div class="td order-amount">訂單金額</div>
+													<div class="td order-eval-status">評價</div>
+													<div class="td order-chat"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td order-status" data-title="">已收貨</div>
+														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
+														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
+														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
+														<div class="td order-eval-status"></div>
+														<div class="td order-chat" data-title="">
+															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
+															<a href="return.html"><span class="btns" data-type="">我要退貨</span></a>
+															<span class="btns order-eval"><a href="javascript: void(0);" data-type="eval-dialog">修改評價</a></span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!--/ 已收貨&可退貨 -->
+										<!-- 已收貨&不可退貨 -->
+										<li data-type="">
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble btn-chat" data-type="chat-dialog">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td order-status">訂單狀態</div>
+													<div class="td order-number">訂單編號</div>
+													<div class="td order-date">訂單日期</div>
+													<div class="td order-amount">訂單金額</div>
+													<div class="td order-eval-status">評價</div>
+													<div class="td order-chat"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td order-status" data-title="">訂單完成</div>
+														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
+														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
+														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
+														<div class="td order-eval-status order-eval">
+															<a href="javascript: void(0);" data-type="eval-dialog">已評價</a>
+														</div>
+														<div class="td order-chat" data-title="">
+															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
+															<span class="btns order-eval"><a href="javascript: void(0);" data-type="eval-dialog">修改評價</a></span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!--/ 已收貨&不可退貨 -->
+										<!-- 已收貨&不可退貨&不可修改評價 -->
+										<li data-type="">
+											<!-- table header -->
+											<div class="shopping-cart-header table">
+												<div class="tr">
+													<div class="td product-name">
+														<img src="images/temp/470x470/images06.jpg" /><span>15fun店鋪</span>
+													</div>
+													<div class="td product-checkbox bubble btn-chat" data-type="chat-dialog">
+														<i class="fa fa-commenting fa-2x" aria-hidden="true"></i>
+														<span>99</span>
+													</div>
+												</div>
+											</div>
+											<!-- table header -->
+											<div class="shopping-cart-content table">
+												<!-- table 標題 -->
+												<div class="tr title">
+													<div class="td order-status">訂單狀態</div>
+													<div class="td order-number">訂單編號</div>
+													<div class="td order-date">訂單日期</div>
+													<div class="td order-amount">訂單金額</div>
+													<div class="td order-eval-status">評價</div>
+													<div class="td order-chat"></div>
+												</div>
+												<!--/ table 標題 -->
+												<div class="tbody">
+													<div class="tr each-item" data-orderid="">
+														<div class="td order-status" data-title="">訂單完成</div>
+														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
+														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
+														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
+														<div class="td order-eval-status order-eval">
+															<a href="javascript: void(0);" data-type="eval-dialog">已評價</a>
+														</div>
+														<div class="td order-chat" data-title="">
+															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!--/ 已收貨&不可退貨&不可修改評價 -->
+									</ul>
 								</li>
 								<!--/ tab: 訂單完成 -->
 								<!-- tab: 退貨/取消 -->
 								<li data-type="">
+										退貨/取消
 								</li>
 								<!--/ tab: 退貨/取消 -->
 							</ul>
@@ -703,9 +838,23 @@
 							// modal
 							var $myModal = $('#myModal')
 								, btnType;
-							$('.btn-chat').on('click', function() {
+							$('.btn-chat, .order-eval a').on('click', function() {
 								btnType = $(this).data('type');
+								if ($myModal.hasClass('gamapay-not-verified') || 
+										$myModal.hasClass('gamapay-verified') || 
+										$myModal.hasClass('order-cancel') || 
+										$myModal.hasClass('order-confirm') ||
+										$myModal.hasClass('logistics-status') ||
+										$myModal.hasClass('chat-dialog') ||
+										$myModal.hasClass('eval-dialog')
+									) 
+									$myModal.removeClass('gamapay-not-verified gamapay-verified order-cancel order-confirm logistics-status chat-dialog eval-dialog');
+								 // show the specific modal
 								if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+								// 評價, reinit Eval JS
+								if ($myModal.hasClass('eval-dialog')) {  
+									//Eval.setEvalStatus({evalBtnStatus: false});
+								}
 							});
 							// modal close
 							$myModal.on("hidden.bs.modal", function () {
@@ -841,12 +990,12 @@
 					</div>
 					<!--/ 取消訂單 -->
 
-					<!-- 已發貨 -->
+					<!-- 確認收貨 -->
 					<div class="order-confirm">
 						<div class="title">是否確定此筆訂單</div>
 						<div class="title">已收到商品?</div>
 					</div>
-					<!--/ 已發貨 -->
+					<!--/ 確認收貨 -->
 
 					<!-- 物流狀態 -->
 					<div class="logistics-status">
@@ -986,12 +1135,20 @@
 						<button type="button" class="btns">確認綁定</button>
 					</div>
 					<!--/ 橘子支：未綁定帳號 btns -->
+
 					<!-- 共用 btns-->
 					<div class="common-btn">
 						<button type="button" class="btns" data-dismiss="modal">取消</button>
 						<button type="button" class="btns">確定</button>
 					</div>
 					<!--/ 共用 -->
+
+					<!-- 確認收貨 btns -->
+					<div class="order-confirm-btn">
+						<button type="button" class="btns" data-dismiss="modal">取消</button>
+						<button type="button" class="btns order-eval"><a href="javascript:void(0);" data-type="eval-dialog">確定</a></button>
+					</div>
+					<!--/ 確認收貨 btns -->
 
 					<!-- 物流狀態 -->
 					<div class="logistics-btn">
@@ -1024,7 +1181,7 @@
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
 						<button type="button" class="btn btn-eval disable" disabled="true">送出評價</button>
 						<div class="tip">
-							* 系統將於訂單狀態「已完成」30天後自動以５顆星(優良) 評價賣家，但仍保留買家「三個月」編輯修改的權利。
+							*	系統將於訂單已發貨14日後，自動以5顆星(優良)評價商品，但仍保留買家30日編輯修改的權利。
 						</div>
 					</div>
 					<!--/ 評價 btns -->

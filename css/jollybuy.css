@@ -148,10 +148,10 @@ h3.supper-title{
 a.btns,
 .btns{
   color: #777;
-  height: 40px;
-  line-height: 20px;
+  line-height: 18px;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 15px;
+  padding: 10px;
   font-weight: bold;
   background: #f0dddd;
   border: solid 1px #c7b7b7;
@@ -1659,10 +1659,13 @@ header .header.layout1 .top-links{
 }
 .group-join .photo{
   float: left;
+  width: 75px;
+  text-align: center;
   padding-right: 10px;
 }
 .group-join .photo img{
   max-width: 75px;
+  max-height: 75px;
 }
 .group-join .info{
   width: 80%;
@@ -4270,6 +4273,9 @@ select{
   font-weight: bold;
 }
 /* btns */
+#order .btns{
+  min-width: 80px;
+}
 #order #chat-list .shopping-cart-content .tbody .btns{
   display: inline-block;
 }
@@ -4295,12 +4301,14 @@ select{
 #order #myModal .gamapay-not-verified-btn, 
 #order #myModal .gamapay-verified,     /* 橘子支：已綁定立即付款 */
 #order #myModal .order-cancel,         /* 訂單取消 */
-#order #myModal .order-confirm,        /* 確認收貨 */
-#order #myModal .logistics-status,     /* 物流狀態 */
-#order #myModal .chat-dialog,          /* 敲敲話 */
 #order #myModal .common-btn,           /* 共用按鈕 */
+#order #myModal .order-confirm,        /* 確認收貨 */
+#order #myModal .order-confirm-btn,    /* 確認收貨按鈕 */
+#order #myModal .logistics-status,     /* 物流狀態 */
 #order #myModal .logistics-btn,        /* 物流狀態按鈕 */
+#order #myModal .chat-dialog,          /* 敲敲話 */
 #order #myModal .chat-btn,             /* 敲敲話按鈕 */
+#order #myModal .eval-dialog,          /* 評價 */
 #order #myModal .rating-btn{           /* 評價按鈕 */
   display: none;
 }
@@ -4316,13 +4324,16 @@ select{
 #order #myModal.order-cancel .common-btn,
 /* 確認收貨 */
 #order #myModal.order-confirm .order-confirm,
-#order #myModal.order-confirm .common-btn,
+#order #myModal.order-confirm .order-confirm-btn,
 /* 物流狀態 */
 #order #myModal.logistics-status .logistics-status,
 #order #myModal.logistics-status .logistics-btn,
 /* 敲敲話 */
 #order #myModal.chat-dialog .chat-dialog,
-#order #myModal.chat-dialog .chat-btn{
+#order #myModal.chat-dialog .chat-btn,
+/* 評價 */
+#order #myModal.eval-dialog .eval-dialog,
+#order #myModal.eval-dialog .rating-btn{
   display: block;
 }
 
@@ -4492,6 +4503,15 @@ select{
   /* #order #myModal .return-complete .ob_body{
     max-width: 100%;
   } */
+}
+
+/* order action button */
+@media (min-width: 1000px) and (max-width: 1200px) {
+  #order .order-chat .btns{
+    padding: 10px 5px;
+    margin: 2px;
+    min-width: auto;
+  }
 }
 
 @media screen and (max-width: 576px) {
