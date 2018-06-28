@@ -183,7 +183,7 @@
 										<div class="gamapay-payment">
 											<div class="gamapay-logo"></div>
 											<div id="gama-pay">
-												<span id="gamapayBtn" class="btns btns-checkout" data-type="gamapay-not-verified">立即付款</span>
+												<span id="gamapayBtn" class="btns btns-checkout" data-type="gamapay-not-verified">去綁定橘子支</span>
 											</div>
 											<div class="remark">請於繳款期限2018-03-28 23:59:59前完成付款</div>
 											<!-- 拚團訊息 -->
@@ -512,7 +512,7 @@
 						/* modal */
 						var $myModal = $('.modal')
 							, btnType;
-						$('.btns-group, .btns-gamapay').on('click', function() {
+						$('.btns-group, #gamapayBtn').on('click', function() {
 							btnType = $(this).data('type');
 							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功 / 橘子支：未綁定帳號
 								$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');
