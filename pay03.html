@@ -183,7 +183,14 @@
 										<div class="gamapay-payment">
 											<div class="gamapay-logo"></div>
 											<div id="gama-pay">
-												<span id="gamapayBtn" class="btns btns-checkout" data-type="gamapay-not-verified">去綁定橘子支</span>
+												<!-- 已綁定按鈕 -->
+												<!--
+												<span id="gamapayBtn" class="btns btns-checkout" ng-click="pay()">立即付款</span>
+												-->
+												<!--/ 已綁定按鈕 -->
+												<!-- 未綁定按鈕 -->
+												<span id="gamapayBind" class="btns btns-checkout" data-type="gamapay-not-verified">去綁定橘子支</span>
+												<!--/ 未綁定按鈕 -->
 											</div>
 											<div class="remark">請於繳款期限2018-03-28 23:59:59前完成付款</div>
 											<!-- 拚團訊息 -->
@@ -512,7 +519,7 @@
 						/* modal */
 						var $myModal = $('.modal')
 							, btnType;
-						$('.btns-group, #gamapayBtn').on('click', function() {
+						$('.btns-group, #gamapayBind').on('click', function() {
 							btnType = $(this).data('type');
 							if ($myModal.hasClass('group-join-joined') || 
 									$myModal.hasClass('group-join-success') || 
