@@ -224,9 +224,16 @@
 						<!-- <div class="product-id">商品編號:A123456789</div> -->
 						<div class="side price-side">
 							<div class="price">
-								<div class="origional">原價：$<span>3,999 </span></div>
-								<div class="sale">特價：$<span>2,800</span></div>
-								<div class="group promo">拚團價：$<span>2,000</span></div>
+								<!-- 一般商品價格 -->
+								<!--
+								$<span class="ins">1,380</span>
+								<span class="del">1,700 </span>
+								-->
+								<!--/ 一般商品價格 -->
+								<!-- 拼團價 -->
+								<div class="group-price">獨買價：$2,800 <span class="del">$3,900</span></div>
+								<div class="group promo">拚團價：$<span >2,000</span></div>
+								<!--/ 拼團價 -->
 							</div>
 							<div class="shipping-info">
 								<span class="float-left">銷量：99</span>
@@ -234,8 +241,8 @@
 								<span class="float-right">成團後將於xx天內出貨</span>
 							</div>
 							<div class="group-info">
-								<div class="flash flash-info">3人拼團價</div>
-								<div>限時24小時，3人即可成團</div>
+								<div class="flash flash-info">拼團玩法</div>
+								<div>限時24小時，3人即可成團 <i class="fa fa-exclamation-circle fa-lg" data-type="group-join-info"></i></div>
 							</div>
 							<div class="activity-info">
 								<div class="flash flash-info">店鋪活動</div>
@@ -372,7 +379,8 @@
 								var $groupJoin = $('.group-join')
 									, $myModal = $('.modal')
 									, btnType;
-								$('.ob_head i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
+								//$('.ob_head i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
+								$('.group-info i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
 									btnType = $(this).data('type');
 								
 									if (btnType == 'group-join-success' || btnType == 'group-join-friend' || btnType == 'group-join-expired') { // 去拼團加入成功 & 加入好友拚團
