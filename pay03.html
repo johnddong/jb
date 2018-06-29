@@ -514,10 +514,17 @@
 							, btnType;
 						$('.btns-group, #gamapayBtn').on('click', function() {
 							btnType = $(this).data('type');
-							if ($myModal.hasClass('group-join-joined') || $myModal.hasClass('group-join-success') || $myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功 / 橘子支：未綁定帳號
-								$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');
+							if ($myModal.hasClass('group-join-joined') || 
+									$myModal.hasClass('group-join-success') || 
+									$myModal.hasClass('gamapay-not-verified')) { // 已成功加入此商品 / 商品拚團成功 / 橘子支：未綁定帳號
+										$myModal.removeClass('group-join-joined group-join-success gamapay-not-verified');
 							}
+						
 							if (btnType != undefined) $myModal.addClass(btnType).modal('show');
+								// 橘字支未綁定
+							if ($myModal.hasClass('gamapay-not-verified')) {
+								dynamicPass.init();
+							}
 						});
 						// modal close
 						$myModal.on("hidden.bs.modal", function () {
@@ -536,6 +543,41 @@
 								digit_unit: countto == 's' ? ['','','','秒'] : ['天',':',':',''], 
 							});
 						});
+						
+						// 動態密碼倒數
+						var dynamicPass = (function() {
+							var 
+							$accountBtn = $('.gamapay-not-verified').find('.dynamic-pw')
+							, timer = null
+							, counter = 60
+							, flag = true;
+
+							init = function() {
+								$accountBtn.on('click', function() {
+									var $this = $(this);
+									if (flag) {
+										$this.addClass('disable');
+										flag = false;
+										$this.css({backgroundColor: '#ccc', borderRadius: 0, border: 'none', boxShadow: 'none', cursor: 'text'}).html('發送動態密碼(<span>'+counter+'</span>s)');
+										timer = setInterval(function() {
+											counter--;
+											$this.find('span').text(counter);
+											if (counter == 0) {
+												$this.removeClass('disable').removeAttr('style').text('發送動態密碼');
+												clearInterval(timer);
+												counter = 60;
+												flag = true;
+											}
+										}, 1000);
+									}
+								});
+							};
+							
+							return {
+								init: init
+							};
+
+						})();
 					});
 					</script>
 				</div>
@@ -577,39 +619,6 @@
 							<button class="btns dynamic-pw" type="submit" id="send">取得動態密碼</button>
 						</div>
 					</div>
-					<script>
-						(function() {
-							var 
-							$accountBtn = $('.gamapay-not-verified').find('.dynamic-pw')
-							, timer = null
-							, counter = 60
-							, flag = true;
-
-							init = function() {
-								$accountBtn.on('click', function() {
-									var $this = $(this);
-									if (flag) {
-										$this.addClass('disable');
-										flag = false;
-										$this.css({backgroundColor: '#ccc', borderRadius: 0, border: 'none', boxShadow: 'none', cursor: 'text'}).html('發送動態密碼(<span>'+counter+'</span>s)');
-										timer = setInterval(function() {
-											counter--;
-											$this.find('span').text(counter);
-											if (counter == 0) {
-												$this.removeClass('disable').removeAttr('style').text('發送動態密碼');
-												clearInterval(timer);
-												counter = 60;
-												flag = true;
-											}
-										}, 1000);
-									}
-								});
-							};
-
-							init();
-
-						})();
-					</script>
 					<!--/ 橘子支：未綁定帳號 -->
 
 					<!-- 已成功加入此商品 -->
