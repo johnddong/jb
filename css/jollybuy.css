@@ -3700,6 +3700,29 @@ select{
   display: inline-block;
 }
 
+/* 拼團 loader */
+.group-loader{
+  font-size: 20px;
+}
+@keyframes fadeIn { 
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+.group-loader .flicker {
+  animation: fadeIn 2s infinite;
+  display: none;
+}
+.group-loader .spinner{
+  margin: 20px auto;
+  display: none;
+}
+/* active */
+.group-loader.active .flicker,
+.group-loader.active .spinner{
+  display: block;
+}
+
 /* 拚團：邀請好友一起拚團 / 已成功加入的拚團 / 此商品已拚團成功 */
 #pay03 #order-list{
   margin-top: 20px;
