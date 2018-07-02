@@ -2067,7 +2067,8 @@ header .header.layout1 .top-links{
 .share .btn-twitter a{background: url('../images/icons/share/twitter.png');}
 .share .btn-twitter a:hover{background: url('../images/icons/share/twitter-hover.png');}
 .share .btn-app-share a{background: url('../images/icons/share/app-share.png');}
-.share .btn-app-share a:hover{background: url('../images/icons/share/app-share-hover.jpg');}
+.share .btn-wechat a{background: url('../images/icons/share/wechat.png');}
+.share .btn-wechat a:hover{background: url('../images/icons/share/wechat-hover.png');}
 
 /* retina */
 @media (min--moz-device-pixel-ratio: 1.5),
@@ -2121,6 +2122,14 @@ header .header.layout1 .top-links{
   }
   .share .btn-app-share a:hover{
     background: url('../images/2x/icons/share/app-share-hover.png') no-repeat center center;
+    background-size: 100% auto;
+  }
+  .share .btn-wechat a{
+    background: url('../images/2x/icons/share/wechat.png');
+    background-size: 100% auto;
+  }
+  .share .btn-wechat a:hover{
+    background: url('../images/2x/icons/share/wechat-hover.png');
     background-size: 100% auto;
   }
 }

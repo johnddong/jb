@@ -281,9 +281,31 @@
 																<a href="javascript:void(0)" class="submit" title="Twitter"></a>
 															</div>
 														</li>
+														<li>
+															<div class="btn-wechat">
+																<a href="javascript:void(0)" class="submit" title="WeChat"></a>
+															</div>
+														</li>
 													</ul>
 												</div>
 												<!--/ social media -->
+												<!-- social media for app -->
+												<!-- <div class="share">
+													<span class="title">點擊分享給好友</span>
+													<ul>
+														<li>
+															<div class="btn-beango">
+																<a href="javascript:void(0)" class="submit" title="BeanGo!"></a>
+															</div>
+														</li>
+														<li>
+															<div class="btn-app-share">
+																<a href="javascript:void(0)" class="submit" title="share"></a>
+															</div>
+														</li>
+													</ul>
+												</div> -->
+												<!--/ social media for app -->
 											</div>
 										</div>
 									</div>
@@ -344,9 +366,33 @@
 																<a href="javascript:void(0)" class="submit" title="Twitter"></a>
 															</div>
 														</li>
+														<li>
+															<div class="btn-wechat">
+																<a href="javascript:void(0)" class="submit" title="WeChat"></a>
+															</div>
+														</li>
 													</ul>
 												</div>
 												<!--/ social media -->
+												<!-- social media for app -->
+												<!-- 
+												<div class="share">
+													<span class="title">點擊分享給好友</span>
+													<ul>
+														<li>
+															<div class="btn-beango">
+																<a href="javascript:void(0)" class="submit" title="BeanGo!"></a>
+															</div>
+														</li>
+														<li>
+															<div class="btn-app-share">
+																<a href="javascript:void(0)" class="submit" title="share"></a>
+															</div>
+														</li>
+													</ul>
+												</div> 
+												-->
+												<!--/ social media for app -->
 											</div>
 										</div>
 									</div>
@@ -361,6 +407,16 @@
 								</div>
 							</li>
 						</ul>
+						<script>
+						$('.share').find('.btn-beango').on('click', function() {
+							$.notify({
+								// options
+								message: '請先下載 beanfun!'
+							}, {
+								type: 'warning'
+							});
+						});
+						</script>
 						<!--/ 邀請好友一起拚團  -->
 
 						<!-- 已成功加入的拚團 -->

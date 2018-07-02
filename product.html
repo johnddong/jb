@@ -501,10 +501,16 @@
 										<a href="javascript:void(0)" class="submit" title="Twitter"></a>
 									</div>
 								</li>
+								<li>
+									<div class="btn-wechat">
+										<a href="javascript:void(0)" class="submit" title="WeChat"></a>
+									</div>
+								</li>
 							</ul>
 						</div>
 						<!--/ social media -->
 						<!-- social media for app -->
+						<!--
 						<div class="share">
 							<h3 class="sub-title"><span>分享</span></h3>
 							<ul>
@@ -520,7 +526,20 @@
 								</li>
 							</ul>
 						</div>
+						-->
 						<!--/ social media for app -->
+						<script>
+						$(function() {
+							$('.share').find('.btn-beango').on('click', function() {
+								$.notify({
+									// options
+									message: '請先下載 beanfun!'
+								}, {
+									type: 'warning'
+								});
+							});
+						});
+						</script>
 					</div>
 					<!-- 加購商品 -->
 					<div id="additional-product">
