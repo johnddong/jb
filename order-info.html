@@ -383,9 +383,9 @@
 							</div>
 							<div class="line"></div>
 							<div class="share-link">
-								<div>分享連結</div>
-								<div id="group-join-link">https://leisure178.firebaseapp.com/</div>
-								<span class="btns copy-link" data-clipboard-target="#group-join-link">複製連結</span>
+								<span class="title">分享連結</span>
+								<span class="link-box"><input type="text" value="https://leisure178.firebaseapp.com/"></span>
+								<span class="btns copy-it" data-clipboard-text="https://leisure178.firebaseapp.com/">複製連結</span>
 							</div>
 							<div class="line"></div>
 							<!-- social media -->
@@ -449,9 +449,9 @@
 					<script>
 					$(function() {
 						if (!(document.queryCommandSupported && document.queryCommandSupported('copy'))) { // old iOS not support
-							$('.copy-link').hide();
+							$('.copy-it').hide();
 						}
-						var clipboard = new ClipboardJS('.copy-link');
+						var clipboard = new ClipboardJS('.copy-it');
 						clipboard.on('success', function() {
 							$.notify({
 								message: '分享連結複製完成'

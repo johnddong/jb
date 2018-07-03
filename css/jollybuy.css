@@ -3864,7 +3864,7 @@ select{
 .group-join-invite .share-link span{
   margin-right: 5px;
 }
-.group-join-invite .share-link .link-box{
+.share-link .link-box{
   display: inline-flex;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 3px;
@@ -3872,11 +3872,11 @@ select{
   padding: 5px;
   width: 45%;
 }
-.group-join-invite .link-box input{
+.share-link .link-box input{
   width: 100%;
   border: none!important;
 }
-.group-join-invite .share-link .btns{
+.share-link .btns{
   display: inline-block;
 }
 .group-join-invite .share{
@@ -4346,7 +4346,9 @@ select{
 #order #myModal .chat-dialog,          /* 敲敲話 */
 #order #myModal .chat-btn,             /* 敲敲話按鈕 */
 #order #myModal .eval-dialog,          /* 評價 */
-#order #myModal .rating-btn{           /* 評價按鈕 */
+#order #myModal .rating-btn,           /* 評價按鈕 */
+#order #myModal .group-join-share,     /* 立即分享 */
+#order #myModal .group-join-check   {  /* 查看拚團 */
   display: none;
 }
 
@@ -4370,8 +4372,12 @@ select{
 #order #myModal.chat-dialog .chat-btn,
 /* 評價 */
 #order #myModal.eval-dialog .eval-dialog,
-#order #myModal.eval-dialog .rating-btn{
-  display: block;
+#order #myModal.eval-dialog .rating-btn,
+ /* 立即分享 */      
+#order #myModal.group-join-share .group-join-share,   
+/* 查看拚團 */ 
+#order #myModal.group-join-check .group-join-check{       
+  display: block
 }
 
 /* 橘子支：未綁定帳號 */
@@ -4611,13 +4617,13 @@ select{
   display: block; 
 }
 /* 立即分享 */
-#order-info .line{
+.group-join .line{
   height: 1px;
 }
-#order-info .share-link{
+.group-join .share-link{
   text-align: center;
 }
-#order-info .share-link #group-join-link{
+.group-join .share-link #group-join-link{
   border: 1px solid rgb(204, 204, 204);
   border-radius: 3px;
   overflow: auto;
@@ -4625,26 +4631,35 @@ select{
   padding: 10px 5px;
   margin: 10px 0;
 }
-#order-info .share-link .btns{
+.group-join .share-link .btns{
   display: inline-block;
   margin-bottom: 10px;
 }
-#order-info .share{
+.group-join .share{
   margin-top: 0;
   text-align: center;
 }
-#order-info .share ul{
+.group-join .share ul{
   margin-top: 10px;
 }
-#order-info .share li{
+.group-join .share li{
   float: none;
   display: inline-block;  
 }
-#order-info .group-join-friend .modal-footer{
+.group-join .group-join-friend .modal-footer{
   padding: 0;
   margin: 0;
 }
 
+/* Modal: 立即分享 */
+@media (max-width: 342px) {
+  .group-join-share .share-link .title{
+    display: none;
+  }
+  .group-join-share .share-link .link-box{
+    width: 64%;
+  }
+}
 
 @media (max-width: 1000px) {
   #order-info .td.price{ /* override width */

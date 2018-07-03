@@ -75,12 +75,12 @@
 							<ul class="dot">
 								<li>
 									<div class="tab">
-										<div class="title">全部</div>
+										<div class="title">待付款</div>
 									</div>
 								</li>
 								<li>
 									<div class="tab">
-										<div class="title">待付款</div>
+										<div class="title">待分享</div>
 									</div>
 								</li>
 								<li>
@@ -90,7 +90,7 @@
 								</li>
 								<li>
 									<div class="tab">
-										<div class="title">待收貨</div>
+										<div class="title">已發貨</div>
 									</div>
 								</li>
 								<li>
@@ -106,7 +106,7 @@
 							</ul>
 							<div class="line"></div>
 							<ul class="ad">
-								<!-- tab: 全部 -->
+								<!-- tab: 待付款 -->
 								<li>
 									<ul class="store">
 										<!-- 新訂單：橘子支未綁定，進行綁定-->
@@ -626,9 +626,9 @@
 										<!--/ 訂單完成已評價 -->
 									</ul>
 								</li>
-								<!--/ tab: 全部 -->
+								<!--/ tab: 待付款 -->
 
-								<!-- tab 待付款 -->
+								<!-- tab 待分享 -->
 								<li>
 									<ul class="store">
 										<!-- 新訂單 -->
@@ -659,14 +659,20 @@
 												<!--/ table 標題 -->
 												<div class="tbody">
 													<div class="tr each-item" data-orderid="">
-														<div class="td order-status" data-title="">新訂單</div>
+														<div class="td order-status" data-title="">待分享</div>
 														<div class="td order-number" data-title="訂單編號："><a href="order-info.html"><span>A1234567890</span></a></div>
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval-status"></div>
 														<div class="td order-chat" data-title="">
+															<!-- 團主 -->
+															<span class="btns btn-chat" data-type="group-join-share">立即分享</span>
 															<span class="btns btn-chat" data-type="order-cancel">取消訂單</span>
-															<span class="btns btn-chat">立即付款</span>
+															<!--/團主 -->
+															<!-- 團員 -->
+															<span class="btns btn-chat" data-type="group-join-check">查看拼團</span>
+															<span class="btns btn-chat" data-type="order-cancel">取消訂單</span>
+															<!--/ 團員 -->
 														</div>
 													</div>
 												</div>
@@ -675,17 +681,20 @@
 										<!--/ 新訂單 -->
 									</ul>
 								</li>
-								<!--/ 待付款 -->
+								<!--/ 待分享 -->
+
 								<!-- tab: 待發貨 -->
 								<li data-type="">
 										待發貨
 								</li>
 								<!--/ tab: 待發貨 -->
-								<!-- tab: 待收貨 -->
+								
+								<!-- tab: 已發貨 -->
 								<li data-type="">
 										待收貨
 								</li>
-								<!--/ tab: 待收貨 -->
+								<!--/ tab: 已發貨 -->
+
 								<!-- tab: 訂單完成 -->
 								<li data-type="">
 									<ul class="store">
@@ -822,6 +831,7 @@
 									</ul>
 								</li>
 								<!--/ tab: 訂單完成 -->
+
 								<!-- tab: 退貨/取消 -->
 								<li data-type="">
 										退貨/取消
@@ -836,19 +846,22 @@
 							// tab
 							$('#order').Rotate({click_speed: 1, target: 0});
 							// modal
-							var $myModal = $('#myModal')
+							var $groupJoin = $('.group-join')
+							  , $myModal = $('#myModal')
 								, btnType;
 							$('.btn-chat, .order-eval a').on('click', function() {
 								btnType = $(this).data('type');
-								if ($myModal.hasClass('gamapay-not-verified') || 
-										$myModal.hasClass('gamapay-verified') || 
-										$myModal.hasClass('order-cancel') || 
-										$myModal.hasClass('order-confirm') ||
-										$myModal.hasClass('logistics-status') ||
-										$myModal.hasClass('chat-dialog') ||
-										$myModal.hasClass('eval-dialog')
+								if ($myModal.hasClass('gamapay-not-verified') || // gamapay 未綁定
+										$myModal.hasClass('gamapay-verified') ||     // gamapay 已綁定
+										$myModal.hasClass('order-cancel') ||         // 取消訂單
+										$myModal.hasClass('order-confirm') ||        // 確認收貨
+										$myModal.hasClass('logistics-status') ||     // 物流狀態
+										$myModal.hasClass('chat-dialog') ||          // 敲敲話
+										$myModal.hasClass('eval-dialog') ||          // 評價
+										$myModal.hasClass('group-join-share') ||     // 立即分享
+										$myModal.hasClass('group-join-check')        // 查看拼團
 									) 
-									$myModal.removeClass('gamapay-not-verified gamapay-verified order-cancel order-confirm logistics-status chat-dialog eval-dialog');
+									$myModal.removeClass('gamapay-not-verified gamapay-verified order-cancel order-confirm logistics-status chat-dialog eval-dialog group-join-share group-join-check');
 								 // show the specific modal
 								if (btnType != undefined) $myModal.addClass(btnType).modal('show');
 								// 評價, reinit Eval JS
@@ -859,6 +872,19 @@
 							// modal close
 							$myModal.on("hidden.bs.modal", function () {
 								if (btnType != undefined) $myModal.removeClass(btnType);
+							});
+
+							/* 倒數 */
+							$groupJoin.find('.countdown').each(function(){
+								var 
+								$this = $(this), 
+								sec = $this.data('timer'),
+								countto = $this.data('countto');
+								$this.digit_countdown({
+									counttime: sec,
+									count_to: countto,
+									digit_unit: countto == 's' ? ['','','','秒'] : ['天',':',':',''], 
+								});
 							});
 						});
 					</script>
@@ -892,7 +918,7 @@
 	<a class="back-to-top" href="#"></a>
 
 	<!-- Modal -->
-	<div id="myModal" class="chat-modal modal fade">
+	<div id="myModal" class="chat-modal modal fade group-join">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1127,6 +1153,177 @@
 						</div>
 					</div>
 					<!--/ 敲敲話對話窗 -->
+
+					<!-- 立即分享 -->
+					<div class="group-join-friend group-join-share">
+						<div class="ob_head">
+							<div class="title-cont">
+								<h3 class="title supper-title">立即分享</h3><span></span>
+							</div>
+						</div>
+						<div class="ob_body">
+							<div class="info">
+								<div>再邀請<span class="group-member-short">2</span>位好友</div>
+								<div>即可滿團</div>
+							</div>
+							<div class="time-left">即將於 <span class="countdown" data-countto="h" data-timer="86400"></span> 結束</div>
+							<div class="photo">
+								<!-- 角色 class:
+								團長 -> role-chief
+								您   -> role-self
+								-->
+								<ul>
+									<li>
+										<img src="images/product/group-join/member-default.png" />
+										<span class="flash flash-label role-self">您</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+								</ul>
+							</div>
+							<div class="line"></div>
+							<div class="share-link">
+								<span class="title">分享連結</span>
+								<span class="link-box"><input type="text" value="https://leisure178.firebaseapp.com/"></span>
+								<span class="btns copy-it" data-clipboard-text="https://leisure178.firebaseapp.com/">複製連結</span>
+							</div>
+							<div class="line"></div>
+							<!-- social media -->
+							<div class="share">
+								<div>點擊分享給好友</div>
+								<ul>
+									<li>
+										<div class="btn-beango">
+											<a href="javascript:void(0)" class="submit" title="BeanGo!"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-fb">
+											<a href="http://www.facebook.com/share.php?u=http://15fun.jollybuy.com/Goods/Detail/J020000000000179-81" class="submit" title="Facebook"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-line">
+											<a href="http://line.naver.jp/R/msg/text/?潑寶不鏽鋼開瓶神器%20%0ahttp://15fun.jollybuy.com/Goods/Detail/J020000000000182" class="submit" title="LINE"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-ig">
+											<a href="javascript:void(0)" class="submit" title="Instagram"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-twitter">
+											<a href="javascript:void(0)" class="submit" title="Twitter"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-wechat">
+											<a href="javascript:void(0)" class="submit" title="WeChat"></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!--/ social media -->
+							<!-- social media for app -->
+							<!--
+							<div class="share">
+								<span class="title">點擊分享給好友</span>
+								<ul>
+									<li>
+										<div class="btn-beango">
+											<a href="javascript:void(0)" class="submit" title="BeanGo!"></a>
+										</div>
+									</li>
+									<li>
+										<div class="btn-app-share">
+											<a href="javascript:void(0)" class="submit" title="share"></a>
+										</div>
+									</li>
+								</ul>
+							</div> 
+							-->
+							<!--/ social media for app -->
+						</div>
+					</div>
+					<script>
+					$(function() {
+						if (!(document.queryCommandSupported && document.queryCommandSupported('copy'))) { // old iOS not support
+							$('.copy-it').hide();
+						}
+						var clipboard = new ClipboardJS('.copy-it');
+						clipboard.on('success', function() {
+							$.notify({
+								message: '分享連結複製完成'
+							});
+						});
+						clipboard.on('error', function() {
+							$.notify({
+								message: '分享連結複製失敗'
+							});
+						});
+
+						// beango 
+						$('.share').find('.btn-beango').on('click', function() {
+							$.notify({
+								// options
+								message: '請先下載 beanfun!'
+							}, {
+								type: 'warning'
+							});
+						});
+					});
+					</script>
+					<!--/ 立即分享 -->
+
+					<!-- 查看拚團 -->
+					<div class="group-join-friend group-join-check">
+						<div class="ob_head">
+							<div class="title-cont">
+								<h3 class="title supper-title">查看拚團</h3><span></span>
+							</div>
+						</div>
+						<div class="ob_body">
+							<div class="info">
+								<!-- 未額滿(團員) -->
+								<div>Pter Pan 的拼團</div>
+								<div>拚團名額還差<span class="group-member-short">1</span>人即可拚團成功</div>
+								<!--/ -->
+								<!-- 已額滿(團員)
+								<div>拚團名額已滿，拚團成功</div>
+								-->
+								<!-- 已額滿(團主)
+								<div>您的拚團名額已滿</div>
+								<div>拚團成功</div>
+								-->
+							</div>
+							<div class="photo">
+								<!-- 角色 class:
+								團長 -> role-chief
+								您   -> role-self
+								-->
+								<ul>
+									<li>
+										<img src="images/product/group-join/member-portrait.png" />
+										<span class="flash flash-label role-chief">團長</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-default.png" />
+										<span class="flash flash-label role-self">您</span>
+									</li>
+									<li>
+										<img src="images/product/group-join/member-unknown.png" />
+									</li>
+								</ul>
+							</div>
+							<div class="time-left">即將於 <span class="countdown" data-countto="h" data-timer="86400"></span> 結束</div>
+						</div>
+					</div>
+					<!--/ 查看拚團 -->
 				</div>
 				<div class="modal-footer">
 					<!-- 橘子支：未綁定帳號 btns-->
@@ -1210,6 +1407,8 @@
 	<script type="text/javascript" src="js/rotate.js"></script>
   <script type="text/javascript" src="js/pay.js"></script>
 	<script type="text/javascript" src="js/order.js"></script>
+	<script type="text/javascript" src="js/digit_countdown.js"></script>
+	<script type="text/javascript" src="js/clipboard.min.js"></script>
 	<script type="text/javascript" src="js/chat.js"></script>
 </body>
 </html>
