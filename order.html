@@ -143,7 +143,7 @@
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval-status"></div>
 														<div class="td order-chat" data-title="">
-															<span class="btns btn-chat" data-type="order-cancel">取消訂單</span>
+															<span class="btns btn-chat" data-type="order-cancel">我要退款</span>
 															<span class="btns btn-chat" data-type="gamapay-not-verified">立即付款</span>
 														</div>
 													</div>
@@ -186,7 +186,7 @@
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval-status"></div>
 														<div class="td order-chat" data-title="">
-															<span class="btns btn-chat" data-type="order-cancel">取消訂單</span>
+															<span class="btns btn-chat" data-type="order-cancel">我要退款</span>
 															<span class="btns btn-chat" data-type="gamapay-verified">立即付款</span>
 														</div>
 													</div>
@@ -614,7 +614,7 @@
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval-status order-eval">
-															<a href="javascript: void(0);" data-type="eval-dialog">已評價</a>
+															<a href="javascript: void(0);" data-type="eval-dialog" data-eval-status="true">已評價</a>
 														</div>
 														<div class="td order-chat" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
@@ -774,7 +774,7 @@
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval-status order-eval">
-															<a href="javascript: void(0);" data-type="eval-dialog">已評價</a>
+															<a href="javascript: void(0);" data-type="eval-dialog" data-eval-status="true">已評價</a>
 														</div>
 														<div class="td order-chat" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
@@ -818,7 +818,7 @@
 														<div class="td order-date" data-title="訂單日期："><span>2018-03-20</span></div>
 														<div class="td order-amount" data-title="訂單金額："><span>$999,999</span></div>
 														<div class="td order-eval-status order-eval">
-															<a href="javascript: void(0);" data-type="eval-dialog">已評價</a>
+															<a href="javascript: void(0);" data-type="eval-dialog" data-eval-status="true">已評價</a>
 														</div>
 														<div class="td order-chat" data-title="">
 															<span class="btns btn-chat" data-type="logistics-status">物流狀態</span>
@@ -864,9 +864,11 @@
 									$myModal.removeClass('gamapay-not-verified gamapay-verified order-cancel order-confirm logistics-status chat-dialog eval-dialog group-join-share group-join-check');
 								 // show the specific modal
 								if (btnType != undefined) $myModal.addClass(btnType).modal('show');
-								// 評價, reinit Eval JS
-								if ($myModal.hasClass('eval-dialog')) {  
-									//Eval.setEvalStatus({evalBtnStatus: false});
+								// 評價, reinit Eval's variable
+								if ($(this).data('eval-status')) {
+									Eval.setStatus({evalOpen: false});
+								} else {
+									Eval.setStatus({evalOpen: true});
 								}
 							});
 							// modal close
