@@ -147,21 +147,35 @@ h3.supper-title{
 }
 a.btns,
 .btns{
-  color: #777;
+  color: #fff!important;
   line-height: 18px;
   padding: 10px 15px;
   font-size: 15px;
   padding: 10px;
   font-weight: bold;
-  background: #f0dddd;
-  border: solid 1px #c7b7b7;
+  background: #e61414;
+  border: solid 1px #b9011b;
   border-radius: 4px;
-  box-shadow: 0px 4px 0px #c7b7b7;
+  box-shadow: 0px 4px 0px #b9011b;
   cursor: pointer;
   -webkit-user-select: none; /* prevent blue hightlight */
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.btns:hover{
+  /* border-top: solid 2px #b9011b; */
+  box-shadow: 0px 3px 0px #b9011b;
+}
+.btns:active{
+  /* border-top: solid 3px #b9011b; */
+  box-shadow: 0px 2px 0px #b9011b;
+}
+div .btns.disable{
+  background:#ddd;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: not-allowed;
 }
 .btns-group-cart{
   font-size: 14px;
@@ -180,16 +194,6 @@ span.btns-group:hover,
 span.btns-group-cart:hover,
 button.btns-group-cart:hover{
   background: #ed6568;
-}
-.btns:hover{
-  background: #fff;
-  box-shadow: none;
-}
-div .btns.disable{
-  background:#ddd;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: not-allowed;
 }
 .mark{
   clear: both;
@@ -1597,13 +1601,15 @@ header .header.layout1 .top-links{
   font-size: 14px;
   height: auto;
   color: #fff;
-  background: rgb(255, 117, 120);
-  border-color: rgb(216, 71, 78);
-  box-shadow: 0 4px 0 rgb(216, 71, 78);
+  background: #FF7800;
+  border-color: #db6700;
+  box-shadow: 0 4px 0 #db6700;
   padding: 5px;
 }
 .group-join .btns-group:hover{
-  background: #ed6568;
+  background: #FF7800;
+  border-top: 2px solid #db6700;
+  box-shadow: 0 2px 0 #db6700;
 }
 .group-join .btns.disable{
   background: rgb(231, 231, 231);
@@ -1615,11 +1621,11 @@ header .header.layout1 .top-links{
   display: inline-block;
   text-align: center;
   height: auto;
-  padding: 2px 25px;
+  padding: 5px 25px;
   margin: 0;
 }
 .add-to-group-cart .btns span{
-  font-size: 16px;
+  font-size: 14px;
   float: none;
   height: auto;
   display: block;
@@ -1631,6 +1637,7 @@ header .header.layout1 .top-links{
   .add-to-group-cart .btns{
     width: 40%;
     margin: 0 2.7%;
+	padding: 5px 0;
   }
 }
 
@@ -1739,8 +1746,9 @@ header .header.layout1 .top-links{
 #product .modal .group-join-friend-btn,
 #product .modal .group-join-success,     /* 加入拼團成功  */
 #product .modal .group-join-success-btn,
-#product .modal .group-join-expired,
-#product .modal .group-join-expired-btn{ /* 加入拚團逾期 */
+#product .modal .group-join-expired,     /* 加入拚團逾期 */
+#product .modal .group-join-expired-btn,
+#product .modal .checkout{
   display: none;
 }
 /* 顯示 */
@@ -1757,7 +1765,8 @@ header .header.layout1 .top-links{
 #product .modal.group-join-success .group-join-success,     /* 加入拼團成功 */
 #product .modal.group-join-success .group-join-success-btn,
 #product .modal.group-join-expired .group-join-expired,     /* 加入拚團逾期 */
-#product .modal.group-join-expired .group-join-expired-btn{       
+#product .modal.group-join-expired .group-join-expired-btn,
+#product .modal.checkout .checkout{
   display: block;
 }
 
@@ -2413,9 +2422,43 @@ div.disable:active:hover{
     width: 40%;
     background-color: #f0dddd;
     padding: 0 0;
+	font-size: 1em;
   }
-  #product .fixed-section .add-to-cart:first-child{
-    margin-left: 7%;
+  #product .fixed-section .link-btn{
+    float: left;
+  }
+  #product .fixed-section .link-btn ul li{
+    float: left;
+    margin-left: 5px;
+    width: 50px;
+    text-align: center;
+  }
+  #product .fixed-section .link-btn ul li a{
+    display: block;
+    position: relative;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+  }
+  #product .fixed-section .link-btn ul li a i{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  #product .fixed-section .buy-btn,
+  #product .fixed-section .add-to-group-cart{
+    display: flex;
+    width: calc(100% - 110px);
+  }
+  #product .fixed-section .buy-btn a{
+    padding: 10px 0;
+    width: 40%;
+    height: 50px;
+    text-align: center;
+    line-height: 28px;
   }
   #product .fixed-section .checkout{
     margin-left: 5%;
@@ -2428,6 +2471,25 @@ div.disable:active:hover{
   #product .back-to-top{
     bottom: 100px;
   }
+}
+/*floater buttons*/
+
+/* 規格彈窗 */
+.checkout ul{
+  display: inline-block;
+  margin-bottom: 10px; 
+  width: 100%;
+}
+.checkout ul li{
+  float: left;
+  padding: 5px 15px;
+  margin: 0 15px 15px 0;
+  background-color: #ebebeb;
+  border: 1px solid #CCC;
+}
+.checkout ul li.active{
+  background-color: #de002a;
+  color: #FFF;
 }
 
 /**
