@@ -7,6 +7,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/icon.css" rel="stylesheet" type="text/css">
 	<link href="css/flaticon.min.css" rel="stylesheet" type="text/css">
 	<link href="css/animate.min.css" rel="stylesheet">
 	<link href="css/jquery.scrollbar.min.css" rel="stylesheet">
@@ -374,17 +375,18 @@
 								* 敲敲話
 								* 拼團詳情
 								* 拼團看更多
-								* 去拼團 & 加入拼團成功 
+								* 去拼團 & 加入拼團成功
+								* 立即購買/放入購物車規格
 								*/
 								var $groupJoin = $('.group-join')
 									, $myModal = $('.modal')
 									, btnType;
-								$('.group-info i, .btn-chat a, .group-join-more, .btns-group').on('click', function() {
+								$('.group-info i, .btn-chat a, .group-join-more, .btns-group, .fixed-section .link-btn ul li a, .fixed-section .buy-btn .add-to-cart').on('click', function() {
 									btnType = $(this).data('type');
 								
-									if (btnType == 'group-join-success' || btnType == 'group-join-friend' || btnType == 'group-join-expired') { // 去拼團加入成功 & 加入好友拚團
-										if ($myModal.hasClass('group-join-friend') || $myModal.hasClass('group-join-more') || $myModal.hasClass('group-join-warning') || $myModal.hasClass('group-join-expired')) 
-											$myModal.removeClass('group-join-friend group-join-more group-join-warning group-join-expired');
+									if (btnType == 'group-join-success' || btnType == 'group-join-friend' || btnType == 'group-join-expired' || btnType == 'checkout' ) { // 去拼團加入成功 & 加入好友拚團
+										if ($myModal.hasClass('group-join-friend') || $myModal.hasClass('group-join-more') || $myModal.hasClass('group-join-warning') || $myModal.hasClass('group-join-expired') || $myModal.hasClass('checkout')) 
+											$myModal.removeClass('group-join-friend group-join-more group-join-warning group-join-expired checkout');
 									}
 									if ($(this).hasClass('disable')) {  // 去拼團 disabled
 										btnType = 'group-join-warning';
@@ -732,18 +734,26 @@
 		</div>
 		<!-- 手機:加入購物車/立即結帳/商品捕貨中按鈕 -->
 		<div class="fixed-section">
+			<!-- 回有閑按鈕 -->
+			<div class="link-btn">
+				<ul>
+					<li class="goback"><a href="https://dev-www.jollybuy.com/Beango/IndexNew"><i class="icon-home icon-m"></i>回有閑</a></li>
+					<li class="chat" ><a href="javascript:void(0);" data-type="chat-dialog"><i class="icon-comment-dots-alt icon-m"></i>敲敲話</a></li>
+				</ul>
+			</div>
+			<!-- 回有閑按鈕 -->
 			<!-- 加入購物車按鈕 -->
-			<!--
-			<a href="javascript:void(0);" class="btn-basic add-to-cart" data-sku="12345" data-type="add-to-cart">放入購物車</a>
-			<a href="javascript:void(0);" class="btn-basic add-to-cart checkout" data-sku="12345" data-type="checkout">立即購買</a>
-			-->
-			<!-- <div class="sold-out">商品補貨中</div> -->
+			<div class="buy-btn">
+				<a href="javascript:void(0);" class="btns add-to-cart" data-sku="12345" data-type="checkout">放入購物車</a>
+				<a href="javascript:void(0);" class="btns add-to-cart checkout" data-sku="12345" data-type="checkout">立即購買</a>
+				<!-- <div class="sold-out">商品補貨中</div> -->
+			</div>
 			<!-- 加入購物車按鈕 -->
 			<!-- 拚團按鈕 -->
-			<div class="add-to-group-cart">
+			<!-- <div class="add-to-group-cart">
 				<span class="btns"><span>$100,000</span><span>單獨購買</span></span>
 				<span class="btns btns-group" data-type="group-join-success"><span>$99,000</span><span>開新團</span></span>
-			</div>
+			</div> -->
 			<!--/ 拚團按鈕 -->
 		</div>
 		<!--/手機: 加入購物車/立即結帳/商品捕貨中按鈕 -->
@@ -1092,8 +1102,36 @@
 						</div>
 					</div>
 					<!--/ 敲敲話對話窗 -->
+					
+					<!-- 立即購買規格 -->
+					<div class="checkout">
+						<b class="spec">顏色</b>
+						<ul>
+							<li class="active">藍色</li>
+							<li>藍色</li>
+							<li>藍色</li>
+							<li>藍色</li>
+							<li>藍色</li>
+						</ul>
+						<b class="spec">尺寸</b>
+						<ul>
+							<li>S</li>
+							<li class="active">M</li>
+							<li>L</li>
+							<li>XL</li>
+						</ul>						
+					</div>
+					<!--/ 立即購買規格 -->
 				</div>
 				
+				<script>
+				$(function(){
+					$('.checkout ul li').on('click', function() {
+						$(this).parents('ul').find('li').removeClass('active');
+						$(this).addClass('active');
+					});
+				});
+				</script>
 				<div class="modal-footer">
 					<!-- 敲敲話上傳 -->
 					<div class="textarea-block">
@@ -1138,6 +1176,11 @@
 						<button type="button" class="btns" data-dismiss="modal">我瞭解了</button>
 					</div>
 					<!--/ 加入拚團逾期 -->
+					<!-- 立即購買規格 -->
+					<div class="checkout">
+						<button type="button" class="btns" data-dismiss="modal">立即購買</button>
+					</div>
+					<!--/ 立即購買規格 -->
 	      </div>
 	    </div>
 	  </div>
