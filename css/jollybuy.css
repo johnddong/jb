@@ -147,21 +147,35 @@ h3.supper-title{
 }
 a.btns,
 .btns{
-  color: #777;
+  color: #fff!important;
   line-height: 18px;
   padding: 10px 15px;
   font-size: 15px;
   padding: 10px;
   font-weight: bold;
-  background: #f0dddd;
-  border: solid 1px #c7b7b7;
+  background: #e61414;
+  border: solid 1px #b9011b;
   border-radius: 4px;
-  box-shadow: 0px 4px 0px #c7b7b7;
+  box-shadow: 0px 4px 0px #b9011b;
   cursor: pointer;
   -webkit-user-select: none; /* prevent blue hightlight */
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.btns:hover{
+  /* border-top: solid 2px #b9011b; */
+  box-shadow: 0px 3px 0px #b9011b;
+}
+.btns:active{
+  /* border-top: solid 3px #b9011b; */
+  box-shadow: 0px 2px 0px #b9011b;
+}
+div .btns.disable{
+  background:#ddd;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: not-allowed;
 }
 .btns-group-cart{
   font-size: 14px;
@@ -180,16 +194,6 @@ span.btns-group:hover,
 span.btns-group-cart:hover,
 button.btns-group-cart:hover{
   background: #ed6568;
-}
-.btns:hover{
-  background: #fff;
-  box-shadow: none;
-}
-div .btns.disable{
-  background:#ddd;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: not-allowed;
 }
 .mark{
   clear: both;
