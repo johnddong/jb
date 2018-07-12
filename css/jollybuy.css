@@ -163,6 +163,9 @@ a.btns,
   -ms-user-select: none;
   user-select: none;
 }
+.btns a{
+  color: #FFF;
+}
 .btns:hover{
   /* border-top: solid 2px #b9011b; */
   box-shadow: 0px 3px 0px #b9011b;
@@ -568,15 +571,15 @@ form#search .invalid{
   margin-right: 5px;
 }
 /* fb btn */
-.btns.btn-fb{background-color: #4267b2;}
-.btns.btn-fb:hover{background-color: #3b5998;}
+.login-page .btn-box .btn-fb{background-color: #4267b2;}
+.login-page .btn-box .btn-fb:hover{background-color: #3b5998;}
 .btn-fb span{
   background: url(../images/icons/icon-fb.png) no-repeat center center;
   width: 26px;
 }
 /* beango btn */
-.btns.btn-beango{background-color: #5AC832;}
-.btns.btn-beango:hover{background-color: #f29600;}
+.login-page .btn-box .btn-beango{background-color: #5AC832;}
+.login-page .btn-box .btn-beango:hover{background-color: #f29600;}
 .btn-beango span{
   background: url(../images/icons/icon-beango.png) no-repeat center center;
   width: 26px;
