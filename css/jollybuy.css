@@ -163,7 +163,8 @@ a.btns,
   -ms-user-select: none;
   user-select: none;
 }
-.btns a{
+.btns a,
+.btns a:hover{
   color: #FFF;
 }
 .btns:hover{
@@ -1626,6 +1627,16 @@ header .header.layout1 .top-links{
   height: auto;
   padding: 5px 25px;
   margin: 0;
+}
+.add-to-group-cart .btns-group{
+  background: #FF7800;
+  border-top: 2px solid #db6700;
+  box-shadow: 0 4px 0 #db6700;
+  border: 1px solid #db6700;
+}
+.add-to-group-cart .btns-group:hover{
+  background: #FF7800;
+  box-shadow: 0 3px 0 #db6700;
 }
 .add-to-group-cart .btns span{
   font-size: 14px;
