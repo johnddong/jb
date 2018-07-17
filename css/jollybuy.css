@@ -1555,6 +1555,10 @@ footer .footer .app-link li a{
   color: #777;
   cursor: pointer;
 }
+#product .main-content .btn-side a.btns{
+  font-size: 20px;
+  padding: 11px;
+}
 .sub-title{
   font-size: 1.2em;
   font-weight: bold;
@@ -1627,8 +1631,7 @@ footer .footer .app-link li a{
 }
 .group-join .btns-group:hover{
   background: #FF7800;
-  border-top: 2px solid #db6700;
-  box-shadow: 0 2px 0 #db6700;
+  box-shadow: 0 3px 0 #db6700;
 }
 .group-join .btns.disable{
   background: rgb(231, 231, 231);
