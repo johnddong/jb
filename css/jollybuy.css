@@ -297,6 +297,9 @@ form#search .invalid{
 .breadcrumbs .current::before{
   content: "/ ";
 }
+.cart-content{
+  padding: 0 0 80px;
+}
 /* loader */
 .loader{
   background:url(../images/spinner/spinner.gif) no-repeat center center;
@@ -924,12 +927,11 @@ header .left-content{
 header .header .logo a{
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 40px;
 }
 header .header .logo img,
 header .header .logo2 img{
-  max-width: 150px;
-  max-height: 60px;
+  max-height: 40px;
 }
 /* icons */
 header .header .top-links .member-icon,
@@ -1229,15 +1231,15 @@ header .header.layout1 .top-links{
 /* 合併header */
 #type05 .header,
 #type05 .header05{
-  height: 50px;
-  background-color: #EB0045;
+  height: 40px;
+  background-color: #e61414;
   padding: 0 15px;
 }
 #type05 .header .logo,
 #type05 .header .home,
 #type05 .header05 .logo{
-  height: 50px;
-  text-align: center;
+  height: 40px;
+  text-align: left;
 }
 #type05 .header #menu-list,
 #type05 .header05 #menu-list{
@@ -1257,6 +1259,8 @@ header .header.layout1 .top-links{
   #type05 .header .logo,
   #type05 .header .home ,
   #type05 .header05 .logo{
+    float: left;
+    padding: 0 15px;
     text-align: left;
   }
   #type05 .header .logo a,
@@ -1277,10 +1281,6 @@ header .header.layout1 .top-links{
     display: block;
     text-align: right;
   }
-  #type05 .header #menu-list,
-  #type05 .header05 #menu-list{
-    padding-top: 10px;
-  }
   #type05 .header #menu-list ul li,
   #type05 .header05 #menu-list ul li,
   #type06 .header06 #menu-list ul li{
@@ -1291,28 +1291,25 @@ header .header.layout1 .top-links{
   #type06 .header06 #menu-list ul li a,
   #type06 .header06 .home a{
     display: block;
-    height: 30px;
+    height: 40px;
     background-repeat: no-repeat;
-    background-position: left top;
-    padding-top: 3px;
+    background-position: left center;
     padding-right: 6px;
     padding-left: 30px;
+    line-height: 40px;
   }
   #type05 .header #menu-list li a,
   #type05 .header05 #menu-list li a{
+    position: relative;
     font-size: 14px;
-    color: #ffa8bd;
+    color: #FFF;
   }
-  #type05 .header #menu-list li a:hover,#type05 .header05 #menu-list li a:hover{color: #fff;}
-  #type05 .header #menu-list li.shop a,#type05 .header05 #menu-list li.shop a{background-image: url("../images/header/type05/icon-shop.png"); background-size: 30px auto;}
-  #type05 .header #menu-list li.shop a:hover,#type05 .header05 #menu-list li.shop a:hover{background-image: url("../images/header/type05/icon-shop-hover.png"); background-size: 30px auto;}
-  #type05 .header #menu-list li.dollar a,#type05 .header05 #menu-list li.dollar a{background-image: url("../images/header/type05/icon-dollar.png");}
-  #type05 .header #menu-list li.dollar a:hover,#type05 .header05 #menu-list li.dollar a:hover{background-image: url("../images/header/type05/icon-dollar-hover.png");}
-  #type05 .header #menu-list li.member a,#type05 .header05 #menu-list li.member a{background-image: url("../images/header/type05/icon-member.png");}
-  #type05 .header #menu-list li.member a:hover,#type05 .header05 #menu-list li.member a:hover{background-image: url("../images/header/type05/icon-member-hover.png");}
-  #type05 .header #menu-list li.cart a,#type05 .header05 #menu-list li.cart a{background-image: url("../images/header/type05/icon-cart.png");}
-  #type05 .header #menu-list li.cart a:hover,#type05 .header05 #menu-list li.cart a:hover{background-image: url("../images/header/type05/icon-cart-hover.png");}
-
+  #type05 .header #menu-list li a:hover,#type05 .header05 #menu-list li a:hover{color: #ffa8bd;}
+  #type05 .header #menu-list li a i{
+    position: absolute;
+    left: 6px;
+    top: 15px;
+  }
   #type06 .header06{
     border-bottom: solid 1px #dbdbdb;
 	  background-color:#f3f3f3;
@@ -1372,6 +1369,20 @@ header .header.layout1 .top-links{
 .footer .coppy-right .content{
   margin-top: 20px;
 }
+footer .footer .app-link li{
+  margin: 15px;
+}
+footer .footer .app-link li a{
+  border: 0;
+}
+@media (min-width: 992px) {
+  footer .footer li a{
+    padding-right: 3px;
+  }
+  footer .footer li:last-child a{
+    border-right: none;
+  }  
+}
 @media(max-width: 767px) {
   .footer .custom-menu{
     margin-top: 0; /* reset */
@@ -1410,7 +1421,9 @@ header .header.layout1 .top-links{
   display: flow-root;
 }
 .leisure .fixed-footer ul li{
+  position: relative;
   width: 25%;
+  height: 50px;
   float: left;
   text-align: center;
 }
@@ -1422,30 +1435,32 @@ header .header.layout1 .top-links{
   background-repeat: no-repeat;
   padding-top: 30px;
 }
-.leisure .fixed-footer .goback a{background-image: url("../images/footer/icon-home.png"); background-size: 30px auto;}
-.leisure .fixed-footer .dollar a{background-image: url("../images/footer/icon-dollar.png");}
-.leisure .fixed-footer .shop a{background-image: url("../images/footer/icon-shop.png"); background-size: 30px auto;}
-.leisure .fixed-footer .member a{background-image: url("../images/footer/icon-member.png"); background-size: 30px auto;}
-.leisure .fixed-footer .cart a{background-image: url("../images/footer/icon-cart.png"); background-size: 30px auto;}
-
+.fixed-footer a i {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
 @media (min-width: 767px) {
   .leisure .fixed-footer{display: none;}
   }
 /*PC footer*/
 .leisure .footer{
   display: none;
-  color: #ffa8bd;
+  color: #FFF;
   text-align: center;
   border-top: none;
-  background-color: #EB0045;
+  background-color: #e61414;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
 }
 .leisure .footer li a,
 .leisure .footer li a:link,
-.leisure .footer li a:visited{color: #ffa8bd; }
-.leisure .footer li a:hover{color: #fff;}
+.leisure .footer li a:visited{color: #FFF; }
+.leisure .footer li a:hover{color: #ffa8bd;}
 .leisure .footer li{
   margin: 0px auto 20px auto;
 }
@@ -1651,7 +1666,7 @@ header .header.layout1 .top-links{
   .add-to-group-cart .btns{
     width: 40%;
     margin: 0 2.7%;
-	padding: 5px 0;
+    padding: 5px 0;
   }
 }
 
@@ -1780,7 +1795,7 @@ header .header.layout1 .top-links{
 #product .modal.group-join-success .group-join-success-btn,
 #product .modal.group-join-expired .group-join-expired,     /* 加入拚團逾期 */
 #product .modal.group-join-expired .group-join-expired-btn,
-#product .modal.checkout .checkout{
+#product .modal.checkout .checkout{       
   display: block;
 }
 
@@ -2436,7 +2451,7 @@ div.disable:active:hover{
     width: 40%;
     background-color: #f0dddd;
     padding: 0 0;
-	font-size: 1em;
+    font-size: 1em;
   }
   #product .fixed-section .link-btn{
     float: left;
