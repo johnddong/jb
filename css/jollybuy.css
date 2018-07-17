@@ -1301,8 +1301,9 @@ header .header.layout1 .top-links{
   #type05 .header #menu-list li a,
   #type05 .header05 #menu-list li a{
     position: relative;
-    font-size: 14px;
+    font-size: 15px;
     color: #FFF;
+    font-weight: 700;
   }
   #type05 .header #menu-list li a:hover,#type05 .header05 #menu-list li a:hover{color: #ffa8bd;}
   #type05 .header #menu-list li a i{
